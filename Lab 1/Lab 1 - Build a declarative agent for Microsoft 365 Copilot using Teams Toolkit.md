@@ -40,7 +40,7 @@ Follow the steps as shown in the screen shot below.
 
 1.  Open Visual Studio Code and click on the Extensions toolbar button.
 
-    ![](./media/image1.png)
+    ![](./media/image1.png
 
 
 2.  Search for +++**Teams**+++ and locate Teams **Toolkit** and click **Install.**
