@@ -41,9 +41,7 @@ agent to streamline IT workflows.
     ![](./media/image2.png)
 
 
-2.  Enter admin tenant ID in the respected field and click on the **Next** button.
-
-    > Note: For this lab we are using admin tenant credentials, participant can use their work or school id to start free trial.
+2.  Enter **User1** credentials in the respected field and click on the **Next** button.
 
     ![](./media/image3.png)
 
