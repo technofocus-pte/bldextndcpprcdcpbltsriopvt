@@ -172,7 +172,7 @@ enhance user engagement through intuitive and efficient interactions.
 
 ## Task 1: Create an Azure AI Search resource
 
-1.  In a web browser, open the Azure portal at +++https://portal.azure.com+++ and sign in using your Azure credentials.
+1.  In a web browser, open the Azure portal at +++https://portal.azure.com+++ and sign in using your office 365 admin tenant credentials.
 
     ![](./media/image1.png)
 
