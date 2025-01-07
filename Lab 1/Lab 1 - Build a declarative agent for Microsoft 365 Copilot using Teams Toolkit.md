@@ -201,7 +201,7 @@ Well done! You have successfully set up the base declarative agent! Now, proceed
 
 ### Task 2: Set up accounts in Teams Toolkit
 
-1.  Now select the Teams Toolkit icon in the left Under **Accounts** click **Sign in to Microsoft 365** and log in with your Azure User1 credentials.
+1.  Now select the Teams Toolkit icon in the left Under **Accounts** click **Sign in to Microsoft 365** and log in with your **User1 credentials**.
 
     ![](./media/image14.png)
 
