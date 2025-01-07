@@ -146,7 +146,7 @@ applications.
     ![](./media/image15.png)
 
 
-2.  Enter admin tenant id / work or school id, check the box and click
+2.  Enter **User1 Credentials**, check the box and click
     on **Start free,** for this tab we are using admin tenant id.
 
     ![](./media/image16.png)
@@ -229,8 +229,7 @@ applications.
 
 By completing this exercise, participants will learn:
 
-- How to access and navigate Power Apps using admin tenant / work or
-  school credentials.
+- How to access and navigate Power Apps using User1 credentials.
 
 - Steps to create and configure a Dataverse table by importing data.
 
@@ -657,7 +656,7 @@ trigger automated workflows effectively.
 
 
 3.  Open outlook or other email service provider login and send email on
-    same admin tenant or same school / work id which is using in copilot
+    same credentials which is using in copilot
     and power automate login.
 
     ![](./media/image85.png)
