@@ -284,7 +284,7 @@ You need two models to implement your solution:
 
     ![](./media/image15.png)
 
-4.  On the **Deploy model text-embedding-ada-**002 pane click on **Customize** and enter the following details in the Deploy model
+4.  On the Deploy model **text-embedding-ada-002** pane click on **Customize** and enter the following details in the Deploy model
     wizard:
 
     ![](./media/image16.png)
@@ -309,7 +309,7 @@ You need two models to implement your solution:
     ![](./media/image18.png)
 
 
-5.  Repeat the previous steps to deploy a **gpt-35-turbo-16k** model with the deployment name gpt-35-turbo-16k.
+5.  Repeat the previous steps to deploy a +++**gpt-35-turbo-16k**+++ model with the deployment name gpt-35-turbo-16k.
 
     ![](./media/image19.png)
 
@@ -378,7 +378,7 @@ Now that you’ve added a data source to your project, you can use it to create 
 
   - **Select Azure AI Search service**: *Select the **AzureAISearch** connection to your Azure AI Search resource*
 
-  - **Vector index**: brochures-index
+  - **Vector index**: +++brochures-index+++
 
   - **Virtual machine**: Auto select
 
@@ -428,7 +428,7 @@ Before using your index in a RAG-based prompt flow, let’s verify that it can b
 
     > **Note**: Some users are finding newly created indexes unavailable right away. Refreshing the browser usually helps, but if you’re still experiencing the issue where it can’t find the index you may need to wait until the index is recognized.
 
-5.  After the index has been added and the chat session has restarted, resubmit the prompt **Where can I stay in New York?**
+5.  After the index has been added and the chat session has restarted, resubmit the prompt +++**Where can I stay in New York?**+++
 
     ![](./media/image38.png)
 
@@ -515,7 +515,7 @@ Your vector index has been saved in your Azure AI Foundry project, enabling you 
 
       - **mlindex_asset_id**: brochures-index:1
 
-    - **queries**: \${modify_query_with_history.output}
+    - **queries**: +++\${modify_query_with_history.output}+++
 
     - **query_type**: Hybrid (vector + keyword)
 
