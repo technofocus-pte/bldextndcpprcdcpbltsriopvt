@@ -147,7 +147,7 @@ applications.
 
 
 2.  Enter **User1 Credentials**, check the box and click
-    on **Start free,** for this tab we are using admin tenant id.
+    on **Start free** .
 
     ![](./media/image16.png)
 
