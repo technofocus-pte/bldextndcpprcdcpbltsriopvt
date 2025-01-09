@@ -44,12 +44,12 @@ application for execution using your Azure OpenAI deployment details.
 account to complete these steps.
 
 
-1. From **C:\LabFiles**, right click on the AITravelAgent folder and select **open with code**. The folder will open in VS Code.
+1. From **C:\LabFiles**, right click on the AITravelAgent folder and select **open with code** folder will open in VS Code or you can open VS code go to files and click on open folder. Choose the folder from lab file **AITravelAgent** and open it.
 
 ![](./media/add.png)
 
 
-2.  In the Explorer panel, navigate to the **AITravelAgent/Starter** folder. Right-click the folder and select Open in Integrated Terminal.
+2.  In the Explorer panel, navigate to the **AITravelAgent/Starter** folder. Right-click the folder and select **Open in Integrated Terminal**.
 
     ![](./media/image8.png)
 
@@ -61,7 +61,7 @@ account to complete these steps.
 
 4.  Open the **Starter/Program.cs** file and update the following variables with your Azure OpenAI Services deployment name, API key, and endpoint. After making the changes, press Ctrl + S to save the file:
 
-    - **string yourDeploymentName** = "gpt-35-turbo-16k";
+    - **string yourDeploymentName** = +++"gpt-35-turbo-16k"+++;
 
     - **string yourEndpoint** = "Which we created in Lab 3";
 
@@ -84,7 +84,7 @@ integrate plugins into a larger application.
 
 **Important:** You need to complete the Setup instructions in the previous unit, Prepare, before you begin this exercise.
 
-1.  Create a new file named **CurrencyConverter.cs** in the **Stater/Plugins/ConvertCurrency** folder
+1.  Create a new file named +++**CurrencyConverter.cs**+++ in the **Stater/Plugins/ConvertCurrency** folder
 
     ![](./media/image12.png)
 
