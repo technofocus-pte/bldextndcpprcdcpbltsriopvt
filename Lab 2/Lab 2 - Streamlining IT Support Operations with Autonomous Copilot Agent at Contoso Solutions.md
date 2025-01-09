@@ -386,9 +386,9 @@ data in Dataverse, and notify support engineers via email.
     ![](./media/image46.png)
 
 
-2.  In choose an action window, scroll down and click on **Create a new flow**, power automate flow window will open.
+2.  In choose an action window, From top left side click on the **+ New Action** and select **New Power Automate Flow** . 
 
-    ![](./media/image47.png)
+    ![](./media/image47a.png)
 
 
 3.  In Power automate flow, click on **Run a flow from copilot** and then select **Add an Input**.
