@@ -41,7 +41,7 @@ agent to streamline IT workflows.
     ![](./media/image2.png)
 
 
-2.  Enter **User1** credentials in the respected field and click on the **Next** button.
+2.  Enter **office 365 admin tenant** credentials in the respected field and click on the **Next** button.
 
     ![](./media/image3.png)
 
@@ -146,8 +146,7 @@ applications.
     ![](./media/image15.png)
 
 
-2.  Enter **User1 Credentials**, check the box and click
-    on **Start free** .
+2.  Enter **office 365 admin tenant**, check the box and click on **Start free** .
 
     ![](./media/image16.png)
 
@@ -197,7 +196,7 @@ applications.
 
 5.  Select the table and click on **View data** to see the table.
 
-    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future reference.
+    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference.
 
     ![](./media/image24.png)
 
@@ -229,7 +228,7 @@ applications.
 
 By completing this exercise, participants will learn:
 
-- How to access and navigate Power Apps using User1 credentials.
+- How to access and navigate Power Apps using office 365 admin tenant credentials.
 
 - Steps to create and configure a Dataverse table by importing data.
 
@@ -656,8 +655,7 @@ trigger automated workflows effectively.
 
 
 3.  Open outlook or other email service provider login and send email on
-    same credentials which is using in copilot
-    and power automate login.
+    same credentials which is using in copilot and power automate login.
 
     ![](./media/image85.png)
 
