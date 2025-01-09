@@ -191,7 +191,19 @@ You install the Azure CLI and sign in from your local development
 environment, so that you can use your user credentials to call the Azure
 OpenAI service.
 
-1.  In most cases you can install the Azure CLI from your terminal using the following command:
+1. Open windows power shell and paste the below given command and run it.
+
+```
+$progressPreference = 'silentlyContinue'
+Write-Host "Installing WinGet PowerShell module from PSGallery..."
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
+Repair-WinGetPackageManager
+Write-Host "Done."
+```
+
+2.  In most cases you can install the Azure CLI from your command line terminal using the following command:
 
 
 ```
@@ -205,7 +217,7 @@ winget install -e --id Microsoft.AzureCLI
 
 ![](./media/image28.png)
 
-2.  After you install the Azure CLI, sign in using the az login command and sign-in using the browser:
+3.  After you install the Azure CLI, sign in using the az login command and sign-in using the browser:
 
 
 ```
@@ -281,6 +293,7 @@ azure-search-documents
 pandas
 python-dotenv
 opentelemetry-api
+marshmallow==3.23.2
 ```
 
 
@@ -485,11 +498,6 @@ CompleteExercise 1 - Create resources for building a custom chat application wit
 The goal with this RAG-based application is to ground the model responses in your custom data. You use an Azure AI Search index that stores vectorized data from the embeddings model. The search index is used to retrieve relevant documents based on the user's question.
 
 1.  Create an **assets** directory in your project folder\src.
-
-
-```
-mkdir assets
-```
 
 
 ![](./media/image50.png)
