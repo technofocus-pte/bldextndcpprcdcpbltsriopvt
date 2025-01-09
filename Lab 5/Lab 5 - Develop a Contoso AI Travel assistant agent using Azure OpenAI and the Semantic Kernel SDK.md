@@ -43,6 +43,15 @@ application for execution using your Azure OpenAI deployment details.
 **Important:** You must have .NET Framework 8.0 installed and a GitHub
 account to complete these steps.
 
+1. Opne command line editor and execute the gien below command one by one.
+
+```
+dotnet nuget list source
+```
+
+```
+dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
+```
 
 1. From **C:\LabFiles**, right click on the AITravelAgent folder and select **open with code** folder will open in VS Code or you can open VS code go to files and click on open folder. Choose the folder from lab file **AITravelAgent** and open it.
 
