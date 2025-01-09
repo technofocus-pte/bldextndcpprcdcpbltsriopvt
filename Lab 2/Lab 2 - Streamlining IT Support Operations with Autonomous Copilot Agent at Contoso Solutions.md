@@ -26,7 +26,111 @@ email notifications for unresolved issues. Finally, participants will
 test the agent to validate its troubleshooting accuracy and workflow
 automation, ensuring seamless IT support operations.
 
-#  Exercise 1: Creating the Contoso IT Support Agent
+# Exercise 1: Getting Started with Power Apps
+
+This exercise introduces participants to Power Apps and Dataverse. The
+goal is to log in to Power Apps, set up a working environment, and
+create a Dataverse table by importing data from an Excel file.
+Participants will learn essential skills for working with data-driven
+applications.
+
+## Task 1: Logging into Power Apps
+
+1.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Fre**e **button.**
+
+    ![](./media/image15.png)
+
+
+2.  Enter **office 365 admin tenant**, check the box and click on **Start free** .
+
+    ![](./media/image16.png)
+
+
+3.  Enter Country/ Region, Phone number, select box check box and click
+    on the **Get started**.
+
+    ![](./media/image17.png)
+
+
+4.  Confirm the account details and then click on the **Get started**.
+
+    ![](./media/image18.png)
+
+
+5.  On the Stay signed in tab select **Yes**.
+
+    ![](./media/image19.png)
+
+
+## Task 2: Setting Up a Dataverse Table
+
+1.  On the power apps home page, from top select the development
+    environment. In our case its **Dev One**, participant can choose their
+    own environment.
+
+    ![](./media/image20.png)
+
+
+2.  From the left navigation bar select **Tables.** In the tables
+    section top bar click on the **+ New table** and then select
+    **Create new tables**.
+
+    ![](./media/image21.png)
+
+
+3.  Select **Import an Excel file or CSV** option to create a new table.
+
+    ![](./media/image22.png)
+
+
+4.  Click on the select form device option and select **Support Ticket**
+    excel file from **Lab Files** folder.
+
+    ![](./media/image23.png)
+
+
+5.  Select the table and click on **View data** to see the table.
+
+    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference.
+
+    ![](./media/image24.png)
+
+
+6.  Go to table data, select **Technical Issue Description down arrow**,
+    select **Edit column**, Set the data type as **Text** 🡪 **Multiple
+    line** 🡪 **Plain Text** and click on the **Update**. The column name
+    may be different in each case.
+
+    ![](./media/image25.png)
+
+
+    ![](./media/image26.png)
+
+
+7.  Select **Current Status down arrow**, select **Edit column**, Set
+    the Choices as **Unresolved, Resolved, Processing**. Set Default
+    choices as **Unresolved** and click on the **Update**.
+
+    ![](./media/image27.png)
+
+
+8.  From top right side click on **Save and exit** to save the table.
+
+    ![](./media/image28.png)
+
+
+## Conclusion
+
+By completing this exercise, participants will learn:
+
+- How to access and navigate Power Apps using office 365 admin tenant credentials.
+
+- Steps to create and configure a Dataverse table by importing data.
+
+- Practical knowledge of setting up an environment to support app
+  development workflows.
+
+#  Exercise 2: Creating the Contoso IT Support Agent
 
 This exercise focuses on logging into Microsoft Copilot Studio and
 creating a customized Copilot agent tailored for IT support operations
@@ -130,110 +234,6 @@ By completing this exercise, participants will learn:
 
 - Ways to enhance IT operations by automating ticket creation and
   leveraging AI for troubleshooting.
-
-# Exercise 2: Getting Started with Power Apps
-
-This exercise introduces participants to Power Apps and Dataverse. The
-goal is to log in to Power Apps, set up a working environment, and
-create a Dataverse table by importing data from an Excel file.
-Participants will learn essential skills for working with data-driven
-applications.
-
-## Task 1: Logging into Power Apps
-
-1.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Fre**e **button.**
-
-    ![](./media/image15.png)
-
-
-2.  Enter **office 365 admin tenant**, check the box and click on **Start free** .
-
-    ![](./media/image16.png)
-
-
-3.  Enter Country/ Region, Phone number, select box check box and click
-    on the **Get started**.
-
-    ![](./media/image17.png)
-
-
-4.  Confirm the account details and then click on the **Get started**.
-
-    ![](./media/image18.png)
-
-
-5.  On the Stay signed in tab select **Yes**.
-
-    ![](./media/image19.png)
-
-
-## Task 2: Setting Up a Dataverse Table
-
-1.  On the power apps home page, from top select the development
-    environment. In our case its **Dev One**, participant can choose their
-    own environment.
-
-    ![](./media/image20.png)
-
-
-2.  From the left navigation bar select **Tables.** In the tables
-    section top bar click on the **+ New table** and then select
-    **Create new tables**.
-
-    ![](./media/image21.png)
-
-
-3.  Select **Import an Excel file or CSV** option to create a new table.
-
-    ![](./media/image22.png)
-
-
-4.  Click on the select form device option and select **Support Ticket**
-    excel file from **Lab Files** folder.
-
-    ![](./media/image23.png)
-
-
-5.  Select the table and click on **View data** to see the table.
-
-    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference.
-
-    ![](./media/image24.png)
-
-
-6.  Go to table data, select **Technical Issue Description down arrow**,
-    select **Edit column**, Set the data type as **Text** 🡪 **Multiple
-    line** 🡪 **Plain Text** and click on the **Update**. The column name
-    may be different in each case.
-
-    ![](./media/image25.png)
-
-
-    ![](./media/image26.png)
-
-
-7.  Select **Current Status down arrow**, select **Edit column**, Set
-    the Choices as **Unresolved, Resolved, Processing**. Set Default
-    choices as **Unresolved** and click on the **Update**.
-
-    ![](./media/image27.png)
-
-
-8.  From top right side click on **Save and exit** to save the table.
-
-    ![](./media/image28.png)
-
-
-## Conclusion
-
-By completing this exercise, participants will learn:
-
-- How to access and navigate Power Apps using office 365 admin tenant credentials.
-
-- Steps to create and configure a Dataverse table by importing data.
-
-- Practical knowledge of setting up an environment to support app
-  development workflows.
 
 # Exercise 3: Enhancing Bot Capabilities
 
