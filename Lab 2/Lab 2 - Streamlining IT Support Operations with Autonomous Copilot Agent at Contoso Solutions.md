@@ -495,41 +495,42 @@ data in Dataverse, and notify support engineers via email.
 
 15. Go back to Copilot window and click on **Refresh** button.
 
-    ![](./media/image63.png)
+    ![](./media/image63a.png)
 
 
 16. In Choose an action window, select **Employee Data** flow.
 
-    ![](./media/image64.png)
+    ![](./media/image64a.png)
 
 
-17. Click on **Next** to move forward and configure the flow.
+17. Click on **Add action** button to add a flow
 
-    ![](./media/image65.png)
-
-
-18. In the Review input and output window, click on **Edit inputs**.
-
-    ![](./media/image66.png)
+    ![](./media/imagea.png)
 
 
-19. Enter the given description in the respected input, after entering
-    the description click on **Save** button. After saving the inputs
-    description click on **Next** and then **Finish**.
+18. Click on the **Employee Data** flow and open it, after opening select inputs option.
 
-| Name -- Description | +++Enter the name of the employee.+++ |
+    ![](./media/imageb.png)
+    
+    ![](./media/imagec.png)
+
+
+20. Enter the given description in the respected input, after entering
+    the description click on **Save** button. 
+
+| Section | Details |
 |----|----|
+| Name -- Description | +++Enter the name of the employee.+++ |
 | ID -- Description | +++Enter the employee ID in the field.+++ |
 | Email -- Description | +++Enter the email address of the employee from whom the email is received.+++ |
 | Details -- Description | +++Enter the email details of the employee.+++ |
 
-![](./media/image67.png)
+![](./media/imaged.png)
+
+ ![](./media/imagee.png)
 
 
-![](./media/image68.png)
 
-
-![](./media/image69.png)
 
 
 ## Conclusion
