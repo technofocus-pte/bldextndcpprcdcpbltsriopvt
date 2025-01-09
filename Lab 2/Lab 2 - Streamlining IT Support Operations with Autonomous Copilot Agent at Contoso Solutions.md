@@ -417,7 +417,7 @@ data in Dataverse, and notify support engineers via email.
 
 6.  Below Run a flow from copilot, click on **(+)** sign and select **Add an action**.
 
-    ![](./media/image52.png)
+    ![](./media/image52a.png)
 
 
 7.  In Add an action search bar, enter +++**Add a new row**+++ . Then select
@@ -456,7 +456,7 @@ data in Dataverse, and notify support engineers via email.
 
 10. Below Add a new row action click on (+) and select **Add an action**.
 
-    ![](./media/image58.png)
+    ![](./media/image58a.png)
 
 
 11. In add an action section, enter +++**Send an email**+++ in the search bar
