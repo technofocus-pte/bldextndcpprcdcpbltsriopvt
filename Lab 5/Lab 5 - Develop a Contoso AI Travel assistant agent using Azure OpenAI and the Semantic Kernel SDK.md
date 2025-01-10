@@ -224,12 +224,12 @@ conversions.
     ![](./media/image18.png)
 
 
-2.  Inside the **Starter/Prompt** folder, create a new folder named **GetTargetCurrencies**. This folder will contain all the files related to this exercise.
+2.  Inside the **Starter/Prompt** folder, create a new folder named +++**GetTargetCurrencies**+++. This folder will contain all the files related to this exercise.
 
     ![](./media/image19.png)
 
 
-3.  Within the **GetTargetCurrencies** folder, create a new file named **config.json**.
+3.  Within the **GetTargetCurrencies** folder, create a new file named +++**config.json**+++.
 
     ![](./media/image20.png)
 
