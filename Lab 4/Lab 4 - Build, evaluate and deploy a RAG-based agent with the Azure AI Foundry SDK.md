@@ -285,7 +285,7 @@ Activating the Python environment means that when you run python or pip from
 
 Install **azure-ai-projects(preview) and azure-ai-inference (preview)**,along with other required packages.
 
-5.  Create a file named **requirements.txt** in your **ProjectXXXX** folder and add the following packages to the file:
+5.  Create a file named +++**requirements.txt**+++ in your **ProjectXXXX** folder and add the following packages. After adding packages go to files and select **Save All**:
 
 
 ```
@@ -500,7 +500,8 @@ CompleteExercise 1 - Create resources for building a custom chat application wit
 
 The goal with this RAG-based application is to ground the model responses in your custom data. You use an Azure AI Search index that stores vectorized data from the embeddings model. The search index is used to retrieve relevant documents based on the user's question.
 
-1.  Create an **assets** directory in your project folder\src.
+1.  Create an +++**assets**+++
+2.   directory in your project folder\src.
 
 
 ![](./media/image50.png)
