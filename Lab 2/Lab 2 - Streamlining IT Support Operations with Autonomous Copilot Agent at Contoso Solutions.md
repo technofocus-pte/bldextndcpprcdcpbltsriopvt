@@ -36,7 +36,7 @@ applications.
 
 ## Task 1: Logging into Power Apps
 
-1.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Fre**e **button.**
+1.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Free** button.
 
     ![](./media/image15.png)
 
@@ -108,7 +108,7 @@ applications.
 
 
 7.  Select **Current Status down arrow**, select **Edit column**, Set
-    the Choices as **Unresolved, Resolved, Processing**. Set Default
+    the Choices as +++**Unresolved**+++, +++**Resolved**+++, +++**Processing**+++. Set Default
     choices as **Unresolved** and click on the **Update**.
 
     ![](./media/image27.png)
@@ -468,17 +468,32 @@ data in Dataverse, and notify support engineers via email.
 12. In send an email section, Enter the below given detail in the
     respected section:
 
-| **To**     | Enter support engineer email (Use any email ID)                                                                                                                                                             |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Subject** | New Technical Support Ticket Raised                                                                                                                                                                      |
-| **Body**    | A new technical support ticket has been raised and requires your attention. Please find details below:                                                                                                  |
-|            | - **Employee Name**: Name (Use Name dynamic content variable (Thunder bolt))                                                                                                                             |
-|            | - **Employee ID**: ID (Use Name dynamic content variable (Thunder bolt))                                                                                                                                 |
-|            | - **Technical Issue**: Details (Use Name dynamic content variable (Thunder Bolt))                                                                                                                       |
-|            |                                                                                                                                                                                                          |
-|            | Thank you for your prompt attention to this matter.                                                                                                                                                     |
-|            |                                                                                                                                                                                                          |
-|            | **Best Regards**                                                                                                                                                                                        |
+**To**
+
+```
+Enter support engineer email (Use any email ID) 
+```
+
+**Subject**
+
+```
+New Technical Support Ticket Raised 
+```
+
+**Body**
+
+```
+A new technical support ticket has been raised and requires your attention. Please find details below:
+
+Employee Name: Name (Use Name dynamic content variable (Thunder bolt))
+Employee ID: ID (Use Name dynamic content variable (Thunder bolt))
+Technical Issue: Details (Use Name dynamic content variable (Thunder Bolt))
+
+Thank you for your prompt attention to this matter.'
+
+Best Regards
+```
+
 
 ![](./media/image60.png)
 
