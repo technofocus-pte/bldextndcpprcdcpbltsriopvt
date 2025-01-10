@@ -203,6 +203,9 @@ Repair-WinGetPackageManager
 Write-Host "Done."
 ```
 
+![](./media/imagez.png)
+
+
 2.  In most cases you can install the Azure CLI from your command line terminal using the following command:
 
 
