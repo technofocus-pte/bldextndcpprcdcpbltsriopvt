@@ -276,7 +276,7 @@ py -3 -m venv .venv
 
 Activating the Python environment means that when you run python or pip from the command line, you then use the Python interpreter contained in the .venv folder of your application.
 
-4.  Run the following command to open the directory in VS **code.**
+4.  Open the project folder in VS Code
 
     ![](./media/image34.png)
 
