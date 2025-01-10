@@ -367,7 +367,7 @@ Now that you’ve added a data source to your project, you can use it to create 
 
     - **Source location**:
 
-      - **Data source**: Data in Azure AI Studio
+      - **Data source**: Data in Azure AI Foundry
 
         - *Select the **brochures** data source- **dataXXXX***
 
