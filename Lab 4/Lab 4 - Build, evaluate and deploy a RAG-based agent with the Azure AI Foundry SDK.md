@@ -1231,7 +1231,7 @@ pip install azure-monitor-opentelemetry
 ![](./media/image78.png)
 
 
-3.  Add the --enable-telemetry flag when you use the chat_with_products.py script:
+3.  Add the --enable --telemetry flag when you use the chat_with_products.py script:
 
 
 ```
