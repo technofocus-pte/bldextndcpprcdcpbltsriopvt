@@ -1235,7 +1235,7 @@ pip install azure-monitor-opentelemetry
 
 
 ```
-python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?" --enable-telemetry
+python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?" --enable--telemetry
 ```
 
 
