@@ -540,9 +540,9 @@ Best Regards
 | Email -- Description | +++Enter the email address of the employee from whom the email is received.+++ |
 | Details -- Description | +++Enter the email details of the employee.+++ |
 
-![](./media/imaged.png)
+![](./media/imaged2.png)
 
- ![](./media/imagee.png)
+ ![](./media/imaged3.png)
 
 
 
