@@ -258,7 +258,7 @@ Here's how the base project looks:
 
 3.  Another important file is the **appPackage/manifest.json** file, which contains crucial metadata, including the package name, the developer’s name, and references to the copilot agents utilized by the application. The following section from the manifest.json file illustrates these details:
 
-    ```no-copy
+    ```nocopy
     "copilotAgents": {
             "declarativeAgents": [            
                 {
@@ -290,7 +290,7 @@ Copy the image **color.png** located in **C:\LabFiles** and replace the image of
 
 2.  Next, go to the file **appPackage/manifest.json** in your root project and find the node **copilotAgents**. Update the id value of the declarativeAgents array's first entry from declarativeAgent to +++dcGeolocator+++ to make this ID unique.
 
-    ```no-copy
+    ```nocopy
     "copilotAgents": {
             "declarativeAgents": [            
                 {
