@@ -238,22 +238,22 @@ Here's how the base project looks:
 1.  The file of interest for our lab is primarily
     the **appPackage/instruction.txt** file which is the core directives needed for your agent. It's a plain text file and you can write natural language instructions in it.
 
-![](./media/image18.png)
+    ![](./media/image18.png)
 
 
 2.  Another important file is **appPackage/declarativeAgent.json** where there is a schema to be followed to extend Microsoft 365 Copilot with the new declarative agent. Let's look at what properties the schema of this file has.
 
-- The \$schema is the schema reference
-
-- The version is the schema version
-
-- The name key represents the name of the declarative agent.
-
-- The description provides a description.
-
-- The instructions the path to the **instructions.txt** file which holds directives which will determine the operational behavior. You can also put your instructions as plain text as a value here. But for this lab we will use the **instructions.txt** file.
-
-![](./media/image19.png)
+    - The \$schema is the schema reference
+    
+    - The version is the schema version
+    
+    - The name key represents the name of the declarative agent.
+    
+    - The description provides a description.
+    
+    - The instructions the path to the **instructions.txt** file which holds directives which will determine the operational behavior. You can also put your instructions as plain text as a value here. But for this lab we will use the **instructions.txt** file.
+    
+    ![](./media/image19.png)
 
 
 3.  Another important file is the **appPackage/manifest.json** file, which contains crucial metadata, including the package name, the developer’s name, and references to the copilot agents utilized by the application. The following section from the manifest.json file illustrates these details:
