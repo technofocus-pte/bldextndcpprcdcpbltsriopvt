@@ -91,7 +91,7 @@ applications.
 
 5.  Select the table and click on **View data** to see the table.
 
-    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference.
+    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference. The comlumn name may also vary in the executioin.
 
     ![](./media/image24.png)
 
