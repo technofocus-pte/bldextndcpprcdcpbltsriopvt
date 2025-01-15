@@ -53,7 +53,7 @@ these steps:
 
     - Subscription: Select your subscription
 
-    - Create new Resource group: +++RG4OpenAI+++
+    - Create new Resource group: +++rg+++XXXX
 
     - Location: East US 2, or Sweden Central
 
