@@ -34,8 +34,8 @@ optimize workflows and streamline travel planning processes.
 
 ## Exercise 1: Cloning and configuring the AI Travel Agent Project with Azure OpenAI Services
 
-In this exercise, you will clone a guided project repository from GitHub
-into Visual Studio Code and configure it to integrate with Azure OpenAI
+In this exercise, you will setup your project folder in
+Visual Studio Code and configure it to integrate with Azure OpenAI
 Services. By following the steps, you will learn how to set up a local
 development environment, modify project files, and prepare the
 application for execution using your Azure OpenAI deployment details.
@@ -45,20 +45,20 @@ account to complete these steps.
 
 1. Open command line editor and execute the gien below command one by one.
 
-```
-dotnet nuget list source
-```
+    ```
+    dotnet nuget list source
+    ```
+    
+    ```
+    dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
+    ```
 
-```
-dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
-```
-
-![](./media/image1a.png)
+    ![](./media/image1a.png)
 
 
 1. From **C:\LabFiles**, right click on the AITravelAgent folder and select **open with code** folder will open in VS Code or you can open VS code go to files and click on open folder. Choose the folder from lab file **AITravelAgent** and open it.
 
-![](./media/add.png)
+    ![](./media/add.png)
 
 
 2.  In the Explorer panel, navigate to the **AITravelAgent/Starter** folder. Right-click the folder and select **Open in Integrated Terminal**.
@@ -94,7 +94,7 @@ This exercise will help you understand how to build and invoke custom
 plugins, utilize decorators for functionality and descriptions, and
 integrate plugins into a larger application.
 
-**Important:** You need to complete the Setup instructions in the previous unit, Prepare, before you begin this exercise.
+**Important:** You need to complete the Setup instructions in the previous exercise, Prepare, before you begin this exercise.
 
 1.  Create a new file named +++**CurrencyConverter.cs**+++ in the **Stater/Plugins/ConvertCurrency** folder
 
