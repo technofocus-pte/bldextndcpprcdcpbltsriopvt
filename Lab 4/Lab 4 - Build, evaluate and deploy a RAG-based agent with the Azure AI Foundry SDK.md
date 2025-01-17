@@ -294,7 +294,7 @@ your global install of Python.
 1.  From your Power Shell, navigate to **C:\Users\Admin** by executing
     the below commands.
 
-    +++cd\\++
+    +++cd\\+++
 
     +++cd Users\Admin+++
 
