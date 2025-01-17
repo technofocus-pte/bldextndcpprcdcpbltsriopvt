@@ -28,30 +28,28 @@ enhance user engagement through intuitive and efficient interactions.
 1.  Login to the Lab Virtual Machine using the credentials provided on
     the Home tab of the Lab interface. 
 
-&nbsp;
-
 2.  In your VM, search for and select +++**Settings**+++ from the
-    **Windows** **Search bar**.![](./media/image1.png) 
+    **Windows** **Search bar**.
 
-&nbsp;
+    ![](./media/image1.png) 
 
 2.  On Settings window, navigate and click on **Time & language**. 
 
-![](./media/image2.png) 
+    ![](./media/image2.png) 
 
 3.  On **the Time & language** page, navigate and click on **Date &
     time**. 
 
-![](./media/image3.png) 
+    ![](./media/image3.png) 
 
 4.  Scroll down and navigate to **Additional settings** section, then
     click on **Syn now** button.  
 
-![](./media/image4.png) 
+    ![](./media/image4.png) 
 
 5.  Close the **Settings** window.  
 
-![](./media/image5.png) 
+    ![](./media/image5.png) 
 
 ## Task 1: Understand the VM and the credentials
 
@@ -64,32 +62,31 @@ will be using throughout the lab.
 2.  **Resources** tab has got the credentials that will be needed for
     executing the lab.
 
-- **URL** – URL to the Azure portal
-
-- **Subscription** – This is the **ID** of the **subscription** assigned
-  to you
-
-- **Username** – The **user id** with which you need to **login** to the
-  **Azure services**.
-
-- **Password** – **Password** to the **Azure login**.
+    - **URL** – URL to the Azure portal
+    
+    - **Subscription** – This is the **ID** of the **subscription** assigned
+      to you
+    
+    - **Username** – The **user id** with which you need to **login** to the
+      **Azure services**.
+    
+    - **Password** – **Password** to the **Azure login**.
 
 > Let us call this Username and password as **Azure login credentials**.
 > We will use these creds wherever we mention **Azure login
 > credentials**.
 
-- **Resource Group** – The **Resource group** assigned to you.
+    - **Resource Group** – The **Resource group** assigned to you.
+    
+    >[!Alert] **Important**: Make sure you create all your resources under this Resource group
 
-> **Important**: Make sure you create all your resources under this
-> Resource group
-
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image6.png)
 
 3.  **Help** tab holds the Support information. The **ID** value here is
     the **Lab instance ID** which will be used during the lab execution.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image7.png)
 
 ## Task 2: Create an Azure AI Search resource
@@ -98,8 +95,7 @@ generated](./media/image7.png)
     portal at +++<https://portal.azure.com>+++ and **Sign in** using the
     **Azure login credentials**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image8.png)
+    ![A screenshot of a computer Description automatically generated](./media/image8.png)
 
 2.  On the home page, select **+ Create a resource.**
 
