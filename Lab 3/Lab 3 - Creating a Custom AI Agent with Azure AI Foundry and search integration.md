@@ -247,8 +247,7 @@ You need two models to implement your solution:
 
     - **Model version**: Select the default version
 
-    - **AI resource**: *Select the resource created previously that gets
-    listed*
+    - **AI resource**: Select the resource created previously that gets listed
 
     - **Tokens per Minute Rate Limit (thousands)**: 5K
 
@@ -262,7 +261,7 @@ You need two models to implement your solution:
 
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
-5.  Repeat the previous steps to deploy a **gpt-35-turbo-16k** model
+5.  Repeat the previous steps to deploy a +++**gpt-35-turbo-16k**+++ model
     with the deployment name gpt-35-turbo-16k.
 
     ![](./media/image29.png)
@@ -302,8 +301,7 @@ them to the project.
     ![A screenshot of a computer Description automatically generated](./media/image35.png)
 
 5.  On the next page of name and finish, enter the data name as
-    +++**data\<Lab instance ID\>**+++ (replacing the place holder with
-    your lab instance id) and click on **Create.**
+    +++**data+++< Lab instance ID >** and click on **Create.**
 
     ![A screenshot of a computer Description automatically generated](./media/image36.png)
 
