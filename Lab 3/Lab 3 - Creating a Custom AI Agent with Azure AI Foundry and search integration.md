@@ -331,9 +331,8 @@ create an index in your Azure AI Search resource.
 4.  Enter the below details in the Create a vector index – Index
     configuration page and click on **Next.**
 
-    - **Select Azure AI Search service**: Select **AzureAISearch** **Vector
-    index**: brochures-index
-
+    - **Select Azure AI Search service**: Select **AzureAISearch**
+      
     - Vector index - +++**brochures-index**+++
 
     - **Virtual machine**: Select **Auto select**
@@ -374,8 +373,7 @@ generated](./media/image45.png)
 Before using your index in a RAG-based prompt flow, let’s verify that it
 can be used to affect generative AI responses.
 
-1.  Select the **Playgrounds** from the left pane and select **Chat
-    Playground.**
+1.  Select the **Playgrounds** from the left pane and select **Try the Chat playground.**
 
     ![A screenshot of a chat Description automatically generated](./media/image46.png)
 
@@ -384,8 +382,7 @@ can be used to affect generative AI responses.
     ![A screenshot of a computer Description automatically generated](./media/image47.png)
 
 3.  Ensure that your **gpt-35-turbo-16k** model deployment is selected.
-    Then, in the main chat session panel, submit the prompt +++**Where
-    can I stay in New York?**+++
+    Then, in the main chat session panel, submit the prompt +++**Where can I stay in New York?**+++
 
     ![A screenshot of a computer program Description automatically generated](./media/image48.png)
 
@@ -472,8 +469,7 @@ enabling you to use it easily in a prompt flow.
 
     - **chat_input**
 
-The default chat history in this sample includes some conversation about
-AI.
+    The default chat history in this sample includes some conversation about AI.
 
     ![](./media/image60.png)
 
@@ -554,7 +550,7 @@ AI.
 
     - **response_format**: {“type”:”text”}
 
-Then ensure that the **inputs** for this tool include the following
+    Then ensure that the **inputs** for this tool include the following
 parameters:
 
 - **prompt_text** *(string)*: ${Prompt_variants.output}
@@ -594,8 +590,6 @@ parameters:
 20. Review the outputs for each tool in the flow, noting how each tool
     in the flow operated on its inputs to prepare a contextualized
     prompt and get an appropriate response.
-
-21. ewqewqe
 
 ## Task 8: Clean up the resources:
 
