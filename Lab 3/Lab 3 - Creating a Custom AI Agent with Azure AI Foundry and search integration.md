@@ -117,7 +117,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: *+++*aisearch\<labinstanceid\>+++
+    - **Service name**: **+++aisearch\<labinstanceid\>+++**
 
     - **Location**: Select a **region** from the below list. Canada East
       is used here.
