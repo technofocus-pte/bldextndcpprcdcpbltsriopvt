@@ -198,7 +198,7 @@ integrate plugins into a larger application.
 
     ![A screenshot of a computer Description automatically generated](./media/image21.png)
 
-2.  In the CurrencyConverter.cs file, add the following code to create a
+2.  In the **CurrencyConverter.cs** file, add the following code to create a
     plugin function
 
     ```
@@ -221,7 +221,7 @@ integrate plugins into a larger application.
 
     In this code, you use the KernelFunction decorator to declare your native function. You also use the Description decorator to add a description of what the function does. You can use Currency.Currencies to get a dictionary of currencies and their exchange rates. Next, add some logic to convert a given amount from one currency to another.
 
-3.  Modify your ConvertAmount function. Replace the existing code with
+3.  Modify your **ConvertAmount** function. Replace the existing code with
     the below code.
 
     ```
@@ -263,7 +263,7 @@ integrate plugins into a larger application.
     In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
 
     ![](./media/image23.png)
->
+
     >[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
 
 4.  In the Starter/Program.cs file, import and invoke your new plugin
@@ -295,7 +295,7 @@ integrate plugins into a larger application.
 
     ![](./media/image25.png)
 
-6.  In the terminal, enter **dotnet run**. You should see the following
+6.  In the terminal, enter +++**dotnet run**+++. You should see the following
     output:
 
     Output: $52000 VND is approximately $2.13 in US Dollars (USD)
