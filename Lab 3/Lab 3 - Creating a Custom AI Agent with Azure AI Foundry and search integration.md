@@ -91,7 +91,7 @@ generated](./media/image6.png)
 ## Task 2: Create an Azure AI Search resource
 
 1.  In a web browser, open the Azure
-    portal at +++<https://portal.azure.com>+++ and **Sign in** using the
+    portal at +++https://portal.azure.com+++ and **Sign in** using the
     **Azure login credentials**.
 
     ![A screenshot of a computer Description automatically generated](./media/image8.png)
@@ -105,8 +105,7 @@ generated](./media/image6.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image10.png)
 
-4.  Select the drop down next to **Create** and select **Azure AI
-    Search**.
+4.  Select the drop down next to **Create** and select **Azure AI Search**.
 
     ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
@@ -119,8 +118,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: *+++*aisearch\<labinstanceid\>+++ (Replace lab
-      instance id with your value from help tab)
+    - **Service name**: *+++*aisearch\<labinstanceid\>+++
 
     - **Location**: Select a **region** from the below list. Canada East
       is used here.
@@ -160,7 +158,7 @@ generated](./media/image6.png)
 ## Task 3: Create an Azure AI project
 
 1.  In a web browser, open **Azure AI Foundry
-    portal**at +++https://ai.azure.com+++ and
+    portal** at +++https://ai.azure.com+++ and
     **sign in** using your **Azure login credentials**.
 
     ![](./media/image15.png)
@@ -173,8 +171,7 @@ generated](./media/image6.png)
     ![](./media/image16.png)
 
 4.  In the **Create a project** wizard enter project name as
-    +++**ragpfproject+++< Lab instance ID >** replacing the **Lab
-    instance ID** with your VM’s lab instance ID.and click on
+    +++**ragpfproject+++< Lab instance ID >** and click on
     **Customize**.
 
     ![](./media/image17.png)
@@ -183,12 +180,11 @@ generated](./media/image6.png)
     the following details, select **Next** and review your
     configuration.
 
-    - **Hub name**: +++**hub**+++**\<LabinstanceID\>** (Replace Lab
-      instance ID with your VM’s value)
+    - **Hub name**: +++**hub**+++**\<LabinstanceID\>** 
 
-    - **Azure Subscription**: Select the assigned Azure subscription
+    - **Azure Subscription**: Select the **assigned Azure subscription**
 
-    - **Resource group**: Select the assigned Resource Group
+    - **Resource group**: Select the **assigned Resource Group** (This should be the one from the **Resources** tab and not a new one that gets pre populated here)
 
     - **Location**: The same **location** as your **Azure AI Search
       resource**, Canada East
