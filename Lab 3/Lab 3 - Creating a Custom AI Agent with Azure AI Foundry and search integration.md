@@ -100,8 +100,7 @@ generated](./media/image6.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image9.png)
 
-3.   From the search bar, search for and select +++**Azure AI
-    Search**+++.
+3.   From the search bar, search for and select +++**Azure AI Search**+++.
 
     ![A screenshot of a computer Description automatically generated](./media/image10.png)
 
