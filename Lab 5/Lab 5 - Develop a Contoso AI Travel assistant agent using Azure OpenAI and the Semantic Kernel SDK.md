@@ -86,7 +86,7 @@ we will be using throughout the lab.
 
     - Region – Select your nearest **region** (East US 2 is being used here)
 
-    - Name – +++AOAI< Lab instance ID >+++ 
+    - Name – **+++AOAI@lab.LabInstance.Id+++** 
 
     - Pricing tier – **Standard**
 
