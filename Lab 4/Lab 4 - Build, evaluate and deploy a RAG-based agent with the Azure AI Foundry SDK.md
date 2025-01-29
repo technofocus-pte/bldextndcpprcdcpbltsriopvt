@@ -87,7 +87,7 @@ To create a project in Azure AI Foundry, follow these steps:
 
 4.  On the next page, enter the following details and click on **Next.**
 
-    -   Hub name - +++**hub+++< Lab instance ID >** (Replace the **< Lab instance ID >** with your **Lab instance ID**)
+    -   Hub name - +++**hub+++@lab.LabInstance.Id** (Replace the **< Lab instance ID >** with your **Lab instance ID**)
 
     -   Subscription - Select your assigned subscription
 
