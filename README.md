@@ -1,9 +1,9 @@
 
 
-Welcome to the lab guide repository for the course. This course provides hands-on exercises to design, build, and deploy custom AI agents leveraging Microsoft and Azure AI technologies.
+Bem-vindo ao repositório de guias de laboratório para o curso. Este curso fornece exercícios práticos para projetar, criar e implantar agentes de IA personalizados aproveitando as tecnologias de IA da Microsoft e do Azure.
 
 
-## Labs Included
+## Laboratórios Incluídos
 
 ### 1. Build a Declarative Agent for Microsoft 365 Copilot Using Teams Toolkit
 
