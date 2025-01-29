@@ -117,7 +117,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: **+++aisearch@lab.LabInstance.Id+++** (Replacing **LabinstanceID** with our value)
+    - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
       
     - **Location**: Select a **region**. Canada East is used here.
 
@@ -151,7 +151,7 @@ generated](./media/image6.png)
     ![](./media/image16.png)
 
 4.  In the **Create a project** wizard enter project name as
-    +++**ragpfproject+++< Lab instance ID >** and click on
+    **+++ragpfproject@lab.LabInstance.Id+++** and click on
     **Customize**.
 
     ![](./media/image17.png)
@@ -160,7 +160,7 @@ generated](./media/image6.png)
     the following details, select **Next** and review your
     configuration.
 
-    - **Hub name**: +++**hub**+++**\<LabinstanceID\>** 
+    - **Hub name**: **+++hub@lab.LabInstance.Id+++** 
 
     - **Azure Subscription**: Select the **assigned Azure subscription**
 
@@ -173,7 +173,7 @@ generated](./media/image6.png)
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      +++**aisearch+++@lab.LabInstance.Id** (Replacing Labinstance ID with your value)
+      **+++aisearch+++@lab.LabInstance.Id+++** 
 
     ![](./media/image18.png)
 
@@ -282,7 +282,7 @@ them to the project.
     ![A screenshot of a computer Description automatically generated](./media/image35.png)
 
 5.  On the next page of name and finish, enter the data name as
-    +++**data+++< Lab instance ID >** and click on **Create.**
+    **+++data@lab.LabInstance.Id+++** and click on **Create.**
 
     ![A screenshot of a computer Description automatically generated](./media/image36.png)
 
