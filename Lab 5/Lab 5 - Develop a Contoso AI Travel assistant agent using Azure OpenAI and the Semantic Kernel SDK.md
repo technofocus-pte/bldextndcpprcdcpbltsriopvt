@@ -90,8 +90,7 @@ we will be using throughout the lab.
 
     - Region – Select your nearest **region** (East US 2 is being used here)
 
-    - Name – +++AOAI< Lab instance ID >+++ (Replace \<Lab instance ID\> with
-    your VM’s ID)
+    - Name – +++AOAI< Lab instance ID >+++ 
 
     - Pricing tier – **Standard**
 
