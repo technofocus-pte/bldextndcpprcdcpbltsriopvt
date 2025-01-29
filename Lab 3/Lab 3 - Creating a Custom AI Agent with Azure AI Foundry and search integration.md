@@ -117,7 +117,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: +++**aisearch+++< LabinstanceID >** (Replacing **LabinstanceID** with our value)
+    - **Service name**: +++**aisearch+++@lab.LabInstance.Id** (Replacing **LabinstanceID** with our value)
       
     - **Location**: Select a **region**. Canada East is used here.
 
@@ -173,7 +173,7 @@ generated](./media/image6.png)
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      +++**aisearch+++< Labinstance ID >** (Replacing Labinstance ID with your value)
+      +++**aisearch+++@lab.LabInstance.Id** (Replacing Labinstance ID with your value)
 
     ![](./media/image18.png)
 
