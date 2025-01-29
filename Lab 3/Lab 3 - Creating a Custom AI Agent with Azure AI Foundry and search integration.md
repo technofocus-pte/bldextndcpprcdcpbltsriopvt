@@ -173,7 +173,7 @@ generated](./media/image6.png)
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      **+++aisearch+++@lab.LabInstance.Id+++** 
+      **+++aisearch@lab.LabInstance.Id+++** 
 
     ![](./media/image18.png)
 
