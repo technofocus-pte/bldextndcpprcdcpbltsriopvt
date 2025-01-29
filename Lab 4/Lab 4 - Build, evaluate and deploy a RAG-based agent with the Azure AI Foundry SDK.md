@@ -357,20 +357,20 @@ along with other required packages.
     marshmallow==3.23.2
     ```
 
-    ![A screenshot of a computer Description automatically generated](./media/image40.png)
+    ![](./media/img53.png)
 
-    ![A screenshot of a computer Description automatically generated](./media/image41.png)
+    ![](./media/img54.png)
 
-2.  On the top navigation bar click on file and **save all**.
+3.  On the top navigation bar click on **File** and **Save All**.
 
-3.  Right click on the requirements.txt and select **Open in Integrated
+4.  Right click on the requirements.txt and select **Open in Integrated
     Terminal**.
 
-    ![](./media/image42.png)
+    ![](./media/img55.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image43.png)
 
-4.  Run the following command to get into the virtual environment
+5.  Run the following command to get into the virtual environment
 
     +++py -3 -m venv .venv+++
 
@@ -378,14 +378,14 @@ along with other required packages.
 
     ![A screenshot of a computer Description automatically generated](./media/image44.png)
 
-5.  Run the +++az login+++ command and login with your Azure login
+6.  Run the +++az login+++ command and login with your Azure login
     credentials. Select **1** to select the subscription.
 
     ![A screenshot of a computer Description automatically generated](./media/image45.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image46.png)
 
-6.  To Install the required packages, run the following code.
+7.  To Install the required packages, run the following code.
 
     +++pip install -r requirements.txt+++
 
