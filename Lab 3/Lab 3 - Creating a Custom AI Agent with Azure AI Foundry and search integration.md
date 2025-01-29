@@ -117,8 +117,8 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: +++**aisearch+++< Lab instance ID >**
-
+    - **Service name**: +++**aisearch+++< Lab instance ID >** +++**ragpfproject+++< Lab instance ID >**
+        +++**aisearch+++< Lab instance ID >**
     - **Location**: Select a **region** from the below list. Canada East
       is used here.
 
@@ -192,7 +192,7 @@ generated](./media/image6.png)
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      **aisearch< Labinstance ID >**
+      +++**aisearch+++< Labinstance ID >**
 
     ![](./media/image18.png)
 
