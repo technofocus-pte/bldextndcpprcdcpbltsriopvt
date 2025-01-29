@@ -117,10 +117,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: +++**aisearch+++< LabinstanceID >** +++**ragpfproject+++< Lab instance ID >**
-        +++**aisearch+++< Lab instance ID >**
-      +++**aisearch+++**\<LabinstanceID\>
-      +++**aisearch**+++**\<LabinstanceID\>** 
+    - **Service name**: +++**aisearch+++< LabinstanceID >** (Replacing **LabinstanceID** with our value)
       
     - **Location**: Select a **region**. Canada East is used here.
 
@@ -176,7 +173,7 @@ generated](./media/image6.png)
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      +++**aisearch+++< Labinstance ID >**
+      +++**aisearch+++< Labinstance ID >** (Replacing Labinstance ID with your value)
 
     ![](./media/image18.png)
 
@@ -537,7 +534,7 @@ enabling you to use it easily in a prompt flow.
     Then ensure that the **inputs** for this tool include the following
 parameters:
 
-- **prompt_text** *(string)*: ${Prompt_variants.output}
+    - **prompt_text** *(string)*: ${Prompt_variants.output}
 
     ![A screenshot of a computer Description automatically generated](./media/image68.png)
 
