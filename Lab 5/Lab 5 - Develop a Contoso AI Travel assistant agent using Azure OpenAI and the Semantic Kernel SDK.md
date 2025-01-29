@@ -68,10 +68,6 @@ we will be using throughout the lab.
 
 ## Exercise 2: Create Azure OpenAI resource and model deployment
 
-**Pre-requisites :** A GitHub account is required to complete this lab. If you do not have an account, create one from here +++https://github.com/+++ by selecting **Sign up**.
-
-![A screenshot of a computer Description automatically generated](./media/image3.png)
-
 1.  Login to +++**https://portal.azure.com**+++ using the Azure login
     credentials. Search for +++**Azure OpenAI**+++ from the search bar
     and select it.
