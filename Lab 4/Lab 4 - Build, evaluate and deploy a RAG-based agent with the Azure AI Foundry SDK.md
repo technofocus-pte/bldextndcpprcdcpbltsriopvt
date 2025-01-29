@@ -87,13 +87,13 @@ To create a project in Azure AI Foundry, follow these steps:
 
 4.  On the next page, enter the following details and click on **Next.**
 
-    -   Hub name - +++**hub+++< Lab instance ID >**
+    -   Hub name - +++**hub+++< Lab instance ID >** (Replace the **< Lab instance ID >** with your **Lab instance ID**)
 
     -   Subscription - Select your assigned subscription
 
     -   Create new Resource group - Select your assigned Resource Group(ResourceGroup1)
 
-    -   Location - East US 2 or Sweden Central (We have used East US 2 while executing this lab)
+    -   Location - Select Region (We have used East US 2 while executing this lab)
 
     Leave the rest as default and click on **Next**.
 
@@ -182,8 +182,7 @@ index.
     - Service name – Enter +++**aisearch\<Lab instance ID\>**+++ replacing
     Lab instance id with your VM’s id.
 
-    - Region - Select Sweden Central or East US 2 (We are using East US 2
-    here)
+    - Region - Select Region (We are using East US 2 here)
 
     - Pricing tier – Select **Standard**
 
@@ -302,7 +301,7 @@ your global install of Python.
     cd\\
     ```
     ```
-    +++cd Users\Admin+++
+    cd Users\Admin
     ```
     
 1.  Create a folder with your project name, **+++RAGproj+++< Lab instance id >, by entering the following command in your powershell.**
@@ -484,7 +483,7 @@ def enable_telemetry(log_to_project: bool = False):
 
 ![A screenshot of a computer Description automatically generated](./media/image52.png)
 
-    >[!Note] **Note**: this newly created config.py file script will be used in the next exercise.
+>[!Note] **Note**: this newly created config.py file script will be used in the next exercise.
 
 ### Task 9: Configure environment variables
 
@@ -582,7 +581,7 @@ index_client = SearchIndexClient(
 )
 ```
 
-![A screenshot of a computer Description automatically generated](./media/image58.png)
+   ![A screenshot of a computer Description automatically generated](./media/image58.png)
 
 3.  Now add the function at the end of the **create_search_index.py** to
     define a search index:
