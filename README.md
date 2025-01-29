@@ -3,7 +3,7 @@
 Bienvenidos al repositorio de guías de laboratorio del curso. Este curso proporciona ejercicios prácticos para diseñar, crear e implementar agentes de IA personalizados aprovechando las tecnologías de IA de Microsoft y Azure.
 
 
-## Labs Included
+## Laboratorios incluidos
 
 ### 1. Build a Declarative Agent for Microsoft 365 Copilot Using Teams Toolkit
 
