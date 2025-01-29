@@ -171,7 +171,7 @@ execution using your Azure OpenAI deployment details.
 
     ![A screenshot of a computer Description automatically generated](./media/image19.png)
 
-7.  Open the Starter/Program.cs file and update the following variables
+7.  Open the **Starter/Program.cs** file and update the following variables
     with your Azure OpenAI Services deployment name, API key, and
     endpoint. After making the changes, press Ctrl + S to save the file:
 
@@ -629,18 +629,18 @@ working as intended and providing accurate, context-sensitive outputs.
 2.  **Test Currency Conversion**
 
     - When prompted, enter a currency conversion query, such as:  
-      *+++*How much is 60 USD in New Zealand dollars?*+++*
+      +++How much is 60 USD in New Zealand dollars?+++
 
     - Expected Output:  
-      *"$60 USD is approximately $97.88 in New Zealand Dollars (NZD)."*
+      "$60 USD is approximately $97.88 in New Zealand Dollars (NZD)."
+
+    ![](./media/img56.png)
 
 3.  **Test Destination Suggestions**
 
     - Enter a query for destination suggestions, providing context. For
       example:  
-      *+++*I'm planning an anniversary trip with my spouse, but they are
-      currently using a wheelchair and accessibility is a must. What are
-      some destinations that would be romantic for us?+++
+      +++I'm planning an anniversary trip with my spouse, but they are currently using a wheelchair and accessibility is a must. What are some destinations that would be romantic for us?+++
 
     - Expected Output: A list of accessible romantic destinations, such
       as:
@@ -656,7 +656,7 @@ working as intended and providing accurate, context-sensitive outputs.
 
     - Enter a query for activity recommendations in a specific
       destination. For example:  
-      *+++*What are some things to do in Barcelona?+++
+      +++What are some things to do in Barcelona?+++
 
     - Expected Output: Recommendations tailored to the destination, such
       as:
