@@ -81,13 +81,11 @@ To create a project in Azure AI Foundry, follow these steps:
 3.  Enter **+++RAGproj@lab.LabInstance.Id+++** as name for the project,
     click on **Customize**.
 
-    >[!Note] **Note:** Replace the **< Lab instance ID >** with your **Lab instance ID**
-
     ![A screenshot of a computer Description automatically generated](./media/image5.png)
 
 4.  On the next page, enter the following details and click on **Next.**
 
-    -   Hub name - +++**hub+++@lab.LabInstance.Id** (Replace the **< Lab instance ID >** with your **Lab instance ID**)
+    -   Hub name - **+++hub@lab.LabInstance.Id+++**
 
     -   Subscription - Select your assigned subscription
 
@@ -179,8 +177,7 @@ index.
 
     - Resource Group – Select your assigned Resource group
 
-    - Service name – Enter +++**aisearch\<Lab instance ID\>**+++ replacing
-    Lab instance id with your VM’s id.
+    - Service name – Enter **+++aisearch@lab.LabInstance.Id+++** 
 
     - Region - Select Region (We are using East US 2 here)
 
@@ -304,7 +301,7 @@ your global install of Python.
     cd Users\Admin
     ```
     
-1.  Create a folder with your project name, **+++RAGproj+++< Lab instance id >, by entering the following command in your powershell.**
+1.  Create a folder with your project name, **+++RAGproj@lab.LabInstance.Id+++**, by entering the following command in your powershell.**
 
     >[!Note] **Note:** Replace < Project name > with your project’s name in the command below and execute it.
 
@@ -1226,7 +1223,7 @@ Do not add documentation reference in the response.
 
     ![A screenshot of a computer Description automatically generated](./media/image83.png)
 
-6.	Provide the name as **+++appinsight+++< Lab instance ID >**
+6.	Provide the name as **+++appinsight@lab.LabInstance.Id+++**
 
     ![A screenshot of a computer screen Description automatically generated](./media/image84.png)
 
