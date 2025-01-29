@@ -117,7 +117,7 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: +++**aisearch+++< Lab instance ID >** +++**ragpfproject+++< Lab instance ID >**
+    - **Service name**: +++**aisearch+++< LabinstanceID >** +++**ragpfproject+++< Lab instance ID >**
         +++**aisearch+++< Lab instance ID >**
     - **Location**: Select a **region** from the below list. Canada East
       is used here.
@@ -179,7 +179,7 @@ generated](./media/image6.png)
     the following details, select **Next** and review your
     configuration.
 
-    - **Hub name**: +++**hub**+++**\<LabinstanceID\>** 
+    - **Hub name**: +++**hub**+++**<LabinstanceID\>** 
 
     - **Azure Subscription**: Select the **assigned Azure subscription**
 
