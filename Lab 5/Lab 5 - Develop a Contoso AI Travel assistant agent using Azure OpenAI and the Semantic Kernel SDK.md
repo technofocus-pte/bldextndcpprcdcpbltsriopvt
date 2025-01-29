@@ -214,7 +214,7 @@ class CurrencyConverter
 
 ![](./media/image22.png)
 
-    In this code, you use the KernelFunction decorator to declare your native function. You also use the Description decorator to add a description of what the function does. You can use Currency.Currencies to get a dictionary of currencies and their exchange rates. Next, add some logic to convert a given amount from one currency to another.
+In this code, you use the KernelFunction decorator to declare your native function. You also use the Description decorator to add a description of what the function does. You can use Currency.Currencies to get a dictionary of currencies and their exchange rates. Next, add some logic to convert a given amount from one currency to another.
 
 3.  Modify your **ConvertAmount** function. Replace the existing code with
     the below code.
@@ -255,11 +255,11 @@ class CurrencyConverter
 }
 ```
 
-    In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
+In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
 
 ![](./media/image23.png)
 
-    >[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
+>[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
 
 4.  In the Starter/Program.cs file, import and invoke your new plugin
     function with the following code. (Delete the code below var kernel
@@ -282,7 +282,7 @@ var result = await kernel.InvokeAsync("CurrencyConverter",
 Console.WriteLine(result);
 ```
 
-    In this code, you use the ImportPluginFromType method to import your plugin. Then you use the InvokeAsync method to invoke your plugin function. The InvokeAsync method takes the plugin name, function name, and a dictionary of parameters. Finally, you print the result to the console. Next, run the code to make sure it's working.
+In this code, you use the ImportPluginFromType method to import your plugin. Then you use the InvokeAsync method to invoke your plugin function. The InvokeAsync method takes the plugin name, function name, and a dictionary of parameters. Finally, you print the result to the console. Next, run the code to make sure it's working.
 
 ![](./media/image24.png)
 
@@ -349,7 +349,7 @@ conversions.
 
 ![](./media/image30.png)
 
-    Save the file by pressing **Ctrl + S**. This configuration defines how the AI system should interpret and process user input.
+Save the file by pressing **Ctrl + S**. This configuration defines how the AI system should interpret and process user input.
 
 5.  Still inside the **GetTargetCurrencies** folder, create another new
     file named +++**skprompt.txt**+++.
@@ -378,9 +378,9 @@ For example:
 <message role="assistant">target|base|amount</message>
 ```
 
-    ![](./media/image32.png)
+![](./media/image32.png)
 
-    Save the file by pressing **Ctrl + S**. This script defines the prompt logic for processing currency conversion requests.
+Save the file by pressing **Ctrl + S**. This script defines the prompt logic for processing currency conversion requests.
 
 ## Exercise 6: Configuring a Prompt System for Travel Activity Recommendations
 
@@ -431,7 +431,7 @@ personalized and creative travel recommendations.
 
 ![](./media/image35.png)
 
-    Save the file after making the changes by pressing **Ctrl + S**. This file configures the system to process user inputs and generate suggestions for activities.
+Save the file after making the changes by pressing **Ctrl + S**. This file configures the system to process user inputs and generate suggestions for activities.
 
 4.  Stay within the SuggestActivities folder and locate the
     **skprompt.txt** file. Open this file in editor.
@@ -451,7 +451,7 @@ Please suggest a list of things to do, see, and points of interest.
 
 ![](./media/image37.png)
 
-    Save the file by pressing **Ctrl + S**. This script sets the behaviour and tone of the system when generating activity recommendations.
+Save the file by pressing **Ctrl + S**. This script sets the behaviour and tone of the system when generating activity recommendations.
 
 ## Exercise 7: Configuring the Main Program for AI Workflow
 
