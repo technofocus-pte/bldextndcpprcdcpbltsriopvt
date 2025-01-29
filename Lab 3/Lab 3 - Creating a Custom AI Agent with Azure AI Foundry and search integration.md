@@ -119,26 +119,9 @@ generated](./media/image6.png)
 
     - **Service name**: +++**aisearch+++< LabinstanceID >** +++**ragpfproject+++< Lab instance ID >**
         +++**aisearch+++< Lab instance ID >**
-    - **Location**: Select a **region** from the below list. Canada East
-      is used here.
-
-      - Australia East
-
-      - Canada East
-
-      - East US
-
-      - East US 2
-
-      - France Central
-
-      - Japan East
-
-      - North Central US
-
-      - Sweden Central
-
-      - Switzerland
+      +++**aisearch+++**<LabinstanceID\>
+      
+    - **Location**: Select a **region**. Canada East is used here.
 
     - **Pricing tier**: Standard
 
