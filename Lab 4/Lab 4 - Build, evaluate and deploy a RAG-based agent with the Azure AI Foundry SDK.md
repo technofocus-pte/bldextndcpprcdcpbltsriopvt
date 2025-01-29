@@ -87,7 +87,7 @@ To create a project in Azure AI Foundry, follow these steps:
 
 4.  On the next page, enter the following details and click on **Next.**
 
-    -   Hub name - +++hub< Lab instance ID >+++
+    -   Hub name - +++**hub+++< Lab instance ID >**
 
     -   Subscription - Select your assigned subscription
 
@@ -101,7 +101,7 @@ To create a project in Azure AI Foundry, follow these steps:
 
 5.  On the **Review and finish** page, click on **Create.**
 
-![A screenshot of a computer Description automatically generated](./media/image7.png)
+    ![A screenshot of a computer Description automatically generated](./media/image7.png)
 
 6.  The resource creation will take a few minutes.
 
@@ -209,7 +209,7 @@ resource.
     ![A screenshot of a computer Description automatically generated](./media/image21.png)
 
 2.  In the **Connected resources** section, select **New
-    connection** and then **Azure AI Search**.
+    connection** and then select **Azure AI Search**.
 
     ![](./media/image22.png)
 
@@ -222,6 +222,8 @@ resource.
 
     ![A screenshot of a search engine Description automatically generated](./media/image25.png)
 
+4.	From the **Connected resources** page, you can now see the added resource connection.
+   
     ![](./media/image26.png)
 
 ### Task 5: Install the Azure CLI and sign in
@@ -266,7 +268,9 @@ OpenAI service.
 4.  After you install the Azure CLI, sign in using the az login command
     and sign-in using the browser:
 
-    +++Az login+++
+    ```
+    az login
+    ```
 
     Select **Work or school account** and click on **Continue**.
 
@@ -298,7 +302,7 @@ your global install of Python.
 
     +++cd Users\Admin+++
 
-2.  Create a folder with your project name, **RAGproj< Lab instance id >, by entering the following command in your powershell.**
+2.  Create a folder with your project name, **+++RAGproj+++< Lab instance id >, by entering the following command in your powershell.**
 
     >[!Note] **Note:** Replace < Project name > with your project’s name in the command below and execute it.
 
@@ -326,7 +330,7 @@ your global install of Python.
     Activating the Python environment means that when you run python or pip from the command line, you then use the Python interpreter contained in the .venv folder of your application.
 
 5.  Open **VS Code**. Select **File -\> Open Folder** and select
-    **RAGproject** folder that we created in the previous steps.
+    **RAGproject** folder that we created in the previous steps (from **C:\Users\Admin**).
 
     ![A screenshot of a computer Description automatically generated](./media/image37.png)
 
