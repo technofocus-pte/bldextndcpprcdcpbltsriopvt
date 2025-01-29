@@ -301,7 +301,7 @@ your global install of Python.
     cd Users\Admin
     ```
     
-1.  Create a folder with your project name, **+++RAGproj@lab.LabInstance.Id+++**, by entering the following command in your powershell.**
+1.  Create a folder with your project name, **+++RAGproj@lab.LabInstance.Id+++**, by entering the following command in your powershell.
 
     >[!Note] **Note:** Replace < Project name > with your project’s name in the command below and execute it.
 
@@ -489,7 +489,7 @@ service from your code. In this quickstart, you save this value in
 a .env file, which is a file that contains environment variables that
 your application can read.
 
-1.  Create a new file ** **+++.env+++** in the **src** directory, and
+1.  Create a new file **+++.env+++** in the **src** directory, and
     paste the following code:
 
     Replace  **< your-connection-string >** with the project connection string value saved in the notepad in task 1.
@@ -578,7 +578,7 @@ index_client = SearchIndexClient(
 )
 ```
 
-   ![A screenshot of a computer Description automatically generated](./media/image58.png)
+![A screenshot of a computer Description automatically generated](./media/image58.png)
 
 3.  Now add the function at the end of the **create_search_index.py** to
     define a search index:
