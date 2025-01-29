@@ -119,7 +119,8 @@ generated](./media/image6.png)
 
     - **Service name**: +++**aisearch+++< LabinstanceID >** +++**ragpfproject+++< Lab instance ID >**
         +++**aisearch+++< Lab instance ID >**
-      +++**aisearch+++**<LabinstanceID\>
+      +++**aisearch+++**\<LabinstanceID\>
+      +++**aisearch**+++**\<LabinstanceID\>** 
       
     - **Location**: Select a **region**. Canada East is used here.
 
@@ -162,7 +163,7 @@ generated](./media/image6.png)
     the following details, select **Next** and review your
     configuration.
 
-    - **Hub name**: +++**hub**+++**<LabinstanceID\>** 
+    - **Hub name**: +++**hub**+++**\<LabinstanceID\>** 
 
     - **Azure Subscription**: Select the **assigned Azure subscription**
 
