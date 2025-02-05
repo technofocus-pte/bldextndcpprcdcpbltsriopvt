@@ -272,7 +272,7 @@ automaticamente](./media/image19.png)
 
 ### Tarefa 3: Entendendo os arquivos no aplicativo
 
-    Veja como o projeto base se parece:
+Veja como o projeto base se parece:
     
 |  **Pasta/Arquivo**  |  **Conteúdo**  |
 |:-------|:-----------|
