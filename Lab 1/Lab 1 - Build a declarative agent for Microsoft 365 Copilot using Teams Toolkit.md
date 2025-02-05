@@ -274,17 +274,17 @@ automaticamente](./media/image19.png)
 
     Veja como o projeto base se parece:
     
-    |  **Pasta/Arquivo**  |  **Conteúdo**  |
-    |:-------|:-----------|
-    |   .vscode | Arquivos VSCode para debugging   |
-    |  appPackage  |  Modelos para o manifesto do aplicativo Teams, o manifesto GPT e a especificação da API  |
-    |  Env  | Arquivos de ambiente com um arquivo .env.dev padrão   |
-    |  appPackage/color.png  | Imagem do logotipo do aplicativo   |
-    |  appPackage/outline.png  |  Imagem do esboço do logotipo do aplicativo  |
-    |  appPackage/declarativeAgent.json  | Define as configurações e configurações do agente declarativo.   |
-    |  appPackage/instruction.txt  |  Define o comportamento do agente declarativo.  |
-    |  appPackage/manifest.json  |  Manifesto do aplicativo do Teams que define metadados para seu agente declarativo.  |
-    |  teamsapp.yml  |  Arquivo de projeto principal do Teams Toolkit. O arquivo de projeto define duas coisas principais: propriedades e definições de estágio de configuração.   |
+|  **Pasta/Arquivo**  |  **Conteúdo**  |
+|:-------|:-----------|
+|   .vscode | Arquivos VSCode para debugging   |
+|  appPackage  |  Modelos para o manifesto do aplicativo Teams, o manifesto GPT e a especificação da API  |
+|  Env  | Arquivos de ambiente com um arquivo .env.dev padrão   |
+|  appPackage/color.png  | Imagem do logotipo do aplicativo   |
+|  appPackage/outline.png  |  Imagem do esboço do logotipo do aplicativo  |
+|  appPackage/declarativeAgent.json  | Define as configurações e configurações do agente declarativo.   |
+|  appPackage/instruction.txt  |  Define o comportamento do agente declarativo.  |
+|  appPackage/manifest.json  |  Manifesto do aplicativo do Teams que define metadados para seu agente declarativo.  |
+|  teamsapp.yml  |  Arquivo de projeto principal do Teams Toolkit. O arquivo de projeto define duas coisas principais: propriedades e definições de estágio de configuração.   |
 
 1.  O arquivo de interesse do nosso laboratório é principalmente o
     arquivo **appPackage/instruction.txt,** que são as principais
