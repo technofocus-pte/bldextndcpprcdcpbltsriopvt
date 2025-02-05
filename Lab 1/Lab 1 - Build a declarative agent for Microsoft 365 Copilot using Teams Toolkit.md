@@ -78,7 +78,7 @@ Neste exercício, você aprenderá:
 
 - como executar e testar seu aplicativo.
 
-> Para o exercício bônus, você precisará de um site SharePoint Teams.
+Para o exercício bônus, você precisará de um site SharePoint Teams.
 
 ### Introdução
 
@@ -213,11 +213,11 @@ automaticamente](./media/image8.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image9.png)
 
-**Por que não criar um com plugin de API aqui?**
-
-Você criará plug-ins de API no próximo laboratório e também aprenderá
-a integrar um plug-in de API a um agente declarativo. Aqui vamos
-apenas criar um agente declarativo.
+    **Por que não criar um com plugin de API aqui?**
+    
+    Você criará plug-ins de API no próximo laboratório e também aprenderá
+    a integrar um plug-in de API a um agente declarativo. Aqui vamos
+    apenas criar um agente declarativo.
 
 5.  Em seguida, selecione a opção **Default folder** para especificar
     onde a pasta do projeto deve ser criada.
@@ -246,11 +246,9 @@ apenas criar um agente declarativo.
     com suas **credenciais de Usuário1** no **Azure** **Portal** na guia
     **Resources**.
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image14.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image14.png)
 
-![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image15.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image15.png)
 
 2.  Uma janela do navegador aparecerá e oferecerá o login no
     Microsoft 365. Quando aparecer a mensagem " **You are signed in now
@@ -278,19 +276,19 @@ automaticamente](./media/image19.png)
 
 ### Tarefa 3: Entendendo os arquivos no aplicativo
 
-Veja como o projeto base se parece:
-
-|  **Pasta/Arquivo**  |  **Conteúdo**  |
-|:-------|:-----------|
-|   .vscode | Arquivos VSCode para debugging   |
-|  appPackage  |  Modelos para o manifesto do aplicativo Teams, o manifesto GPT e a especificação da API  |
-|  Env  | Arquivos de ambiente com um arquivo .env.dev padrão   |
-|  appPackage/color.png  | Imagem do logotipo do aplicativo   |
-|  appPackage/outline.png  |  Imagem do esboço do logotipo do aplicativo  |
-|  appPackage/declarativeAgent.json  | Define as configurações e configurações do agente declarativo.   |
-|  appPackage/instruction.txt  |  Define o comportamento do agente declarativo.  |
-|  appPackage/manifest.json  |  Manifesto do aplicativo do Teams que define metadados para seu agente declarativo.  |
-|  teamsapp.yml  |  Arquivo de projeto principal do Teams Toolkit. O arquivo de projeto define duas coisas principais: propriedades e definições de estágio de configuração.   |
+    Veja como o projeto base se parece:
+    
+    |  **Pasta/Arquivo**  |  **Conteúdo**  |
+    |:-------|:-----------|
+    |   .vscode | Arquivos VSCode para debugging   |
+    |  appPackage  |  Modelos para o manifesto do aplicativo Teams, o manifesto GPT e a especificação da API  |
+    |  Env  | Arquivos de ambiente com um arquivo .env.dev padrão   |
+    |  appPackage/color.png  | Imagem do logotipo do aplicativo   |
+    |  appPackage/outline.png  |  Imagem do esboço do logotipo do aplicativo  |
+    |  appPackage/declarativeAgent.json  | Define as configurações e configurações do agente declarativo.   |
+    |  appPackage/instruction.txt  |  Define o comportamento do agente declarativo.  |
+    |  appPackage/manifest.json  |  Manifesto do aplicativo do Teams que define metadados para seu agente declarativo.  |
+    |  teamsapp.yml  |  Arquivo de projeto principal do Teams Toolkit. O arquivo de projeto define duas coisas principais: propriedades e definições de estágio de configuração.   |
 
 1.  O arquivo de interesse do nosso laboratório é principalmente o
     arquivo **appPackage/instruction.txt,** que são as principais
@@ -354,19 +352,16 @@ automaticamente](./media/image20.png)
 1.  Primeiro, vamos substituir o logotipo. Substituiremos a imagem
     color.png no projeto por uma nova.
 
-Copie a imagem **color.png** localizada em **C:\LabFiles** e substitua a
+    Copie a imagem **color.png** localizada em **C:\LabFiles** e substitua a
 imagem de mesmo nome na pasta **appPackage** em seu projeto raiz (o
 caminho deve ser **C:\Users\Student\TeamsApps\Geo Locator
 Game\appPackage**).
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image23.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image23.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image24.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image24.png)
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image25.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image25.png)
 
 2.  Em seguida, vá para o arquivo **appPackage/manifest.json** em seu
     projeto raiz e localize o nódulo **copilotAgents**. Atualize o valor
@@ -445,22 +440,22 @@ incorrect.](./media/image27.png)
 
 ### Tarefa 2: Adicionar iniciadores de conversa
 
-Você pode aumentar o envolvimento do usuário com o agente declarativo
+    Você pode aumentar o envolvimento do usuário com o agente declarativo
 adicionando iniciadores de conversa a ele.
 
-Alguns dos benefícios de iniciar uma conversa são:
-
-- **Engajamento**: eles ajudam a iniciar a interação, fazendo com que os
-  usuários se sintam mais confortáveis e incentivando a participação.
-
-- **Configuração de contexto**: os iniciantes definem o tom e o tópico
-  da conversa, orientando os usuários sobre como proceder.
-
-- **Eficiência**: ao liderar com um foco claro, os iniciantes reduzem a
-  ambiguidade, permitindo que a conversa progrida sem problemas.
-
-- **Retenção de usuários**: iniciantes bem projetados mantêm os usuários
-  interessados, incentivando interações repetidas com a AI.
+    Alguns dos benefícios de iniciar uma conversa são:
+    
+    - **Engajamento**: eles ajudam a iniciar a interação, fazendo com que os
+      usuários se sintam mais confortáveis e incentivando a participação.
+    
+    - **Configuração de contexto**: os iniciantes definem o tom e o tópico
+      da conversa, orientando os usuários sobre como proceder.
+    
+    - **Eficiência**: ao liderar com um foco claro, os iniciantes reduzem a
+      ambiguidade, permitindo que a conversa progrida sem problemas.
+    
+    - **Retenção de usuários**: iniciantes bem projetados mantêm os usuários
+      interessados, incentivando interações repetidas com a AI.
 
 1.  Abra o arquivo **declarativeAgent.json** e logo após o nódulo de
     instruções, adicione uma vírgula e cole o código abaixo:
@@ -485,7 +480,7 @@ Alguns dos benefícios de iniciar uma conversa são:
     
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image30.png)
 
-Agora que todas as alterações foram feitas no agente, é hora de
+    Agora que todas as alterações foram feitas no agente, é hora de
 testá-lo.
 
 2.  Vá para **File** na barra superior e clique em **Salve All.**
@@ -533,7 +528,7 @@ incorrect.](./media/image36.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image37.png)
 
-Se você não conseguir encontrá-lo, esta pode ser uma lista longa, mas você pode encontrar seu agente expandindo a lista selecionando "**see more**"
+    Se você não conseguir encontrá-lo, esta pode ser uma lista longa, mas você pode encontrar seu agente expandindo a lista selecionando "**see more**"
 
 6.  Uma vez iniciado, você estará nesta janela de chat focada com o
     agente. E você verá os iniciadores de conversa conforme marcado
