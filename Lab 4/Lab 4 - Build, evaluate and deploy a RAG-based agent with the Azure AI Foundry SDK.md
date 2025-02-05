@@ -990,7 +990,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
 
 ### Tarefa 4: Criar modelo de prompt para mapeamento de intenção
 
-    O script **get_product_documents.py** usa um modelo de prompt para converter a conversa em uma consulta de pesquisa. O modelo instrui como extrair a intenção do usuário da conversa.
+O script **get_product_documents.py** usa um modelo de prompt para converter a conversa em uma consulta de pesquisa. O modelo instrui como extrair a intenção do usuário da conversa.
 
 1.  Antes de executar o script, crie o modelo de prompt. Crie um arquivo
     chamado +++**intent_mapping.prompty**+++ na pasta **assets**:
