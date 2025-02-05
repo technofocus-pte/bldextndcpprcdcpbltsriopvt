@@ -36,10 +36,6 @@ para configurar.
 
 ### Tarefa 1: Instalar o Teams Toolkit
 
-Esses laboratórios são baseados no [Teams Toolkit versão
-5.0](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension).
-Siga as etapas conforme mostrado na captura de tela abaixo:
-
 1.  Abra o **Visual Studio Code** e clique no botão da barra de
     ferramentas **EXTENSIONS**.
 
