@@ -1,587 +1,622 @@
-# Lab 3 - Creating a Custom AI Agent with Azure AI Foundry and search integration
+# Laboratório 3 – Criando um Agente de AI Personalizado com o Azure AI Foundry e integração de pesquisa
 
-**Estimated time: 45 min**
+**Tempo estimado: 45 min**
 
-## Objective
+## Objetivo
 
-The objective of this lab is to guide participants in building an
-AI-powered agent using Azure AI services and Search integration.
-Participants will learn to configure, integrate, and test key components
-to create a functional agent capable of intelligent information
-retrieval and interaction, enhancing user experience and productivity.
+O objetivo deste laboratório é orientar os participantes na criação de
+um agente com tecnologia de AI usando os serviços do Azure AI e a
+integração de pesquisa. Retrieval Augmented Generation (RAG) é uma
+técnica usada para criar aplicativos que integram dados de fontes de
+dados personalizadas em um prompt para um modelo de generative AI. RAG é
+um padrão comumente usado para desenvolver aplicativos de generative
+AI - aplicativos baseados em chat que usam um modelo de linguagem para
+interpretar entradas e gerar respostas apropriadas. Os participantes
+aprenderão a usar o portal do Azure AI Foundry para integrar dados
+personalizados em um fluxo de prompt de generative AI.
 
-## Solution
+Solução
 
-This lab focuses on integrating Azure AI services with advanced search
-capabilities to create a robust, intelligent solution. It emphasizes
-configuring an AI-powered agent, enabling seamless data retrieval, and
-providing contextual responses. By leveraging AI and search integration,
-the solution aims to streamline workflows, improve decision-making, and
-enhance user engagement through intuitive and efficient interactions.
+Este laboratório se concentra na integração dos serviços do Azure AI com
+recursos avançados de pesquisa para criar uma solução robusta e
+inteligente. Ele enfatiza a configuração de um agente alimentado por AI,
+permitindo a recuperação contínua de dados e fornecendo respostas
+contextuais. Ao alavancar a integração de AI e pesquisa, a solução visa
+simplificar os fluxos de trabalho, melhorar a tomada de decisões e
+aumentar o envolvimento do usuário por meio de interações intuitivas e
+eficientes.
 
-## Task 0: Sync Host environment time
+## Tarefa 0: Sincronizar a hora do ambiente do host 
 
-1.  Login to the Lab Virtual Machine using the credentials provided on
-    the Home tab of the Lab interface. 
+1.  Faça login na Máquina Virtual do Laboratório usando as credenciais
+    fornecidas na guia da Página Inicial de interface do Laboratório.
 
+&nbsp;
 
-2.  In your VM, navigate and click in the **Search bar**, type
-    **Settings** and then click on **Settings** under **Best match**.
+2.  Em sua VM, pesquise e selecione +++ **Settings**+++ na barra de
+    pesquisa do **Windows**.
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image1.png) 
+
+2.  Na janela **Settings**, navegue e clique em **Time & language**.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image2.png) 
+
+3.  Na página **Time & language**, navegue e clique em **Date & time**.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image3.png) 
+
+4.  Role para baixo e navegue até a seção **Additional settings** e
+    clique no botão **Sync now**.  
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image4.png) 
+
+5.  Feche a janela **Settings**.  
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image5.png) 
+
+## Tarefa 1: Entender a VM e as credenciais
+
+Nesta tarefa, identificaremos e entenderemos as credenciais que usaremos
+em todo o laboratório.
+
+1.  A guia **Instructions** contém o guia do laboratório com as
+    instruções a serem seguidas em todo o laboratório.
+
+2.  A guia **Resources** tem as credenciais necessárias para executar o
+    laboratório.
+
+    - **URL** – URL para o portal do Azure
     
-    ![](./media/image01.png)
+    - **Subscription** – este é o **ID** da **assinatura** atribuída a você
+    
+    - **Username** – o **ID de usuário** com a qual você precisa fazer
+      **login** nos serviços do **Azure**.
+    
+    - **Password** – **senha** para o **login no Azure**.
 
+    Vamos chamar esse nome de usuário e senha como **credenciais de login no Azure**. Usaremos essas credenciais sempre que mencionarmos **as credenciais de login no Azure**.
 
-2.  On Settings window, navigate and click on **Time & language**. 
+    - **Resource Group** – o **grupo de recursos** atribuído a você.
 
-    ![](./media/image02.png)
+    >[!alert] **Importante**: certifique-se de criar todos os seus recursos neste grupo de recursos
 
-3.  On **Time & language** page, navigate and click on **Date & time**. 
+    ![Uma captura de tela de um computador Descrição gerada
+automaticamente](./media/image6.png)
 
-    ![](./media/image03.png)
+3.  A guia **Help** contém as informações de suporte. O valor do **ID**
+    aqui é o **ID da** **instância do laboratório** que será usado
+    durante a execução do laboratório.
 
+    ![Uma captura de tela de um computador Descrição gerada
+automaticamente](./media/image7.png)
 
-4.  Scroll down and navigate to **Additional settings** section, then
-    click on **Syn now** button.  
+## Tarefa 2: Criar um recurso do Azure AI Search
 
-    ![](./media/image04.png)
+1.  Em um navegador da web, abra o portal do Azure em
+    +++<https://portal.azure.com>+++ e **sign in** usando as credenciais
+    de **login no Azure**.
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image8.png)
 
-5.  Close the **Settings** window.  
+2.  Na página inicial, selecione **+ Create a resource.**
 
-    ![](./media/image05.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image9.png)
 
+3.  Na barra de pesquisa, pesquise e selecione +++**Azure AI
+    Search**+++.
 
-6.  In your lab VM, open Microsoft Edge and enter +++**http://www.microsoftazurepass.com**+++
+> ![Uma captura de tela de um computador Descrição gerada
+> automaticamente](./media/image10.png)
 
-    ![](./media/image06.png)
+4.  Selecione a lista suspensa ao lado de **Create** e selecione **Azure
+    AI Search**.
 
-7.  On **Ready to get started?** page, click on the **Start** button. 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image11.png)
 
-    ![](./media/image07.jpeg)
+5.  Na página **Create a search service**, insira os detalhes abaixo e
+    clique em **Review + create**.
 
+    - **Subscription**: selecione sua assinatura do Azure na lista
+      suspensa.
 
-    > **Note**: Do not use your Company/Work Account to login to redeem the Azure Pass, another Azure Pass will not be issued. 
+    - **Resource group**: selecione o grupo de recursos atribuído à sua
+      assinatura (ResourceGroup1)
 
-8.	In the **Sign in** window, enter the **Office 365 Tenant ID** from the **Resources** tab  and click on the **Next** button. 
+    - **Service name**: *+++*aisearch\<labinstanceid\>+++ (substitua o
+      ID da instância do laboratório pelo valor da guia de ajuda)
 
-    ![](./media/image08.png)
-
-9.  Enter Office **365 Tenant Password** and click on the **Sign in**
-    button. 
-
-    ![](./media/image09.png)
-
-10.  On **Stayed signed in?** dialog box, click on **Yes** button. 
-
-![](./media/image010.png)
-
-
-11.  On **The following Microsoft Account will be used for Azure pass**
-    page, click on **Confirm Microsoft Account** button. 
-
-![](./media/image011.png)
-
-
-12.	Enter the **Promocode** provided in the **Resources** tab in the **Enter Promo code** field, then enter the characters under the **Enter the characters you see** field and click on the **Submit** button.  
-
-![](./media/image012.png)
-
-
-13.  **We are processing your request** page will appear, it may take few
-    seconds to process the redemption. 
-
-![](./media/image013.png)
-
-
-14. Enter correct details in **Your Profile** page, tick all the check
-    boxes, and then click on **Sign up** button. 
-
-    ![](./media/image014.png)
-
-    ![](./media/image015.png)
-
-    ![](./media/image016.png)
-
-
-15. On **Protect your account** dialog box, click on the **Next**
-    button. 
-
-    ![](./media/image017.png)
-
-
-16. Then, on **More information required** dialog box, click on
-    the **Next** button. 
-
-    ![](./media/image018.png)
-
-17. If prompted, then enter the password and click on the **Sign in**
-    button. 
-
-    ![](./media/image019.png)
-
-
-18. In your mobile, install the **Microsoft Authenticator App**. Then,
-    go back to Microsoft Azure port. In the Azure portal, **Microsoft
-    Authenticator -** **Start by getting the app** window, navigate and
-    click on the **Next** button. 
-
-    ![](./media/image020.png)
-
-
-19. In **Microsoft Authenticator –** **Set up your account** window,
-    click on the **Next** button. 
-
-    ![](./media/image021.png)
-
-
-20. **Scan the QR code** using the **Authenticator app** installed in
-    your mobile phone and click on the **Next** button. 
-
-    ![](./media/image022.png)
-
-
-21. Enter the number in your mobile authenticator app and select
-    **Yes**. In **testvm1**, click on the **Next** button. 
-
-    ![](./media/image023.png)
-
-
-22. Click on the **Next** button. 
-
-    ![](./media/image024.png)
-
-
-23. Click on the **Done** button. 
-
-    ![](./media/image025.png)
-
-
-24. Enter the number again in your mobile authenticator app and select
-    **Yes**.. 
-
-     ![](./media/image026.png)
-
-
-25. In the **Stay signed in?** window, click on the **Yes** button. 
-
-    ![](./media/image010.png)
-
-
-## Task 1: Create an Azure AI Search resource
-
-1.  In a web browser, open the Azure portal at +++https://portal.azure.com+++ and sign in using your office 365 admin tenant credentials.
-
-    ![](./media/image1.png)
-
-2.  On the home page, select **+ Create a resource** and search for +++**Azure AI Search**+++. Then **create** a new Azure AI Search resource with the following settings:
-
-    - **Subscription**: Select your Azure subscription.
-
-    - **Resource group**: Select or create a resource group, here we select +++**RG4OpenAI**+++
-
-    - **Service name**: Enter a unique service name, here we name it as +++**copilotXXXX**+++
-
-    - **Location**: *Make a **random** choice from any of the following regions, here we select Canada East*
-
-      - Australia East
-
-      - Canada East
-
-      - East US
-
-      - East US 2
-
-      - France Central
-
-      - Japan East
-
-      - North Central US
-
-      - Sweden Central
-
-      - Switzerland
+    - **Location**: selecione uma **região**. O **Canada East** é usado aqui.
 
     - **Pricing tier**: Standard
 
-    - Click on **Review+create,** then click on **Create.**
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image12.png)
 
-    ![](./media/image2.png)
+6.  Revise as configurações e clique em **Create**.
 
-    ![](./media/image3.png)
+    ![Uma captura de tela de um serviço de pesquisa Descrição gerada automaticamente](./media/image13.png)
 
-    ![](./media/image4.png)
+7.  Aguarde a conclusão da implantação do recurso do Azure AI Search.
 
-    ![](./media/image5.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image14.png)
 
-    Later, you’re going to create an Azure AI Hub (which includes an Azure OpenAI service) in the same region as your Azure AI Search resource. Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a tenant with other users. In the event of a quota limit being reached later in the exercise, there’s a possibility you may need to create another Azure AI hub in a different region.
+    **Observação:** posteriormente, você criará um Hub de IA do Azure (que inclui um serviço Azure OpenAI) na mesma região que o recurso do Azure AI Search. Os recursos do Azure OpenAI são restritos no nível do locatário por cotas regionais. As regiões listadas incluem cota padrão para os tipos de modelo usados neste exercício. A escolha aleatória de uma região reduz o risco de uma única região atingir seu limite de cota em cenários em que você está compartilhando um locatário com outros usuários. No caso de um limite de cota ser atingido posteriormente no exercício, talvez seja necessário criar outro hub de Azure AI em uma região diferente.
 
-3.  Wait for your Azure AI Search resource deployment to be completed.
+## Tarefa 3: Criar um projeto Azure AI
 
-    ![](./media/image6.png)
+1.  Em um navegador da web, abra o **Portal do Azure AI Foundry** em +++https://ai.azure.com+++ e
+    **sign in** usando suas **credenciais de login no Azure**.
 
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image15.png)
 
-## Task 2: Create an Azure AI project
+2.  **Feche** a guia **Help** e selecione **Got it** no pop-up
+    **Streamlined from the start**.
 
-1.  In a web browser, open Azure AI Foundry portal at +++https://ai.azure.com+++ and **sign in** using your admin tenant credentials.
+3.  Na página inicial, selecione **+ Create project**.
 
-2.  In the home page, select **+ Create project**.
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image16.png)
 
-    ![](./media/image7.png)
+4.  No assistente **Create a project,** insira o nome do projeto como
+    +++**ragpfproject+++\<ID da instância do laboratório**\>
+    substituindo o **ID** **da instância do laboratório** pelo **ID da
+    instância de laboratório da VM** e clique em **Customize**.
 
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image17.png)
 
-3.  In the **Create a project** wizard enter project name as **ProjectXXXX** and click on **Customize**.
+5.  Em **Customize**, conecte-se ao recurso do Azure AI Search, insira
+    os detalhes a seguir, selecione **Next**  e examine sua
+    configuração.
 
-    ![](./media/image8.png)
+    - **Hub name**: +++hub+++\<**LabinstanceID\>** (substitua o ID da
+      instância do laboratório pelo valor da VM)
 
+    - **Azure Subscription**: selecione a assinatura do Azure atribuída
 
-4.  **In Customize**, connect to your Azure AI Search resource, enter the following details, select **Next** and review your configuration.
+    - **Resource group**: selecione o grupo de recursos atribuído
 
-    - **Hub name**: ***hubXXXX***
+    - **Location**: o mesmo **local** que o **recurso do Azure AI
+      Search**, Canada East
 
-    - **Azure Subscription**: *Your Azure subscription*
+    - **Connect Azure AI Services or Azure OpenAI:** (new) preenchimento
+      automático com o nome do hub
 
-    - **Resource group**: **RG4OpenAI**
+    - **Connect Azure AI Search**: selecione o recurso do Azure AI
+      Search, **aisearch\<Labinstance ID\>**
 
-    - **Location**: *The same location as your Azure AI Search resource, **Canada East***
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image18.png)
 
-    - **Connect Azure AI Services or Azure OpenAI**: (New)*Autofill’s with your selected hub name*
+6.  Revise os detalhes e clique em **Create** e aguarde a conclusão do
+    processo.
 
-    - **Connect Azure AI Search**: *Select your Azure AI Search resource, **copilotXXXX***
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image19.png)
 
-    ![](./media/image9.png)
+7.  Clique em **Close** no pop-up **Explore and experiment**.
 
-5.  Select **Next** and then **Create** and wait for the process to complete.
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image20.png)
 
-    ![](./media/image10.png)
+8.  Você será direcionado para a página do projeto criado.
 
-    ![](./media/image11.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image21.png)
 
+## Tarefa 3: Implementar modelos
 
-## Task 3: Deploy models
+Você precisa de dois modelos para implementar sua solução:
 
-You need two models to implement your solution:
+- um modelo de incorporação para vetorizar dados de texto para indexação
+  e processamento eficientes;
 
-- An *embedding* model to vectorize text data for efficient indexing and processing.
+- um modelo que pode gerar respostas em linguagem natural a perguntas
+  com base em seus dados.
 
-- A model that can generate natural language responses to questions based on your data.
+1.  Selecione **Models + endpoints** em **My assets** no painel
+    esquerdo.
 
-1.  In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Models + endpoints** page.
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image22.png)
 
-    ![](./media/image13.png)
+2.  Na página **Manage deployments of your models and services,** clique
+    em **+Deploy model** e selecione **Deploy base model.**
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image23.png)
 
-2.  On the **Manage deployments of your models and services page,** click on **+ Deploy model** and select **Deploy base model.**
+3.  Na página **Select a model**, pesquise e selecione
+    +++**text-embedding-ada-002**+++ modelo e clique em **Confirm.**
 
-    ![](./media/image14.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image24.png)
 
+4.  No painel **Deploy model text-embedding-ada-002**, clique em
+    **Customize** e insira os seguintes detalhes no assistente **Deploy
+    model**:
 
-3.  On the **Select a model** page, search and select +++**text-embedding-ada-002**+++ model and click on **Confirm.**
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image25.png)
 
-    ![](./media/image15.png)
-
-4.  On the Deploy model **text-embedding-ada-002** pane click on **Customize** and enter the following details in the Deploy model
-    wizard:
-
-    ![](./media/image16.png)
-
-
-    - **Deployment name**: +++text-embedding-ada-002+++
+    - **Deployment name**: text-embedding-ada-002
     
     - **Deployment type**: Standard
     
-    - **Model version**: *Select the default version*
+    - **Model version**: *selecione a versão padrão*
     
-    - **AI resource**: *Select the resource created previously*
+    - **AI resource**: *selecione o recurso criado anteriormente que é
+      listado*
     
-    - **Tokens per Minute Rate Limit (thousands)**: 5K
+    - **Tokens per Minute Rate Limit:** 5K (5.000)
     
     - **Content filter**: DefaultV2
     
     - **Enable dynamic quota**: Disabled
 
-    ![](./media/image17.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image26.png)
 
-    ![](./media/image18.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image27.png)
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image28.png)
 
-5.  Repeat the previous steps to deploy a +++**gpt-35-turbo-16k**+++ model with the deployment name gpt-35-turbo-16k.
+5.  Repita as etapas anteriores para implantar um modelo
+    **gpt-35-turbo-16k** com o nome de implantação **gpt-35-turbo-16k**.
 
-    ![](./media/image19.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
 
-    ![](./media/image20.png)
+6.  Agora temos as duas implementações prontas.
 
-    > **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image30.png)
 
-## Task 4: Add data to your project
+    **Observação**: reduzir os Tokens Per Minute (TPM) ajuda a evitar o uso excessivo da cota disponível na assinatura que você está usando. 5.000 TPM é suficiente para os dados usados neste exercício.
 
-The data for your copilot consists of a set of travel brochures in PDF format from the fictitious travel agency *Margie’s Travel*. Let’s add them to the project.
+## Tarefa 4: Adicionar dados ao seu projeto
 
-1.  In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes** page.
+Os dados do seu Copilot consistem em um conjunto de folhetos de viagem
+em formato PDF da agência de viagens fictícia *Margie's Travel*. Vamos
+adicioná-los ao projeto.
 
-    ![](./media/image21.png)
+1.  Selecione **Data + indexes** em **My assets** no painel esquerdo.
+    Selecione **+ New data**.
 
-2.  Select **+ New data**.
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image31.png)
 
-    ![](./media/image22.png)
+2.  No assistente **Add your data**, selecione **Upload files/folders**
+    no menu suspenso.
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image32.png)
 
-3.  In the **Add your data** wizard, expand the drop-down menu to select **Upload files/folders**.
+3.  Selecione **Upload folder** e selecione a pasta **brochuras** em
+    **C:\LabFiles** e clique em **Upload**.
 
-    ![](./media/image23.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image33.png)
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image34.png)
 
-4.  Select **Upload folder** and select the **brochures** folder from **C:\LabFiles**.
+4.  Aguarde o carregamento da pasta e observe que ela contém vários
+    arquivos .pdf. Selecione **Next** depois que todos os arquivos forem
+    carregados.
 
-    ![](./media/image24.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image35.png)
 
+5.  Na próxima página de nome e conclusão, insira o nome dos dados como
+    +++**data\<ID da instância do laboratório\>**+++ (substituindo o
+    espaço reservado pelo ID da instância do laboratório) e clique em
+    **Create.**
 
-6.  Select **Next** on the screen.
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image36.png)
 
-    ![](./media/image25.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image37.png)
 
-7.  Wait for the folder to be uploaded and note that it contains several .pdf files.
+## Tarefa 5: Criar um índice para seus dados
 
-8.  On the next page of name and finish, enter the data name as +++**data0212**+++ and click on **Create.**
+Agora que você adicionou uma fonte de dados ao seu projeto, pode usá-la
+para criar um índice no recurso do Azure AI Search.
 
-    ![](./media/image26.png)
+1.  Na página **Data + indexes**, selecione a guia **Indexes**.
 
-    ![](./media/image27.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image38.png)
 
+2.  Na guia **Indexes**, selecione **+ New index** para adicionar um
+    novo índice.
 
-## Task 5: Create an index for your data
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image39.png)
 
-Now that you’ve added a data source to your project, you can use it to create an index in your Azure AI Search resource.
+3.  Insira os detalhes abaixo e clique em **Next**.
 
-1.	From the **Data + indexes** (in the navigation pane on the left, under **My assets**, select the **Data + indexes**) page, select the **Indexes** tab.
+    - **Data source** – selecione **Data in Azure AI Foundry**
 
-    ![](./media/image28.png)
+    Selecione a **data source** listada e clique em **Next**.
 
-2.  In the **Indexes** tab, add a new index with the following settings and then select on **Next**.
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image40.png)
 
-    - **Source location**:
+4.  Insira os detalhes abaixo na página de configuração **Create a
+    vector index** – **Index configuration** e clique em **Next.**
 
-      - **Data source**: Data in Azure AI Foundry
-
-        - *Select the **brochures** data source- **dataXXXX***
-
-    ![](./media/image29.png)
-
-
-    - Configure the index as below given options and then select **Next.**
+    - **Select Azure AI Search service**: selecione **AzureAISearch** 
     
-      - **Select Azure AI Search service**: *Select the **AzureAISearch** connection to your Azure AI Search resource*
+    - **Vector index:** brochures-index
     
-      - **Vector index**: +++brochures-index+++
+    - **Vector index:** +++ **brochures-index** +++
     
-      - **Virtual machine**: Auto select
+    - **Virtual machine**: selecione **Auto select**
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image41.png)
+
+5.  Na página **Create a vector index – Search settings**:
+
+    **Vector settings** - selecione **Add vector search to this search
+resource**
+
+    Aceite os outros padrões e selecione **Next.**
+
+    ![Uma captura de tela de uma caixa de pesquisa Descrição gerada automaticamente](./media/image42.png)
+
+6.  Na página **Review and finish**, revise os detalhes e selecione
+    **Create vector index.**
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image43.png)
+
+7.  Aguarde a conclusão do processo de indexação, o que pode levar
+    vários minutos. A operação de criação de índice consiste nos
+    seguintes trabalhos:
+
+    - **Cracking, chunking, and embedding** os tokens de texto em seus
+      dados de brochuras.
+
+    - **Creating** o Azure AI Search Index.
+
+    - **Registering** o Index.
+
+    ![Uma captura de tela de um erro do computador Descrição gerada
+automaticamente](./media/image44.png)
+
+    ![Uma captura de tela de um programa de computador Descrição gerada
+automaticamente](./media/image45.png)
+
+## Tarefa 6: Testar o índice
+
+Antes de usar seu índice em um fluxo de prompt baseado em RAG, vamos
+verificar se ele pode ser usado para afetar as respostas de generative
+AI.
+
+1.  Selecione **Playgrounds** no painel esquerdo e selecione **Chat
+    playground.**
+
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image46.png)
+
+2.  Clique em **Show setup** se não estiver visível por padrão.
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image47.png)
+
+3.  Certifique-se de que a implantação do modelo **gpt-35-turbo-16k**
+    esteja selecionada. Em seguida, no painel principal da sessão de
+    chat, insira o prompt +++ **Where can I stay in New York?**+++
+
+    ![Uma captura de tela de um programa de computador Descrição gerada automaticamente](./media/image48.png)
+
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image49.png)
+
+4.  Examine a resposta, que deve ser uma resposta genérica do modelo sem
+    nenhum dado do índice.
+
+5.  No painel **Setup**, expanda o campo **Add your data**, selecione o
+    **Index** como **brochures-index** e selecione o tipo de pesquisa
+    como **Hybrid (vector + keyword)** 
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image50.png)
     
-          ![](./media/image30.png)
+    **Observação:** alguns usuários estão descobrindo que os índices recém-criados estão indisponíveis imediatamente. Atualizar o navegador geralmente ajuda, mas se você ainda estiver enfrentando o problema em que ele não consegue encontrar o índice, talvez seja necessário aguardar até que o índice seja reconhecido.
+
+6.  Essa adição da fonte de dados inicia uma nova sessão. Feito isso,
+    insira novamente o prompt +++ **Where can I stay in New York?**+++
+
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image51.png)
+
+7.  Revise a resposta e observe que agora a resposta é baseada em dados
+    no índice.
+
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image52.png)
+
+## Tarefa 7: Usar o índice em um fluxo de prompt
+
+Seu índice de vetor foi salvo em seu projeto do Azure AI Foundry,
+permitindo que você o use facilmente em um fluxo de prompt.
+
+1.  Selecione **Prompt flow** em **Build and customize** no painel de
+    navegação esquerdo e clique em **+ Create**.
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image53.png)
+
+2.  Selecione **Clone** em **Multi-Round Q&A on Your Data**.
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image54.png)
+
+3.  Dê o **Folder name** como +++**brochure-flow**+++ e clique em
+    **Clone**.
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image55.png)
+
+    **Observação:** se você enfrentar um erro de permissão, tente novamente com um novo nome após dois minutos e o fluxo será clonado.
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image56.png)
+
+4.  Quando a página do designer de fluxo de prompt for aberta, revise o
+    **brochure-flow**. Seu gráfico deve se parecer com a seguinte
+    imagem:
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image57.png)
+
+    ![Uma captura de tela de um gráfico de fluxo de prompt](./media/image58.png)
+
+    O fluxo de prompt de exemplo que você está usando implementa a lógica de prompt para um aplicativo de chat no qual o usuário pode enviar iterativamente a entrada de texto para a interface de chat. O histórico de conversação é retido e incluído no contexto de cada iteração. O fluxo de prompt orquestra uma sequência de ferramentas para:
+
+    - anexar o histórico à entrada de chat para definir um prompt na forma
+      de uma forma contextualizada de uma pergunta;
     
-    - Configure the search setting as given below and select **Next**, on the Review window click on the **Create Vector Index**.
+    - recuperar o contexto usando seu índice e um tipo de consulta de sua
+      própria escolha com base na pergunta;
+    
+    - gerar contexto de prompt usando os dados recuperados do índice para
+      aumentar a pergunta;
+    
+    - criar variantes de prompt adicionando uma mensagem do sistema e
+      estruturando o histórico de chat;
+    
+    - enviar o prompt para um modelo de linguagem para gerar uma resposta de
+      linguagem natural.
 
-  - **Vector settings**: Add vector search to this search resource
+5.  Use o botão **Start compute session** para iniciar a computação de
+    runtime para o fluxo.
 
-  - **Azure OpenAI connection**: *Select the default Azure OpenAI resource for your hub.*
+    Aguarde o início do runtime. Isso fornece um contexto de computação para o fluxo de prompt. Enquanto aguarda, na guia Flow, revise as seções das ferramentas no fluxo.
 
-    ![](./media/image31.png)
+    ![Uma captura de tela de uma tela de computador Descrição gerada automaticamente](./media/image59.png)
 
-    ![](./media/image32.png)
-
-
-3.  Wait for the indexing process to be completed, which can take several minutes. The index creation operation consists of the following jobs:
-
-    - Crack, chunk, and embed the text tokens in your brochures data.
-
-    - Create the Azure AI Search index.
-
-    - Register the index asset.
-
-    ![](./media/image33.png)
-
-    ![](./media/image34.png)
-
-## Task 6: Test the index
-
-Before using your index in a RAG-based prompt flow, let’s verify that it can be used to affect generative AI responses.
-
-1.  In the navigation pane on the left, select the **Playgrounds** page and then select **Chat Playground.**
-
-    ![](./media/image35.png)
-
-2.	Click on Show setup if it is not visible by default.
-
-    ![](./media/Picture7.png)
-   
-3.  On the Chat page, in the Setup pane, ensure that your **gpt-35-turbo-16k** model deployment is selected. Then, in the main chat session panel, submit the prompt +++**Where can I stay in New York?**+++
-
-    ![](./media/image36.png)
-
-
-4.  Review the response, which should be a generic answer from the model without any data from the index.
-
-5.  In the Setup pane, expand the **Add your data** field, select **brochures-index** and select the **hybrid (vector + keyword)** search type.
-
-    ![](./media/image37.png)
-
-    > **Note**: Some users are finding newly created indexes unavailable right away. Refreshing the browser usually helps, but if you’re still experiencing the issue where it can’t find the index you may need to wait until the index is recognized.
-
-6.  After the index has been added and the chat session has restarted, resubmit the prompt +++**Where can I stay in New York?**+++
-
-    ![](./media/image38.png)
-
-7.  Review the response, which should be based on data in the index.
-
-## Task 7: Use the index in a prompt flow
-
-Your vector index has been saved in your Azure AI Foundry project, enabling you to use it easily in a prompt flow.
-
-1.  In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **Build and customize**, select the **Prompt flow** page and click on **+Create.**
-
-    ![](./media/image39.png)
-
-2.  Create a new prompt flow by cloning the **Multi-Round Q&A on Your Data** sample in the gallery. Save your clone of this sample in a folder named +++**brochure-flow**+++.
-
-    ![](./media/image40.png)
-
-    ![](./media/image41.png)
-
-
-    > **Note:** If you face permissions error, retry with a new name after 2 minutes and the flow will get cloned
-
-    ![](./media/image42.png)
-
-3.  When the prompt flow designer page opens, review **brochure-flow**. Its graph should resemble the following image:
-
-    ![](./media/image43.png)
-
-    ![](./media/image44.png)
-
-    The sample prompt flow you are using implements the prompt logic for a chat application in which the user can iteratively submit text input to chat interface. The conversational history is retained and included in the context for each iteration. The prompt flow orchestrates a sequence of *tools* to:
-
-    - Append the history to the chat input to define a prompt in the form of a contextualized form of a question.
-
-    - Retrieve the context using your index and a query type of your own choice based on the question.
-
-    - Generate prompt context by using the retrieved data from the index to augment the question.
-
-    - Create prompt variants by adding a system message and structuring the chat history.
-
-    - Submit the prompt to a language model to generate a natural language response.
-
-4.  Use the **Start compute session** button to start the runtime compute for the flow.
-
-    Wait for the runtime to start. This provides a compute context for the prompt flow. While you’re waiting, in the **Flow** tab, review the sections for the tools in the flow.
-
-    ![](./media/image45.png)
-
-5.  In the **Inputs** section, ensure the inputs include:
+6.  Na seção **Inputs**, verifique se as entradas incluem:
 
     - **chat_history**
 
     - **chat_input**
 
-    The default chat history in this sample includes some conversation about AI.
+    O histórico de chat padrão neste exemplo inclui algumas conversas sobre
+AI.
 
-    ![](./media/image46.png)
+    ![A screenshot of a computer program AI-generated content may be incorrect.](./media/image60.png)
 
+7.  Na seção **Outputs**, certifique-se de que a saída inclua:
 
-6.  In the **Outputs** section, ensure that the output includes:
+    - **chat_output** com Value ${chat_with_context.output}
 
-    - **chat_output** with value \${chat_with_context.output}
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image61.png)
 
-    ![](./media/image47.png)
+8.  Na seção **modify_query_with_history**, selecione as seguintes
+    configurações (deixando as outras como estão):
 
+    - **Connection**: selecione o **recurso Azure** **OpenAI** para o
+      hub de AI listado
 
-7.  In the **modify_query_with_history** section, select the following settings (leaving others as they are):
+    - **Api**: selecione **chat**
 
-    - **Connection**: *The default Azure OpenAI resource for your AI hub*
+    - **deployment_name**: selecione **gpt-35-turbo-16k**
 
-    - **Api**: chat
+    - **response_format**: selecione **{"type":"text"}**
 
-    - **deployment_name**: gpt-35-turbo-16k
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image62.png)
 
-    - **response_format**: {“type”:”text”}
+9.  Depois que a sessão de computação for iniciada, na seção **lookup**,
+    defina os seguintes valores de parâmetro:
 
-    ![](./media/image48.png)
+    - **mlindex_content**: *selecione o campo vazio para abrir o painel
+      Generate*
 
-8.  Wait for the compute session to start, then in the **lookup** section, set the following parameter values:
+      - **index_type**: selecione **Registered Index**
 
-    - **mlindex_content**: *Select the empty field to open the Generate pane*
+      - **mlindex_asset_id**: selecione **brochures-index:1**
 
-      - **index_type**: Registered Index
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image63.png)
 
-      - **mlindex_asset_id**: brochures-index:1
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image64.png)
 
-    - **queries**: \${modify_query_with_history.output}
-
+    De volta à seção **Lookup**, insira os detalhes abaixo
+    
+    - **queries**: ${modify_query_with_history.output}
+    
     - **query_type**: Hybrid (vector + keyword)
-
+    
     - **top_k**: 2
 
-    ![](./media/image49.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image65.png)
 
-    ![](./media/image50.png)
+10. Na seção **generate_prompt_context**, revise o script Python e
+    verifique se as **entradas** para essa ferramenta incluem o seguinte
+    parâmetro:
 
-9.  In the **generate_prompt_context** section, review the Python script and ensure that the **inputs** for this tool include the following parameter:
+    - **search_result** *(objeto):* ${lookup.output}
 
-    - **search_result** *(object)*: \${lookup.output}
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image66.png)
 
-    ![](./media/image51.png)
+11. Na seção **Prompt_variants**, revise o script Python e verifique se
+    as **entradas** para essa ferramenta incluem os seguintes
+    parâmetros:
 
-10. In the **Prompt_variants** section, review the Python script and ensure that the **inputs** for this tool include the following parameters:
+    - **contexts** *(string):* ${generate_prompt_context.output}
 
-    - **contexts** *(string)*: \${generate_prompt_context.output}
+    - **chat_history** *(string):* ${inputs.chat_history}
 
-    - **chat_history** *(string)*: \${inputs.chat_history}
+    - **chat_input** *(string):* ${inputs.chat_input}
 
-    - **chat_input** *(string)*: \${inputs.chat_input}
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image67.png)
 
-    ![](./media/image52.png)
-
-11. In the **chat_with_context** section, select the following settings (leaving others as they are):
+12. Na seção **chat_with_context**, selecione as seguintes configurações
+    (deixando as outras como estão):
 
     - **Connection**: Default_AzureOpenAI
 
-    - **Api**: Chat
+    - **Api**: chat
 
-    - **deployment_name**: gpt-35-turbo-16k
+    - **deployment_name**: GPT-35-turbo-16K
 
-    - **response_format**: {“type”:”text”}
+    - **response_format**: {"type":"text"}
 
-Then ensure that the **inputs** for this tool include the following parameters:
+    Em seguida, certifique-se de que as **entradas** para essa ferramenta
+incluam os seguintes parâmetros:
 
-- **prompt_text** *(string)*: \${Prompt_variants.output}
+    - **prompt_text** *(string):* ${Prompt_variants.output}
 
-    ![](./media/image53.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image68.png)
 
-12. On the toolbar, use the **Save** button to save the changes you’ve made to the tools in the prompt flow.
+13. Na barra de ferramentas, use o botão **Salve** para salvar as
+    alterações feitas nas ferramentas no fluxo de prompt.
 
-    ![](./media/image54.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image69.png)
 
+14. Na barra de ferramentas, selecione **Chat**. Um painel de chat é
+    aberto com o histórico de conversas de exemplo e a entrada já
+    preenchida com base nos valores de exemplo. Você pode ignorá-los.
 
-13. On the toolbar, select **Chat**. A chat pane opens with the sample conversation history and the input already filled in based on the sample values. You can ignore these.
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image70.png)
 
-    ![](./media/image55.png)
+15. No painel de **Chat**, substitua a entrada padrão pela pergunta +++
+    **Where can I stay in London?**+++ e a envie.
 
+    ![A screenshot of a chat AI-generated content may be incorrect.](./media/image71.png)
 
-14. In the chat pane, replace the default input with the question +++**Where can I stay in London?**+++ and submit it.
+16. A resposta é baseada nos dados do índice.
 
-    ![](./media/image56.png)
+17. Revise as saídas de cada ferramenta no fluxo.
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image72.png)
 
-15. Review the response, which should be based on data in the index.
+18. No painel de **Chat**, digite a pergunta +++ **What can I do
+    there?**+++
 
-16. Review the outputs for each tool in the flow.
+19. Revise a resposta, que deve ser baseada nos dados do índice e leve
+    em consideração o **histórico do chat** (portanto, "**lá**" é
+    entendido como "**em Londres**").
 
-    ![](./media/image57.png)
+    ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image73.png)
 
+20. Revise as saídas de cada ferramenta no fluxo, observando como cada
+    ferramenta no fluxo operou em suas entradas para preparar um prompt
+    contextualizado e obter uma resposta apropriada.
 
-17. In the chat pane, enter the question +++**What can I do there?**+++
+## Tarefa 8: Limpar os recursos:
 
-18. Review the response, which should be based on data in the index and take into account the chat history (so “there” is understood as “in London”).
+1.  No portal do Azure (+++https://portal.azure.com+++), selecione o
+    **ResourceGroup1** (aquele atribuído a você).
 
-    ![](./media/image58.png)
+2.  Selecione todos os recursos abaixo dele e clique em **Delete**.
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image74.png)
 
-19. Review the outputs for each tool in the flow, noting how each tool in the flow operated on its inputs to prepare a contextualized prompt and get an appropriate response.
+3.  Digite +++**delete**+++ e clique no botão **Delete** para confirmar
+    a exclusão. Clique em **Delete** na caixa de diálogo **Delete
+    confirmation**.
 
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image75.png)
+
+4.  Certifique-se de que os recursos sejam excluídos, pela mensagem de
+    confirmação de exclusão.
+
+    ![Uma captura de tela de uma tela de computador Descrição gerada automaticamente](./media/image76.png)
+
+**Resumo:**
+
+Neste laboratório, aprendemos a criar um agente personalizado que usa
+seus próprios dados do **Azure AI Foundry**.
