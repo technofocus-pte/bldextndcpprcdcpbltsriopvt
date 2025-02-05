@@ -31,8 +31,6 @@ eficientes.
 1.  Faça login na Máquina Virtual do Laboratório usando as credenciais
     fornecidas na guia da Página Inicial de interface do Laboratório.
 
-&nbsp;
-
 2.  Em sua VM, pesquise e selecione +++ **Settings**+++ na barra de
     pesquisa do **Windows**.
 
