@@ -38,7 +38,7 @@ aplicativos orientados a dados.
 ### Tarefa 1: Fazendo login no Power Apps
 
 1.  Navegue até
-    https://www.microsoft.com/en-us/power-platform/products/power-apps
+    +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++
     do site do Power Apps e clique no botão **Try for free.**
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image1.png)
