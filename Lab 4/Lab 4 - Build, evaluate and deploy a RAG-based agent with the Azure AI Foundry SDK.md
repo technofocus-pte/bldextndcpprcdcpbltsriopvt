@@ -52,7 +52,7 @@ laboratório.
     
     - **Password** – **senha** para o **login no Azure**.
 
-Vamos chamar esse nome de usuário e senha como **credenciais de login no Azure**. Usaremos essas credenciais sempre que mencionarmos **as credenciais de login no Azure**.
+    Vamos chamar esse nome de usuário e senha como **credenciais de login no Azure**. Usaremos essas credenciais sempre que mencionarmos **as credenciais de login no Azure**.
 
     - **Resource Group** – o **grupo de recursos** atribuído a você.
 
