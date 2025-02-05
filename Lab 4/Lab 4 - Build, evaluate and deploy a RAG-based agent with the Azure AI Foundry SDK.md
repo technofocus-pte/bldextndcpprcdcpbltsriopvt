@@ -1023,11 +1023,11 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
     # Examples
     Example 1:
     With a conversation like below:
-    ```
+    
      - user: are the trailwalker shoes waterproof?
      - assistant: Yes, the TrailWalker Hiking Shoes are waterproof. They are designed with a durable and waterproof construction to withstand various terrains and weather conditions.
      - user: how much do they cost?
-    ```
+    
     Respond with:
     {
         "intent": "The user wants to know how much the Trailwalker Hiking Shoes cost.",
@@ -1036,7 +1036,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
     
     Example 2:
     With a conversation like below:
-    ```
+    
      - user: are the trailwalker shoes waterproof?
      - assistant: Yes, the TrailWalker Hiking Shoes are waterproof. They are designed with a durable and waterproof construction to withstand various terrains and weather conditions.
      - user: how much do they cost?
@@ -1046,7 +1046,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
      - user: which is your most waterproof tent?
      - assistant: Our most waterproof tent is the Alpine Explorer Tent. It is designed with a waterproof material and has a rainfly with a waterproof rating of 3000mm. This tent provides reliable protection against rain and moisture.
      - user: how much does it cost?
-    ```
+    
     Respond with:
     {
         "intent": "The user would like to know how much the Alpine Explorer Tent costs.",
