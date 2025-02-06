@@ -120,11 +120,11 @@ para ver todos os elementos principais. Você também verá que o processo
 de implantação do aplicativo é muito semelhante à implantação de um
 aplicativo do Teams.
 
-|  Elemento  | Descrição   |  Nome do arquivo  |
+|  Elemento  | Descripción   |  Nombre del archivo |
 |:----|:-------|:-----|
-|  **Manifesto do aplicativo**  |  Descreve a configuração do aplicativo, os recursos, os recursos necessários e os atributos importantes.  |  manifest.json  |
-| **Ícones de aplicativos**   | Requer um ícone de cor (192x192) e contorno (32x32) para seu agente declarativo.   |  icon.png, color.png  |
-| **Manifesto do agente declarativo**   |  Descreve a configuração do agente, instruções, campos obrigatórios, recursos, iniciadores de conversa e ações.  |  declarativeAgent.json  |
+|  **Manifiesto de la aplicación**  |  Describe la configuración, las capacidades, los recursos necesarios y los atributos importantes de la aplicación.  |  manifest.json  |
+| **Íconos de aplicaciones**   | Se requiere un ícono de color (192x192) y un ícono de contorno (32x32) para su agente declarativo.   |  icon.png, color.png  |
+| **Manifiesto declarativo del agente**   |  Describe la configuración del agente, las instrucciones, los campos requeridos, las capacidades, los iniciadores de conversación y las acciones.  |  declarativeAgent.json  |
 
 **Observação:** você pode adicionar dados de referência do SharePoint,
 OneDrive, pesquisa na web etc. e adicionar recursos de extensão a um
