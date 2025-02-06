@@ -1,549 +1,614 @@
-# Laboratório 1: Criar um agente declarativo para o Microsoft 365 Copilot usando o Teams Toolkit
+# Laboratorio 1: Creación de un agente declarativo para Microsoft 365 Copilot utilizando Teams Toolkit
 
-**Tempo estimado: 30 minutos**
+**Tiempo estimado: 30 minutos**
 
 ## Objetivo
 
-O objetivo deste laboratório é capacitar os participantes a criarem um
-agente declarativo para o Microsoft 365 Copilot usando o Teams Toolkit.
-Ao concluir o laboratório, os participantes criarão um jogo de
-geolocalização que proporciona uma pausa divertida e educativa no
-trabalho. O laboratório se concentra em entender a estrutura dos agentes
-declarativos, configurá-los com instruções e integrá-los ao ecossistema
-do Microsoft 365 para interações personalizadas do Copilot.
+El objetivo de este laboratorio es capacitar a los participantes para
+construir un agente declarativo para Microsoft 365 Copilot utilizando
+Teams Toolkit. Al completar el laboratorio, los participantes habrán
+creado un juego de geo-localización que ofrece un descanso divertido y
+educativo del trabajo. El laboratorio se centra en entender la
+estructura de los agentes declarativos, configurarlos con instrucciones
+e integrarlos en el ecosistema de Microsoft 365 para interacciones
+personalizadas con Copilot.
 
-## Solução
+## Solución
 
-Os participantes instalarão o Teams Toolkit no Visual Studio Code e
-configurarão seu ambiente de desenvolvimento. Usando um modelo, eles
-criarão um agente declarativo chamado Geo Locator Game. Eles
-personalizarão as instruções do agente e atualizarão seus arquivos de
-configuração, como instruction.txt e manifest.json. O laboratório também
-orienta os participantes a aprimorarem o agente com identificadores
-exclusivos, ícones personalizados e funcionalidade de teste. O resultado
-é um aplicativo Copilot totalmente funcional e envolvente, adaptado para
-fornecer pistas sobre as cidades enquanto se integra perfeitamente ao
-Microsoft 365.
+## Los participantes instalarán Teams Toolkit en Visual Studio Code y configurarán su entorno de desarrollo. Utilizando una plantilla, crearán un agente declarativo denominado "Geo Locator Game". Personalizarán las instrucciones del agente y actualizarán sus archivos de configuración, como instruction.txt y manifest.json. El laboratorio también guía a los participantes en la mejora del agente con identificadores únicos, íconos personalizados y la funcionalidad de prueba. El resultado será una aplicación Copilot completamente funcional y atractiva, diseñada para ofrecer pistas sobre ciudades mientras se integra de manera fluida con Microsoft 365.
 
-## Exercício 1: Configurar seu ambiente de desenvolvimento para o Microsoft 365 Copilot
+## Ejercicio 1: Configuración del entorno de desarrollo para Microsoft 365 Copilot
 
-Atualmente, este laboratório pressupõe que você já tenha um locatário
-para configurar.
+En este laboratorio, se asume que ya se dispone de un tenant de
+Microsoft 365 configurado.
 
-- Visual Studio Code
+- Visual studio code
 
-- NodeJS versão 22.13.1
+- NodeJS version 22.13.1
 
-### Tarefa 1: Instalar o Teams Toolkit
+### Tarea 1: Instale Teams Toolkit
 
-1.  Abra o **Visual Studio Code** e clique no botão da barra de
-    ferramentas **EXTENSIONS**.
+Siga los pasos que se muestran en la siguiente captura de pantalla.
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image1.png)
+1. Abra Visual Studio Code y haga clic en el botón de la barra de
+herramientas de Extensions.
 
-2.  Pesquise "**Teams**" e localize o **Teams Toolkit** e clique em
+    ![](./media/image1.png)
+
+2.  Busque "**Teams**" y localice Teams **Toolkit,** luego haga clic en
     **Install.**
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image2.png)
+    ![](./media/image2.png)
 
-3.  Quando a instalação for concluída, o ícone do **Teams Toolkit**
-    aparecerá na barra de navegação esquerda.
+3.  Una vez finalizada la instalación, aparecerá el ícono **Teams
+    Toolkit** en la barra de navegación de la izquierda.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image3.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image3.png)
 
-## [Exercício 2: Primeiro agente declarativo](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-declarative-copilot/)
+## [Ejercicio 2: Primer agente declarativo](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-declarative-copilot/) 
 
-Neste laboratório, você criará um agente declarativo simples usando o
-Teams Toolkit para Visual Studio Code. Seu agente foi projetado para lhe
-dar uma pausa divertida e educacional no trabalho, ajudando você a
-explorar cidades em todo o mundo. Ele apresenta pistas abstratas para
-você adivinhar uma cidade, com menos pontos concedidos quanto mais
-pistas você usar. No final, sua pontuação final será revelada.
+En este laboratorio, construirá un agente declarativo simple utilizando
+Teams Toolkit para Visual Studio Code. El agente está diseñado para
+ofrecerle un descanso divertido y educativo del trabajo, ayudándole a
+explorar ciudades de todo el mundo. Presenta pistas abstractas para que
+adivine una ciudad, otorgando menos puntos a medida que utiliza más
+pistas. Al final, se revelará su puntaje final.
 
-Neste exercício, você aprenderá:
+### En este ejercicio aprenderá: 
 
-- o que é um agente declarativo para o Microsoft 365 Copilot;
+    • Qué es un agente declarativo para Microsoft 365 Copilot. 
+    
+    • Cómo crear un agente declarativo utilizando la plantilla de Teams Toolkit. 
+    
+    • Cómo personalizar el agente para crear el juego de geo-localización utilizando instrucciones. 
+    
+    • Cómo ejecutar y probar su aplicación. 
+    
+    • Como ejercicio adicional, necesitará un sitio de SharePoint en Teams.
 
-- a criar um agente declarativo usando o modelo do Teams Toolkit;
+### Introducción 
 
-- a personalizar o agente para criar o jogo de localização geográfica
-  usando instruções;
+Los agentes declarativos aprovechan la misma infraestructura escalable y
+plataforma de Microsoft 365 Copilot, adaptada específicamente para
+centrarse en áreas particulares de sus necesidades. Funcionan como
+expertos en un área o necesidad empresarial específica, permitiéndole
+utilizar la misma interfaz que el chat estándar de Microsoft 365
+Copilot, asegurando que se enfoquen exclusivamente en la tarea en
+cuestión.  
+¡Bienvenido a la creación de su propio agente declarativo! ¡Vamos a
+sumergirnos y hacer que su Copilot haga magia!  
+En este laboratorio, comenzará a construir un agente declarativo
+utilizando Teams Toolkit con una plantilla predeterminada incluida en la
+herramienta. Esto le ayudará a empezar con algo básico. Luego,
+modificará su agente para centrarlo en un juego de geo-localización.  
+  
+El objetivo de su IA es ofrecer un descanso divertido del trabajo
+mientras le ayuda a aprender sobre diferentes ciudades del mundo.
+Proporciona pistas abstractas para que identifique una ciudad. Cuantas
+más pistas necesite, menos puntos ganará. Al final del juego, se
+revelará su puntaje final.
 
-- como executar e testar seu aplicativo.
+![game](./media/image4.png)
 
-Para o exercício bônus, você precisará de um site SharePoint Teams.
+También le dará a su agente algunos archivos para consultar un diario
+secreto 🕵🏽 y un mapa 🗺️ para dar más desafíos al jugador.
 
-### Introdução
+¡Empecemos!
 
-Os agentes declarativos aproveitam a mesma infraestrutura e plataforma
-escalonáveis do Microsoft 365 Copilot, adaptadas especificamente para
-atender ao foco em uma área especial de suas necessidades. Eles
-funcionam como especialistas no assunto em uma área específica ou
-necessidade de negócios, permitindo que você use a mesma interface de um
-chat padrão do Microsoft 365 Copilot, garantindo que eles se concentrem
-exclusivamente na tarefa específica em questão.
+### Anatomía de un agente declarativo
 
-Bem-vindo a bordo para construir seu próprio agente declarativo! Vamos
-mergulhar e fazer seu Copilot funcionar como mágica!
+A medida que desarrollemos más extensiones para Copilot, al final lo que
+creará será una colección de archivos empaquetados en un archivo
+comprimido, conocido como un paquete de aplicación, que posteriormente
+instalará y utilizará. Por lo tanto, es fundamental comprender la
+estructura de este paquete de aplicación. El paquete de la aplicación de
+un agente declarativo es similar a una aplicación de Teams (en caso de
+haber creado una previamente), pero con elementos adicionales. Consulte
+la tabla para conocer los principales componentes. Además, observará que
+el proceso de implementación de la aplicación es muy similar al de
+implementar una aplicación de Teams.
 
-Neste laboratório, você começará a criar um agente declarativo usando o
-Teams Toolkit com um modelo padrão usado na ferramenta. Isso é para
-ajudá-lo a começar com algo. Em seguida, você modificará seu agente para
-se concentrar em um jogo de localização geográfica.
-
-O objetivo da sua AI é proporcionar uma pausa divertida no trabalho
-enquanto ajuda você a aprender sobre diferentes cidades ao redor do
-mundo. Ela oferece pistas abstratas para você identificar uma cidade.
-Quanto mais pistas você precisar, menos pontos você ganha. No final do
-jogo, sua pontuação final será revelada.
-
-![jogo](./media/image4.png)
-
-Você também dará ao seu agente alguns arquivos para consultar um diário
-secreto 🕵🏽 e um mapa 🗺️ para oferecer mais desafios ao jogador.
-
-Então, vamos começar!
-
-### Anatomia de um agente declarativo
-
-Você verá à medida que desenvolvemos mais e mais extensões para o
-Copilot que, no final, o que você criará é uma coleção de alguns
-arquivos em um arquivo zip que chamaremos de pacote de aplicativo que
-você instalará e usará. Portanto, é importante que você tenha uma
-compreensão básica do que consiste o pacote do aplicativo. O pacote do
-aplicativo de um agente declarativo é como um aplicativo do Teams se
-você tiver criado um antes com elementos adicionais. Consulte a tabela
-para ver todos os elementos principais. Você também verá que o processo
-de implantação do aplicativo é muito semelhante à implantação de um
-aplicativo do Teams.
-
-|  Elemento  | Descrição   |  Nome do arquivo  |
+|  Elemento  | Descripción   |  Nombre del archivo |
 |:----|:-------|:-----|
-|  **Manifesto do aplicativo**  |  Descreve a configuração do aplicativo, os recursos, os recursos necessários e os atributos importantes.  |  manifest.json  |
-| **Ícones de aplicativos**   | Requer um ícone de cor (192x192) e contorno (32x32) para seu agente declarativo.   |  icon.png, color.png  |
-| **Manifesto do agente declarativo**   |  Descreve a configuração do agente, instruções, campos obrigatórios, recursos, iniciadores de conversa e ações.  |  declarativeAgent.json  |
+|  **Manifiesto de la aplicación**  |  Describe la configuración, las capacidades, los recursos necesarios y los atributos importantes de la aplicación.  |  manifest.json  |
+| **Íconos de aplicaciones**   | Se requiere un ícono de color (192x192) y un ícono de contorno (32x32) para su agente declarativo.   |  icon.png, color.png  |
+| **Manifiesto declarativo del agente**   |  Describe la configuración del agente, las instrucciones, los campos requeridos, las capacidades, los iniciadores de conversación y las acciones.  |  declarativeAgent.json  |
 
-**Observação:** você pode adicionar dados de referência do SharePoint,
-OneDrive, pesquisa na web etc. e adicionar recursos de extensão a um
-agente declarativo, como plug-ins e conectores. Você aprenderá a
-adicionar um plug-in nos próximos laboratórios neste caminho.
+**Nota:** Puede añadir datos de referencia de SharePoint, OneDrive,
+búsqueda web, etc. y añadir capacidades de extensión a un agente
+declarativo como plugins y conectores. Aprenderá cómo añadir un plugin
+en los próximos laboratorios de esta ruta.
 
-### Recursos de um agente declarativo
+### Capacidades de un agente declarativo
 
-Você pode aprimorar o foco do agente no contexto e nos dados não apenas
-adicionando instruções, mas também especificando a base de conhecimento
-que ele deve acessar. Eles são chamados de recursos e há três tipos de
-recursos suportados.
+Puede mejorar el enfoque del agente en el contexto y los datos no sólo
+añadiendo instrucciones, sino también especificando la base de
+conocimientos a la que debe acceder. Se denominan capacidades y existen
+tres tipos de capacidades admitidas.
 
-- **Microsoft Graph** **Connectors** – passa conexões de conectores do
-  Graph para o agente, permitindo que o agente acesse e utilize o
-  conhecimento do conector.
+- **Microsoft Graph Connectors:** Permite que el agente reciba las
+  conexiones de los conectores de Graph, lo que le permite acceder y
+  utilizar el conocimiento del conector.
 
-- **OneDrive and SharePoint** - fornece URLs de arquivos e sites para o
-  agente, para que ele obtenha acesso a esses conteúdos.
+- **OneDrive y SharePoint:** Proporciona las URL de los archivos y
+  sitios al agente, permitiéndole acceder a esos contenidos.
 
-- **Web** **search** - ativa ou desativa o conteúdo da web como parte da
-  base de conhecimento do agente.
+- **Búsqueda web:** Habilita o deshabilita el contenido web como parte
+  de la base de conocimientos del agente.
 
-    ![Capacidades dos agentes declarativos](./media/image5.png)
+> ![capabilities of declarative agents](./media/image5.png)
 
-### One Drive and SharePoint
+### One Drive y SharePoint
 
-As URLs devem ser o caminho completo para itens do SharePoint (site,
-biblioteca de documentos, pasta ou arquivo). Você pode usar a opção
-"Copy direct link" no SharePoint para obter o caminho completo ou
-arquivos e pastas. Para conseguir isso, clique com o botão direito do
-mouse no arquivo ou pasta e selecione “Details”. Navegue até caminho e
-clique no ícone de cópia. Não especificando as URLs, todo o corpo de
-conteúdo do OneDrive e do SharePoint disponível para o usuário conectado
-será usado pelo agente.
+Las URL deben ser la ruta completa a los elementos de SharePoint (sitio,
+biblioteca de documentos, carpeta o archivo). Puede usar la opción
+"Copiar enlace directo" en SharePoint para obtener la ruta completa de
+archivos y carpetas. Para lograr esto, haga clic derecho en el archivo o
+carpeta, seleccione "Detalles", luego navegue hasta "Ruta" y haga clic
+en el ícono de copiar.
+
+Si no se especifican las URL, el agente utilizará todo el corpus de
+contenido disponible de OneDrive y SharePoint para el usuario que haya
+iniciado sesión.
 
 ### Microsoft Graph Connector
 
-Não especificando as conexões, todo o corpo de conteúdo dos Graph
-Connectors disponível para o usuário conectado será usado pelo agente.
+Si no se especifican las conexiones, el agente utilizará todo el corpus
+de contenido de los conectores de Graph disponible para el usuario que
+haya iniciado sesión.
 
-### Web search
+Búsqueda web
 
-No momento, você não pode passar sites ou domínios específicos, e isso
-funciona apenas como uma alternância para ativar e desativar o uso da
-web.
+En este momento, no se pueden pasar sitios web o dominios específicos;
+esto actúa únicamente como un interruptor para habilitar o deshabilitar
+el uso de contenido web.
 
-## Exercício 3: Estruturar um agente declarativo a partir de um modelo
+## Ejercicio 3: Cree un agente declarativo a partir de una plantilla
 
-Você pode usar qualquer editor para criar um agente declarativo se
-souber a estrutura dos arquivos no pacote do aplicativo mencionado
-acima. Mas as coisas são mais fáceis se você usar uma ferramenta como o
-Teams Toolkit não apenas para criar esses arquivos para você, mas também
-para ajudá-lo a implantar e publicar seu aplicativo. Portanto, para
-manter as coisas o mais simples possível, você usará o Teams Toolkit.
+Se puede usar cualquier editor para crear un agente declarativo si se
+conoce la estructura de los archivos en el paquete de la aplicación
+mencionado anteriormente. Sin embargo, las cosas son más sencillas si se
+utiliza una herramienta como Teams Toolkit, que no solo crea estos
+archivos, sino que también ayuda a implementar y publicar la aplicación.
+Por lo tanto, para simplificar las cosas, utilizará Teams Toolkit.
 
-### Tarefa 1: Usar Teams Toolkit para criar um aplicativo de agente declarativo
+### Tarea 1: Utilice Teams Toolkit para crear una aplicación de agente declarativo
 
-1.  Vá para a extensão do **Teams Toolkit** no editor do **Visual Studio
-    Code** e selecione **Create a New App.**
+1.  Vaya a la extensión Teams Toolkit en el editor de código de Visual
+    Studio y seleccione **Create a New App.**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image6.png)
+![A screenshot of a computer Description automatically
+generated](./media/image6.png)
 
-2.  Um painel é aberto onde você precisa selecionar **Agent** na lista
-    de tipos de projeto.
+2.  Se abre un panel en el que debe seleccionar **Agent** de la lista de
+    tipos de proyecto.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image7.png)
+![A screenshot of a computer Description automatically
+generated](./media/image7.png)
 
-3.  Em seguida, você será solicitado a escolher o recurso do aplicativo
-    do Copilot Agent. Escolha **Declarative Agent** e pressione
-    **Enter**.
+3.  A continuación, se le pedirá que elija la característica de la
+    aplicación del Agente Copilot. Elija **declarative agent** y
+    presione la tecla Intro.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image8.png)
+![A screenshot of a computer Description automatically
+generated](./media/image8.png)
 
-4.  Em seguida, você será solicitado a escolher se deseja criar um
-    agente declarativo básico ou um com um plug-in de API. Escolha a
-    opção **No plugin**.
+4.  A continuación, se le pedirá que elija si desea crear un agente
+    declarativo básico o uno con un plugin de API. Elija la opción **No
+    Plugin.** 
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image9.png)
+![A screenshot of a computer Description automatically
+generated](./media/image9.png)
 
-    **Por que não criar um com plugin de API aqui?**
-    
-    Você criará plug-ins de API no próximo laboratório e também aprenderá
-    a integrar um plug-in de API a um agente declarativo. Aqui vamos
-    apenas criar um agente declarativo.
+**¿Por qué no crear uno con el plugin API aquí?**
 
-5.  Em seguida, selecione a opção **Default folder** para especificar
-    onde a pasta do projeto deve ser criada.
+> En el siguiente laboratorio, se construirán plugins de API y se
+> aprenderá cómo integrarlos con un agente declarativo en el laboratorio
+> posterior, siguiendo la misma ruta. En este caso, solo se creará un
+> agente declarativo.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image10.png)
+5.  A continuación, seleccione la opción **Default folder** para
+    especificar dónde debe crearse la carpeta del proyecto.
 
-6.  Em seguida, dê a ele um aplicativo chamado **Geo Locator Game** e
-    pressione **Enter**.
+> ![A screenshot of a computer Description automatically
+> generated](./media/image10.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image11.png)
+6.  A continuación, asígnele el nombre de aplicación **Geo Locator
+    Game** y presione la tecla Intro.
 
-    O projeto será criado em alguns segundos na pasta que você mencionou e será aberto em uma nova janela de projeto do Visual Studio Code. Esta é a sua pasta de trabalho.
+> ![A screenshot of a computer Description automatically
+> generated](./media/image11.png)
+>
+> El proyecto se generará en breve en la carpeta indicada y se abrirá
+> automáticamente en una nueva ventana de Visual Studio Code. Esta será
+> la carpeta de trabajo donde se gestionarán los archivos y
+> configuraciones del proyecto.
 
-7.  Clique em **Yes, I trust the authors.**
+7.  Haga clic en **Yes, I trust the authors.**
 
-    ![](./media/image12.png)
+> ![](./media/image12.png)
+>
+> ![A screenshot of a computer Description automatically
+> generated](./media/image13.png)
+>
+> ¡Excelente trabajo! Ha configurado con éxito el agente declarativo
+> base. Ahora, proceda a revisar los archivos que contiene para poder
+> personalizarlo y desarrollar la aplicación del juego de
+> geo-localización.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image13.png)
+### Tarea 2: Configure las cuentas en Teams Toolkit
 
-    Muito bem! Você configurou com sucesso o agente declarativo base! Agora, prossiga para examinar os arquivos contidos para poder personalizá-los para criar o aplicativo de jogo localizador geográfico.
+1.  Ahora seleccione el ícono de Teams Toolkit en la parte izquierda. En
+    Accounts, haga clic en **Sign in to Microsoft 365** e inicie sesión
+    con sus **User1 credentials** en la sección **Azure Portal** de la
+    pestaña **Resources.**
 
-### Tarefa 2: Configurar contas no Teams Toolkit
+![](./media/image14.png)
 
-1.  Agora selecione o ícone do **Teams Toolkit** à esquerda: Em "
-    **ACCOUNTS**", clique em " Sign in to Microsoft 365" e faça login
-    com suas **credenciais de Usuário1** no **Azure** **Portal** na guia
-    **Resources**.
+![A screenshot of a computer Description automatically
+generated](./media/image15.png)
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image14.png)
+2.  Se abrirá una ventana del navegador que ofrecerá iniciar sesión en
+    Microsoft 365. Cuando aparezca el mensaje " You are signed in now
+    and close this page", proceda a cerrarla.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image15.png)
+![A screenshot of a computer Description automatically
+generated](./media/image16.png)
 
-2.  Uma janela do navegador aparecerá e oferecerá o login no
-    Microsoft 365. Quando aparecer a mensagem " **You are signed in now
-    and close this page.**", feche esta janela.
+![A screenshot of a computer Description automatically
+generated](./media/image17.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image16.png)
+3.  Seleccione **Allow access** en el cuadro de diálogo Alerta de
+    seguridad.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image17.png)
+![A screenshot of a computer security alert Description automatically
+generated](./media/image18.png)
 
-3.  Selecione **Allow access** na caixa de diálogo **Security Alert**.
+4.  Verifique que la casilla "**Custom App Upload Enabled**" tiene una
+    marca de verificación de color verde.
 
-    ![Uma captura de tela de um alerta de segurança do computador Descrição
-gerada automaticamente](./media/image18.png)
+5.  Verifique que la casilla "**Copilot Access Enabled**" tiene una
+    marca de verificación de color verde.
 
-4.  Verifique se " **Custom App Upload Enabled**" tem uma marca de
-    seleção verde.
+![A screenshot of a computer Description automatically
+generated](./media/image19.png)
 
-5.  Verifique se "**Copilot Access Enabled**” tem uma marca de seleção
-    verde.
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image19.png)
-
-### Tarefa 3: Entendendo os arquivos no aplicativo
-
-Veja como o projeto base se parece:
-    
-|  **Pasta/Arquivo**  |  **Conteúdo**  |
-|:-------|:-----------|
-|   .vscode | Arquivos VSCode para debugging   |
-|  appPackage  |  Modelos para o manifesto do aplicativo Teams, o manifesto GPT e a especificação da API  |
-|  Env  | Arquivos de ambiente com um arquivo .env.dev padrão   |
-|  appPackage/color.png  | Imagem do logotipo do aplicativo   |
-|  appPackage/outline.png  |  Imagem do esboço do logotipo do aplicativo  |
-|  appPackage/declarativeAgent.json  | Define as configurações e configurações do agente declarativo.   |
-|  appPackage/instruction.txt  |  Define o comportamento do agente declarativo.  |
-|  appPackage/manifest.json  |  Manifesto do aplicativo do Teams que define metadados para seu agente declarativo.  |
-|  teamsapp.yml  |  Arquivo de projeto principal do Teams Toolkit. O arquivo de projeto define duas coisas principais: propriedades e definições de estágio de configuração.   |
-
-1.  O arquivo de interesse do nosso laboratório é principalmente o
-    arquivo **appPackage/instruction.txt,** que são as principais
-    diretivas necessárias para o agente. É um arquivo de texto simples e
-    você pode escrever instruções em linguagem natural nele.
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image20.png)
-
-2.  Outro arquivo importante é o **appPackage/declarativeAgent.json**,
-    onde há um esquema a ser seguido para estender o Microsoft 365
-    Copilot com o novo agente declarativo. Vejamos quais propriedades o
-    esquema desse arquivo possui.
-
-    - $schema é a referência do esquema
-    
-    - version é a versão do esquema
-    
-    - name key representa o nome do agente declarativo
-    
-    - description fornece uma descrição
-    
-    - instructions são o caminho para o arquivo **instructions.txt** que
-      contém diretivas que determinarão o comportamento operacional. Você
-      também pode colocar suas instruções como texto simples como um valor
-      aqui. Mas para este laboratório, usaremos o arquivo
-      **instructions.txt**.
-    
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image21.png)
-
-3.  Outro arquivo importante é o arquivo **appPackage/manifest.json**,
-    que contém metadados cruciais, incluindo o nome do pacote, o nome do
-    desenvolvedor e referências aos agentes Copilot utilizados pelo
-    aplicativo. A seção a seguir do arquivo manifest.json ilustra esses
-    detalhes:
-
-    ```nocopy
-    "copilotAgents": {
-        "declarativeAgents": [            
-            {
-                "id": "declarativeAgent",
-                "arquivo": "declarativeAgent.json"
-            }
-        ]
-    },
-
-    ```
-    
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image22.png)
-
-4.  Você também pode atualizar os arquivos de logotipo color.png e
-    outline.png para que correspondam à marca do seu aplicativo. No
-    laboratório de hoje, você alterará o ícone **color.png** para que o
-    agente se destaque.
-
-## Exercício 4: Atualizar instruções e ícones
-
-### Tarefa 1: Atualizar ícones e manifestos
-
-1.  Primeiro, vamos substituir o logotipo. Substituiremos a imagem
-    color.png no projeto por uma nova.
-
-    Copie a imagem **color.png** localizada em **C:\LabFiles** e substitua a
-imagem de mesmo nome na pasta **appPackage** em seu projeto raiz (o
-caminho deve ser **C:\Users\Student\TeamsApps\Geo Locator
-Game\appPackage**).
-
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image23.png)
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image24.png)
-
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image25.png)
-
-2.  Em seguida, vá para o arquivo **appPackage/manifest.json** em seu
-    projeto raiz e localize o nódulo **copilotAgents**. Atualize o valor
-    id da primeira entrada da matriz declarativeAgents de
-    declarativeAgent para dcGeolocator para tornar esse ID exclusivo.
-
-    ```nocopy
-    "copilotAgents": {
-        "declarativeAgents": [            
-            {
-                "id": "dcGeolocator",
-                "arquivo": "declarativeAgent.json"
-            }
-        ]
-    },
-    ```
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image26.png)
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image27.png)
-
-3.  Em seguida, vá para o arquivo **appPackage/instruction.txt** e copie
-    e cole a instrução abaixo para substituir o conteúdo existente do
-    arquivo.
-
-    ```
-    System Role: You are the game host for a geo-location guessing game. Your goal is to provide the player with clues about a specific city and guide them through the game until they guess the correct answer. You will progressively offer more detailed clues if the player guesses incorrectly. You will also reference PDF files in special rounds to create a clever and immersive game experience.
-    Game play Instructions:
-    Game Introduction Prompt
-    Use the following prompt to welcome the player and explain the rules:
-    Welcome to the Geo Location Game! I’ll give you clues about a city, and your task is to guess the name of the city. After each wrong guess, I’ll give you a more detailed clue. The fewer clues you use, the more points you score! Let’s get started. Here’s your first clue:
-    Clue Progression Prompts
-    Start with vague clues and become progressively specific if the player guesses incorrectly. Use the following structure:
-    Clue 1: Provide a general geographical clue about the city (e.g., continent, climate, latitude/longitude).
-    Clue 2: Offer a hint about the city’s landmarks or natural features (e.g., a famous monument, a river).
-    Clue 3: Give a historical or cultural clue about the city (e.g., famous events, cultural significance).
-    Clue 4: Offer a specific clue related to the city’s cuisine, local people, or industry.
-    Response Handling
-    After the player’s guess, respond accordingly:
-    If the player guesses correctly, say:
-    That’s correct! You’ve guessed the city in [number of clues] clues and earned [score] points. Would you like to play another round?
-    If the guess is wrong, say:
-    Nice try! [followed by more clues]
-    PDF-Based Scenario
-    For special rounds, use a PDF file to provide clues from a historical document, traveler's diary, or ancient map:
-    This round is different! I’ve got a secret document to help us. I’ll read clues from this [historical map/traveler’s diary] and guide you to guess the city. Here’s the first clue:
-    Reference the specific PDF to extract details:
-    Traveler's Diary PDF,Historical Map PDF.
-    Use emojis where necessary to have friendly tone. 
-    Scorekeeping System
-    Track how many clues the player uses and calculate points:
-    1 clue: 10 points
-    2 clues: 8 points
-    3 clues: 5 points
-    4 clues: 3 points
-    End of Game Prompt
-    After the player guesses the city or exhausts all clues, prompt:
-    Would you like to play another round, try a special challenge?
-    
-    ```
-
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
-
-4.  Siga a próxima etapa para garantir que nosso agente possa ajudar o
-    usuário a se envolver com ele, fornecendo iniciadores de conversa.
-
-    **Inclua seus próprios arquivos em arquivos appPackage**
-    
-    Observe esta linha em **appPackage/declarativeAgent.json**:
-    
-    "instruções": "$\[file('instruction.txt')\]",
-    
-    Isso traz suas instruções do arquivo **instruction.txt**. Se você quiser modularizar seus arquivos de empacotamento, poderá usar essa técnica em qualquer um dos arquivos JSON na pasta **appPackage.**
-
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
-
-### Tarefa 2: Adicionar iniciadores de conversa
-
-    Você pode aumentar o envolvimento do usuário com o agente declarativo
-adicionando iniciadores de conversa a ele.
-
-    Alguns dos benefícios de iniciar uma conversa são:
-    
-    - **Engajamento**: eles ajudam a iniciar a interação, fazendo com que os
-      usuários se sintam mais confortáveis e incentivando a participação.
-    
-    - **Configuração de contexto**: os iniciantes definem o tom e o tópico
-      da conversa, orientando os usuários sobre como proceder.
-    
-    - **Eficiência**: ao liderar com um foco claro, os iniciantes reduzem a
-      ambiguidade, permitindo que a conversa progrida sem problemas.
-    
-    - **Retenção de usuários**: iniciantes bem projetados mantêm os usuários
-      interessados, incentivando interações repetidas com a AI.
-
-1.  Abra o arquivo **declarativeAgent.json** e logo após o nódulo de
-    instruções, adicione uma vírgula e cole o código abaixo:
-
-    ```
-    "conversation_starters": [
-          { 
-                "title": "Começando",
-                "text":"Estou pronto para jogar o Jogo de Localização Geográfica! Dê-me uma cidade para adivinhar e comece com a primeira pista.          
-    
-             },
-            {
-                "title": "Pronto para um Desafio",
-                "text": "Vamos tentar algo diferente. Podemos jogar uma rodada usando o diário do viajante?"
-            },
-            { 
-                "title": "Sentindo-se mais aventureiro",
-                "text": "Estou com vontade de um desafio! Podemos jogar o jogo usando o mapa histórico? Quero ver se consigo descobrir a cidade a partir dessas pistas antigas."
-            }
-        ]
-    ```
-    
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image30.png)
-
-    Agora que todas as alterações foram feitas no agente, é hora de
-testá-lo.
-
-2.  Vá para **File** na barra superior e clique em **Salve All.**
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image31.png)
-
-### Tarefa 3: Testar o aplicativo
-
-1.  Para testar o aplicativo, acesse a extensão Teams Toolkit no Visual
-    Studio Code. Isso abrirá o painel esquerdo. Em "**LIFECYCLE",**
-    selecione "**Provision**". Você pode ver o valor do Teams Toolkit
-    aqui, pois torna a publicação muito simples.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image32.png)
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image33.png)
-
-2.  Quando solicitado, entre com suas credenciais.
-
-    ![A screen shot of a computer AI-generated content may be
-incorrect.](./media/image34.png)
-
-3.  Nesta etapa, o Teams Toolkit empacotará todos os arquivos dentro da
-    pasta **appPackage** como um arquivo zip e instalará o agente
-    declarativo em seu próprio catálogo de aplicativos.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image35.png)
-
-4.  Acesse o Teams no navegador <https://teams.microsoft.com/v2/>
-    conectado ao locatário do desenvolvedor. Se você tiver um Microsoft
-    365 Copilot, o novo aplicativo será fixado automaticamente acima de
-    seus chats. Basta abrir o **Teams**, selecionar **Chat** e você verá
-    o **Copilot**.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image36.png)
-
-5.  Depois que o aplicativo Copilot for carregado, encontre o **Geo
-    Locator Game** no painel direito, conforme mostrado:
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image37.png)
-
-    Se você não conseguir encontrá-lo, esta pode ser uma lista longa, mas você pode encontrar seu agente expandindo a lista selecionando "**see more**"
-
-6.  Uma vez iniciado, você estará nesta janela de chat focada com o
-    agente. E você verá os iniciadores de conversa conforme marcado
-    abaixo:
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image38.png)
-
-7.  Selecione um dos iniciadores de conversa e ele preencherá sua caixa
-    de mensagem de composição com o prompt inicial, apenas esperando que
-    você pressione **Enter**. Ele ainda é apenas seu assistente e
-    esperará que você faça uma ação.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image39.png)
-
-8.  Tente responder à pergunta e explorar o jogo que você desenvolveu.
-
-Resumo:
-
-Neste laboratório, aprendemos a criar um agente declarativo usando o
-Teams Toolkit e testamos a funcionalidade do agente.
+### Tarea 3: Conozca los archivos de la aplicación
+
+Este es el aspecto del proyecto base:
+
+[TABLE]
+
+1.  El archivo de interés para nuestro laboratorio es principalmente el
+    archivo **appPackage/instruction.txt** que es el núcleo de
+    directivas necesarias para su agente. Es un fichero de texto plano y
+    puede escribir instrucciones en lenguaje natural en él.
+
+![A screenshot of a computer Description automatically
+generated](./media/image20.png)
+
+2.  Otro archivo importante es **appPackage/declarativeAgent.json**
+    donde hay un esquema a seguir para extender Microsoft 365 Copilot
+    con el nuevo agente declarativo. Veamos qué propiedades tiene el
+    esquema de este fichero:
+
+- $schema, es la referencia al esquema.
+
+- Versión, indica la versión del esquema.
+
+- Name, representa el nombre del agente declarativo.
+
+- Description, proporciona una descripción.
+
+- Instructions, define la ruta al archivo **instructions.txt**, que
+  contiene directivas para determinar el comportamiento operativo.
+  También es posible ingresar las instrucciones como texto plano en este
+  valor. Sin embargo, en este laboratorio se utilizará el archivo
+  **instructions.txt**.
+
+> ![A screenshot of a computer Description automatically
+> generated](./media/image21.png)
+
+3.  Otro archivo relevante es **appPackage/manifest.json**, que contiene
+    metadatos esenciales, como el nombre del paquete, el desarrollador y
+    las referencias a los agentes Copilot utilizados por la aplicación.
+    La siguiente sección de manifest.json ilustra estos detalles:
+
+> "copilotAgents": {
+>
+> "declarativeAgents": \[
+>
+> {
+>
+> "id": "declarativeAgent",
+>
+> "file": "declarativeAgent.json"
+>
+> }
+>
+> \]
+>
+> },
+>
+> ![A screenshot of a computer Description automatically
+> generated](./media/image22.png)
+
+4.  También puede actualizar los archivos de logotipo color.png y
+    outline.png para que coincida con la marca de su aplicación. En el
+    laboratorio de hoy cambiará el ícono **color.png** para que el
+    agente destaque.
+
+## Ejercicio 4: Actualice las instrucciones y los íconos
+
+### Tarea 1: Actualice los íconos y los archivos de manifiesto
+
+1.  En primer lugar, se reemplazará el logotipo, sustituyendo la imagen
+    **color.png** del proyecto por una nueva.
+
+Copie la imagen **color.png** ubicada en **C:\LabFiles** y reemplácela
+por la imagen del mismo nombre en la carpeta **appPackage** dentro del
+directorio raíz del proyecto. (La ruta debe ser:
+
+**C:\Users\Student\TeamsApps\Geo Locator Game\appPackage**).
+
+![](./media/image23.png)
+
+![A screenshot of a computer Description automatically
+generated](./media/image24.png)
+
+![](./media/image25.png)
+
+2.  A continuación, vaya al archivo **appPackage/manifest.json** en el
+    directorio raíz de su proyecto y busque el nodo **copilotAgents**.
+    Actualice el valor de **id** en la primera entrada del array
+    **declarativeAgents**, cambiando **declarativeAgent** a
+    **dcGeolocator** para hacer que este ID sea único.
+
+> "copilotAgents": {
+>
+> "declarativeAgents": \[
+>
+> {
+>
+> "id": "**dcGeolocator**",
+>
+> "file": "declarativeAgent.json"
+>
+> }
+>
+> \]
+>
+> },
+>
+> ![](./media/image26.png)
+
+![](./media/image27.png)
+
+3.  A continuación, vaya al archivo **appPackage/instruction.txt** y
+    copie y pegue la siguiente instrucción para sobrescribir el
+    contenido existente del archivo:
+
+> System Role: You are the game host for a geo-location guessing game.
+> Your goal is to provide the player with clues about a specific city
+> and guide them through the game until they guess the correct answer.
+> You will progressively offer more detailed clues if the player guesses
+> incorrectly. You will also reference PDF files in special rounds to
+> create a clever and immersive game experience.
+>
+> Game play Instructions:
+>
+> Game Introduction Prompt
+>
+> Use the following prompt to welcome the player and explain the rules:
+>
+> Welcome to the Geo Location Game! I’ll give you clues about a city,
+> and your task is to guess the name of the city. After each wrong
+> guess, I’ll give you a more detailed clue. The fewer clues you use,
+> the more points you score! Let’s get started. Here’s your first clue:
+>
+> Clue Progression Prompts
+>
+> Start with vague clues and become progressively specific if the player
+> guesses incorrectly. Use the following structure:
+>
+> Clue 1: Provide a general geographical clue about the city (e.g.,
+> continent, climate, latitude/longitude).
+>
+> Clue 2: Offer a hint about the city’s landmarks or natural features
+> (e.g., a famous monument, a river).
+>
+> Clue 3: Give a historical or cultural clue about the city (e.g.,
+> famous events, cultural significance).
+>
+> Clue 4: Offer a specific clue related to the city’s cuisine, local
+> people, or industry.
+>
+> Response Handling
+>
+> After the player’s guess, respond accordingly:
+>
+> If the player guesses correctly, say:
+>
+> That’s correct! You’ve guessed the city in \[number of clues\] clues
+> and earned \[score\] points. Would you like to play another round?
+>
+> If the guess is wrong, say:
+>
+> Nice try! \[followed by more clues\]
+>
+> PDF-Based Scenario
+>
+> For special rounds, use a PDF file to provide clues from a historical
+> document, traveler's diary, or ancient map:
+>
+> This round is different! I’ve got a secret document to help us. I’ll
+> read clues from this \[historical map/traveler’s diary\] and guide you
+> to guess the city. Here’s the first clue:
+>
+> Reference the specific PDF to extract details:
+>
+> Traveler's Diary PDF,Historical Map PDF.
+>
+> Use emojis where necessary to have friendly tone.
+>
+> Scorekeeping System
+>
+> Track how many clues the player uses and calculate points:
+>
+> 1 clue: 10 points
+>
+> 2 clues: 8 points
+>
+> 3 clues: 5 points
+>
+> 4 clues: 3 points
+>
+> End of Game Prompt
+>
+> After the player guesses the city or exhausts all clues, prompt:
+>
+> Would you like to play another round, try a special challenge?
+>
+> ![](./media/image28.png)
+
+4.  Siga el siguiente paso para asegurarse de que nuestro agente puede
+    ayudar al usuario a comprometerse con él dándole iniciadores de
+    conversación.
+
+**Incluya sus propios archivos en la carpeta appPackage del proyecto**
+
+Fíjese en esta línea de **appPackage/declarativeAgent.json**:
+
+"instructions": "$\[file('instruction.txt')\]",
+
+> Esto trae sus instrucciones desde el archivo **instruction.txt**. Si
+> desea modularizar sus archivos de empaquetado, puede utilizar esta
+> técnica en cualquiera de los archivos JSON de la carpeta
+> **appPackage**.
+>
+>   ![](./media/image29.png)
+
+### Tarea 2: Añada temas de conversación
+
+Puede mejorar el compromiso del usuario con el agente declarativo
+añadiéndole iniciadores de conversación.
+
+Algunas de las ventajas de tener iniciadores de conversación son:
+
+- **Compromiso:** Ayudan a iniciar la interacción, haciendo que los
+  usuarios se sientan más cómodos y fomentando la participación.
+
+- **Establecimiento de contexto**: Los iniciadores fijan el tono y el
+  tema de la conversación, guiando a los usuarios sobre cómo proceder.
+
+- **Eficiencia**: Al iniciar con un enfoque claro, los iniciadores
+  reducen la ambigüedad, permitiendo que la conversación avance sin
+  problemas.
+
+- **Retención de usuarios:** Los iniciadores bien diseñados mantienen el
+  interés de los usuarios, fomentando interacciones repetidas con la IA.
+
+1.  Abra el archivo declarativeAgent.json y justo después del nodo de
+    instrucciones añada una coma , y pegue el siguiente Código:
+
+> "conversation_starters": \[
+>
+> {
+>
+> "title": "Getting Started",
+>
+> "text":"I am ready to play the Geo Location Game! Give me a city to
+> guess, and start with the first clue."
+>
+> },
+>
+> {
+>
+> "title": "Ready for a Challenge",
+>
+> "text": "Let us try something different. Can we play a round using the
+> travelers diary?"
+>
+> },
+>
+> {
+>
+> "title": "Feeling More Adventurous",
+>
+> "text": "I am in the mood for a challenge! Can we play the game using
+> the historical map? I want to see if I can figure out the city from
+> those ancient clues."
+>
+> }
+>
+> \]
+>
+> ![](./media/image30.png)
+
+Ahora que ya se han realizado todos los cambios en el agente, es hora de
+probarlo.
+
+2.  Vaya a **Files** en la barra superior y haga clic en el botón **Save
+    All.**
+
+![](./media/image31.png)
+
+### Tarea 3: Pruebe la aplicación
+
+1.  Para probar la aplicación, vaya a la extensión **Teams Toolkit** en
+    **Visual Studio Code**. Se abrirá el panel izquierdo. En
+    **LIFECYCLE**, seleccione **Provision**. Aquí podrá ver el valor de
+    **Teams Toolkit**, ya que facilita el proceso de publicación de
+    manera muy sencilla.
+
+![](./media/image32.png)
+
+![](./media/image33.png)
+
+2.  Cuando se le solicite, inicie sesión con sus credenciales.
+
+![](./media/image34.png)
+
+3.  En este paso, el kit de herramientas Teams empaquetará todos los
+    archivos dentro de la carpeta appPackage como un archivo zip e
+    instalará el agente declarativo en su propio catálogo de
+    aplicaciones.
+
+![](./media/image35.png)
+
+4.  Vaya a **Teams** en el navegador en
+    <https://teams.microsoft.com/v2/> e inicie sesión con su cuenta de
+    desarrollador. Si tiene **Microsoft 365 Copilot**, la nueva
+    aplicación se anclará automáticamente encima de sus chats. Solo
+    deberá abrir Teams, seleccionar "Chats" y verá **Copilot**.
+
+![](./media/image36.png)
+
+5.  Una vez cargada la aplicación Copilot, busque el **Geo Locator
+    Game** en el panel de la derecha, tal y como se muestra.
+
+![](./media/image37.png)
+
+> Si no lo encuentra, es posible que la lista sea larga. Puede encontrar
+> su agente ampliando la lista y seleccionando **See more.**
+
+6.  Una vez iniciado, estará en esta ventana de chat enfocada con el
+    agente. Verá los iniciadores de conversación como se muestra a
+    continuación:
+
+![](./media/image38.png)
+
+7.  Seleccione uno de los iniciadores de conversación y el cuadro de
+    redacción del mensaje se llenará con la pregunta del iniciador,
+    esperando que presione la tecla **Intro**. El asistente continuará
+    esperando a que usted actúe.
+
+![](./media/image39.png)
+
+8.  Intente responder a la pregunta y explore el juego que ha creado.
+
+Resumen:
+
+En este laboratorio, hemos aprendido a crear un agente declarativo
+utilizando **Teams Toolkit** y a probar la funcionalidad del agente.
