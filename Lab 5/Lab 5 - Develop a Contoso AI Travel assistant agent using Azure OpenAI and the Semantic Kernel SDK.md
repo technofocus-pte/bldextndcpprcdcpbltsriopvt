@@ -1,225 +1,238 @@
-# Laboratório 5 – Desenvolver um assistente de agente de viagem de AI da Contoso usando Azure OpenAI e o Semantic Kernel SDK
+# Laboratorio 5 - Desarrollar un agente asistente de viajes de Contoso utilizando Azure OpenAI y el SDK de Semantic Kernel
 
-**Tempo estimado: 40 minutos**
+**Tiempo estimado: 40 minutos**
 
 ## Objetivo
 
-Neste laboratório, os participantes criarão um agente de viagens com
-tecnologia de AI para a Contoso usando o Azure OpenAI e o Semantic
-Kernel SDK. O objetivo é demonstrar como aproveitar as tecnologias de AI
-para criar um agente de conversação capaz de entender as consultas dos
-usuários, fornecer recomendações de viagens e executar tarefas como
-reservar voos, hotéis e gerenciar itinerários. Ao final do laboratório,
-os participantes terão experiência prática na integração de modelos de
-AI com aplicativos do mundo real, utilizando o Semantic Kernel SDK para
-aprimorar os recursos do agente de viagens e testando o desempenho do
-agente em um ambiente simulado.
+En este laboratorio, los participantes desarrollarán un agente de viajes
+impulsado por IA para Contoso utilizando Azure OpenAI y el SDK de
+Semantic Kernel. El objetivo es demostrar cómo aprovechar las
+tecnologías de IA para crear un agente conversacional capaz de entender
+consultas de los usuarios, proporcionar recomendaciones de viaje y
+realizar tareas como la reserva de vuelos, hoteles y la gestión de
+itinerarios. Al final del laboratorio, los participantes tendrán
+experiencia práctica en la integración de modelos de IA con aplicaciones
+del mundo real, utilizando el SDK de Semantic Kernel para mejorar las
+capacidades del agente de viajes y evaluando su rendimiento en un
+entorno simulado.
 
-## Área de foco da solução
+## Área de enfoque de la solución
 
-O laboratório se concentra na criação de um agente de viagens com
-tecnologia de AI usando o Azure OpenAI e o Semantic Kernel SDK. Ele
-permite o processamento de linguagem natural (NLP) para lidar com
-consultas de usuários relacionadas ao planejamento de viagens, como
-reservar voos, acomodações e fornecer recomendações de viagens.
+El laboratorio se centra en la creación de un agente de viajes impulsado
+por IA utilizando Azure OpenAI y el SDK de Semantic Kernel. Permite el
+procesamiento de lenguaje natural (NLP) para manejar consultas de
+usuarios relacionadas con la planificación de viajes, como la reserva de
+vuelos, alojamientos y la provisión de recomendaciones de viaje.  
+El laboratorio pone énfasis en la creación de una interfaz
+conversacional de IA que interactúa con los usuarios, respondiendo
+preguntas y asistiendo con tareas relacionadas con viajes. Utilizando el
+SDK de Semantic Kernel, organiza tareas como la gestión de itinerarios e
+integra APIs para datos de viaje en tiempo real.  
+La solución tiene como objetivo mejorar la experiencia del usuario
+proporcionando asistencia personalizada y reactiva en los viajes.
+Automatiza tareas comunes de viajes para optimizar flujos de trabajo y
+agilizar los procesos de planificación de viajes.
 
-O laboratório enfatiza a criação de uma interface de AI conversacional
-que interage com os usuários, responde a perguntas e auxilia em tarefas
-relacionadas a viagens. Usando o Semantic Kernel SDK, ele orquestra
-tarefas como gerenciamento de itinerários e integra APIs para dados de
-viagem em tempo real.
+## Ejercicio 1: Conozca la máquina virtual y las credenciales
 
-A solução visa aprimorar a experiência do usuário, fornecendo
-assistência de viagem personalizada e responsiva. Automatiza tarefas
-comuns de viagem para otimizar fluxos de trabalho e agilizar os
-processos de planejamento de viagens.
+En este ejercicio, identificaremos y comprenderemos las credenciales que
+utilizaremos a lo largo del laboratorio.
 
-## Exercício 1: Entender a VM e as credenciais
+1.  Pestaña de **Instrucciones** sujeta la guía de laboratorio con las
+    instrucciones a seguir a lo largo del laboratorio.
 
-Neste exercício, identificaremos e entenderemos as credenciais que
-usaremos em todo o laboratório.
+2.  La pestaña **Recursos** contiene las credenciales necesarias para
+    realizar el laboratorio.
 
-1.  A guia **Instructions** contém o guia do laboratório com as
-    instruções a serem seguidas em todo o laboratório.
-
-2.  A guia **Resources** tem as credenciais necessárias para executar o
-    laboratório.
-
-    - **URL** – URL para o portal do Azure
+    - **URL** – URL del portal Azure.
     
-    - **Subscription** – este é o **ID** **da** **assinatura** atribuída a
-      você
+    - **Subscription** – Este es el **ID** de la **suscripción** que se le
+      ha asignado.
     
-    - **Username** – o **ID de usuário** com a qual você precisa fazer
-      **login** nos serviços do **Azure**.
+    - **Username** – El **identificador de usuario** con el que debe
+      **iniciar sesión** en los **servicios Azure**.
     
-    - **Password** – **senha** para o **login no Azure**.
+    - **Password** – **Contraseña** de acceso a **Azure**.
+
+    Llamemos a este nombre de usuario y contraseña como **Azure login credentials**.
+
+    Utilizaremos estas credenciales cada vez que mencionemos **Azure login credentials**.
+
+    - **Resource Group** – El **grupo de recursos** que se le ha asignado.
+
+    >[!Alert] **Importante:** Asegúrese de crear todos sus recursos en este grupo de recursos.
     
-    Vamos chamar esse nome de usuário e senha como **credenciais de login no Azure**. Usaremos essas credenciais sempre que mencionarmos **as credenciais de login no Azure**.
+    ![A screenshot of a computer Description automatically generated](./media/image1.png)
+
+3.  La pestaña **Help** contiene la información de Soporte. El valor
+    **ID** aquí es el **ID de la instancia de laboratorio** que se
+    utilizará durante la ejecución del laboratorio.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image2.png)
+
+## Ejercicio 2: Creación de recursos Azure OpenAI e implementación de modelos
+
+**Requisitos previos**: Se requiere una cuenta de GitHub para completar
+este laboratorio. Si no tiene una cuenta, cree una desde aquí
++++https://github.com/+++, seleccionando **Sign up**.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image3.png)
+
+1.  Inicie sesión +++**https://portal.azure.com**+++ utilizando las
+    credenciales de inicio de sesión de Azure. Busque +++**Azure
+    OpenAI**+++ en la barra de búsqueda y selecciónelo.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image4.png)
+
+2.  Seleccione **+ Create**.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image5.png)
+
+3.  Complete los siguientes datos en la pestaña **Basics** y seleccione
+    **Next**.
+
+    - Subscription – Seleccione la **suscripción** asignada
     
-    - **Resource Group** – o **grupo de recursos** atribuído a você.
-
-    >[!Alert] **Importante**: certifique-se de criar todos os seus recursos neste grupo de recursos
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image1.png)
-
-3.  A guia **Help** contém as informações de suporte. O valor do **ID**
-    aqui é o **ID da** **instância do laboratório** que será usado
-    durante a execução do laboratório.
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image2.png)
-
-## Exercício 2: Criar recursos e modelo de implementação do Azure OpenAI 
-
-1.  Faça login em +++**https://portal.azure.com**+++ usando as
-    credenciais de login no Azure. Pesquise +++**Azure OpenAI**+++ na
-    barra de pesquisa e selecione-o.
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image4.png)
-
-2.  Selecione **+ Create**.
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image5.png)
-
-3.  Preencha os detalhes abaixo na guia **Basics** e selecione **Next**.
-
-    - Subscription – Selecione sua **assinatura atribuída**
+    - Resource group – Seleccione el **grupo de recursos** que se le ha
+      asignado.
     
-    - Resource group – Selecione o **grupo de recursos** atribuído a você
+    - Region – Seleccione su **región** más cercana (aquí se utiliza East US
+      2)
     
-    - Region – Selecione a **região** mais próxima (**East US 2** está sendo
-      usado aqui)
-    
-    - Name – +++AOAI\<ID da instância do laboratório\>+++ (substitua \<ID da
-      instância do laboratório\> pela ID da VM)
+    - Name – +++AOAI\<ID de instancia de laboratorio\>+++ (Sustituya \<**ID
+      de instancia de laboratorio**\> por el ID de su máquina virtual)
     
     - Pricing tier – **Standard**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image6.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image6.png)
 
-4.  Aceite os padrões nas páginas **Network** e **Tags** e clique em
-    **Create** na página **Review + submit**.
+4.  Acepte los valores predeterminados en las páginas **Network** y
+    **Tags.**  
+    Haga clic en **Create** en la página **Review + submit.**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image7.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image7.png)
 
-5.  Depois de criado, clique em **Go to resource**.
+5.  Una vez creado, haga clic en **Go to resource**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image8.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image8.png)
 
-6.  Selecione **Keys and Endpoint** em **Resource Management**. Copie os
-    valores de **Key 1** e **Endpoint** para um bloco de notas para uso
-    futuro neste laboratório.
+6.  Seleccione **Keys and Endpoint,** debajo de **Resource Management**.
+    Copie los valores de **Key 1** y **Endpoint** en un bloc de notas
+    para utilizarlos en el futuro en este laboratorio.
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image9.png)
+    ![](./media/image9.png)
 
-7.  Na página **Overview** do recurso do Azure OpenAI, selecione **Go to
+7.  En la página Azure OpenAI resource **Overview**, seleccione **Go to
     Azure AI Foundry portal**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image10.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image10.png)
 
-8.  No painel esquerdo, selecione **Deployments**.
+8.  En el panel izquierdo, seleccione **Deployments**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image11.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image11.png)
 
-9.  Selecione **+ Deploy model** -\> **Deploy base model**.
+9.  Seleccione **+ Deploy model** -\> **Deploy base model**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image12.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image12.png)
 
-10. Pesquise e selecione +++**gpt-35-turbo-16k**+++. Clique em
+10. Busque y seleccione +++**gpt-35-turbo-16k**+++. Haga clic en
     **Confirm**.
 
-    ![Uma captura de tela de um bate-papo Descrição gerada
-automaticamente](./media/image13.png)
+    ![A screenshot of a chat Description automatically
+generated](./media/image13.png)
 
-11. Aceite os padrões e selecione **Deploy**.
+11. Acepte los valores por defecto y seleccione **Deploy**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image14.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image14.png)
 
-## Exercício 3: Configurando o projeto do agente de viagens de AI com os serviços Azure OpenAI 
+## Ejercicio 3: Configuración del proyecto AI Travel Agent con Azure OpenAI Services
 
-Neste exercício, você definirá sua pasta de projeto no Visual Studio
-Code e a configurará para integração com os serviços Azure OpenAI.
-Seguindo as etapas, você aprenderá a configurar um ambiente de
-desenvolvimento local, modificar arquivos de projeto e preparar o
-aplicativo para execução usando os detalhes de implementação do Azure
-OpenAI.
+En este ejercicio, configurará su carpeta de proyecto en Visual Studio
+Code y la integrará con Azure OpenAI Services. Al seguir los pasos,
+aprenderá cómo configurar un entorno de desarrollo local, modificar los
+archivos del proyecto y preparar la aplicación para su ejecución
+utilizando los detalles de su implementación de Azure OpenAI.
 
-1.  Abra o **Command Prompt.**
+1.  Abra el **Command Prompt.**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image15.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image15.png)
 
-2.  Execute os comandos abaixo um por um.
+2.  Ejecute los siguientes comandos uno a uno:
 
-    +++dotnet nuget list source+++
+    ```
+    dotnet nuget list source
+    ```
+    
+    ```
+    dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org
+    ```
 
-    +++dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org+++
+3.  Abra Visual Studio Code. Seleccione **File** -\> **Open folder**.
 
-3.  Abra o **Visual Studio Code**. Selecione **File** -\> **Open
-    Folder**.
+    ![A screenshot of a computer Description automatically
+generated](./media/image16.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image16.png)
+4.  Navegue hasta **C:\LabFiles** y seleccione la carpeta
+    **AITravelAgent** y haga clic en **Select Folder**. La carpeta se
+    abrirá en VS Code.
 
-4.  Navegue até **C:\LabFiles** e selecione a pasta **AITravelAgent** e
-    clique em **Select Folder**. A pasta será aberta no VS Code.
+    ![A screenshot of a computer Description automatically
+generated](./media/image17.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image17.png)
+5.  En el panel explorador, navegue hasta la carpeta
+    **AITravelAgent/Starter**. Haga clic con el botón derecho en la
+    carpeta y seleccione **Open in Integrated Terminal.**
 
-5.  No painel **EXPLORER**, navegue até a pasta
-    **AITravelAgent/Starter**. Clique com o botão direito do mouse na
-    pasta e selecione **Open in Integrated Terminal**.
+    ![A screenshot of a computer Description automatically generated](./media/image18.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image18.png)
+7.  En el panel explorador, expanda la carpeta Starter, y debería ver la
+    carpeta Plugins, la carpeta Prompts y el archivo Program.cs.
 
-6.  No painel **EXPLORER**, expanda a pasta **Starter** e você verá a
-    pasta **Plugins**, a pasta **Prompts** e o arquivo **Program.cs**.
+    ![A screenshot of a computer Description automatically
+generated](./media/image19.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image19.png)
+7.  Abra el archivo Starter/Program.cs y actualice las siguientes
+    variables con el nombre de implementación, la clave de API y el
+    endpoint de sus servicios Azure OpenAI. Después de realizar los
+    cambios, presione Ctrl + S para guardar el archivo:
 
-7.  Abra o arquivo **Starter/Program.cs** e atualize as variáveis a
-    seguir com o nome de implementação do Azure OpenAI Services, a chave
-    de API e o ponto de endpoint. Depois de fazer as alterações,
-    pressione **Ctrl + S** para salvar o arquivo:
+    -    string yourDeploymentName = +++**gpt-35-turbo-16k**+++
 
-    string yourDeploymentName = +++**gpt-35-turbo-16k+++**
+    -    string yourEndpoint = El valor del Endpoint del recurso Azure OpenAI que guardamos anteriormente.
 
-    string yourEndpoint = O valor do endpoint do recurso Azure OpenAI que salvamos anteriormente
+    -    string yourKey = La clave1 del recurso AOAI que guardamos anteriormente.
 
-    string yourKey = A Key 1 do recurso AOAI que salvamos anteriormente
+    ![](./media/image20.png)
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image20.png)
+## Ejercicio 4: Creación y prueba de un plugin de conversión de divisas con Semantic Kernel
 
-## Exercício 4: Criando e testando um plug-in conversor de moeda com Semantic Kernel
+En este ejercicio, creará un complemento de conversión de divisas
+utilizando Semantic Kernel. Escribirá y probará una función que
+convierte una cantidad de una moneda a otra utilizando tasas de cambio
+predefinidas. Este ejercicio le ayudará a comprender cómo construir e
+invocar complementos personalizados, utilizar decoradores para la
+funcionalidad y descripciones, e integrar complementos en una aplicación
+más grande.
 
-Neste exercício, você criará um plug-in conversor de moeda usando o
-Semantic Kernel. Você escreverá e testará uma função que converte um
-valor de uma moeda para outra usando taxas de câmbio predefinidas. Este
-exercício ajudará você a entender como criar e chamar plug-ins
-personalizados, utilizar decoradores para funcionalidade e descrições e
-integrar plug-ins em um aplicativo maior.
+1.  Cree un nuevo archivo llamado +++CurrencyConverter.cs+++ en la
+    carpeta **Stater/Plugins/ConvertCurrency**.
 
-1.  Crie um novo arquivo chamado +++**CurrencyConverter.cs**+++ na pasta
-    **Stater/Plugins/ConvertCurrency**
+    ![A screenshot of a computer Description automatically generated](./media/image21.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image21.png)
-
-2.  No arquivo **CurrencyConverter.cs**, adicione o seguinte código para
-    criar uma função de plug-in
+2.  En el archivo **CurrencyConverter.cs**, añada el siguiente código para
+    crear una función plugin.
 
     ```
     using Microsoft.SemanticKernel;
@@ -237,13 +250,12 @@ integrar plug-ins em um aplicativo maior.
     }
     ```
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image22.png)
+    ![](./media/image22.png)
 
-    Neste código, você usa o decorador KernelFunction para declarar sua função nativa. Você também usa o decorador Description para adicionar uma descrição do que a função faz. Você pode usar Currency.Currencies para obter um dicionário de moedas e suas taxas de câmbio. Em seguida, adicione alguma lógica para converter um determinado valor de uma moeda para outra.
+    En este código, se utiliza el decorador KernelFunction para declarar la función nativa. También se emplea el decorador Description para agregar una descripción de lo que hace la función. Se puede usar Currency.Currencies para obtener un diccionario de monedas y sus tasas de cambio. Luego, se agrega lógica para convertir una cantidad dada de una moneda a otra.
 
-3.  Modifique sua função **ConvertAmount**. Substitua o código existente
-    pelo código abaixo:
+3.  Modifique su función ConvertAmount. Sustituya el código existente
+    por el siguiente:
 
     ```
     using Microsoft.SemanticKernel;
@@ -262,7 +274,7 @@ incorrect.](./media/image22.png)
             var currencyDictionary = Currency.Currencies;
             Currency targetCurrency = currencyDictionary[targetCurrencyCode];
             Currency baseCurrency = currencyDictionary[baseCurrencyCode];
-    
+            
             if (targetCurrency == null)
             {
                 return targetCurrencyCode + " was not found";
@@ -280,25 +292,27 @@ incorrect.](./media/image22.png)
         }
     }
     ```
-    
-    Neste código, você usa o dicionário Currency.Currencies para obter o objeto Currency para as moedas base e de destino. Em seguida, use o objeto Currency para converter o valor da moeda base para a moeda de destino. Por fim, você retorna uma string com o valor convertido. Em seguida, vamos testar seu plug-in.
 
-    ![A screenshot of a computer program AI-generated content may be incorrect.](./media/image23.png)
+    En este código, se utiliza el diccionario Currency.Currencies para obtener el objeto Currency de las monedas base y destino. Luego, se usa el objeto Currency para convertir la cantidad de la moneda base a la moneda destino. Finalmente, se devuelve una cadena con la cantidad convertida. A continuación, probemos su complemento.
 
-    **Observação:** ao usar o Semantic Kernel SDK em seus próprios projetos, você não precisa codificar dados em arquivos se tiver acesso a APIs RESTful. Em vez disso, você pode usar o plug-in Plugins.Core.HttpClient para recuperar dados de APIs.
 
-4.  No arquivo **Starter/Program.cs**, importe e chame sua nova função
-    de plug-in com o código a seguir. (Exclua o código below var kernel
-    = builder.Build(); e substitua-o pelo código abaixo.)
+    ![](./media/image23.png)
+
+    >[!Note] **Nota:** Al usar el SDK de Semantic Kernel en sus propios proyectos, no es necesario codificar datos directamente en los archivos si tiene acceso a APIs RESTful. En su lugar, puede utilizar el complemento Plugins.Core.HttpClient para recuperar datos de las APIs.
+
+4.  En el archivo **Starter/Program.cs**, importe e invoque su nueva
+    función de complemento con el siguiente código. (Elimine el código
+    debajo de **var kernel = builder.Build();** y reemplácelo con el
+    código proporcionado a continuación).
 
     ```
-    kernel. ImportPluginFromType<CurrencyConverter>();
-    kernel. ImportPluginFromType<ConversationSummaryPlugin>();
-    var prompts = kernel. ImportPluginFromPromptDirectory("Prompts");
+    kernel.ImportPluginFromType<CurrencyConverter>();
+    kernel.ImportPluginFromType<ConversationSummaryPlugin>();
+    var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
     
-    var resultado = await kernel. InvokeAsync("CurrencyConverter", 
+    var result = await kernel.InvokeAsync("CurrencyConverter", 
         "ConvertAmount", 
-        novo() {
+        new() {
             {"targetCurrencyCode", "USD"}, 
             {"amount", "52000"}, 
             {"baseCurrencyCode", "VND"}
@@ -307,51 +321,51 @@ incorrect.](./media/image22.png)
     
     Console.WriteLine(result);
     ```
+
+    En este código, se utiliza el método ImportPluginFromType para importar su plugin. Luego, se usa el método InvokeAsync para invocar la función de su plugin. El método InvokeAsync toma el nombre del plugin, el nombre de la función y un diccionario de parámetros. Finalmente, se imprime el resultado en la consola. A continuación, ejecute el código para asegurarse de que funcione.
     
-    Neste código, você usa o método ImportPluginFromType para importar seu plug-in. Em seguida, você usa o método InvokeAsync para invocar sua função de plug-in. O método InvokeAsync usa o nome do plug-in, o nome da função e um dicionário de parâmetros. Por fim, imprima o resultado no console. Em seguida, execute o código para verificar se ele está funcionando.
-    
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image24.png)
+    ![](./media/image24.png)
 
-5.  Vá em **File** na barra superior e selecione **Save All.**
+5.  Vaya a Files desde la barra superior y seleccione **Save all.**
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image25.png)
+    ![](./media/image25.png)
 
-6.  No terminal, insira **dotnet run**. Você deve ver a seguinte saída:
+6.  En la terminal, ingrese **dotnet run**. Debería ver la siguiente
+    respuesta:
 
-    Output: $52000 VND is approximately $2.13 in US Dollars (USD)
+    Respuesta: $52000 VND is approximately $2.13 in US Dollars (USD)
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image26.png)
+    ![](./media/image26.png)
 
-Agora que seu plug-in está funcionando corretamente, vamos criar um prompt de linguagem natural que possa detectar quais moedas e valores o usuário deseja converter.
+    Ahora que su complemento está funcionando correctamente, vamos a crear un prompt en lenguaje natural que pueda detectar qué monedas y cantidad desea convertir el usuario.
 
-## Exercício 5: Configurando um prompt de moeda de destino para processamento semântico
+## Ejercicio 5: Configuración de un prompt de Target Currency para el procesamiento semántico
 
-Neste exercício, você configurará um sistema de prompt para identificar
-moedas base, moedas de destino e valores da entrada do usuário. Ao criar
-e configurar arquivos de configuração e prompt, você definirá como a AI
-interpreta e processa solicitações de linguagem natural para conversões
-de moeda.
+En este ejercicio, configurará un sistema de prompts para identificar
+**Target Currency**, monedas base y cantidades a partir de la entrada
+del usuario. Al crear y configurar los archivos de configuración y de
+prompts, definirá cómo la IA interpreta y procesa solicitudes en
+lenguaje natural para conversiones de divisas.
 
-1.  No **Visual Studio Code**, localize a pasta **Starter/Prompt**.
-    Navegue até esta pasta para se preparar para as próximas etapas.
+1.  Desde Visual Studio Code, localice la carpeta Starter/Prompt.
+    Navegue dentro de esta carpeta para prepararse para los siguientes
+    pasos.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image27.png)
+    ![](./media/image27.png)
 
-2.  Dentro da pasta **Starter/Prompt**, crie uma nova pasta chamada
-    +++**GetTargetCurrencies**+++. Esta pasta conterá todos os arquivos
-    relacionados a este exercício.
+2.  Dentro de la carpeta Starter/Prompt, cree una nueva carpeta llamada
+    +++**GetTargetCurrencies**+++. Esta carpeta contendrá todos los
+    archivos relacionados con este ejercicio.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
+    ![](./media/image28.png)
 
-3.  Na pasta **GetTargetCurrencies**, crie um novo arquivo chamado
-    +++**config.json**+++.
+3.  Dentro de la carpeta **GetTargetCurrencies**, cree un nuevo archivo
+    llamado +++**config.json**+++.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
+    ![](./media/image29.png)
 
-4.  Abra o arquivo **config.json** recém-criado no **Visual Studio
-    Code**. Copie e cole o código a seguir no arquivo.
+4.  Abra el archivo **config.json** recién creado en Visual Studio Code.
+    Copie y pegue el siguiente código en el archivo.
 
     ```
     {
@@ -374,17 +388,17 @@ de moeda.
     }
     ```
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image30.png)
+    ![](./media/image30.png)
 
-    Salve o arquivo pressionando Ctrl + S. Essa configuração define como o sistema de AI deve interpretar e processar a entrada do usuário.
+    Guarde el archivo presionando Ctrl + S. Esta configuración define cómo el sistema de IA debe interpretar y procesar la entrada del usuario.
 
-5.  Ainda dentro da pasta **GetTargetCurrencies**, crie outro novo
-    arquivo chamado +++**skprompt.txt**+++.
+5.  Aún dentro de la carpeta **GetTargetCurrencies**, cree otro nuevo
+    archivo llamado +++**skprompt.txt**+++.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image31.png)
+    ![](./media/image31.png)
 
-6.  Abra o arquivo **skprompt.txt** em seu editor de texto e cole o
-    seguinte conteúdo:
+6.  Abra el archivo **skprompt.txt** en su editor de texto y pegue el
+    siguiente contenido:
 
     ```
     <message role="system">Identify the target currency, base currency, and 
@@ -405,30 +419,31 @@ de moeda.
     <message role="assistant">target|base|amount</message>
     ```
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image32.png)
+    ![](./media/image32.png)
 
-    Salve o arquivo pressionando Ctrl + S. Esse script define a lógica de prompt para processar solicitações de conversão de moeda.
+    Guarde el archivo presionando Ctrl + S. Este script define la lógica para procesar las solicitudes de conversión de divisas.
+    
+## Ejercicio 6: Configuración de un sistema de prompts para recomendaciones de actividades de viaje.
 
-## Exercício 6: Configurando um sistema de prompt para recomendações de atividades de viagem
+En este ejercicio, configurará y personalizará un sistema de **prompts**
+para sugerir actividades y puntos de interés según el destino de viaje
+del usuario. Al editar los archivos de configuración y los **prompts**,
+definirá el comportamiento del sistema, el tono y los requisitos de
+entrada para generar recomendaciones de viaje personalizadas y
+creativas.
 
-Neste exercício, você configurará e personalizará um sistema de prompt
-para sugerir atividades e pontos de interesse com base no destino de
-viagem de um usuário. Ao editar os arquivos de configuração e prompt,
-você definirá o comportamento, o tom e os requisitos de entrada do
-sistema para gerar recomendações de viagem personalizadas e criativas.
-
-1.  No **Visual Studio Code**, navegue até a pasta
+1.  En Visual Studio Code, vaya a la carpeta
     **Starter/Prompts/SuggestActivities**.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image33.png)
+    ![](./media/image33.png)
 
-2.  Localize o arquivo **config.json** dentro da pasta
-    **SuggestActivities** e abra-o.
+2.  Localice el archivo **config.json** dentro de la carpeta
+    SuggestActivities y ábralo.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image34.png)
+    ![](./media/image34.png)
 
-3.  Substitua o código existente no arquivo **config.json** pelo
-    seguinte:
+3.  Sustituya el código existente en el archivo **config.json** por el
+    siguiente:
 
     ```
     {
@@ -456,17 +471,17 @@ sistema para gerar recomendações de viagem personalizadas e criativas.
       }
     ```
 
-    ![A screenshot of a computer code AI-generated content may be incorrect.](./media/image35.png)
+    ![](./media/image35.png)
 
-    Salve o arquivo depois de fazer as alterações pressionando Ctrl + S. Esse arquivo configura o sistema para processar entradas do usuário e gerar sugestões de atividades.
+    Guarde el archivo después de hacer los cambios presionando Ctrl + S. Este archivo configura el sistema para procesar las entradas del usuario y generar sugerencias para las actividades.
 
-4.  Permaneça na pasta **SuggestActivities** e localize o arquivo
-    **skprompt.txt**. Abra este arquivo no editor.
+4.  Permanezca dentro de la carpeta SuggestActivities y localice el
+    archivo **skprompt.txt**. Abra este archivo en el editor.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image36.png)
+    ![](./media/image36.png)
 
-5.  Substitua o conteúdo existente do **skprompt.txt** pelo seguinte
-    texto:
+5.  Sustituya el contenido existente de **skprompt.txt** por el
+    siguiente texto:
 
     ```
     You are an experienced travel agent. 
@@ -476,101 +491,101 @@ sistema para gerar recomendações de viagem personalizadas e criativas.
     Please suggest a list of things to do, see, and points of interest.
     ```
 
-    ![A screenshot of a computer code AI-generated content may be incorrect.](./media/image37.png)
+    ![](./media/image37.png)
 
-    Salve o arquivo pressionando **Ctrl + S**. Esse script define o comportamento e o tom do sistema ao gerar recomendações de atividades.
+    Guarde el archivo presionando Ctrl + S. Este script establece el comportamiento y el tono del sistema a la hora de generar recomendaciones de actividad.
 
-## Exercício 7: Configurando o programa principal para fluxo de trabalho de AI
+## Ejercicio 7: Configuración del programa principal para el flujo de trabajo de IA
 
-Neste exercício, você configurará o arquivo Program.cs principal para
-integração com os serviços Azure OpenAI e o Microsoft Semantic Kernel.
-Ao personalizar o código, você habilitará funcionalidades como conversão
-de moeda, sugestões de atividades e recomendações de viagem. Essa
-configuração estabelece um fluxo de trabalho robusto com inteligência
-artificial para interação do usuário e reconhecimento de intenção,
-aproveitando plug-ins e lógica baseada em prompt.
+En este ejercicio, configurará el archivo principal **Program.cs** para
+integrarlo con los servicios de Azure OpenAI y el Microsoft Semantic
+Kernel. Al personalizar el código, habilitará funcionalidades como
+conversión de divisas, sugerencias de actividades y recomendaciones de
+viajes. Esta configuración establece un flujo de trabajo sólido
+impulsado por IA para la interacción con el usuario y el reconocimiento
+de intenciones, aprovechando complementos y lógica basada en prompts.
 
-1.  No projeto no **Visual Studio Code**, navegue até o arquivo
-    **Starter/Program.cs** e abra-o para edição.
+1.  Desde su proyecto en Visual Studio Code, navegue hasta el archivo
+    **Starter/Program.cs** y ábralo para editarlo.
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image38.png)
+    ![](./media/image38.png)
 
-2.  Substitua todo o conteúdo do arquivo **Program.cs** pelo código a
-    seguir e pressione **Cntrl + S** para salvar o código.
+2.  Sustituya todo el contenido del archivo **Program.cs** por el
+    siguiente código y, a continuación, presione **cntrl + S** para
+    guardar el código.
 
-    **Observação:** depois de substituir o código, adicione novamente o
-endpoint, a chave e o nome da implementação nas partes respectivas do
-código.
+    >[!Note] **Nota:** Después de reemplazar el código, por favor, agregue nuevamente
+el **endpoint**, la **clave** y el **nombre de la implementación** en la
+sección correspondiente del código.
 
     ```
-    usando o sistema.Texto;
-    usando a Microsoft.SemanticKernel;
-    usando a Microsoft.SemanticKernel.Conclusão do bate-papo;
-    usando a Microsoft.SemanticKernel.Conectores.OpenAI;
-    usando a Microsoft.SemanticKernel.Plugins.Núcleo;
-    #pragma aviso desabilitar SKEXP0050 
-    #pragma aviso desabilitar SKEXP0060
+    using System.Text;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.ChatCompletion;
+    using Microsoft.SemanticKernel.Connectors.OpenAI;
+    using Microsoft.SemanticKernel.Plugins.Core;
+    #pragma warning disable SKEXP0050 
+    #pragma warning disable SKEXP0060
     
     string yourDeploymentName = "gpt-35-turbo-16k";
     string yourEndpoint = "EndPoint";
-    string yourApiKey = "Chave de API";
+    string yourApiKey = "API Key";
     
     var builder = Kernel.CreateBuilder();
-    construtor.Serviços.AddAzureOpenAIChatCompletion(
+    builder.Services.AddAzureOpenAIChatCompletion(
         yourDeploymentName,
-        seuEndpoint,
-        suaApiKey,
-        "GPT-35-turbo-16k");
-    var kernel = construtor.Construir();
+        yourEndpoint,
+        yourApiKey,
+        "gpt-35-turbo-16k");
+    var kernel = builder.Build();
     
     kernel.ImportPluginFromType<CurrencyConverter>();
     kernel.ImportPluginFromType<ConversationSummaryPlugin>();
     var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
     
-    Nota: ChatHistory não está funcionando corretamente a partir do SemanticKernel v 1.4.0
+    // Note: ChatHistory isn't working correctly as of SemanticKernel v 1.4.0
     StringBuilder chatHistory = new();
     
-    Configurações OpenAIPromptExecutionSettings  = new()
+    OpenAIPromptExecutionSettings settings = new()
     {
         ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
     };
     
-    entrada de string; 
+    string input;
     
     do {
-        Console.WriteLine("O que você gostaria de fazer?");
+        Console.WriteLine("What would you like to do?");
         input = Console.ReadLine()!;
     
         var intent = await kernel.InvokeAsync<string>(
             prompts["GetIntent"], 
-            new() {{ "entrada", entrada }}
-    );
+            new() {{ "input",  input }}
+        );
     
-        interruptor (intenção) {
-            caso "ConvertCurrency": 
+        switch (intent) {
+            case "ConvertCurrency": 
                 var currencyText = await kernel.InvokeAsync<string>(
                     prompts["GetTargetCurrencies"], 
-                    new() {{ "entrada", entrada }}
-    );
+                    new() {{ "input",  input }}
+                );
                 
-                var currencyInfo = currencyText!.Dividir("|");
-                var resultado = await kernel.InvokeAsync("CurrencyConverter", 
+                var currencyInfo = currencyText!.Split("|");
+                var result = await kernel.InvokeAsync("CurrencyConverter", 
                     "ConvertAmount", 
-                    novo() {
-     {"targetCurrencyCode", currencyInfo[0]}, 
-     {"baseCurrencyCode", currencyInfo[1]},
-     {"amount", currencyInfo[2]}, 
-    }
-    );
-                Console.WriteLine(resultado);
-                quebrar;
-            caso "SuggestDestinations":
-                chatHistory.AppendLine("Usuário:" + entrada);
-                var recommendations = await kernel.InvokePromptAsync(entrada!);
-                Console.WriteLine(recomendações);
-                quebrar;
-            caso "SuggestActivities":
+                    new() {
+                        {"targetCurrencyCode", currencyInfo[0]}, 
+                        {"baseCurrencyCode", currencyInfo[1]},
+                        {"amount", currencyInfo[2]}, 
+                    }
+                );
+                Console.WriteLine(result);
+                break;
+            case "SuggestDestinations":
+                chatHistory.AppendLine("User:" + input);
+                var recommendations = await kernel.InvokePromptAsync(input!);
+                Console.WriteLine(recommendations);
+                break;
+            case "SuggestActivities":
     
                 var chatSummary = await kernel.InvokeAsync(
                     "ConversationSummaryPlugin", 
@@ -578,136 +593,135 @@ código.
                     new() {{ "input", chatHistory.ToString() }});
     
                 var activities = await kernel.InvokePromptAsync(
-                    entrada!,
-                    novo () {
-     {"entrada", entrada},
-     {"history", chatSummary},
-     {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
-    });
+                    input!,
+                    new () {
+                        {"input", input},
+                        {"history", chatSummary},
+                        {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
+                });
     
-                chatHistory.AppendLine("Usuário:" + entrada);
-                chatHistory.AppendLine("Assistente:" + atividades.ToString());
+                chatHistory.AppendLine("User:" + input);
+                chatHistory.AppendLine("Assistant:" + activities.ToString());
     
-                Console.WriteLine(atividades);
-                quebrar;
-            caso "HelpfulPhrases":
-            caso "Traduzir":
-                var autoInvokeResult = await kernel.InvokePromptAsync(entrada, novo(configurações));
+                Console.WriteLine(activities);
+                break;
+            case "HelpfulPhrases":
+            case "Translate":
+                var autoInvokeResult = await kernel.InvokePromptAsync(input, new(settings));
                 Console.WriteLine(autoInvokeResult);
-                quebrar;
-            Padrão:
-                Console.WriteLine("Claro, posso ajudar com isso.");
-                var otherIntentResult = kernel await.InvokePromptAsync(entrada);
+                break;
+            default:
+                Console.WriteLine("Sure, I can help with that.");
+                var otherIntentResult = await kernel.InvokePromptAsync(input);
                 Console.WriteLine(otherIntentResult);
-                quebrar;
-    }
+                break;
+        }
     } 
-    enquanto (!cadeia de caracteres.IsNullOrWhiteSpace(entrada));
+    while (!string.IsNullOrWhiteSpace(input));
     ```
 
-    O programa começa importando namespaces essenciais, como System.Text para manipulação de texto e Microsoft.SemanticKernel para fluxos de trabalho de conversação com tecnologia de AI. Ele integra os serviços Microsoft Azure OpenAI por meio do namespace Microsoft.SemanticKernel.Connectors.OpenAI, permitindo a comunicação com o modelo GPT (gpt-35-turbo-16k). A configuração envolve a configuração de variáveis como yourDeploymentName, yourEndpoint e yourApiKey para autenticar e se conectar ao ponto de extremidade do OpenAI do Azure.
-O Semantic Kernel é inicializado usando um padrão de construtor. Plug-ins para funcionalidades adicionais, como CurrencyConverter e ConversationSummaryPlugin, são importados. Além disso, os prompts armazenados em um diretório (Prompts) são carregados dinamicamente para facilitar o reconhecimento da intenção e a execução da tarefa.
-O loop principal do programa interage com o usuário solicitando entrada e determinando a intenção usando o prompt GetIntent. Com base na intenção, o programa se ramifica em diferentes funcionalidades:
+    El programa comienza importando los espacios de nombres esenciales como System.Text para el manejo de texto y Microsoft.SemanticKernel para flujos de trabajo conversacionales impulsados por IA. Integra los servicios de Microsoft Azure OpenAI a través del espacio de nombres
+    
+    Microsoft.SemanticKernel.Connectors.OpenAI, lo que permite la comunicación con el modelo GPT (gpt-35-turbo-16k). La configuración implica establecer variables como yourDeploymentName, yourEndpoint y yourApiKey para autenticar y conectar con el punto de acceso de Azure OpenAI.
+    
+    **Semantic Kernel** se inicializa utilizando un patrón de construcción. Se importan complementos para funcionalidades adicionales, como CurrencyConverter y ConversationSummaryPlugin. Además, se cargan dinámicamente los prompts almacenados en un directorio (Prompts) para facilitar el reconocimiento de intenciones y la ejecución de tareas.
 
+    El ciclo principal del programa interactúa con el usuario solicitando entrada y determinando la intención mediante el prompt GetIntent. Según la intención, el programa se ramifica en diferentes funcionalidades:
 
-    1.  **Conversão de moeda**: se a intenção for converter moeda, o
-    programa extrairá detalhes (moeda base, moeda de destino e valor)
-    usando o prompt GetTargetCurrencies. Em seguida, ele chama o método
-    ConvertAmount do plug-in CurrencyConverter e exibe o resultado.
+    1. **Conversión de divisas**: Si la intención es convertir divisas, el programa extrae los detalles (moneda de destino, moneda base y cantidad) utilizando el prompt GetTargetCurrencies. Luego, llama al método ConvertAmount del complemento CurrencyConverter y muestra el resultado.
 
-    2.  **Sugestões de destino**: se a intenção for sugerir destinos, o
-    programa usará o método InvokePromptAsync do Semantic Kernel para
-    fornecer recomendações com base na entrada do usuário.
+    2. **Sugerencias de destinos:** Si la intención es sugerir destinos, el programa utiliza el método InvokePromptAsync del Semantic Kernel para proporcionar recomendaciones basadas en la entrada del usuario.
 
-    3.  **Sugestões de atividades**: essa funcionalidade aproveita o resumo
-    da conversa por meio do ConversationSummaryPlugin para fornecer
-    sugestões de atividades contextualmente relevantes. O histórico de
-    conversas é mantido usando um objeto StringBuilder para fluxo de
-    diálogo contínuo.
+    3. **Sugerencias de actividades**: Esta funcionalidad aprovecha la resumificación de conversaciones a través del ConversationSummaryPlugin para proporcionar sugerencias de actividades contextualmente relevantes. El historial de la conversación se mantiene utilizando un objeto StringBuilder para un flujo continuo del diálogo.
 
-    4.  **Frases úteis e tradução**: para intenções como "HelpfulPhrases" ou
-    "Translate", o kernel invoca automaticamente funções relevantes com
-    base na entrada e nas configurações.
+    4. **Frases útiles y traducción**: Para intenciones como "HelpfulPhrases" o "Translate", el kernel invoca automáticamente las funciones relevantes según la entrada y la configuración. 
 
-    Outras intenções do usuário são tratadas genericamente invocando o sistema de prompt, garantindo flexibilidade nas respostas. O loop de interação continua até que o usuário não forneça nenhuma entrada (uma cadeia de caracteres vazia).
+    Otros intentos de usuario se manejan de manera genérica invocando el sistema de prompts, asegurando flexibilidad en las respuestas. El ciclo de interacción continúa hasta que el usuario no proporcione entrada (una cadena vacía).
 
-## Exercício 8: Testando o aplicativo
+## Ejercicio 8: Verificación de la aplicación
 
-Neste exercício, você testará a funcionalidade do seu aplicativo
-executando consultas para conversão de moeda, sugestões de destino e
-recomendações de atividades. Isso garantirá que seu sistema alimentado
-por AI esteja funcionando conforme o esperado e fornecendo saídas
-precisas e sensíveis ao contexto.
+En este ejercicio, probará la funcionalidad de su aplicación ejecutando
+consultas de conversión de divisas, sugerencias de destinos y
+recomendaciones de actividades. De este modo, se asegurará de que su
+sistema basado en IA funciona según lo previsto y proporciona resultados
+precisos y sensibles al contexto.
 
-**Etapas para testar**
+**Pasos para la prueba**
 
-1.  **Execute o aplicativo**
+1.  **Ejecute la aplicación**
 
-    - Clique com o botão direito do mouse na pasta Starter e selecione
+    - Haga clic con el botón derecho en la carpeta Starter y seleccione
       **Open in Integrated Terminal**.
 
-    - No terminal, digite o seguinte comando para executar o aplicativo: +++dotnet run+++
+    - En el terminal, ingrese el siguiente comando para ejecutar la
+      aplicación:
 
-2.  **Testar conversão de moeda**
+      +++dotnet run+++
 
-    - Quando solicitado, insira uma consulta de conversão de moeda,
-      como:  
+2.  **Prueba de conversión de divisas**
+
+    - Cuando se le solicite, ingrese una consulta de conversión de
+      divisas, por ejemplo:  
       +++How much is 60 USD in New Zealand dollars?+++
 
-    - Saída esperada:  
-      $60 USD is approximately $97.88 in New Zealand Dollars (NZD)."
+    - Resultados esperados:  
+      "$60 USD is approximately $97.88 in New Zealand Dollars (NZD)."
 
-3.  **Sugestões de destino de teste**
+3.  **Sugerencias de destino de prueba**
 
-    - Insira uma consulta para sugestões de destino, fornecendo
-      contexto. Por exemplo:  
-      +++I'm planning an anniversary trip with my spouse, but they
-      are currently using a wheelchair and accessibility is a must. What
-      are some destinations that would be romantic for us?+++
+    - Ingrese una consulta para obtener sugerencias de destinos,
+      proporcionando contexto. Por ejemplo:  
+      +++I'm planning an anniversary trip with my spouse, but they are
+      currently using a wheelchair and accessibility is a must. What are
+      some destinations that would be romantic for us?+++
 
-    - Saída esperada: Uma lista de destinos românticos acessíveis, como:
+    - Resultados esperados: Una lista de destinos románticos accesibles,
+      como:
 
-      1.  Santorini, Greece: romantic sunsets and wheelchair-accessible
-          paths in certain areas.
+      1.  Santorini, Grecia: puestas de sol románticas y senderos
+          accesibles para sillas de ruedas en determinadas áreas.
 
-      2.  Venice, Italy: gondola rides with accessible boarding options.
+      2.  Venecia, Italia: paseos en góndola con opciones de embarque
+          accesible.
 
-      3.  Maui, Hawaii: stunning views and accessible resorts.
+      3.  Maui, Hawai: vistas impresionantes y complejos turísticos con
+          acceso para personas con movilidad reducida.
 
-4.  **Sugestões de atividades de teste**
+4.  **Sugerencias de actividades de prueba**
 
-    - Insira uma consulta para recomendações de atividades em um destino
-      específico. Por exemplo:  +++What are some things to do in Barcelona?+++
+    - Ingrese una consulta para recomendaciones de actividades en un
+      destino específico. Por ejemplo:  
+      +++What are some things to do in Barcelona?+++
 
-    - Saída esperada: recomendações adaptadas ao destino, como:
+    - Resultados esperados: Recomendaciones adaptadas al destino, como:
 
-      1.  Visit the Sagrada Família: a Gaudí masterpiece with accessible
-          facilities.
+      1.  Visite la sagrada familia: una obra maestra de Gaudí con
+          instalaciones accesibles.
 
-      2.  Explore Park Güell: unique mosaic designs with
-          wheelchair-friendly routes.
+      2.  Explore el Park Güell: diseños de mosaicos únicos con rutas
+          accesibles para sillas de ruedas.
 
-      3.  Discover the Picasso Museum: a wheelchair-accessible art
-          venue.
+      3.  Visite el Museo Picasso: un espacio de arte accesible para
+          personas en silla de ruedas.
 
-Exercício 7: Limpar os recursos
+## Ejercicio 7: Elimine los recursos innecesarios
 
-1.  No portal do Azure (+++https://portal.azure.com+++), selecione o
-    grupo de recursos atribuído a você.
+1.  En el portal de Azure (+++https://portal.azure.com+++), seleccione
+    el Grupo de recursos que se le ha asignado.
 
-2.  Selecione os recursos abaixo dele e clique em **Delete**.
+2.  Seleccione los recursos que están bajo él y haga clic en **Delete**.
 
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image39.png)
+    ![](./media/image39.png)
 
-3.  Digite +++**delete**+++ na caixa de confirmação de exclusão e
-    clique em **Delete**.
+3.  Escriba +++delete+++ en el cuadro de texto de confirmación de
+    eliminación y haga clic en **Delete**.
 
-4.  Selecione **Delete** na caixa de diálogo de confirmação.
+4.  Seleccione **Delete** en el cuadro de diálogo de confirmación de
+    eliminación.
 
-5.  Procure uma notificação de confirmação de exclusão de recurso.
+5.  Busque una notificación de confirmación de eliminación de recurso.
 
-**Resumo:**
+**Resumen:**
 
-Neste laboratório, aprendemos a criar um agente usando o Semantic Kernel
-e o serviço Azure OpenAI.
+En este laboratorio, hemos aprendido a crear un agente utilizando
+Semantic Kernel y Azure OpenAI Service.
