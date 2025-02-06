@@ -181,25 +181,7 @@ enhance user engagement through intuitive and efficient interactions.
 
     - **Service name**: Enter a unique service name, here we name it as +++**copilotXXXX**+++
 
-    - **Location**: *Make a **random** choice from any of the following regions, here we select Canada East*
-
-      - Australia East
-
-      - Canada East
-
-      - East US
-
-      - East US 2
-
-      - France Central
-
-      - Japan East
-
-      - North Central US
-
-      - Sweden Central
-
-      - Switzerland
+    - **Location**: Select a region, here we have selected Canada East
 
     - **Pricing tier**: Standard
 
@@ -310,7 +292,7 @@ You need two models to implement your solution:
 
     ![](./media/image20.png)
 
-    > **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
+    >[!Note] **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
 
 ## Task 4: Add data to your project
 
