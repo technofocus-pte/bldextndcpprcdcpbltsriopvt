@@ -2,7 +2,7 @@
 
 **Tiempo estimado: 30 minutos**
 
-## Objetivo
+**Objetivo**
 
 El objetivo de este laboratorio es capacitar a los participantes para
 construir un agente declarativo para Microsoft 365 Copilot utilizando
@@ -13,9 +13,9 @@ estructura de los agentes declarativos, configurarlos con instrucciones
 e integrarlos en el ecosistema de Microsoft 365 para interacciones
 personalizadas con Copilot.
 
-## Solución
+**Solución**
 
-## Los participantes instalarán Teams Toolkit en Visual Studio Code y configurarán su entorno de desarrollo. Utilizando una plantilla, crearán un agente declarativo denominado "Geo Locator Game". Personalizarán las instrucciones del agente y actualizarán sus archivos de configuración, como instruction.txt y manifest.json. El laboratorio también guía a los participantes en la mejora del agente con identificadores únicos, íconos personalizados y la funcionalidad de prueba. El resultado será una aplicación Copilot completamente funcional y atractiva, diseñada para ofrecer pistas sobre ciudades mientras se integra de manera fluida con Microsoft 365.
+Los participantes instalarán Teams Toolkit en Visual Studio Code y configurarán su entorno de desarrollo. Utilizando una plantilla, crearán un agente declarativo denominado "Geo Locator Game". Personalizarán las instrucciones del agente y actualizarán sus archivos de configuración, como instruction.txt y manifest.json. El laboratorio también guía a los participantes en la mejora del agente con identificadores únicos, íconos personalizados y la funcionalidad de prueba. El resultado será una aplicación Copilot completamente funcional y atractiva, diseñada para ofrecer pistas sobre ciudades mientras se integra de manera fluida con Microsoft 365.
 
 ## Ejercicio 1: Configuración del entorno de desarrollo para Microsoft 365 Copilot
 
@@ -57,15 +57,15 @@ pistas. Al final, se revelará su puntaje final.
 
 ### En este ejercicio aprenderá: 
 
-    • Qué es un agente declarativo para Microsoft 365 Copilot. 
+• Qué es un agente declarativo para Microsoft 365 Copilot. 
     
-    • Cómo crear un agente declarativo utilizando la plantilla de Teams Toolkit. 
+• Cómo crear un agente declarativo utilizando la plantilla de Teams Toolkit. 
     
-    • Cómo personalizar el agente para crear el juego de geo-localización utilizando instrucciones. 
+• Cómo personalizar el agente para crear el juego de geo-localización utilizando instrucciones. 
     
-    • Cómo ejecutar y probar su aplicación. 
+• Cómo ejecutar y probar su aplicación. 
     
-    • Como ejercicio adicional, necesitará un sitio de SharePoint en Teams.
+• Como ejercicio adicional, necesitará un sitio de SharePoint en Teams.
 
 ### Introducción 
 
@@ -127,17 +127,17 @@ añadiendo instrucciones, sino también especificando la base de
 conocimientos a la que debe acceder. Se denominan capacidades y existen
 tres tipos de capacidades admitidas.
 
-    - **Microsoft Graph Connectors:** Permite que el agente reciba las
+- **Microsoft Graph Connectors:** Permite que el agente reciba las
       conexiones de los conectores de Graph, lo que le permite acceder y
       utilizar el conocimiento del conector.
     
-    - **OneDrive y SharePoint:** Proporciona las URL de los archivos y
+- **OneDrive y SharePoint:** Proporciona las URL de los archivos y
       sitios al agente, permitiéndole acceder a esos contenidos.
     
-    - **Búsqueda web:** Habilita o deshabilita el contenido web como parte
+- **Búsqueda web:** Habilita o deshabilita el contenido web como parte
       de la base de conocimientos del agente.
     
-    ![capabilities of declarative agents](./media/image5.png)
+![capabilities of declarative agents](./media/image5.png)
 
 ### One Drive y SharePoint
 
@@ -211,7 +211,7 @@ generated](./media/image9.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
-El proyecto se generará en breve en la carpeta indicada y se abrirá automáticamente en una nueva ventana de Visual Studio Code. Esta será la carpeta de trabajo donde se gestionarán los archivos y configuraciones del proyecto.
+    El proyecto se generará en breve en la carpeta indicada y se abrirá automáticamente en una nueva ventana de Visual Studio Code. Esta será la carpeta de trabajo donde se gestionarán los archivos y configuraciones del proyecto.
 
 7.  Haga clic en **Yes, I trust the authors.**
 
