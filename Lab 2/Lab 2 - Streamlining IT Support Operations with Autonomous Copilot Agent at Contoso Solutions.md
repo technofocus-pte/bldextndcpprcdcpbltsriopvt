@@ -41,7 +41,7 @@ trabajar con aplicaciones basadas en datos.
 ### Tarea 1: Inicie sesión en Power Apps
 
 1.  Navegue hasta el sitio web de Power Apps
-    <https://www.microsoft.com/en-us/power-platform/products/power-apps>
+    +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++
     y haga clic en el botón **Try for Free.**
 
     ![A screenshot of a computer Description automatically generated](./media/image1.png)
