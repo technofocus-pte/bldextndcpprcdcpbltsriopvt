@@ -191,7 +191,7 @@ generated](./media/image7.png)
     aplicación del Agente Copilot. Elija **declarative agent** y
     presione la tecla Intro.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image8.png)
 
 4.  A continuación, se le pedirá que elija si desea crear un agente
