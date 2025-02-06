@@ -127,17 +127,17 @@ añadiendo instrucciones, sino también especificando la base de
 conocimientos a la que debe acceder. Se denominan capacidades y existen
 tres tipos de capacidades admitidas.
 
-- **Microsoft Graph Connectors:** Permite que el agente reciba las
-  conexiones de los conectores de Graph, lo que le permite acceder y
-  utilizar el conocimiento del conector.
-
-- **OneDrive y SharePoint:** Proporciona las URL de los archivos y
-  sitios al agente, permitiéndole acceder a esos contenidos.
-
-- **Búsqueda web:** Habilita o deshabilita el contenido web como parte
-  de la base de conocimientos del agente.
-
-> ![capabilities of declarative agents](./media/image5.png)
+    - **Microsoft Graph Connectors:** Permite que el agente reciba las
+      conexiones de los conectores de Graph, lo que le permite acceder y
+      utilizar el conocimiento del conector.
+    
+    - **OneDrive y SharePoint:** Proporciona las URL de los archivos y
+      sitios al agente, permitiéndole acceder a esos contenidos.
+    
+    - **Búsqueda web:** Habilita o deshabilita el contenido web como parte
+      de la base de conocimientos del agente.
+    
+    ![capabilities of declarative agents](./media/image5.png)
 
 ### One Drive y SharePoint
 
@@ -178,13 +178,13 @@ Por lo tanto, para simplificar las cosas, utilizará Teams Toolkit.
 1.  Vaya a la extensión Teams Toolkit en el editor de código de Visual
     Studio y seleccione **Create a New App.**
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image6.png)
 
 2.  Se abre un panel en el que debe seleccionar **Agent** de la lista de
     tipos de proyecto.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image7.png)
 
 3.  A continuación, se le pedirá que elija la característica de la
@@ -198,44 +198,28 @@ generated](./media/image8.png)
     declarativo básico o uno con un plugin de API. Elija la opción **No
     Plugin.** 
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image9.png)
-
-**¿Por qué no crear uno con el plugin API aquí?**
-
-> En el siguiente laboratorio, se construirán plugins de API y se
-> aprenderá cómo integrarlos con un agente declarativo en el laboratorio
-> posterior, siguiendo la misma ruta. En este caso, solo se creará un
-> agente declarativo.
 
 5.  A continuación, seleccione la opción **Default folder** para
     especificar dónde debe crearse la carpeta del proyecto.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image10.png)
+    ![A screenshot of a computer Description automatically generated](./media/image10.png)
 
 6.  A continuación, asígnele el nombre de aplicación **Geo Locator
     Game** y presione la tecla Intro.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image11.png)
->
-> El proyecto se generará en breve en la carpeta indicada y se abrirá
-> automáticamente en una nueva ventana de Visual Studio Code. Esta será
-> la carpeta de trabajo donde se gestionarán los archivos y
-> configuraciones del proyecto.
+    ![A screenshot of a computer Description automatically generated](./media/image11.png)
+
+El proyecto se generará en breve en la carpeta indicada y se abrirá automáticamente en una nueva ventana de Visual Studio Code. Esta será la carpeta de trabajo donde se gestionarán los archivos y configuraciones del proyecto.
 
 7.  Haga clic en **Yes, I trust the authors.**
 
-> ![](./media/image12.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image13.png)
->
-> ¡Excelente trabajo! Ha configurado con éxito el agente declarativo
-> base. Ahora, proceda a revisar los archivos que contiene para poder
-> personalizarlo y desarrollar la aplicación del juego de
-> geo-localización.
+    ![](./media/image12.png)
+
+    ![A screenshot of a computer Description automatically generated](./media/image13.png)
+
+¡Excelente trabajo! Ha configurado con éxito el agente declarativo base. Ahora, proceda a revisar los archivos que contiene para poder personalizarlo y desarrollar la aplicación del juego de geo-localización. 
 
 ### Tarea 2: Configure las cuentas en Teams Toolkit
 
@@ -244,25 +228,25 @@ generated](./media/image9.png)
     con sus **User1 credentials** en la sección **Azure Portal** de la
     pestaña **Resources.**
 
-![](./media/image14.png)
+    ![](./media/image14.png)
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image15.png)
 
 2.  Se abrirá una ventana del navegador que ofrecerá iniciar sesión en
     Microsoft 365. Cuando aparezca el mensaje " You are signed in now
     and close this page", proceda a cerrarla.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image16.png)
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image17.png)
 
 3.  Seleccione **Allow access** en el cuadro de diálogo Alerta de
     seguridad.
 
-![A screenshot of a computer security alert Description automatically
+    ![A screenshot of a computer security alert Description automatically
 generated](./media/image18.png)
 
 4.  Verifique que la casilla "**Custom App Upload Enabled**" tiene una
@@ -271,21 +255,31 @@ generated](./media/image18.png)
 5.  Verifique que la casilla "**Copilot Access Enabled**" tiene una
     marca de verificación de color verde.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image19.png)
 
 ### Tarea 3: Conozca los archivos de la aplicación
 
 Este es el aspecto del proyecto base:
 
-[TABLE]
+|  **Carpeta/Archivo**  |  **Contenido**  |
+|:-----|:------|
+|  .vscode  |  Archivos VSCode para depuración.  |
+|  appPackage  |  Plantillas para el manifiesto de la aplicación Teams, el manifiesto GPT y la especificación API.  |
+|  env  | Archivos de entorno con un archivo .env.dev por defecto.   |
+|  appPackage/color.png  |   Imagen del logotipo de la aplicación. |
+|  appPackage/outline.png  | Imagen de contorno del logotipo de la aplicación.  |
+|  appPackage/declarativeAgent.json  | Define los ajustes y configuraciones del agente declarativo.   |
+|  appPackage/instruction.txt  |  Define el comportamiento del agente declarativo.  |
+|  appPackage/manifest.json |  Manifiesto de la aplicación de Teams que define los metadatos para el agente declarativo.  |
+|  teamsapp.yml  | Archivo principal del proyecto en Teams Toolkit. Este archivo define dos aspectos clave: propiedades y definiciones de etapas de configuración.   |
 
 1.  El archivo de interés para nuestro laboratorio es principalmente el
     archivo **appPackage/instruction.txt** que es el núcleo de
     directivas necesarias para su agente. Es un fichero de texto plano y
     puede escribir instrucciones en lenguaje natural en él.
 
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image20.png)
 
 2.  Otro archivo importante es **appPackage/declarativeAgent.json**
@@ -293,46 +287,39 @@ generated](./media/image20.png)
     con el nuevo agente declarativo. Veamos qué propiedades tiene el
     esquema de este fichero:
 
-- $schema, es la referencia al esquema.
+    - $schema, es la referencia al esquema.
+    
+    - Versión, indica la versión del esquema.
+    
+    - Name, representa el nombre del agente declarativo.
+    
+    - Description, proporciona una descripción.
+    
+    - Instructions, define la ruta al archivo **instructions.txt**, que
+      contiene directivas para determinar el comportamiento operativo.
+      También es posible ingresar las instrucciones como texto plano en este
+      valor. Sin embargo, en este laboratorio se utilizará el archivo
+      **instructions.txt**.
 
-- Versión, indica la versión del esquema.
-
-- Name, representa el nombre del agente declarativo.
-
-- Description, proporciona una descripción.
-
-- Instructions, define la ruta al archivo **instructions.txt**, que
-  contiene directivas para determinar el comportamiento operativo.
-  También es posible ingresar las instrucciones como texto plano en este
-  valor. Sin embargo, en este laboratorio se utilizará el archivo
-  **instructions.txt**.
-
-> ![A screenshot of a computer Description automatically
-> generated](./media/image21.png)
+    ![A screenshot of a computer Description automatically generated](./media/image21.png)
 
 3.  Otro archivo relevante es **appPackage/manifest.json**, que contiene
     metadatos esenciales, como el nombre del paquete, el desarrollador y
     las referencias a los agentes Copilot utilizados por la aplicación.
     La siguiente sección de manifest.json ilustra estos detalles:
 
-> "copilotAgents": {
->
-> "declarativeAgents": \[
->
-> {
->
-> "id": "declarativeAgent",
->
-> "file": "declarativeAgent.json"
->
-> }
->
-> \]
->
-> },
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image22.png)
+    ```nocopy
+    "copilotAgents": {
+            "declarativeAgents": [            
+                {
+                    "id": "declarativeAgent",
+                    "file": "declarativeAgent.json"
+                }
+            ]
+        },
+    ```
+
+    ![A screenshot of a computer Description automatically generated](./media/image22.png)
 
 4.  También puede actualizar los archivos de logotipo color.png y
     outline.png para que coincida con la marca de su aplicación. En el
@@ -346,18 +333,16 @@ generated](./media/image20.png)
 1.  En primer lugar, se reemplazará el logotipo, sustituyendo la imagen
     **color.png** del proyecto por una nueva.
 
-Copie la imagen **color.png** ubicada en **C:\LabFiles** y reemplácela
+    Copie la imagen **color.png** ubicada en **C:\LabFiles** y reemplácela
 por la imagen del mismo nombre en la carpeta **appPackage** dentro del
-directorio raíz del proyecto. (La ruta debe ser:
+directorio raíz del proyecto. (La ruta debe ser: **C:\Users\Student\TeamsApps\Geo Locator Game\appPackage**).
 
-**C:\Users\Student\TeamsApps\Geo Locator Game\appPackage**).
+    ![](./media/image23.png)
 
-![](./media/image23.png)
-
-![A screenshot of a computer Description automatically
+    ![A screenshot of a computer Description automatically
 generated](./media/image24.png)
 
-![](./media/image25.png)
+    ![](./media/image25.png)
 
 2.  A continuación, vaya al archivo **appPackage/manifest.json** en el
     directorio raíz de su proyecto y busque el nodo **copilotAgents**.
@@ -365,129 +350,102 @@ generated](./media/image24.png)
     **declarativeAgents**, cambiando **declarativeAgent** a
     **dcGeolocator** para hacer que este ID sea único.
 
-> "copilotAgents": {
->
-> "declarativeAgents": \[
->
-> {
->
-> "id": "**dcGeolocator**",
->
-> "file": "declarativeAgent.json"
->
-> }
->
-> \]
->
-> },
->
-> ![](./media/image26.png)
+    ```nocopy
+    "copilotAgents": {
+            "declarativeAgents": [            
+                {
+                    "id": "dcGeolocator",
+                    "file": "declarativeAgent.json"
+                }
+            ]
+        },
+    ```
 
-![](./media/image27.png)
+    ![](./media/image26.png)
+
+    ![](./media/image27.png)
 
 3.  A continuación, vaya al archivo **appPackage/instruction.txt** y
     copie y pegue la siguiente instrucción para sobrescribir el
     contenido existente del archivo:
 
-> System Role: You are the game host for a geo-location guessing game.
-> Your goal is to provide the player with clues about a specific city
-> and guide them through the game until they guess the correct answer.
-> You will progressively offer more detailed clues if the player guesses
-> incorrectly. You will also reference PDF files in special rounds to
-> create a clever and immersive game experience.
->
-> Game play Instructions:
->
-> Game Introduction Prompt
->
-> Use the following prompt to welcome the player and explain the rules:
->
-> Welcome to the Geo Location Game! I’ll give you clues about a city,
-> and your task is to guess the name of the city. After each wrong
-> guess, I’ll give you a more detailed clue. The fewer clues you use,
-> the more points you score! Let’s get started. Here’s your first clue:
->
-> Clue Progression Prompts
->
-> Start with vague clues and become progressively specific if the player
-> guesses incorrectly. Use the following structure:
->
-> Clue 1: Provide a general geographical clue about the city (e.g.,
-> continent, climate, latitude/longitude).
->
-> Clue 2: Offer a hint about the city’s landmarks or natural features
-> (e.g., a famous monument, a river).
->
-> Clue 3: Give a historical or cultural clue about the city (e.g.,
-> famous events, cultural significance).
->
-> Clue 4: Offer a specific clue related to the city’s cuisine, local
-> people, or industry.
->
-> Response Handling
->
-> After the player’s guess, respond accordingly:
->
-> If the player guesses correctly, say:
->
-> That’s correct! You’ve guessed the city in \[number of clues\] clues
-> and earned \[score\] points. Would you like to play another round?
->
-> If the guess is wrong, say:
->
-> Nice try! \[followed by more clues\]
->
-> PDF-Based Scenario
->
-> For special rounds, use a PDF file to provide clues from a historical
-> document, traveler's diary, or ancient map:
->
-> This round is different! I’ve got a secret document to help us. I’ll
-> read clues from this \[historical map/traveler’s diary\] and guide you
-> to guess the city. Here’s the first clue:
->
-> Reference the specific PDF to extract details:
->
-> Traveler's Diary PDF,Historical Map PDF.
->
-> Use emojis where necessary to have friendly tone.
->
-> Scorekeeping System
->
-> Track how many clues the player uses and calculate points:
->
-> 1 clue: 10 points
->
-> 2 clues: 8 points
->
-> 3 clues: 5 points
->
-> 4 clues: 3 points
->
-> End of Game Prompt
->
-> After the player guesses the city or exhausts all clues, prompt:
->
-> Would you like to play another round, try a special challenge?
->
-> ![](./media/image28.png)
+    ```
+    
+    System Role: You are the game host for a geo-location guessing game. Your goal is to provide the player with clues about a specific city and guide them through the game until they guess the correct answer. You will progressively offer more detailed clues if the player guesses incorrectly. You will also reference PDF files in special rounds to create a clever and immersive game experience.
+
+    Game play Instructions:
+
+    Game Introduction Prompt
+
+    Use the following prompt to welcome the player and explain the rules:
+
+    Welcome to the Geo Location Game! I’ll give you clues about a city, and your task is to guess the name of the city. After each wrong guess, I’ll give you a more detailed clue. The fewer clues you use, the more points you score! Let’s get started. Here’s your first clue:
+
+    Clue Progression Prompts
+
+    Start with vague clues and become progressively specific if the player guesses incorrectly. Use the following structure:
+
+    Clue 1: Provide a general geographical clue about the city (e.g., continent, climate, latitude/longitude).
+
+    Clue 2: Offer a hint about the city’s landmarks or natural features (e.g., a famous monument, a river).
+
+    Clue 3: Give a historical or cultural clue about the city (e.g., famous events, cultural significance).
+
+    Clue 4: Offer a specific clue related to the city’s cuisine, local people, or industry.
+
+    Response Handling
+
+    After the player’s guess, respond accordingly:
+    If the player guesses correctly, say:
+
+    That’s correct! You’ve guessed the city in [number of clues] clues and earned [score] points. Would you like to play another round?
+
+    If the guess is wrong, say:
+
+    Nice try! [followed by more clues]
+
+    PDF-Based Scenario
+
+    For special rounds, use a PDF file to provide clues from a historical document, traveler's diary, or ancient map:
+
+    This round is different! I’ve got a secret document to help us. I’ll read clues from this [historical map/traveler’s diary] and guide you to guess the city. Here’s the first clue:
+
+    Reference the specific PDF to extract details:
+    Traveler's Diary PDF,Historical Map PDF.
+    Use emojis where necessary to have friendly tone. 
+    Scorekeeping System
+
+    Track how many clues the player uses and calculate points:
+
+    1 clue: 10 points
+
+    2 clues: 8 points
+
+    3 clues: 5 points
+
+    4 clues: 3 points
+
+    End of Game Prompt
+
+    After the player guesses the city or exhausts all clues, prompt:
+
+    Would you like to play another round, try a special challenge?
+
+    ```
+
+    ![](./media/image28.png)
 
 4.  Siga el siguiente paso para asegurarse de que nuestro agente puede
     ayudar al usuario a comprometerse con él dándole iniciadores de
-    conversación.
+    conversación. **Incluya sus propios archivos en la carpeta appPackage del proyecto**
 
-**Incluya sus propios archivos en la carpeta appPackage del proyecto**
+    Fíjese en esta línea de **appPackage/declarativeAgent.json**:
 
-Fíjese en esta línea de **appPackage/declarativeAgent.json**:
+    "instructions": "$\[file('instruction.txt')\]",
 
-"instructions": "$\[file('instruction.txt')\]",
-
-> Esto trae sus instrucciones desde el archivo **instruction.txt**. Si
-> desea modularizar sus archivos de empaquetado, puede utilizar esta
-> técnica en cualquiera de los archivos JSON de la carpeta
-> **appPackage**.
->
->   ![](./media/image29.png)
+    Esto trae sus instrucciones desde el archivo instruction.txt. Si desea modularizar sus archivos de empaquetado, puede utilizar esta técnica en cualquiera de los archivos JSON de la carpeta appPackage.
+    
+    ![](./media/image29.png)
 
 ### Tarea 2: Añada temas de conversación
 
@@ -496,63 +454,49 @@ añadiéndole iniciadores de conversación.
 
 Algunas de las ventajas de tener iniciadores de conversación son:
 
-- **Compromiso:** Ayudan a iniciar la interacción, haciendo que los
-  usuarios se sientan más cómodos y fomentando la participación.
-
-- **Establecimiento de contexto**: Los iniciadores fijan el tono y el
-  tema de la conversación, guiando a los usuarios sobre cómo proceder.
-
-- **Eficiencia**: Al iniciar con un enfoque claro, los iniciadores
-  reducen la ambigüedad, permitiendo que la conversación avance sin
-  problemas.
-
-- **Retención de usuarios:** Los iniciadores bien diseñados mantienen el
-  interés de los usuarios, fomentando interacciones repetidas con la IA.
+    - **Compromiso:** Ayudan a iniciar la interacción, haciendo que los
+      usuarios se sientan más cómodos y fomentando la participación.
+    
+    - **Establecimiento de contexto**: Los iniciadores fijan el tono y el
+      tema de la conversación, guiando a los usuarios sobre cómo proceder.
+    
+    - **Eficiencia**: Al iniciar con un enfoque claro, los iniciadores
+      reducen la ambigüedad, permitiendo que la conversación avance sin
+      problemas.
+    
+    - **Retención de usuarios:** Los iniciadores bien diseñados mantienen el
+      interés de los usuarios, fomentando interacciones repetidas con la IA.
 
 1.  Abra el archivo declarativeAgent.json y justo después del nodo de
     instrucciones añada una coma , y pegue el siguiente Código:
 
-> "conversation_starters": \[
->
-> {
->
-> "title": "Getting Started",
->
-> "text":"I am ready to play the Geo Location Game! Give me a city to
-> guess, and start with the first clue."
->
-> },
->
-> {
->
-> "title": "Ready for a Challenge",
->
-> "text": "Let us try something different. Can we play a round using the
-> travelers diary?"
->
-> },
->
-> {
->
-> "title": "Feeling More Adventurous",
->
-> "text": "I am in the mood for a challenge! Can we play the game using
-> the historical map? I want to see if I can figure out the city from
-> those ancient clues."
->
-> }
->
-> \]
->
-> ![](./media/image30.png)
+    ```
+    "conversation_starters": [
+        { 
+                "title": "Getting Started",
+                "text":"I am ready to play the Geo Location Game! Give me a city to guess, and start with the first clue."          
 
-Ahora que ya se han realizado todos los cambios en el agente, es hora de
+            },
+            {
+                "title": "Ready for a Challenge",
+                "text": "Let us try something different. Can we play a round using the travelers diary?"
+            },
+            { 
+                "title": "Feeling More Adventurous",
+                "text": "I am in the mood for a challenge! Can we play the game using the historical map? I want to see if I can figure out the city from those ancient clues."
+            }
+        ]
+    ```
+
+    ![](./media/image30.png)
+
+    Ahora que ya se han realizado todos los cambios en el agente, es hora de
 probarlo.
 
 2.  Vaya a **Files** en la barra superior y haga clic en el botón **Save
     All.**
 
-![](./media/image31.png)
+    ![](./media/image31.png)
 
 ### Tarea 3: Pruebe la aplicación
 
@@ -562,13 +506,13 @@ probarlo.
     **Teams Toolkit**, ya que facilita el proceso de publicación de
     manera muy sencilla.
 
-![](./media/image32.png)
+    ![](./media/image32.png)
 
-![](./media/image33.png)
+    ![](./media/image33.png)
 
 2.  Cuando se le solicite, inicie sesión con sus credenciales.
 
-![](./media/image34.png)
+    ![](./media/image34.png)
 
 3.  En este paso, el kit de herramientas Teams empaquetará todos los
     archivos dentro de la carpeta appPackage como un archivo zip e
@@ -583,28 +527,27 @@ probarlo.
     aplicación se anclará automáticamente encima de sus chats. Solo
     deberá abrir Teams, seleccionar "Chats" y verá **Copilot**.
 
-![](./media/image36.png)
+    ![](./media/image36.png)
 
 5.  Una vez cargada la aplicación Copilot, busque el **Geo Locator
     Game** en el panel de la derecha, tal y como se muestra.
 
-![](./media/image37.png)
+    ![](./media/image37.png)
 
-> Si no lo encuentra, es posible que la lista sea larga. Puede encontrar
-> su agente ampliando la lista y seleccionando **See more.**
+    Si no lo encuentra, es posible que la lista sea larga. Puede encontrar su agente ampliando la lista y seleccionando **See more.**
 
 6.  Una vez iniciado, estará en esta ventana de chat enfocada con el
     agente. Verá los iniciadores de conversación como se muestra a
     continuación:
 
-![](./media/image38.png)
+    ![](./media/image38.png)
 
 7.  Seleccione uno de los iniciadores de conversación y el cuadro de
     redacción del mensaje se llenará con la pregunta del iniciador,
     esperando que presione la tecla **Intro**. El asistente continuará
     esperando a que usted actúe.
 
-![](./media/image39.png)
+    ![](./media/image39.png)
 
 8.  Intente responder a la pregunta y explore el juego que ha creado.
 
