@@ -346,29 +346,26 @@ generated](./media/image40.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image41.png)
 
-5.  In the Create a vector index – Search settings page,
+5.	En la página Crear un índice vectorial – Configuración de búsqueda, 
 
-    **Vector settings** - Select **Add vector search to this search
+    **Vector settings** - Escoger **Add vector search to this search
 resource**
 
-    Accept the other defaults and select **Next.**
+    Acepte los demás valores predeterminados y seleccione **Next**.
 
     ![A screenshot of a search box Description automatically generated](./media/image42.png)
 
-6.  In the **Review and finish** page, review the details and select
-    **Create vector index**.
+6.	En **Review and finish** , revise los detalles y seleccione **Create vector index**.
 
     ![A screenshot of a computer Description automatically generated](./media/image43.png)
 
-7.  Wait for the indexing process to be completed, which can take
-    several minutes. The index creation operation consists of the
-    following jobs:
+7.  Espere a que se complete el proceso de indexación, que puede tardar varios minutos. La operación de creación de índices consta de los siguientes trabajos:
 
-    - Crack, chunk, and embed the text tokens in your brochures data.
+    - Descifre, fragmente e incruste los tokens de texto en los datos de sus folletos.
+      
+    - Cree el índice de Azure AI Search.
 
-    - Create the Azure AI Search index.
-
-    - Register the index asset.
+    - Registre el activo del índice.
 
     ![A screenshot of a computer error Description automatically
 generated](./media/image44.png)
@@ -376,186 +373,141 @@ generated](./media/image44.png)
     ![A screenshot of a computer program Description automatically
 generated](./media/image45.png)
 
-## Task 6: Test the index
+## Tarea 6: Probar el índice
 
-Before using your index in a RAG-based prompt flow, let’s verify that it
-can be used to affect generative AI responses.
+Antes de usar el índice en un flujo de solicitud basado en RAG, verifiquemos que se puede usar para afectar a las respuestas generativas de IA.
 
-1.  Select the **Playgrounds** from the left pane and select **Chat
-    Playground.**
+1.	Seleccione la opción **Playgrounds** en el panel izquierdo y seleccione **Chat Playground**.
 
     ![A screenshot of a chat Description automatically generated](./media/image46.png)
 
-2.  Click on **Show setup** if it is not visible by default.
+2.	Haga clic en **Show setup** si no está visible de forma predeterminada.
 
     ![A screenshot of a computer Description automatically generated](./media/image47.png)
 
-3.  Ensure that your **gpt-35-turbo-16k** model deployment is selected.
-    Then, in the main chat session panel, submit the prompt +++**Where
-    can I stay in New York?**+++
+3.  Asegúrese de que su **gpt-35-turbo-16k** Se selecciona la implementación del modelo. Luego, en el panel principal de la sesión de chat, envíe el mensaje +++Where can I stay in New York?+++
 
     ![A screenshot of a computer program Description automatically generated](./media/image48.png)
 
     ![A screenshot of a chat Description automatically generated](./media/image49.png)
 
-4.  Review the response, which should be a generic answer from the model
-    without any data from the index.
+4.  Revise la respuesta, que debe ser una respuesta genérica del modelo sin ningún dato del índice.
 
-5.  In the Setup pane, expand the **Add your data** field,
-    select **brochures-index** project index and select the **hybrid
-    (vector + keyword)** search type.
+5.	En el panel Configuración, expanda el icono **Add your data** field, escoger **brochures-index** Índice de proyecto y seleccione el **hybrid (vector + keyword)** Tipo de búsqueda.
 
     ![A screenshot of a computer Description automatically generated](./media/image50.png)
 
-> **Note**: Some users are finding newly created indexes unavailable
-> right away. Refreshing the browser usually helps, but if you’re still
-> experiencing the issue where it can’t find the index you may need to
-> wait until the index is recognized.
+    >[!Note] **Note**: Algunos usuarios encuentran que los índices recién creados no están disponibles de inmediato. Actualizar el navegador suele ayudar, pero si sigues experimentando el problema de que no puede encontrar el índice, es posible que tengas que esperar hasta que se reconozca el índice.
 
-6.  This addition of the data source starts a new session. Once that is
-    done, resubmit the prompt +++**Where can I stay in New York?**+++
+6. Esta adición de la fuente de datos inicia una nueva sesión. Una vez hecho esto, vuelva a enviar el mensaje+++Where can I stay in New York?+++
 
-> ![A screenshot of a chat Description automatically
-> generated](./media/image51.png)
+    ![A screenshot of a chat Description automatically generated](./media/image51.png)
 
-7.  Review the response and note that now the response is based on data
-    in the index.
+7.  Revise la respuesta y observe que ahora la respuesta se basa en los datos del índice.
 
-> ![A screenshot of a chat Description automatically
-> generated](./media/image52.png)
+    ![A screenshot of a chat Description automatically generated](./media/image52.png)
 
-## Task 7: Use the index in a prompt flow
+## Tarea 7: Usar el índice en un flujo de solicitud
 
-Your vector index has been saved in your Azure AI Foundry project,
-enabling you to use it easily in a prompt flow.
+El índice vectorial se ha guardado en el proyecto de Azure AI Foundry, lo que le permite usarlo fácilmente en un flujo de solicitud.
 
-1.  Select the **Prompt flow** under **Build and customize** from the
-    left navigation pane and then click on **Create**.
+1.  Seleccione la opción **Prompt flow** debajo **Build and customize** desde el panel de navegación izquierdo y, a continuación, haga clic en **Create**.
 
     ![](./media/image53.png)
 
-2.  Select **Clone** under Multi-Round Q&A on Your Data.
+2.  Escoger **Clone** debajo Multi-Round Q&A on Your Data.
 
     ![A screenshot of a computer Description automatically generated](./media/image54.png)
 
-3.  Give the folder name as +++**brochure-flow**+++ and click on
-    **Clone**.
+3.	Asigne el nombre de la carpeta como +++**brochure-flow**+++ y haga clic en **Clone**. 
 
     ![A screenshot of a computer Description automatically generated](./media/image55.png)
 
-    >[!Note] **Note:** If you face permissions error, retry with a new name after 2 minutes and the flow will get cloned.
+    >[!Note] **Nota:** Si se enfrenta a un error de permisos, vuelva a intentarlo con un nuevo nombre después de 2 minutos y el flujo se clonará.
 
     ![](./media/image56.png)
 
-4.  When the prompt flow designer page opens, review **brochure-flow**.
-    Its graph should resemble the following image:
+4.	Cuando se abra la página del diseñador de flujo de solicitudes, revise **brochure-flow**. Su gráfico debe parecerse a la siguiente imagen:
 
     ![](./media/image57.png)
 
     ![A screenshot a a prompt flow graph](./media/image58.png)
 
-> The sample prompt flow you are using implements the prompt logic for a
-> chat application in which the user can iteratively submit text input
-> to chat interface. The conversational history is retained and included
-> in the context for each iteration. The prompt flow orchestrates a
-> sequence of *tools* to:
+El flujo de solicitud de ejemplo que está utilizando implementa la lógica de solicitud para una aplicación de chat en la que el usuario puede enviar iterativamente una entrada de texto a la interfaz de chat. El historial conversacional se conserva y se incluye en el contexto de cada iteración. El flujo de solicitud organiza una secuencia de herramientas para:
 
-- Append the history to the chat input to define a prompt in the form of
-  a contextualized form of a question.
+- Agregue el historial a la entrada de chat para definir un mensaje en forma de una forma contextualizada de una pregunta.
 
-- Retrieve the context using your index and a query type of your own
-  choice based on the question.
+- Recupere el contexto utilizando el índice y un tipo de consulta de su elección en función de la pregunta.
 
-- Generate prompt context by using the retrieved data from the index to
-  augment the question.
+- Genere un contexto de solicitud mediante el uso de los datos recuperados del índice para aumentar la pregunta.
 
-- Create prompt variants by adding a system message and structuring the
-  chat history.
+- Cree variantes de avisos agregando un mensaje del sistema y estructurando el historial de chat.
 
-- Submit the prompt to a language model to generate a natural language
-  response.
+- Envíe el mensaje a un modelo de lenguaje para generar una respuesta de lenguaje natural.
 
-5.  Use the **Start compute session** button to start the runtime
-    compute for the flow.
+5.  Utilice la función **Start compute session** para iniciar el proceso en tiempo de ejecución del flujo.
 
-    > Wait for the runtime to start. This provides a compute context for the
-    > prompt flow. While you’re waiting, in the **Flow** tab, review the
-    > sections for the tools in the flow.
+    Espere a que se inicie el tiempo de ejecución. Esto proporciona un contexto de proceso para el flujo de solicitudes. Mientras esperas, en el **Flow** tab, revise las secciones de las herramientas del flujo.
 
     ![A screenshot of a computer screen Description automatically generated](./media/image59.png)
 
-6.  In the **Inputs** section, ensure the inputs include:
+6.   En **Inputs** , asegúrese de que las entradas incluyan:
 
     - **chat_history**
 
     - **chat_input**
 
-The default chat history in this sample includes some conversation about
-AI.
+    El historial de chat predeterminado de este ejemplo incluye alguna conversación sobre la IA.
 
     ![](./media/image60.png)
 
-7.  In the **Outputs** section, ensure that the output includes:
+7.	En **Outputs** , asegúrese de que la salida incluya:
 
-    - **chat_output** with value ${chat_with_context.output}
+    - **chat_output** con valor ${chat_with_context.output}
 
     ![](./media/image61.png)
 
-8.  In the **modify_query_with_history** section, select the following
-    settings (leaving others as they are):
+8.  En **modify_query_with_history** , seleccione los siguientes ajustes (dejando los demás como están):
 
-    - **Connection**: Select the **Azure OpenAI resource** for your AI
-      hub that gets listed
+    - **Connection**: Seleccione la opción **Azure OpenAI resource** para el centro de IA que aparece en la lista
 
-    - **Api**: Select **chat**
+    - **Api**: Escoger **chat**
 
-    - **deployment_name**: Select **gpt-35-turbo-16k**
+    - **deployment_name**: Escoger **gpt-35-turbo-16k**
 
-    - **response_format**: Select **{“type”:”text”}**
+    - **response_format**: Escoger  **{“type”:”text”}**
 
-> ![](./media/image62.png)
+    ![](./media/image62.png)
 
-9.  Once the compute session has started, in the **lookup** section, set
-    the following parameter values:
+9.  Una vez iniciada la sesión de proceso, en el archive lookup , establezca los siguientes valores de parámetro:
 
-    - **mlindex_content**: *Select the empty field to open the Generate
-      pane*
+    - **mlindex_content**: Seleccione el campo vacío para abrir el panel Generar
 
-      - **index_type**: Select **Registered Index**
+      - **index_type**: Escoger **Registered Index**
 
-      &nbsp;
+      - **mlindex_asset_id**: Escoger **brochures-index:1**
 
-      - **mlindex_asset_id**: Select **brochures-index:1**
+    ![A screenshot of a computer Description automatically generated](./media/image63.png)
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image63.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image64.png)
->
-> Back in the Lookup section enter the below details
+    ![A screenshot of a computer Description automatically generated](./media/image64.png)
 
-- **queries**: ${modify_query_with_history.output}
+    De vuelta en la sección Búsqueda, ingrese los detalles a continuación 
 
-- **query_type**: Hybrid (vector + keyword)
+    - **queries**: ${modify_query_with_history.output}
+    
+    - **query_type**: Hybrid (vector + keyword)
+    
+    - **top_k**: 2
 
-- **top_k**: 2
+    ![A screenshot of a computer Description automatically generated](./media/image65.png)
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image65.png)
-
-10. In the **generate_prompt_context** section, review the Python script
-    and ensure that the **inputs** for this tool include the following
-    parameter:
+10. En **generate_prompt_context** , revise el script de Python y asegúrese de que el **inputs** Para esta herramienta, incluya el siguiente parámetro:
 
     - **search_result** *(object)*: ${lookup.output}
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image66.png)
+    ![A screenshot of a computer Description automatically generated](./media/image66.png)
 
-11. In the **Prompt_variants** section, review the Python script and
-    ensure that the **inputs** for this tool include the following
-    parameters:
+11. En **Prompt_variants** , revise el script de Python y asegúrese de que el **inputs** Para esta herramienta, incluya los siguientes parámetros:
 
     - **contexts** *(string)*: ${generate_prompt_context.output}
 
@@ -563,11 +515,9 @@ AI.
 
     - **chat_input** *(string)*: ${inputs.chat_input}
 
-> ![A screenshot of a chat Description automatically
-> generated](./media/image67.png)
+    ![A screenshot of a chat Description automatically generated](./media/image67.png)
 
-12. In the **chat_with_context** section, select the following settings
-    (leaving others as they are):
+12. En **chat_with_context** , seleccione los siguientes ajustes (dejando los demás como están):
 
     - **Connection**: Default_AzureOpenAI
 
@@ -577,77 +527,55 @@ AI.
 
     - **response_format**: {“type”:”text”}
 
-Then ensure that the **inputs** for this tool include the following
-parameters:
+    A continuación, asegúrese de que el inputs Para esta herramienta, incluya los siguientes parámetros:
 
-- **prompt_text** *(string)*: ${Prompt_variants.output}
+    - **prompt_text** *(string)*: ${Prompt_variants.output}
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image68.png)
+    ![A screenshot of a computer Description automatically generated](./media/image68.png)
 
-13. On the toolbar, use the **Save** button to save the changes you’ve
-    made to the tools in the prompt flow.
+13. En la barra de herramientas, utilice el botón **Save** para guardar los cambios que ha realizado en las herramientas en el flujo de solicitudes.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image69.png)
+    ![A screenshot of a computer Description automatically generated](./media/image69.png)
 
-14. On the toolbar, select **Chat**. A chat pane opens with the sample
-    conversation history and the input already filled in based on the
-    sample values. You can ignore these.
+14. En la barra de herramientas, seleccione **Chat**. Se abre un panel de chat con el historial de conversaciones de muestra y la entrada ya rellenada en función de los valores de muestra. Puede ignorarlos.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image70.png)
+    ![A screenshot of a computer Description automatically generated](./media/image70.png)
 
-15. In the chat pane, replace the default input with the
-    question +++**Where can I stay in London?**+++ and submit it.
+15. En el panel de chat, reemplace la entrada predeterminada por la pregunta **+++Where can I stay in London?+++** y presentarlo.
 
-> ![](./media/image71.png)
+    ![](./media/image71.png)
 
-16. The response is based on data in the index.
+16. La respuesta se basa en los datos del índice.
 
-17. Review the outputs for each tool in the flow.
+17. Revise las salidas de cada herramienta en el flujo.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image72.png)
+    ![A screenshot of a computer Description automatically generated](./media/image72.png)
 
-18. In the chat pane, enter the question +++**What can I do there?**+++
+18. En el panel de chat, escriba la pregunta **+++What can I do there?+++**
 
-19. Review the response, which should be based on data in the index and
-    it takes **chat history** into account (so “**there**” is understood
-    as “**in London**”).
+19. Revise la respuesta, que debe basarse en los datos del índice y toma **chat history** Tener en cuenta (por lo que “**there**” se entiende como “**in London**”).
 
 > ![A screenshot of a chat Description automatically
 > generated](./media/image73.png)
 
-20. Review the outputs for each tool in the flow, noting how each tool
-    in the flow operated on its inputs to prepare a contextualized
-    prompt and get an appropriate response.
-
-21. ewqewqe
+20. Revise los resultados de cada herramienta en el flujo, observando cómo cada herramienta en el flujo operó con sus entradas para preparar un mensaje contextualizado y obtener una respuesta adecuada.
 
 ## Task 8: Clean up the resources:
 
-1.  From the Azure portal (+++https://portal.azure.com+++), select the
-    **ResourceGroup1**(the one assigned to you).
+1.  Del Azure portal (+++https://portal.azure.com+++), Seleccione la opción **ResourceGroup1**(el que se le asigne a usted).
 
-2.  Select all the resources under it and click on **Delete**.
+2.  Seleccione todos los recursos debajo de él y haga clic en **Delete**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image74.png)
+    ![A screenshot of a computer Description automatically generated](./media/image74.png)
 
-3.  Enter +++**delete**+++ and click on the **Delete** button to confirm
-    deletion. Click on **Delete** in the Delete confirmation dialog box.
+3.  Entrar +++**delete**+++ y haga clic en el botón Delete para confirmar la eliminación. Haga clic en **Delete** En Delete confirmation dialog box.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image75.png)
+    ![A screenshot of a computer Description automatically generated](./media/image75.png)
 
-4.  Ensure that the resources are deleted, by the delete confirmation
-    message.
+4.  Asegúrese de que los recursos se eliminen mediante el mensaje de confirmación de eliminación.
 
-![A screenshot of a computer screen Description automatically
-generated](./media/image76.png)
+    ![A screenshot of a computer screen Description automatically generated](./media/image76.png)
 
 **Summary:**
 
-In this lab, we have learnt to create a custom agent that uses your own
-data from **Azure AI Foundry**.
+En este laboratorio, hemos aprendido a crear un agente personalizado que utiliza sus propios datos de **Azure AI Foundry**.
