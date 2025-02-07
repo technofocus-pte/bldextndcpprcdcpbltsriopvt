@@ -1,254 +1,258 @@
-# Laboratório 4 – Criar, avaliar e implementar um agente baseado em RAG com o Azure AI Foundry SDK
+# Laboratorio 4 - Crear, evaluar e implementar un agente basado en RAG con Azure AI Foundry SDK
 
-**Tempo estimado: 120 minutos**
+**Tiempo estimado: 120 minutos**
 
 ## Objetivo
 
-O objetivo deste laboratório é criar, avaliar e implantar um agente
-baseado em Retrieval-Augmented Generation (RAG) usando o Azure AI
-Foundry SDK. O laboratório orienta você na configuração do ambiente de
-projeto e desenvolvimento, na implantação de modelos de AI (por exemplo,
-GPT-4 e text-embedding-ada-002), na integração do Azure AI Search para
-recuperação de documentos e na criação de um aplicativo de chat de
-recuperação de conhecimento personalizado (RAG). O foco está em
-fundamentar as respostas do modelo de AI com dados relevantes do
-produto, desenvolver uma interface de chat personalizada e avaliar o
-desempenho das respostas geradas.
+El objetivo de este laboratorio es crear, evaluar e implementar un
+agente basado en Retrieval-Augmented Generation (RAG) utilizando el SDK
+de Azure AI Foundry. A lo largo del laboratorio, se explica cómo
+configurar el proyecto y el entorno de desarrollo, implementar modelos
+de IA (como GPT-4 y text-embedding-ada-002), integrar Azure AI Search
+para la recuperación de documentos y desarrollar una aplicación de chat
+con recuperación de conocimiento personalizada (RAG). El enfoque
+principal es fundamentar las respuestas del modelo de IA con datos de
+productos relevantes, diseñar una interfaz de chat personalizada y
+evaluar el rendimiento de las respuestas generadas.
 
-## Solução
+## Solución 
 
-A solução envolve a configuração de um projeto no Azure AI Foundry, a
-implantação de modelos de AI (GPT-4 e text-embedding-ada-002) e a
-integração do Azure AI Search para armazenar e recuperar dados
-personalizados do produto. Inclui a criação de scripts Python para gerar
-embeddings vetoriais, criar índices de pesquisa e consultá-los para
-obter informações relevantes sobre o produto. Uma interface de chat
-baseada em RAG é desenvolvida para fornecer respostas fundamentadas,
-aproveitando os resultados da pesquisa e o desempenho do aplicativo de
-chat é avaliado usando conjuntos de dados e métricas predefinidos para
-aumentar sua eficácia.
+La solución implica configurar un proyecto en Azure AI Foundry,
+implementar modelos de IA (GPT-4 y text-embedding-ada-002) e integrar
+Azure AI Search para almacenar y recuperar datos personalizados de
+productos. También incluye la creación de scripts en Python para generar
+incrustaciones vectoriales, construir índices de búsqueda y consultarlos
+en busca de información relevante sobre los productos. Se desarrolla una
+interfaz de chat basada en RAG para ofrecer respuestas fundamentadas
+aprovechando los resultados de búsqueda, y se evalúa el rendimiento de
+la aplicación de chat utilizando conjuntos de datos predefinidos y
+métricas para mejorar su efectividad.
 
-## Exercício 0: Entender a VM e as credenciais
+## Ejercicio 0: Conozca la máquina virtual y las credenciales
 
-Neste exercício, identificaremos e entenderemos as credenciais que
-usaremos em todo o laboratório.
+En este ejercicio, identificaremos y comprenderemos las credenciales que
+utilizaremos a lo largo del laboratorio.
 
-**Importante:** passe por cada etapa deste exercício para conhecer os
-termos genéricos e as credenciais que serão usadas para a execução do
-laboratório.
+**Importante:** Repase cada paso de este ejercicio para conocer los
+términos genéricos y las credenciales que se utilizarán para la
+ejecución del laboratorio.
 
-1.  A guia **Instructions** contém o guia do laboratório com as
-    instruções a serem seguidas em todo o laboratório.
+1.  La pestaña **Instructions** contiene la guía del laboratorio con los
+    pasos a seguir durante su desarrollo.
 
-2.  A guia **Resources** tem as credenciais necessárias para executar o
-    laboratório.
+2.  La pestaña **Resources** contiene las credenciales necesarias para
+    ejecutar el laboratorio.
 
-    - **URL** – URL para o portal do Azure
+    - **URL** – URL del portal de Azure.
     
-    - **Subscription** – este é o **ID** da **assinatura** atribuída a você
+    - **Subscription** – Este es el **ID** de la **suscripción** que se le
+      ha asignado.
     
-    - **Username** – o **ID de usuário** com a qual você precisa fazer
-      **login** nos serviços do **Azure**.
+    - **Username** – El **ID** del usuario con el que debe **iniciar
+      sesión** en los **servicios de Azure**.
     
-    - **Password** – **senha** para o **login no Azure**.
+    - **Password** – **Contraseña** de **acceso** a **Azure**.
 
-    Vamos chamar esse nome de usuário e senha como **credenciais de login no Azure**. Usaremos essas credenciais sempre que mencionarmos **as credenciais de login no Azure**.
+    Llamemos a este nombre de usuario y contraseña como **Azure login credentials**.
 
-    - **Resource Group** – o **grupo de recursos** atribuído a você.
+    Utilizaremos estas credenciales siempre que mencionemos **Azure login credentials**.
 
-    >[!Alert] **Importante**: certifique-se de criar todos os seus recursos neste grupo de recursos
+    - **Resource Group** – El **grupo de recursos** que se le ha asignado.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image1.png)
+    >[!Alert] **Importante:** Asegúrese de crear todos sus recursos en este grupo de recursos.
 
-3.  A guia **Help** contém as informações de suporte. O valor do **ID**
-    aqui é o **ID da** **instância do laboratório** que será usado
-    durante a execução do laboratório.
+    ![A screenshot of a computer Description automatically
+generated](./media/image1.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image2.png)
+3.  La pestaña **Help** contiene la información de soporte. El valor
+    **ID** aquí es el **Lab instance ID** que se utilizará durante la
+    ejecución del laboratorio.
 
-## Exercício 1 – Configurar o ambiente de projeto e desenvolvimento para criar um aplicativo RAG (recuperação de conhecimento) personalizado com o Azure AI Foundry SDK
+    ![A screenshot of a computer Description automatically
+generated](./media/image2.png)
 
-### Tarefa 1: Criar um projeto
+## Ejercicio 1: Configuración del proyecto y del entorno de desarrollo para crear una aplicación de recuperación de conocimiento (RAG) con Azure AI Foundry SDK
 
-Para criar um projeto no Azure AI Foundry, siga estas etapas:
+### Tarea1- Cree un proyecto 
 
-1.  Faça login no Azure AI Foundry em +++<https://ai.azure.com/>+++
-    **sign in** usando as credenciais de **login no Azure**.
+Para crear un proyecto en Azure AI Foundry, siga estos pasos:
+
+1.  Inicie sesión en Azure AI Foundry en +++<https://ai.azure.com/>+++
+    utilizando las **Azure login credentials**.
 
     ![](./media/image3.png)
 
-2.  Selecione **+ Create project**.
+2.  Seleccione **+ Create project**.
 
     ![](./media/image4.png)
 
-3.  Insira +++**RAGproj\<Lab instance ID\>**+++ como nome do projeto,
-    clique em **Customize**.
+3.  Ingrese +++**RAGproj\<Lab instance ID\>**+++ como nombre para el
+    proyecto, haga clic en **Customize**.
 
-    **Observação:** substitua o **\<ID da instância do laboratório**\> pelo **ID da instância do laboratório**
+    >[!Note] **Nota:** Sustituya **\<Lab instance ID\>** por su **Lab instance ID.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image5.png)
+    ![A screenshot of a computer Description automatically generated](./media/image5.png)
 
-4.  Na próxima página, insira os seguintes detalhes e clique em
+4.  En la siguiente página, ingrese los siguientes datos y haga clic en
     **Next.**
 
-    **Hub name** - +++hub\<ID da instância do laboratório\>+++
+    Hub name - +++hub\< ID de la instancia de laboratorio \>+++
     
-    **Subscription** - selecione sua assinatura atribuída
-    
-    **Resource group** - Selecione o grupo de recursos atribuído (**ResourceGroup1**)
-    
-    **Location** - East US 2 or Sweden Central (usamos East US 2 durante a execução deste laboratório)
-    
-    Deixe o resto como padrão e clique em **Next**.
+    Subscription - Seleccione la suscripción asignada.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image6.png)
+    Create new Resource group - Seleccione el grupo de recursos asignado (ResourceGroup1)
 
-5.  Na página **Review and finish**, clique em **Create.**
+    Location - East US 2 o Sweden Central (Hemos utilizado East US 2 durante la ejecución de este laboratorio)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image7.png)
+    Mantenga el resto de las opciones con su configuración predeterminada y seleccione **Next** para continuar.
 
-6.  A criação do recurso levará alguns minutos.
+    ![A screenshot of a computer Description automatically generated](./media/image6.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image8.png)
+5.  En la página **Review and finish,** haga clic en **Create.**
 
-7.  Feche a janela pop-up, se alguma aparecer.
+    ![A screenshot of a computer Description automatically generated](./media/image7.png)
 
-8.  Na página inicial do projeto, anote a **Project connection string**
-    em um bloco de notas para ser usada na próxima tarefa deste
-    exercício.
+6.  La creación del recurso tardará unos minutos.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image8.png)
+
+7.  Cierre cualquier ventana emergente que pueda aparecer.
+
+8.  Desde la página de inicio del proyecto, anote la **Project
+    connection string** en un bloc de notas para utilizarla en la
+    siguiente tarea de este ejercicio.
 
     ![](./media/image9.png)
 
-### Tarefa 2: Implementar modelos
+### Tarea 2: Implemente modelos
 
-Você precisa de dois modelos para criar um aplicativo de chat baseado em
-RAG: um modelo de chat do Azure OpenAI (gpt-4o-mini) e um modelo de
-inserção do Azure OpenAI (text-embedding-ada-002). Implemente esses
-modelos em seu projeto do Azure AI Foundry, usando este conjunto de
-etapas para cada modelo.
+Se requieren dos modelos para crear una aplicación de chat basada en
+RAG: un modelo de chat de Azure OpenAI (gpt-4o-mini) y un modelo de
+incrustaciones de Azure OpenAI (text-embedding-ada-002). Implemente
+estos modelos en su proyecto de Azure AI Foundry siguiendo estos pasos
+para cada uno.
 
-Estas etapas implementam um modelo em um endpoint em tempo real do
-catálogo de modelos do portal do AI Foundry:
+Estos pasos implementan un modelo en un endpoint en tiempo real desde el
+portal de AI Foundry  [model
+catalogue](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog-overview):
 
-1.  No painel de navegação esquerdo, selecione **Model catalog**.
+1.  En el panel de navegación izquierdo, seleccione **Model catalog**.
 
     ![](./media/image10.png)
 
-2.  Selecione o modelo **gpt-4o-mini** na lista de modelos. Você pode
-    usar a barra de pesquisa para encontrá-lo.
+2.  Seleccione el modelo **gpt-4o-mini**  de la lista de modelos. Puede
+    utilizar la barra de búsqueda para encontrarlo.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image11.png)
+    ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
-3.  Na página de detalhes do modelo, selecione **Deploy**.
+3.  En la página de detalles del modelo, seleccione **Deploy**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image12.png)
+    ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
-4.  Deixe o **Deployment name** padrão, selecione **Deploy**. Ou, se o
-    modelo não estiver disponível em sua região, uma região diferente
-    será selecionada para você e conectada ao seu projeto. Nesse caso,
-    selecione **Create resource and deploy**.
+4.  Mantenga el **Deployment name** predeterminado y seleccione
+    **Deploy**. Si el modelo no está disponible en su región, se
+    seleccionará automáticamente una región diferente y se conectará a
+    su proyecto. En ese caso, seleccione **Create resource and deploy.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image13.png)
+    ![A screenshot of a computer Description automatically generated](./media/image13.png)
 
-    ![](./media/image14.png)
+    ![](./media/03f283c8dea9187da77af69265ea0b2dc0fab665.png)
 
-5.  Depois de implementar o **gpt-4o-mini**, repita as etapas para
-    implantar o modelo +++**text-embedding-ada-002**++++.
+5.  Después de implementar **gpt-4o-mini**, repita los pasos para
+    implementar el modelo +++**text-embedding-ada-002**+++.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image15.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image15.png)
 
-### Tarefa 3: Criar um serviço Azure AI Search
+### Tarea 3: Cree un servicio de Azure AI Search
 
-O objetivo desse aplicativo é fundamentar as respostas do modelo em seus
-dados personalizados. O índice de pesquisa é usado para recuperar
-documentos relevantes com base na pergunta do usuário.
+El objetivo de esta aplicación es basar las respuestas del modelo en sus
+datos personalizados. El índice de búsqueda se utiliza para recuperar
+documentos relevantes basados en la pregunta del usuario.
 
-Você precisa de um serviço e uma conexão do Azure AI Search para criar
-um índice de pesquisa.
+Necesita un servicio Azure AI Search y una conexión para crear un índice
+de búsqueda.
 
-1.  Faça login no portal do Azure em +++<https://portal.azure.com>+++
-    usando as credenciais de login no Azure.
+1.  Inicie sesión en el portal de Azure en
+    +++<https://portal.azure.com>+++ utilizando las credenciales de
+    inicio de sesión de Azure.
 
-2.  Na barra de pesquisa da página inicial, procure por +++**AI
-    search**+++ e selecione-o.
+2.  En la barra de búsqueda de la página de inicio, busque +++**AI
+    search**+++ y selecciónelo.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image16.png)
+    ![A screenshot of a computer Description automatically generated](./media/image16.png)
 
-3.  Clique no ícone **+ Create** e preencha os seguintes detalhes.
+3.  Haga clic en el ícono **+ Create** y complete los siguientes datos.
 
     ![](./media/image17.png)
 
-4.  Insira os detalhes abaixo e selecione **Review + create**.
+4.  Ingrese los siguientes datos y seleccione **Review + create**.
 
-    - **Subscription** – selecione sua assinatura atribuída
+    - Subscription – Seleccione la suscripción asignada.
     
-    - **Resource Group** – selecione o grupo de recursos atribuído
+    - Resource Group – Seleccione el grupo de recursos asignado.
     
-    - **Service name** – insira +++**aisearch\<ID da instância do
-      laboratório\>**+++ substituindo ao ID da instância do laboratório pelo
-      ID da VM.
+    - Service name – Ingrese +++**aisearch\<Lab instance ID\>**+++
+      sustituyendo Lab instance id por el id de su VM.
     
-    - **Region** - selecione Sweden Central ou East US 2 (estamos usando
-      East US 2 aqui)
+    - Region - Seleccione Sweden Central o East US 2 (En este caso
+      utilizamos East US 2).
     
-    - **Pricing tier** – selecione **Standard**
+    - Pricing tier – Seleccione **Standard.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image18.png)
+    ![A screenshot of a computer Description automatically generated](./media/image18.png)
 
-5.  Examine os detalhes e selecione **Create**.
+5.  Revise los detalles y seleccione **Create**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image19.png)
+    ![A screenshot of a computer Description automatically generated](./media/image19.png)
 
-6.  Aguarde até que a implantação seja bem-sucedida, como na captura de
-    tela abaixo, antes de prosseguir com a próxima etapa.
+6.  Espere hasta que la implementación tenga éxito como en la siguiente
+    captura de pantalla antes de proceder con el siguiente paso.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image20.png)
+    ![A screenshot of a computer Description automatically generated](./media/image20.png)
 
-### Tarefa 4: Conectar o Azure AI Search ao seu projeto
+### Tarea 4: Conecte Azure AI Search a su proyecto
 
-No portal do Azure AI Foundry, verifique se há um recurso conectado do
-Azure AI Search.
+En el portal de Azure AI Foundry, compruebe si hay un recurso conectado
+a Azure AI Search.
 
-1.  No projeto no **Azure AI Foundry**, selecione **Management center** 
-    no painel esquerdo.
+1.  Desde su proyecto en Azure AI Foundry, seleccione **Management
+    center** en el panel izquierdo.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image21.png)
+    ![A screenshot of a computer Description automatically generated](./media/image21.png)
 
-2.  Na seção **Connected resources**, selecione **+ New connection** e,
-    em seguida, selecione **Azure AI Search**.
+2.  En la sección  **Connected resources** , seleccione **New
+    connection**  y, a continuación, **Azure AI Search**.
 
     ![](./media/image22.png)
 
     ![](./media/image23.png)
 
-3.  Selecione **API key** em **Authentication** e selecione **Add
-    connection**.
+3.  Seleccione la **API key** en **Authentication** y seleccione **Add
+    connection.**
 
-    ![Uma captura de tela de um mecanismo de pesquisa Descrição gerada automaticamente](./media/image24.png)
+    ![A screenshot of a search engine Description automatically generated](./media/image24.png)
 
-    ![Uma captura de tela de um mecanismo de pesquisa Descrição gerada automaticamente](./media/image25.png)
+    ![A screenshot of a search engine Description automatically generated](./media/image25.png)
 
-4.  Na página **Connected resources**, você agora pode ver a conexão de
-    recurso adicionada.
+4.  En la página **Connected resources,** ahora puede ver la conexión de
+    recursos añadida.
 
     ![](./media/image26.png)
 
-### Tarefa 5: Instalar a CLI do Azure e sign in
+### Tarea 5: Instale Azure CLI e inicie sesión
 
-Você instala a CLI do Azure e entra no ambiente de desenvolvimento
-local, para que possa usar suas credenciais de usuário para chamar o
-serviço Azure OpenAI.
+Instale Azure CLI e inicie sesión desde su entorno de desarrollo local,
+de modo que pueda utilizar sus credenciales de usuario para llamar al
+servicio Azure OpenAI.
 
-1.  Procure por +++**PowerShell**+++ na barra de pesquisa do Windows e
-    abra-o no modo **administrator**.
+1.  Busque +++ **PowerShell** +++ en la barra de búsqueda de Windows y
+    ábralo en modo Administrador.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image27.png)
+    ![A screenshot of a computer Description automatically generated](./media/image27.png)
 
-2.  Abra o Windows Power Shell, cole o comando abaixo e execute-o.
+2.  Abra windows power shell y pegue el siguiente comando y ejecútelo:
 
     ```
     $progressPreference = 'silentlyContinue'
@@ -260,199 +264,218 @@ serviço Azure OpenAI.
     Write-Host "Done."
     ```
 
-3.  Instale a CLI do Azure do terminal usando o seguinte comando:
+3.  Instale el Azure CLI desde su terminal utilizando el siguiente
+    comando:
 
-    +++winget install -e --id Microsoft.AzureCLI+++
+    ```
+    winget install -e --id Microsoft.AzureCLI
+    ```
 
-    Selecione **Y** quando solicitado para aceitação.
+    Seleccione **Y,** cuando se le pida aceptación.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image28.png)
-
+    ![A screenshot of a computer Description automatically
+    generated](./media/image28.png)
+    
     ![](./media/image29.png)
-
+    
     ![](./media/image30.png)
 
-4.  Depois de instalar a CLI do Azure, sign in usando o comando az login
-    e sign in usando o navegador:
+4.  Una vez instalada la CLI de Azure, inicie sesión con el comando az
+    login e inicie sesión con el navegador:
 
     +++az login+++
 
-    Selecione **Work or school account** e clique em **Continue**.
+    Seleccione **Work or school account** y haga clic en **Continue**.
 
-    ![Uma captura de tela de uma tela de computador Descrição gerada
-automaticamente](./media/image31.png)
+    ![A screenshot of a computer screen Description automatically
+generated](./media/image31.png)
 
-5.  Faça login com suas **credenciais de login no Azure**.
+5.  Inicie sesión con sus **Azure login credentials**.
 
-    ![Uma captura de tela de computador de um programa Descrição gerada
-automaticamente](./media/image32.png)
+    ![A computer screen shot of a program Description automatically
+generated](./media/image32.png)
 
-6.  Digite **1** para o prompt **Select a subscription** e pressione
+6.  Ingrese **1** para **Select a subscription** y haga clic en
     **Enter**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image33.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image33.png)
 
-### Tarefa 6: Criar um novo ambiente Python
+### Tarea 6: Cree un nuevo entorno Python
 
-Primeiro, você precisa criar um novo ambiente Python para instalar o
-pacote necessário para este tutorial. NÃO instale pacotes em sua
-instalação global do Python. Você deve sempre usar um ambiente virtual
-ou conda ao instalar pacotes Python, caso contrário, você pode
-interromper sua instalação global do Python.
+Primero, es necesario crear un nuevo entorno de Python para instalar los
+paquetes requeridos en este tutorial. No se deben instalar paquetes en
+la instalación global de Python. Es recomendable utilizar siempre un
+entorno virtual o Conda al instalar paquetes de Python para evitar
+posibles conflictos que puedan afectar la instalación global.
 
-**Criar um ambiente virtual**
+**Cree un entorno virtual**
 
-1.  No Power Shell, navegue até **C:\Users\Admin** executando os
-    comandos abaixo.
+1.  Desde su Power Shell, navegue a **C:\Users\Admin** ejecutando los
+    siguientes comandos:
 
-    +++cd\\+++
-
+    +++cd\\++
+    
     +++cd Users\Admin+++
 
-2.  Crie uma pasta com o nome do seu projeto, **RAGproj\<Lab instance
-    id\>, inserindo o seguinte comando em seu PowerShell.**
+2.  Cree una carpeta con el nombre de su proyecto, **RAGproj\<Lab
+    instance id\>, by entering the following command in your
+    powershell.**
 
-    >[!Note] **Nota:** substitua \<Nome do projeto\> pelo nome do seu projeto no
-comando abaixo e execute-o.
+    **Nota:** Sustituya \<Nombre del proyecto\> con el nombre de su proyecto
+en el siguiente comando y ejecútelo:
 
-    +++**mkdir \<Nome do projeto\>**+++
+    ```
+    mkdir ProjectXXXX
+    ```
 
-    ![Uma tela de computador com texto branco e verde Descrição gerada
-automaticamente](./media/image34.png)
+    ![A computer screen with white and green text Description automatically
+generated](./media/image34.png)
 
-3.  No terminal, digite o seguinte comando para navegar até o novo local
-    da pasta
+3.  En su terminal ingrese el siguiente comando para navegar a la nueva
+    ubicación de la carpeta:
 
-    +++cd \<Nome do projeto\>+++
+    +++**cd \<Project name\>**+++
 
-    Substitua \<Nome do projeto\> pelo nome da pasta que você criou na etapa
-anterior.
+    Sustituya \<Nombre del proyecto\> por el nombre de la carpeta que ha
+creado en el paso anterior.
 
-    ![Uma tela azul com texto branco Descrição gerada
-automaticamente](./media/image35.png)
+    ![A blue screen with white text Description automatically
+generated](./media/image35.png)
 
-4.  Crie um ambiente virtual usando os seguintes comandos
+4.  Cree un entorno virtual utilizando los siguientes comandos:
 
     +++py -3 -m venv .venv+++
 
     +++.venv\scripts\activate+++
 
-    ![Uma captura de tela de computador de um código Descrição gerada automaticamente](./media/image36.png)
+    ![A computer screen shot of a code Description automatically generated](./media/7f94d24aed5bb00427b5ca60ff1dc38e1855d0fe.png)
 
-    Ativar o ambiente Python significa que, ao executar Python ou pip a partir da linha de comando, você usa o interpretador Python contido na pasta .venv do seu aplicativo.
+    Activar el entorno de Python permite que, al ejecutar python o pip desde la línea de comandos, se utilice el  intérprete de Python ubicado en la carpeta **.venv** de la aplicación.
 
-5.  Abra o **VS Code**. Selecione **File -\> Open Folder** e selecione
-    **a pasta RAGproject** que criamos nas etapas anteriores (**de
-    C:\Users\Admin**).
+5.  Abra **VS Code**. Seleccione **File -\> Open Folder** y seleccione
+    la carpeta **RAGproject** que hemos creado en los pasos anteriores
+    (**desde C:\Users\Admin**).
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image37.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image37.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image38.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image38.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image39.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image39.png)
 
-### Tarefa 7: Instalar pacotes
+### Tarea 7: Instale los paquetes necesarios
 
-Instale azure-ai-projects(preview) e azure-ai-inference (preview),
-juntamente com outros pacotes necessários.
+Instale azure-ai-projects(preview) y azure-ai-inference (preview), junto
+con otros paquetes necesarios.
 
-1.  Crie um arquivo chamado +++**requirements.txt**+++ na pasta
-    **Project** e adicione os seguintes pacotes ao arquivo:
+1.  Cree un archivo llamado +++**requirements.txt**+++ en la carpeta
+    **Project** y agregue los siguientes paquetes al archivo:
 
     ```
     azure-ai-projects
     azure-ai-inference[prompts]
     azure-identity
     azure-search-documents
-    Pandas
+    pandas
     python-dotenv
     opentelemetry-api
+    marshmallow==3.23.2
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image40.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image40.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image41.png)
+    ![A screenshot of a computer Description automatically generated](./media/image41.png)
 
-2.  Na barra de navegação superior, clique em **File** e **Save All**.
+2.  En la barra de navegación superior, haga clic en archivo y **save
+    all**.
 
-3.  Clique com o botão direito do mouse no requirements.txt e selecione
+3.  Haga clic con el botón derecho en requirements.txt y seleccione
     **Open in Integrated Terminal**.
 
     ![](./media/image42.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image43.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image43.png)
 
-4.  Execute o seguinte comando para entrar no ambiente virtual:
+4.  Ejecute el siguiente comando para entrar en el entorno virtual:
 
-    +++py -3 -m venv .venv+++
+    ```
+    py -3 -m venv .venv
+    ```
+    
+    ```
+    .venv\scripts\activate
+    ```
 
-    +++.venv\scripts\activate+++
+    ![A screenshot of a computer Description automatically
+generated](./media/image44.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image44.png)
+5.  Ejecute el comando +++az login+++ e inicie sesión con sus
+    credenciales de inicio de sesión de Azure. Luego, seleccione **1**
+    para elegir la suscripción.
 
-5.  Execute o comando +++az login+++ e faça login com suas credenciais
-    de login no Azure. Selecione **1** para selecionar a assinatura.
+    ![A screenshot of a computer Description automatically
+generated](./media/image45.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image45.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image46.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image46.png)
-
-6.  Para instalar os pacotes necessários, execute o código a seguir.
+6.  Para instalar los paquetes necesarios, ejecute el siguiente comando:
 
     +++pip install -r requirements.txt+++
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image47.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image47.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image48.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image48.png)
 
-    **Observação:** se você receber um aviso de uma nova versão do pip, execute os comandos abaixo para atualizar o pip
+    >[!Note] **Nota:** si recibe un aviso de una nueva versión de pip, ejecute los siguientes comandos para actualizar pip:
 
     +++pip install -r requirements.txt+++
 
     +++python.exe -m pip install --upgrade pip+++
 
-    ![Uma captura de tela de um programa de computador Descrição gerada automaticamente](./media/image49.png)
+    ![A screenshot of a computer program Description automatically generated](./media/image49.png)
 
-### Tarefa 8: Criar um script auxiliar
+### Tarea 8: Cree un helper script
 
-1.  Crie uma nova pasta chamada **src**. Executando o seguinte comando
-    no terminal:
-
-    +++mkdir src+++
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image50.png)
-
-2.  Crie um novo arquivo na pasta **src** e nomeie-o +++**config.py**+++
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image51.png)
-
-3.  Adicione o código a seguir ao **config.py** e salve-o:
+1.  Cree una nueva carpeta llamada **src,** ejecutando el siguiente
+    comando en su terminal:
 
     ```
+    mkdir src
+    ```
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image50.png)
+
+2.  Cree un nuevo archivo en la carpeta **src** y nómbrelo
+    como +++**config.py**+++.
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image51.png)
+
+3.  Agregue el siguiente código a **config.py** y guárdelo.
+
+    ```
+    # ruff: noqa: ANN201, ANN001
+    
     import os
     import sys
     import pathlib
     import logging
     from azure.identity import DefaultAzureCredential
-    from azure.ai.projects import AIProjectClient 
+    from azure.ai.projects import AIProjectClient
     from azure.ai.inference.tracing import AIInferenceInstrumentor
     
     # load environment variables from the .env file
     from dotenv import load_dotenv
+    
     load_dotenv()
     
     # Set "./assets" as the path where assets are stored, resolving the absolute path:
@@ -462,6 +485,7 @@ automaticamente](./media/image51.png)
     logger = logging.getLogger("app")
     logger.setLevel(logging.INFO)
     logger.addHandler(logging.StreamHandler(stream=sys.stdout))
+    
     
     # Returns a module-specific logger, inheriting from the root app logger
     def get_logger(module_name):
@@ -489,30 +513,32 @@ automaticamente](./media/image51.png)
                 )
                 logger.warning(tracing_link)
     
-               return
+                return
+    
             configure_azure_monitor(connection_string=application_insights_connection_string)
             logger.info("Enabled telemetry logging to project, view traces at:")
             logger.info(tracing_link)
+    
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image52.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image52.png)
 
-    **Observação**: esse script de arquivo config.py recém-criado será usado
-no próximo exercício.
+    >[!Note] **Nota**: este script config.py recién creado se utilizará en el
+siguiente ejercicio.
 
-### Tarefa 9: Configurar variáveis de ambiente
+### Tarea 9: Configure las variables de entorno
 
-A cadeia de conexão do projeto é necessária para chamar o serviço Azure
-OpenAI do seu código. Neste guia de início rápido, você salva esse valor
-em um arquivo .env, que é um arquivo que contém variáveis de ambiente
-que seu aplicativo pode ler.
+La cadena de conexión de su proyecto es necesaria para llamar al
+servicio de Azure OpenAI desde el código. En este inicio rápido, guarde
+este valor en un archivo .env, que almacena variables de entorno
+accesibles por su aplicación.
 
-1.  Crie um novo arquivo +++**.env+++** no diretório **src** e cole o
-    seguinte código:
+1.  Cree un nuevo archivo +++**.env**+++ en el directorio **src**, y
+    pegue el siguiente código:
 
-    Substitua a **\<your-connection-string\>** pelo valor da cadeia de
-conexão do projeto salvo no bloco de notas na tarefa 1.
+    Sustituya **\<your-connection-string\>** por el valor de la cadena de
+conexión del proyecto guardado en el bloc de notas en la tarea 1.
 
     ```
     AIPROJECT_CONNECTION_STRING=<your-connection-string>
@@ -525,53 +551,54 @@ conexão do projeto salvo no bloco de notas na tarefa 1.
 
     ![](./media/image53.png)
 
-    **Observação**: sua cadeia de conexão pode ser encontrada na página
-inicial do projeto Azure AI Foundry em **Overview**.
+    >[!Note] **Nota**: Puede encontrar su cadena de conexión en la página de inicio
+del proyecto Azure AI Foundry en  **Overview**.
 
-## Exercício 2: Criar um aplicativo de recuperação de conhecimento personalizado (RAG) com o Azure AI Foundry SDK
+## Ejercicio 2: Cree una aplicación personalizada de recuperación de conocimiento (RAG) con Azure AI Foundry SDK
 
-### Tarefa 1: Criar dados de exemplo para seu aplicativo de chat
+### Tarea 1: Cree datos de ejemplo para su aplicación de chat
 
-O objetivo desse aplicativo baseado em RAG é fundamentar as respostas do
-modelo em seus dados personalizados. Você usa um índice do Azure AI
-Search que armazena dados vetorizados do modelo de inserções. O índice
-de pesquisa é usado para recuperar documentos relevantes com base na
-pergunta do usuário.
+El objetivo de esta aplicación basada en RAG es fundamentar las
+respuestas del modelo en sus datos personalizados. Se utiliza un índice
+de Azure AI Search que almacena datos vectorizados a partir del modelo
+de incrustaciones. Este índice de búsqueda se emplea para recuperar
+documentos relevantes en función de la pregunta del usuario.
 
-1.  Na configuração do VS Code que está aberta, crie uma pasta chamada
-    +++**assets**+++ na pasta **src**.
+1.  Desde la configuración de VS Code abierta, cree una carpeta llamada
+    +++**assets**+++ en la carpeta **src.**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image54.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image54.png)
 
-2.  Copie o arquivo **products.csv** de **C:\LabFiles** e cole-o em
+2.  Copie el archivo **products.csv** de **C:\LabFiles** y péguelo en la
+    carpeta
 
-    **C:\Users\Admin\\ a pasta Nome do projeto\>\src\assets** .
+    **C:\Users\Admin\\ Your Project Name\>\src\assets.**
 
-    **Observação:** isso precisa ser feito no **EXPLORER** e, em seguida,
-será refletido no VS Code.
+    >[!Note] **Nota:** Esto debe hacerse en el Explorador de archivos y luego se
+reflejará en el Código VS.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image55.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image55.png)
 
-3.  Navegue até **File** na barra de navegação superior e clique em
+3.  Vaya al **File** en la barra de navegación superior y haga clic en
     **Save All.**
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image56.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image56.png)
 
-### Tarefa 2: Criar um índice de pesquisa
+### Tarea 2: Cree un índice de búsqueda
 
-O índice de pesquisa é usado para armazenar dados vetorizados do modelo de incorporações. O índice de pesquisa é usado para recuperar documentos relevantes com base na pergunta do usuário.
+El índice de búsqueda se utiliza para almacenar los datos vectorizados del modelo de incrustación. El índice de búsqueda se utiliza para recuperar los documentos pertinentes en función de la pregunta del usuario.
 
-1.  No VS code, crie um arquivo chamado +++**create_search_index.py**+++
-    na pasta **src**.
+1.  En el código VS, cree un archivo llamado
+    +++**create_search_index.py**+++ en su carpeta **src**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image57.png)
+    ![A screenshot of a computer Description automatically generated](./media/image57.png)
 
-2.  Abra o arquivo criado, **create_search_index.py** arquivo e adicione
-    o seguinte código para importar as bibliotecas necessárias, criar um
-    cliente de projeto e definir algumas configurações:
+2.  Abra el archivo creado, **create_search_index.py** y agregue el
+    siguiente código para importar las librerías necesarias, crear un
+    cliente de proyecto y configurar algunos parámetros:
 
     ```
     import os
@@ -582,6 +609,7 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
     from azure.search.documents import SearchClient
     from azure.search.documents.indexes import SearchIndexClient
     from config import get_logger
+    
     # initialize logging object
     logger = get_logger(__name__)
     
@@ -605,10 +633,10 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
     )
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image58.png)
+    ![A screenshot of a computer Description automatically generated](./media/image58.png)
 
-3.  Agora adicione a função no final do **create_search_index.py** para
-    definir um índice de pesquisa:
+3.  Ahora, agregue la función al final de **create_search_index.py**
+    para definir un índice de búsqueda:
 
     ```
     import pandas as pd
@@ -633,9 +661,9 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
     )
     
     
-    def create_index_definition(index_name: str, modelo: str) -> SearchIndex:
+    def create_index_definition(index_name: str, model: str) -> SearchIndex:
         dimensions = 1536  # text-embedding-ada-002
-            if model == "text-embedding-3-large":
+        if model == "text-embedding-3-large":
             dimensions = 3072
     
         # The fields we want to index. The "embedding" field is a vector field that will
@@ -656,13 +684,13 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
             ),
         ]
     
-            # The "content" field should be prioritized for semantic ranking.
+        # The "content" field should be prioritized for semantic ranking.
         semantic_config = SemanticConfiguration(
-            nome="padrão",
+            name="default",
             prioritized_fields=SemanticPrioritizedFields(
-                title_field=SemanticField(field_name="title",
+                title_field=SemanticField(field_name="title"),
                 keywords_fields=[],
-                content_fields=[SemanticField(field_name="conteúdo")],
+                content_fields=[SemanticField(field_name="content")],
             ),
         )
     
@@ -676,8 +704,8 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
                     kind=VectorSearchAlgorithmKind.HNSW,
                     parameters=HnswParameters(
                         m=4,
-                        ef_construction = 1000,
-                        ef_search = 1000,
+                        ef_construction=1000,
+                        ef_search=1000,
                         metric=VectorSearchAlgorithmMetric.COSINE,
                     ),
                 ),
@@ -687,7 +715,7 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
                     parameters=ExhaustiveKnnParameters(metric=VectorSearchAlgorithmMetric.COSINE),
                 ),
             ],
-            perfis=[
+            profiles=[
                 VectorSearchProfile(
                     name="myHnswProfile",
                     algorithm_configuration_name="myHnsw",
@@ -700,28 +728,26 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
         )
     
         # Create the semantic settings with the configuration
-        semantic_search = SemanticSearch(configurações=[semantic_config])
+        semantic_search = SemanticSearch(configurations=[semantic_config])
     
-    # Create the search index definition
+        # Create the search index definition
         return SearchIndex(
             name=index_name,
             fields=fields,
             semantic_search=semantic_search,
-            vector_search = vector_search,
+            vector_search=vector_search,
         )
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image59.png)
+    ![A screenshot of a computer Description automatically generated](./e1a8102c540d33a2000f2603b9442cbb088ea4ee.png)
 
-4.  Agora adicione a função em **create_search_index.py** para criar a
-    função para adicionar um arquivo csv ao índice:
+4.  Después, agregue la función en create_search_index.py para incluir
+    un archivo CSV en el índice.
 
     ```
     # define a function for indexing a csv file, that adds each row as a document
     # and generates vector embeddings for the specified content_column
     def create_docs_from_csv(path: str, content_column: str, model: str) -> list[dict[str, any]]:
-        produtos = pd.read_csv(caminho)
-        itens = []
         products = pd.read_csv(path)
         items = []
         for product in products.to_dict("records"):
@@ -731,6 +757,7 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
             url = f"/products/{title.lower().replace(' ', '-')}"
             emb = embeddings.embed(input=content, model=model)
             rec = {
+                "id": id,
                 "content": content,
                 "filepath": f"{title.lower().replace(' ', '-')}",
                 "title": title,
@@ -747,7 +774,7 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
         try:
             index_definition = index_client.get_index(index_name)
             index_client.delete_index(index_name)
-     logger.info(f"🗑️  Found existing index named '{index_name}', and deleted it")
+            logger.info(f"🗑️  Found existing index named '{index_name}', and deleted it")
         except Exception:
             pass
     
@@ -755,7 +782,7 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
         index_definition = create_index_definition(index_name, model=os.environ["EMBEDDINGS_MODEL"])
         index_client.create_index(index_definition)
     
-            # create documents from the products.csv file, generating vector embeddings for the "description" column
+        # create documents from the products.csv file, generating vector embeddings for the "description" column
         docs = create_docs_from_csv(path=csv_file, content_column="description", model=os.environ["EMBEDDINGS_MODEL"])
     
         # Add the documents to the index using the Azure AI Search client
@@ -765,88 +792,98 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
             credential=AzureKeyCredential(key=search_connection.key),
         )
     
-        search_client.upload_documents(documentos)
+        search_client.upload_documents(docs)
         logger.info(f"➕ Uploaded {len(docs)} documents to '{index_name}' index")
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image60.png)
+    ![A screenshot of a computer Description automatically generated](./media/image60.png)
 
-5.  Por fim, adicione as funções abaixo em **create_search_index.py**
-    para criar o índice e registrá-lo no projeto de nuvem. Depois de
-    adicionar o código, vá para **Files** na barra superior e clique em
-    **Save All.**
+5.  Finalmente, agregue las siguientes funciones en
+    create_search_index.py para construir el índice y registrarlo en el
+    proyecto Cloud. Después de agregar el código, vaya a **File** en la
+    barra superior y haga clic en **Save all.**
 
     ```
     if __name__ == "__main__":
         import argparse
     
-        parser = argparse. ArgumentParser()
+        parser = argparse.ArgumentParser()
         parser.add_argument(
             "--index-name",
             type=str,
-    help="index name to use when creating the AI Search index",
+            help="index name to use when creating the AI Search index",
             default=os.environ["AISEARCH_INDEX_NAME"],
         )
         parser.add_argument(
-    "--csv-file", type=str, help="path to data for creating search index", default="assets/products.csv "
+            "--csv-file", type=str, help="path to data for creating search index", default="assets/products.csv"
         )
         args = parser.parse_args()
         index_name = args.index_name
         csv_file = args.csv_file
+    
         create_index_from_csv(index_name, csv_file)
     ```
-    
+
     ![](./media/image61.png)
 
-6.  Clique com o botão direito do mouse no **create_search_index.py** e
-    selecione a opção **Open in Integrated Terminal**.
+7.  Haga clic derecho sobre el archivo **create_search_index.py** y
+    seleccione la opción **Open in integrated terminal.**
 
     ![](./media/image62.png)
 
-7.  No terminal, faça login com a credencial de login no Azure e siga as
-    instruções para autenticar sua conta:
+7.  Desde su terminal, inicie sesión con sus credenciales de acceso a
+    Azure y siga las instrucciones para autenticar su cuenta:
 
-    +++az login+++
-
+    ```
+    az login
+    ```
+    
     ![](./media/image63.png)
 
     ![](./media/image64.png)
 
-8.  Execute o código para criar seu índice localmente e registre-o no
-    projeto de nuvem:
+8.  Ejecute el código para crear su índice localmente y registrar el
+    proyecto en la nube:
 
-    +++python create_search_index.py+++
+    ```
+    python create_search_index.py
+    ```
+    ![](./media/3e2a5022a5f3ce1d93629c60a59419af97494e45.png)
 
-    ![](./media/image65.png)
+9.  Una vez ejecutado el script, puede ver el índice recién creado en el
+    portal de Azure.
 
-9.  Depois que o script for executado, você poderá exibir o índice
-    recém-criado no portal do Azure.
-
-10. Navegue até o **Resource Group -\> Your search service
+10. Navegue hasta **Resource Group -\> Your search service
     created(aisearchLabinstanceID) -\> Search management -\> Indexes**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image66.png)
+    ![A screenshot of a computer Description automatically generated](./media/image66.png)
 
-11. Se você executar o script novamente com o mesmo nome de índice, ele
-    criará uma nova versão do mesmo índice.
+11. Si ejecuta de nuevo el script con el mismo nombre de índice, crea
+    una nueva versión del mismo índice.
 
-### Tarefa 3: Obter documentos do produto
+### Tarea 3: Obtenga los documentos del producto
 
-Em seguida, você cria um script para obter documentos de produtos do índice de pesquisa. O script consulta o índice de pesquisa em busca de documentos que correspondam à pergunta de um usuário.
+A continuación, cree un script para obtener los documentos del
+producto desde el índice de búsqueda. El script consulta el índice de
+búsqueda para encontrar documentos que coincidan con la pregunta del
+usuario.
 
-**Criar script para obter documentos do produto**
+**Cree un script para obtener documentos de producto**
 
-Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar informações relevantes. Esse script usa o Azure AI SDK para consultar o índice de pesquisa em busca de documentos que correspondam à pergunta de um usuário. Em seguida, ele retorna os documentos para o aplicativo de chat.
+Cuando el chat recibe una solicitud, busca a través de sus datos para
+encontrar información relevante. Este script utiliza el Azure AI SDK
+para consultar el índice de búsqueda en busca de documentos que
+coincidan con la pregunta del usuario. Luego, devuelve los documentos
+a la aplicación de chat.
 
+1.  Desde VS Code, cree un archivo llamado
+    +++**get_product_documents.py**+++ en la carpeta **src.**
 
-1.  No VS Code, crie um arquivo chamado
-    +++**get_product_documents.py**+++ na pasta **src**.
+    ![A screenshot of a computer Description automatically generated](./media/image67.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image67.png)
-
-2.  Copie e cole o código a seguir no arquivo. Comece com o código para
-    importar as bibliotecas necessárias, criar um cliente de projeto e
-    definir as configurações.
+2.  Copie y pegue el siguiente código en el archivo. Comience con el
+    código para importar las bibliotecas necesarias, crear un cliente de
+    proyecto y configurar los ajustes.
 
     ```
     import os
@@ -886,8 +923,8 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
     )
     ```
 
-3.  Adicione a função em get_product-documents.py para **obter
-    documentos do produto**.
+3.  Agregue la función en get_product-documents.py a **get product
+    documents**.
 
     ```
     from azure.ai.inference.prompts import PromptTemplate
@@ -899,7 +936,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
         if context is None:
             context = {}
     
-            overrides = context.get("overrides", {})
+        overrides = context.get("overrides", {})
         top = overrides.get("top", 5)
     
         # generate a search query from the chat messages
@@ -956,8 +993,8 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
         return documents
     ```
 
-4.  Por fim, adicione código para **testar a função** ao executar o
-    script diretamente:
+4.  Finalmente, agregue el código para **probar la función** cuando
+    ejecute el script directamente:
 
     ```
     if __name__ == "__main__":
@@ -982,23 +1019,26 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
         result = get_product_documents(messages=[{"role": "user", "content": query}])
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image68.png)
+    ![A screenshot of a computer Description automatically generated](./media/image68.png)
 
-5.  Clique em **File**\> **Save All**.
+5.  Haga clic en **File**\> **Save all**.
 
     ![](./media/image69.png)
 
-### Tarefa 4: Criar modelo de prompt para mapeamento de intenção
+### Tarea 4: Cree una plantilla de prompt para mapeo de intenciones
 
-O script **get_product_documents.py** usa um modelo de prompt para converter a conversa em uma consulta de pesquisa. O modelo instrui como extrair a intenção do usuário da conversa.
+El script **get_product_documents.py** utiliza una plantilla de prompt
+para convertir la conversación en una consulta de búsqueda. La plantilla
+instruye sobre cómo extraer la intención del usuario de la conversación.
 
-1.  Antes de executar o script, crie o modelo de prompt. Crie um arquivo
-    chamado +++**intent_mapping.prompty**+++ na pasta **assets**:
+1.  Antes de ejecutar el script, cree la plantilla de consulta. Cree un
+    archivo llamado +++**intent_mapping.prompty**+++ en su carpeta de
+     **assets.**
 
     ![](./media/image70.png)
 
-2.  Copie o código a seguir para o arquivo **intent_mapping_prompty** e,
-    na barra superior, vá para **File** e clique em **Save All.**
+4.  Copie el siguiente código en el archivo intent_mapping_prompty y en
+    la barra superior vaya a **File** y haga clic en **Save all.**
 
     ```
     ---
@@ -1061,32 +1101,36 @@ O script **get_product_documents.py** usa um modelo de prompt para converter a c
     
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image71.png)
+    ![A screenshot of a computer Description automatically generated](./media/image71.png)
 
-### Tarefa 5: Testar o script de recuperação do documento do produto
+### Tarea 5: Pruebe el script de recuperación de documentos de producto
 
-1.  Agora que você tem o script e o modelo, execute o script para testar
-    quais documentos o índice de pesquisa retorna de uma consulta. Na
-    janela do terminal, execute:
+1.  Ahora que se dispone tanto del script como de la plantilla, ejecute
+    el script para probar qué documentos devuelve el índice de búsqueda
+    a partir de una consulta. Desde la ventana del terminal, ejecute:
 
-    +++python get_product_documents.py --query "I need a new tent for 4 people, what would you recommend?"+++
+    ```
+    python get_product_documents.py --query "I need a new tent for 4 people, what would you recommend?"
+    ```
+    
+    ![A screenshot of a computer Description automatically generated](./media/image72.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image72.png)
+### Tarea 6: Desarrolle un código de recuperación de conocimiento personalizado (RAG)
 
-### Tarefa 6: Desenvolver código de recuperação de conhecimento personalizado (RAG)
+A continuación, cree un código personalizado para añadir funciones de
+generación aumentada de recuperación (RAG) a una aplicación de chat
+básica.
 
-Em seguida, você cria um código personalizado para adicionar recursos de retrieval augmented generation (RAG) a um aplicativo de chat básico.
+**Cree un script de chat con funciones RAG**
 
-**Criar um script de chat com recursos RAG**
+1.  En su carpeta **src**, cree un nuevo archivo llamado +++
+    **chat_with_products.py** +++. Este script recupera documentos de
+    productos y genera una respuesta a la pregunta de un usuario.
 
-1.  Na pasta **src**, crie um novo arquivo chamado
-    +++**chat_with_products.py**+++. Esse script recupera documentos do
-    produto e gera uma resposta à pergunta de um usuário.
+    ![A screenshot of a computer Description automatically generated](./media/image73.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image73.png)
-
-2.  Adicione o código para importar as bibliotecas necessárias, criar um
-    cliente de projeto e definir as configurações:
+2.  Agregue el código para importar las bibliotecas necesarias, crear un
+    cliente de proyecto y configurar los ajustes:
 
     ```
     import os
@@ -1109,13 +1153,12 @@ Em seguida, você cria um código personalizado para adicionar recursos de retri
     
     # create a chat client we can use for testing
     chat = project.inference.get_chat_completions_client()
-    
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image74.png)
+    ![A screenshot of a computer Description automatically generated](./media/image74.png)
 
-3.  Adicione o código no final do **chat_with_products.py** para criar a
-    função de chat que usa os recursos RAG.
+3.  Agregue el código al final de chat_with_products.py, para crear la
+    función de chat que utiliza las capacidades RAG.
 
     ```
     from azure.ai.inference.prompts import PromptTemplate
@@ -1142,17 +1185,17 @@ Em seguida, você cria um código personalizado para adicionar recursos de retri
         # Return a chat protocol compliant response
         return {"message": response.choices[0].message, "context": context}
     ```
+    
+    ![A screenshot of a computer Description automatically generated](./media/image75.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image75.png)
-
-4.  Por fim, adicione o código para executar a **função de chat** e, em
-    seguida, vá para **File** e clique em **Save All**.
+4.  Por último, añada el código para ejecutar **chat** **function** y
+    luego vaya a archivos y haga clic en **Save all**.
 
     ```
     if __name__ == "__main__":
         import argparse
     
-            # load command line arguments
+        # load command line arguments
         parser = argparse.ArgumentParser()
         parser.add_argument(
             "--query",
@@ -1172,18 +1215,22 @@ Em seguida, você cria um código personalizado para adicionar recursos de retri
         # run chat with products
         response = chat_with_products(messages=[{"role": "user", "content": args.query}])
     ```
+    
+    ![A screenshot of a computer Description automatically generated](./media/image76.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image76.png)
+### Tarea 7: Cree una plantilla de prompt para chat fundamentado
 
-### Tarefa 7: Criar um modelo de prompt de chat fundamentado
+El script chat_with_products.py llama a una plantilla de prompt para
+generar una respuesta a la pregunta del usuario. La plantilla instruye
+sobre cómo generar una respuesta basada en la pregunta del usuario y los
+documentos recuperados. Cree esta plantilla ahora.
 
-O script chat_with_products.py chama um modelo de prompt para gerar uma resposta à pergunta do usuário. O modelo instrui como gerar uma resposta com base na pergunta do usuário e nos documentos recuperados. Crie este modelo agora.
+1.  En su carpeta **assets** , añada el archivo
+    +++**grounded_chat.prompty**+++
 
-1.  Na pasta **assets**, adicione o arquivo +++**grounded_chat.prompty**+++
+    ![A screenshot of a computer Description automatically generated](./media/image77.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image77.png)
-
-2.  Adicione o seguinte código **grounded_chat.prompty**.
+2.  Añada el siguiente código grounded_chat.prompty.
 
     ```
     ---
@@ -1214,96 +1261,101 @@ O script chat_with_products.py chama um modelo de prompt para gerar uma resposta
     {{/documents}}
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image78.png)
+    ![A screenshot of a computer Description automatically generated](./media/image78.png)
 
-3.  Clique em **File\> Save All.**
+3.  Haga clic en **File\> Save all.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image79.png)
+    ![A screenshot of a computer Description automatically generated](./media/image79.png)
 
-### Tarefa 8: Executar o script de chat com recursos RAG
+### Tarea 8: Ejecute el script de chat con capacidades RAG
 
-1.  Agora que você tem o script e o modelo, execute o script para testar
-    seu aplicativo de chat com recursos RAG:
+1.  Ahora que se dispone tanto del script como de la plantilla, ejecute
+    el script para probar su aplicación de chat con capacidades RAG:
 
-    +++python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?"+++
+    ```
+    python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?"
+    ```
+    ![A screenshot of a computer Description automatically generated](./media/image80.png)
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image80.png)
+### Tarea 9: Agregue registros de telemetría
 
-### Tarefa 9: Adicionar log de telemetria
+1.  Desde el portal de Azure, seleccione **Subscriptions**, luego
+    seleccione su suscripción y después seleccione **Resource
+    providers** bajo **Settings** en el panel de navegación izquierdo.
 
-1.  No portal do Azure, selecione **Subscriptions**, selecione sua
-    assinatura e, em seguida, selecione **Resource providers** em
-    **Settings** no painel de navegação esquerdo.
-
-2.  Pesquise e selecione +++**Microsoft.OperationalInsights**+++ e
-    clique nos três pontos desse provedor de recursos e selecione
+2.  Busque y seleccione +++**Microsoft.OperationalInsights**+++ y haga
+    clic en los tres puntos de este proveedor de recursos y seleccione
     **Register**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image81.png)
+    ![A screenshot of a computer Description automatically generated](./media/image81.png)
 
-3.  Siga o mesmo procedimento para registrar o
-    +++**microsoft.insights**+++
+3.  Siga el mismo procedimiento para registrarse
+    +++microsoft.insights+++
 
-4.  Aguarde uma mensagem de sucesso no registro antes de prosseguir para
-    a próxima etapa.
+4.  Espere a recibir un mensaje de éxito en el registro antes de
+    proceder al siguiente paso.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image82.png)
+    ![A screenshot of a computer Description automatically generated](./media/image82.png)
 
-5.  No seu projeto no Azure AI Foundry, selecione **Tracing** **Access
-    and improve** no painel esquerdo. Selecione **Create New**.
+5.  Desde su proyecto en Azure AI Foundry, seleccione **Tracing** en
+    **Access and improve** del panel izquierdo. Luego, seleccione
+    **Create New**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image83.png)
+    ![A screenshot of a computer Description automatically generated](./media/image83.png)
 
-6.  Forneça o nome como **+++appinsight+++\<ID da instância do
-    laboratório\>**
+6.  Proporcione el nombre como **+++appinsight+++\< ID de instancia de
+    laboratorio \>.**
 
-    ![Uma captura de tela de uma tela de computador Descrição gerada automaticamente](./media/image84.png)
+    ![A screenshot of a computer screen Description automatically generated](./c70544a3a6b72ffa899a674db8b98b142febc2a3.png)
 
-7.  Certifique-se de que o recurso seja criado.
+7.  Asegúrese de que se crea el recurso.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image85.png)
+    ![A screenshot of a computer Description automatically generated](./media/image85.png)
 
-8.  De volta ao VS Code, para habilitar o log de telemetria em seu
-    projeto, instale azure-monitor-opentelemetry.
+8.  De vuelta en VS Code, para habilitar el registro de telemetría en su
+    proyecto, instale azure-monitor-opentelemetry.
 
     +++pip install azure-monitor-opentelemetry+++
 
-    ![Uma captura de tela de um programa de computador Descrição gerada automaticamente](./media/image86.png)
+    ![A screenshot of a computer program Description automatically generated](./media/image86.png)
 
-9.  Adicione o script **--enable-telemetry flag when you use
-    the chat_with_products.py**:
+9.  Agregue el --enable-telemetry flag cuando utilice el script
+    chat_with_products.py:
 
-    +++python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?" --enable-telemetry+++
+    ```
+    python chat_with_products.py --query "I need a new tent for 4 people, what would you recommend?" --enable--telemetry
+    ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image87.png)
+    ![A screenshot of a computer Description automatically generated](./9a018fae6450d21af5f67050b90ca7807a90a2c9.png)
 
-## Exercício 3: Avaliar o aplicativo de chat personalizado com o Azure AI Foundry SDK
+## Ejercicio 3: Evalúe la aplicación de chat personalizada con Azure AI Foundry SDK
 
-### Tarefa 1: Avaliar a qualidade das respostas do aplicativo de chat
+### Tarea 1: Evalúe la calidad de las respuestas de la aplicación de chat
 
-Agora que você sabe que seu aplicativo de chat responde bem às suas
-perguntas, inclusive com o histórico do chat, é hora de avaliar como ele
-se sai em algumas métricas diferentes e mais dados.
+Ahora que sabe que su aplicación de chat responde bien a sus consultas,
+incluyendo el historial de chat, es momento de evaluar su desempeño en
+diversas métricas y con más datos.
 
-Use um avaliador com um conjunto de dados de avaliação e a função de
-destino **get_chat_response()** e, em seguida, avalie os resultados da
-avaliação.
+Utiliza un evaluador con un conjunto de datos de evaluación y la función
+objetivo get_chat_response(), luego evalúa los resultados de la
+evaluación.
 
-Depois de executar uma avaliação, você pode fazer melhorias em sua
-lógica, como melhorar o prompt do sistema e observar como as respostas
-do aplicativo de chat mudam e melhoram.
+Una vez que haya ejecutado una evaluación, podrá realizar mejoras en su
+lógica, como mejorar su system prompt, y observar cómo cambian y mejoran
+las respuestas de la aplicación de chat.
 
-**Criar conjunto de dados de avaliação**
+**Cree un conjunto de datos de evaluación**
 
-Use o conjunto de dados de avaliação a seguir, que contém exemplos de
-perguntas e respostas esperadas (verdade).
+Utilice el siguiente conjunto de datos de evaluación, que contiene
+ejemplos de preguntas y respuestas esperadas (Verdaderas).
 
-1.  Crie um arquivo chamado +++**chat_eval_data.jsonl**+++ na pasta
-    **assets**.
+1.  Cree un archivo llamado +++**chat_eval_data.jsonl**+++ en su carpeta
+    de  **assets.**
 
     ![](./media/image88.png)
 
-2.  Cole esse conjunto de dados no arquivo e **salve** o arquivo.
+2.  Pegue este conjunto de datos en el archivo y guárdelo, haciendo clic
+    en **save.**
 
     ```
     {"query": "Which tent is the most waterproof?", "truth": "The Alpine Explorer Tent has the highest rainfly waterproof rating at 3000m"}
@@ -1321,40 +1373,42 @@ perguntas e respostas esperadas (verdade).
     {"query": "Is France in Europe?", "truth": "Sorry, I can only queries related to outdoor/camping gear and equipment"}
     ```
     
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image89.png)
+    ![A screenshot of a computer Description automatically generated](./media/image89.png)
 
-### Tarefa 2: Avaliar com avaliadores do Azure AI
+### Tarea 2: Realice la evaluación utilizando los evaluadores de Azure AI
 
-Agora, defina um script de avaliação que:
+A continuación, se presenta un script de evaluación que ejecuta los
+pasos mencionados:
 
-- gere um wrapper de função de destino em torno da lógica do nosso
-  aplicativo de chat;
+- Genera un envoltorio de función objetivo alrededor de la lógica de la
+  aplicación de chat.
 
-- carregue o conjunto de dados .jsonl de exemplo;
+- Carga el conjunto de datos de ejemplo .jsonl.
 
-- execute a avaliação, que usa a função de destino e mescla o conjunto
-  de dados de avaliação com as respostas do aplicativo de chat;
+- Ejecuta la evaluación, que toma la función objetivo y fusiona el
+  conjunto de datos de evaluación con las respuestas de la aplicación de
+  chat.
 
-- gere um conjunto de métricas assistidas por GPT (relevância,
-  fundamentação e coerência) para avaliar a qualidade das respostas do
-  aplicativo de chat;
+- Genera un conjunto de métricas asistidas por GPT (relevancia,
+  fundamentación y coherencia) para evaluar la calidad de las respuestas
+  de la aplicación de chat.
 
-- produza os resultados localmente e registre os resultados no projeto
-  de nuvem.
+- Genera la salida de los resultados localmente y registra los
+  resultados del proyecto en la nube.
 
-O script permite que você revise os resultados localmente, gerando os
-resultados na linha de comando e em um arquivo json.
+El script permite revisar los resultados localmente, mostrando los
+resultados en la línea de comandos y en un archivo json.
 
-O script também registra os resultados da avaliação no projeto de nuvem
-para que você possa comparar as execuções de avaliação na interface do
-usuário.
+El script también registra los resultados de la evaluación del proyecto
+en la nube para que se puedan comparar las ejecuciones de evaluación en
+la interfaz de usuario.
 
-1.  Crie um arquivo chamado +++**evaluate.py**+++ na pasta **src**.
+1.  Cree un archivo llamado +++**evaluate.py**+++ en el archivo **src.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image90.png)
+    ![A screenshot of a computer Description automatically generated](./media/image90.png)
 
-2.  Adicione o seguinte código para importar as bibliotecas necessárias,
-    criar um cliente de projeto e definir algumas configurações:
+2.  Agregue el siguiente código para importar las librerías necesarias,
+    crear un cliente de proyecto y configurar algunos parámetros:
 
     ```
     import os
@@ -1388,10 +1442,11 @@ usuário.
     groundedness = GroundednessEvaluator(evaluator_model)
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image91.png)
+    ![A screenshot of a computer Description automatically generated](./media/image91.png)
 
-3.  Adicione código para criar uma função wrapper que implemente a
-    interface de avaliação para avaliação de consulta e resposta:
+3.  Agregue un código para crear una función envolvente que implemente
+    la interfaz de evaluación para la evaluación de consultas y
+    respuestas:
 
     ```
     def evaluate_chat_with_products(query):
@@ -1399,11 +1454,11 @@ usuário.
         return {"response": response["message"].content, "context": response["context"]["grounding_data"]}
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image92.png)
+    ![A screenshot of a computer Description automatically generated](./media/image92.png)
 
-4.  Por fim, adicione código para executar a avaliação, exibir os
-    resultados localmente e fornecer um link para os resultados da
-    avaliação no portal AI Foundry.
+4.  Finalmente, agregue un código para ejecutar la evaluación, ver los
+    resultados localmente y proporcionar un enlace a los resultados de
+    la evaluación en el portal de AI Foundry.
 
     ```
     # Evaluate must be called inside of __main__, not on import
@@ -1447,118 +1502,118 @@ usuário.
         pprint(f"View evaluation results in AI Studio: {result['studio_url']}")
     ```
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image93.png)
+    ![A screenshot of a computer Description automatically generated](./media/image93.png)
 
-5.  Clique em **Save All** em **File** na barra de navegação superior.
+5.  Haga clic en **Save all** en **File** en la barra de navegación
+    superior
 
-### Tarefa 3: Configurar o modelo de avaliação
+### Tarea 3: Configure el modelo de evaluación
 
-Como o script de avaliação chama o modelo muitas vezes, talvez você
-queira aumentar o número de tokens por minuto para o modelo de
-avaliação.
+Dado que el script de evaluación llama al modelo muchas veces, es
+posible que desee aumentar el número de tokens por minuto para el modelo
+de evaluación.
 
-Inicialmente, você criou um arquivo **.env** que especifica o nome do
-modelo de avaliação, **gpt-4o-mini**. Tente aumentar o limite de tokens
-por minuto para este modelo, se você tiver cota disponível. Se você não
-tiver cota suficiente para aumentar o valor, não se preocupe, o script
-foi projetado para lidar com erros de limite.
+Inicialmente, creó un archivo **.env** que especifica el nombre del
+modelo de evaluación, **gpt-4o-mini**. Intente aumentar el límite de
+tokens por minuto para este modelo, si tiene cuota disponible. Si no
+tiene suficiente cuota para aumentar el valor, no se preocupe. El script
+está diseñado para manejar errores de límite.
 
-1.  No seu projeto no portal do Azure AI Foundry, selecione **Models +
-    endpoints** e selecione **gpt-4o-mini**.
+1.  Desde su proyecto en el portal Azure AI Foundry, seleccione
+     **Models + endpoints** y seleccione **gpt-4o-mini**.
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image94.png)
+    ![A screenshot of a computer Description automatically generated](./media/image94.png)
 
-2.  Selecione **gpt-4o-mini**, clique em **Edit.**
+2.  Seleccione **gpt-4o-mini**, haga clic en **Edit.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image95.png)
+    ![A screenshot of a computer Description automatically generated](./media/image95.png)
 
-3.  Defina o valor de **Tokens per Minute Rate Limit** para o limite
-    máximo permitido e clique em **Save and close**.
+3.  Establezca el valor **Tokens per Minute Rate Limit** en el límite
+    máximo permitido y seleccione **Save and close.**
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image96.png)
+    ![A screenshot of a computer Description automatically generated](./media/image96.png)
 
-### Tarefa 4: Executar a avaliação 
+### Tarea 4: Ejecute la evaluación 
 
-1.  No Azure AI Foundry, selecione **Evaluations** no painel esquerdo e
-    selecione **+ New evaluation**.
+1.  En Azure AI Foundry, en el panel izquierdo, seleccione
+    **Evaluations** y luego haga clic en **+ New Evaluation**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image97.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image97.png)
 
-2.  Selecione **Dataset**.
+2.  Seleccione **Dataset**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image98.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image98.png)
 
-3.  Aceite os padrões na página **Basic information** e clique em
-    **Next**.
+3.  Acepte los valores predeterminados en la página de información
+    básica y haga clic en **Next**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image99.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image99.png)
 
-4.  Selecione **Add your** **dataset** -\> **Upload file** e carregue o
-    **chat_eval_data.jsonl** que criamos na pasta **assets** e clique em
-    **Next**.
+4.  Seleccione **Add your** **dataset** -\> **Upload file** y cargue el
+    **chat_eval_data.jsonl** que hemos creado en la carpeta **assets.**
+    Haga clic en **Next**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image100.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image100.png)
 
-5.  Selecione as **Metrics** em **AI quality** e **Risk and safety
-    metrics**.
+5.  Seleccione **Metrics** bajo AI quality, Risk y safety metrics.
 
-    Além disso, em **AI quality**, selecione sua conexão e o nome da
-implementação.
+    Además, bajo AI quality, seleccione su conexión y el nombre de la
+implementación.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image101.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image101.png)
 
-    ![Uma captura de tela de uma pesquisa Descrição gerada
-automaticamente](./media/image102.png)
+    ![A screenshot of a survey Description automatically
+generated](./media/image102.png)
 
-6.  Selecione os tipos de fonte de dados como na captura de tela abaixo
-    e clique em **Next**.
+6.  Seleccione los tipos de fuentes de datos como en la siguiente
+    captura de pantalla y haga clic en **Next**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image103.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image103.png)
 
-7.  Selecione **Submit** para enviar a avaliação.
+7.  Seleccione **Submit** para enviar la evaluación.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image104.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image104.png)
 
-8.  Quando a avaliação for concluída, analise os resultados.
+8.  Una vez finalizada la evaluación, explore los resultados.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image105.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image105.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image106.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image106.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image107.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image107.png)
 
-## Exercício 4: Excluir os recursos
+## Ejercicio 4: Elimine los recursos
 
-1.  Na página inicial do portal do Azure, selecione o grupo Recursos
-    atribuído. Selecione todos os recursos no grupo de recursos e
-    selecione **Delete**.
+1.  En la página de inicio del portal de Azure, seleccione el grupo de
+    recursos asignado. Luego, seleccione todos los recursos dentro del
+    grupo de recursos y haga clic en **Delete**.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image108.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image108.png)
 
-2.  Digite +++**delete**+++ e clique no botão **Delete** para confirmar
-    a exclusão. Clique em **Delete** na caixa de diálogo de confirmação
-    para excluir.
+2.  Ingrese +++**delete**+++ y haga clic en el botón **Delete** para
+    confirmar la eliminación. Haga clic en **Delete** en el cuadro de
+    diálogo de confirmación de eliminación.
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image109.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image109.png)
 
-3.  Confirme que todos os recursos foram excluídos ao receber a seguinte
-    mensagem de êxito:
+3.  Confirme la eliminación de todos los recursos con un mensaje de
+    éxito.
 
-    ![Uma captura de tela de uma tela de computador Descrição gerada
-automaticamente](./media/image110.png)
+    ![A screenshot of a computer screen Description automatically
+generated](./media/image110.png)
 
-**Resumo:**
+**Resumen:**
 
-Neste laboratório, aprendemos a criar, avaliar e implementar um aplicativo baseado em RAG.
+ En este laboratorio, hemos aprendido a construir, evaluar e implementar una aplicación basada en RAG.
