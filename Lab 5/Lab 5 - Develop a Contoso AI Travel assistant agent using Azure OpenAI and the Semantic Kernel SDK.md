@@ -221,45 +221,45 @@ integrate plugins into a larger application.
 3.  Modify your **ConvertAmount** function. Replace the existing code with
     the below code.
 
-    ```
-    using Microsoft.SemanticKernel;
-    using System.ComponentModel;
-    using AITravelAgent;
-    
-    class CurrencyConverter
+```
+using Microsoft.SemanticKernel;
+using System.ComponentModel;
+using AITravelAgent;
+
+class CurrencyConverter
+{
+    [KernelFunction, Description(@"Converts an amount from one currency to another
+        and returns a friendly message with the results")]
+    public static string ConvertAmount(
+        [Description("The starting currency code")] string baseCurrencyCode,
+        [Description("The target currency code")] string targetCurrencyCode, 
+        [Description("The amount to convert")] string amount)
     {
-        [KernelFunction, Description(@"Converts an amount from one currency to another
-            and returns a friendly message with the results")]
-        public static string ConvertAmount(
-            [Description("The starting currency code")] string baseCurrencyCode,
-            [Description("The target currency code")] string targetCurrencyCode, 
-            [Description("The amount to convert")] string amount)
+        var currencyDictionary = Currency.Currencies;
+        Currency targetCurrency = currencyDictionary[targetCurrencyCode];
+        Currency baseCurrency = currencyDictionary[baseCurrencyCode];
+        
+        if (targetCurrency == null)
         {
-            var currencyDictionary = Currency.Currencies;
-            Currency targetCurrency = currencyDictionary[targetCurrencyCode];
-            Currency baseCurrency = currencyDictionary[baseCurrencyCode];
-            
-            if (targetCurrency == null)
-            {
-                return targetCurrencyCode + " was not found";
-            }
-            else if (baseCurrency == null)
-            {
-                return baseCurrencyCode + " was not found";
-            }
-            else
-            {
-                double amountInUSD = Double.Parse(amount) * baseCurrency.USDPerUnit;
-                double result = amountInUSD * targetCurrency.UnitsPerUSD;
-                return $"${amount} {baseCurrencyCode} is approximately {result.ToString("C")} in {targetCurrency.Name}s ({targetCurrencyCode})";
-            }
+            return targetCurrencyCode + " was not found";
+        }
+        else if (baseCurrency == null)
+        {
+            return baseCurrencyCode + " was not found";
+        }
+        else
+        {
+            double amountInUSD = Double.Parse(amount) * baseCurrency.USDPerUnit;
+            double result = amountInUSD * targetCurrency.UnitsPerUSD;
+            return $"${amount} {baseCurrencyCode} is approximately {result.ToString("C")} in {targetCurrency.Name}s ({targetCurrencyCode})";
         }
     }
-    ```
+}
+```  
 
     In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
 
-    ![](./media/image23.png)
+![](./media/image23.png)
 
     >[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
 
@@ -474,107 +474,107 @@ and intent recognition, leveraging plugins and prompt-based logic.
 
     >[!Note] **Note:** After replacing code, please again add endpoint, Key and deployment name in the respected part of code.
 
-    ```
-    using System.Text;
-    using Microsoft.SemanticKernel;
-    using Microsoft.SemanticKernel.ChatCompletion;
-    using Microsoft.SemanticKernel.Connectors.OpenAI;
-    using Microsoft.SemanticKernel.Plugins.Core;
-    #pragma warning disable SKEXP0050 
-    #pragma warning disable SKEXP0060
-    
-    string yourDeploymentName = "gpt-35-turbo-16k";
-    string yourEndpoint = "EndPoint";
-    string yourApiKey = "API Key";
-    
-    var builder = Kernel.CreateBuilder();
-    builder.Services.AddAzureOpenAIChatCompletion(
-        yourDeploymentName,
-        yourEndpoint,
-        yourApiKey,
-        "gpt-35-turbo-16k");
-    var kernel = builder.Build();
-    
-    kernel.ImportPluginFromType<CurrencyConverter>();
-    kernel.ImportPluginFromType<ConversationSummaryPlugin>();
-    var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
-    
-    // Note: ChatHistory isn't working correctly as of SemanticKernel v 1.4.0
-    StringBuilder chatHistory = new();
-    
-    OpenAIPromptExecutionSettings settings = new()
-    {
-        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
-    };
-    
-    string input;
-    
-    do {
-        Console.WriteLine("What would you like to do?");
-        input = Console.ReadLine()!;
-    
-        var intent = await kernel.InvokeAsync<string>(
-            prompts["GetIntent"], 
-            new() {{ "input",  input }}
-        );
-    
-        switch (intent) {
-            case "ConvertCurrency": 
-                var currencyText = await kernel.InvokeAsync<string>(
-                    prompts["GetTargetCurrencies"], 
-                    new() {{ "input",  input }}
-                );
-                
-                var currencyInfo = currencyText!.Split("|");
-                var result = await kernel.InvokeAsync("CurrencyConverter", 
-                    "ConvertAmount", 
-                    new() {
-                        {"targetCurrencyCode", currencyInfo[0]}, 
-                        {"baseCurrencyCode", currencyInfo[1]},
-                        {"amount", currencyInfo[2]}, 
-                    }
-                );
-                Console.WriteLine(result);
-                break;
-            case "SuggestDestinations":
-                chatHistory.AppendLine("User:" + input);
-                var recommendations = await kernel.InvokePromptAsync(input!);
-                Console.WriteLine(recommendations);
-                break;
-            case "SuggestActivities":
-    
-                var chatSummary = await kernel.InvokeAsync(
-                    "ConversationSummaryPlugin", 
-                    "SummarizeConversation", 
-                    new() {{ "input", chatHistory.ToString() }});
-    
-                var activities = await kernel.InvokePromptAsync(
-                    input!,
-                    new () {
-                        {"input", input},
-                        {"history", chatSummary},
-                        {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
-                });
-    
-                chatHistory.AppendLine("User:" + input);
-                chatHistory.AppendLine("Assistant:" + activities.ToString());
-    
-                Console.WriteLine(activities);
-                break;
-            case "HelpfulPhrases":
-            case "Translate":
-                var autoInvokeResult = await kernel.InvokePromptAsync(input, new(settings));
-                Console.WriteLine(autoInvokeResult);
-                break;
-            default:
-                Console.WriteLine("Sure, I can help with that.");
-                var otherIntentResult = await kernel.InvokePromptAsync(input);
-                Console.WriteLine(otherIntentResult);
-                break;
-        }
-    } 
-    while (!string.IsNullOrWhiteSpace(input));
-    ```
+```
+using System.Text;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.ChatCompletion;
+using Microsoft.SemanticKernel.Connectors.OpenAI;
+using Microsoft.SemanticKernel.Plugins.Core;
+#pragma warning disable SKEXP0050 
+#pragma warning disable SKEXP0060
+
+string yourDeploymentName = "gpt-35-turbo-16k";
+string yourEndpoint = "EndPoint";
+string yourApiKey = "API Key";
+
+var builder = Kernel.CreateBuilder();
+builder.Services.AddAzureOpenAIChatCompletion(
+    yourDeploymentName,
+    yourEndpoint,
+    yourApiKey,
+    "gpt-35-turbo-16k");
+var kernel = builder.Build();
+
+kernel.ImportPluginFromType<CurrencyConverter>();
+kernel.ImportPluginFromType<ConversationSummaryPlugin>();
+var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
+
+// Note: ChatHistory isn't working correctly as of SemanticKernel v 1.4.0
+StringBuilder chatHistory = new();
+
+OpenAIPromptExecutionSettings settings = new()
+{
+    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+};
+
+string input;
+
+do {
+    Console.WriteLine("What would you like to do?");
+    input = Console.ReadLine()!;
+
+    var intent = await kernel.InvokeAsync<string>(
+        prompts["GetIntent"], 
+        new() {{ "input",  input }}
+    );
+
+    switch (intent) {
+        case "ConvertCurrency": 
+            var currencyText = await kernel.InvokeAsync<string>(
+                prompts["GetTargetCurrencies"], 
+                new() {{ "input",  input }}
+            );
+            
+            var currencyInfo = currencyText!.Split("|");
+            var result = await kernel.InvokeAsync("CurrencyConverter", 
+                "ConvertAmount", 
+                new() {
+                    {"targetCurrencyCode", currencyInfo[0]}, 
+                    {"baseCurrencyCode", currencyInfo[1]},
+                    {"amount", currencyInfo[2]}, 
+                }
+            );
+            Console.WriteLine(result);
+            break;
+        case "SuggestDestinations":
+            chatHistory.AppendLine("User:" + input);
+            var recommendations = await kernel.InvokePromptAsync(input!);
+            Console.WriteLine(recommendations);
+            break;
+        case "SuggestActivities":
+
+            var chatSummary = await kernel.InvokeAsync(
+                "ConversationSummaryPlugin", 
+                "SummarizeConversation", 
+                new() {{ "input", chatHistory.ToString() }});
+
+            var activities = await kernel.InvokePromptAsync(
+                input!,
+                new () {
+                    {"input", input},
+                    {"history", chatSummary},
+                    {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
+            });
+
+            chatHistory.AppendLine("User:" + input);
+            chatHistory.AppendLine("Assistant:" + activities.ToString());
+
+            Console.WriteLine(activities);
+            break;
+        case "HelpfulPhrases":
+        case "Translate":
+            var autoInvokeResult = await kernel.InvokePromptAsync(input, new(settings));
+            Console.WriteLine(autoInvokeResult);
+            break;
+        default:
+            Console.WriteLine("Sure, I can help with that.");
+            var otherIntentResult = await kernel.InvokePromptAsync(input);
+            Console.WriteLine(otherIntentResult);
+            break;
+    }
+} 
+while (!string.IsNullOrWhiteSpace(input));
+```
 
     The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
 
