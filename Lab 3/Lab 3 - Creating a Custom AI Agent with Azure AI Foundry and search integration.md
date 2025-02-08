@@ -453,13 +453,13 @@ El flujo de solicitud de ejemplo que está utilizando implementa la lógica de s
 
 6.   En **Inputs** , asegúrese de que las entradas incluyan:
 
-    - **chat_history**
+      - **chat_history**
 
-    - **chat_input**
+      - **chat_input**
 
-    El historial de chat predeterminado de este ejemplo incluye alguna conversación sobre la IA.
+       El historial de chat predeterminado de este ejemplo incluye alguna conversación sobre la IA.
 
-    ![](./media/image60.png)
+       ![](./media/image60.png)
 
 7.	En **Outputs** , asegúrese de que la salida incluya:
 
