@@ -739,7 +739,7 @@ El índice de búsqueda se utiliza para almacenar los datos vectorizados del mod
         )
     ```
 
-    ![A screenshot of a computer Description automatically generated](./e1a8102c540d33a2000f2603b9442cbb088ea4ee.png)
+    ![A screenshot of a computer Description automatically generated](./media/e1a8102c540d33a2000f2603b9442cbb088ea4ee.png)
 
 4.  Después, agregue la función en create_search_index.py para incluir
     un archivo CSV en el índice.
