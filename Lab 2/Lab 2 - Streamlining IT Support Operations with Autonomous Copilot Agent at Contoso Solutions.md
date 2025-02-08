@@ -101,7 +101,7 @@ applications.
     line** 🡪 **Plain Text** and click on the **Update**. The column name
     may be different in each case.
 
-    **Note:** The c**olumn name might be slightly different**, but it will be something similar to the issue description since it is Copilot generated.
+    **Note:** The **column name might be slightly different**, but it will be something similar to the issue description since it is Copilot generated.
 
     ![](./media/image25.png)
 
