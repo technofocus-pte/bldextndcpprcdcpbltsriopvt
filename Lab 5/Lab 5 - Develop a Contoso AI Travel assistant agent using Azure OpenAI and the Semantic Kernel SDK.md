@@ -147,27 +147,29 @@ execution using your Azure OpenAI deployment details.
 
     +++dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org+++
 
-3.  Open Visual Studio Code. Select **File** -\> **Open folder**.
+    ![A screenshot of a computer Description automatically generated](./media/Picture8.png)
+    
+4.  Open Visual Studio Code. Select **File** -\> **Open folder**.
 
     ![A screenshot of a computer Description automatically generated](./media/image16.png)
 
-4.  Navigate to **C:\LabFiles** and select **AITravelAgent** folder and
+5.  Navigate to **C:\LabFiles** and select **AITravelAgent** folder and
     click **Select Folder**. The folder will open in VS Code.
 
     ![A screenshot of a computer Description automatically generated](./media/image17.png)
 
-5.  In the Explorer pane, navigate to the **AITravelAgent/Starter**
+6.  In the Explorer pane, navigate to the **AITravelAgent/Starter**
     folder. Right-click the folder and select **Open in Integrated
     Terminal**.
 
     ![A screenshot of a computer Description automatically generated](./media/image18.png)
 
-6.  In the Explorer panel, expand the Starter folder, and you should see
+7.  In the Explorer panel, expand the Starter folder, and you should see
     the Plugins folder, Prompts folder, and Program.cs file.
 
     ![A screenshot of a computer Description automatically generated](./media/image19.png)
 
-7.  Open the **Starter/Program.cs** file and update the following variables
+8.  Open the **Starter/Program.cs** file and update the following variables
     with your Azure OpenAI Services deployment name, API key, and
     endpoint. After making the changes, press Ctrl + S to save the file:
 
@@ -196,95 +198,95 @@ integrate plugins into a larger application.
 2.  In the **CurrencyConverter.cs** file, add the following code to create a
     plugin function
 
-```
-using Microsoft.SemanticKernel;
-using System.ComponentModel;
-using AITravelAgent;
-
-class CurrencyConverter
-{
-    [KernelFunction, 
-    Description("Convert an amount from one currency to another")]
-    public static string ConvertAmount(
+    ```
+    using Microsoft.SemanticKernel;
+    using System.ComponentModel;
+    using AITravelAgent;
+    
+    class CurrencyConverter
     {
-        var currencyDictionary = Currency.Currencies;
+        [KernelFunction, 
+        Description("Convert an amount from one currency to another")]
+        public static string ConvertAmount(
+        {
+            var currencyDictionary = Currency.Currencies;
+        }
     }
-}
-```
+    ```
 
-![](./media/image22.png)
+    ![](./media/image22.png)
 
-In this code, you use the KernelFunction decorator to declare your native function. You also use the Description decorator to add a description of what the function does. You can use Currency.Currencies to get a dictionary of currencies and their exchange rates. Next, add some logic to convert a given amount from one currency to another.
+    In this code, you use the KernelFunction decorator to declare your native function. You also use the Description decorator to add a description of what the function does. You can use Currency.Currencies to get a dictionary of currencies and their exchange rates. Next, add some logic to convert a given amount from one currency to another.
 
 3.  Modify your **ConvertAmount** function. Replace the existing code with
     the below code.
 
-```
-using Microsoft.SemanticKernel;
-using System.ComponentModel;
-using AITravelAgent;
-
-class CurrencyConverter
-{
-    [KernelFunction, Description(@"Converts an amount from one currency to another
-        and returns a friendly message with the results")]
-    public static string ConvertAmount(
-        [Description("The starting currency code")] string baseCurrencyCode,
-        [Description("The target currency code")] string targetCurrencyCode, 
-        [Description("The amount to convert")] string amount)
+    ```
+    using Microsoft.SemanticKernel;
+    using System.ComponentModel;
+    using AITravelAgent;
+    
+    class CurrencyConverter
     {
-        var currencyDictionary = Currency.Currencies;
-        Currency targetCurrency = currencyDictionary[targetCurrencyCode];
-        Currency baseCurrency = currencyDictionary[baseCurrencyCode];
-        
-        if (targetCurrency == null)
+        [KernelFunction, Description(@"Converts an amount from one currency to another
+            and returns a friendly message with the results")]
+        public static string ConvertAmount(
+            [Description("The starting currency code")] string baseCurrencyCode,
+            [Description("The target currency code")] string targetCurrencyCode, 
+            [Description("The amount to convert")] string amount)
         {
-            return targetCurrencyCode + " was not found";
-        }
-        else if (baseCurrency == null)
-        {
-            return baseCurrencyCode + " was not found";
-        }
-        else
-        {
-            double amountInUSD = Double.Parse(amount) * baseCurrency.USDPerUnit;
-            double result = amountInUSD * targetCurrency.UnitsPerUSD;
-            return $"${amount} {baseCurrencyCode} is approximately {result.ToString("C")} in {targetCurrency.Name}s ({targetCurrencyCode})";
+            var currencyDictionary = Currency.Currencies;
+            Currency targetCurrency = currencyDictionary[targetCurrencyCode];
+            Currency baseCurrency = currencyDictionary[baseCurrencyCode];
+            
+            if (targetCurrency == null)
+            {
+                return targetCurrencyCode + " was not found";
+            }
+            else if (baseCurrency == null)
+            {
+                return baseCurrencyCode + " was not found";
+            }
+            else
+            {
+                double amountInUSD = Double.Parse(amount) * baseCurrency.USDPerUnit;
+                double result = amountInUSD * targetCurrency.UnitsPerUSD;
+                return $"${amount} {baseCurrencyCode} is approximately {result.ToString("C")} in {targetCurrency.Name}s ({targetCurrencyCode})";
+            }
         }
     }
-}
-```
+    ```
 
-In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
+    In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
 
-![](./media/image23.png)
+    ![](./media/image23.png)
 
->[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
+    >[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
 
 4.  In the Starter/Program.cs file, import and invoke your new plugin
     function with the following code. (Delete the code below var kernel
     = builder.Build(); and replace it with the given below code. )
 
-```
-kernel.ImportPluginFromType<CurrencyConverter>();
-kernel.ImportPluginFromType<ConversationSummaryPlugin>();
-var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
+    ```
+    kernel.ImportPluginFromType<CurrencyConverter>();
+    kernel.ImportPluginFromType<ConversationSummaryPlugin>();
+    var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
+    
+    var result = await kernel.InvokeAsync("CurrencyConverter", 
+        "ConvertAmount", 
+        new() {
+            {"targetCurrencyCode", "USD"}, 
+            {"amount", "52000"}, 
+            {"baseCurrencyCode", "VND"}
+        }
+    );
+    
+    Console.WriteLine(result);
+    ```
 
-var result = await kernel.InvokeAsync("CurrencyConverter", 
-    "ConvertAmount", 
-    new() {
-        {"targetCurrencyCode", "USD"}, 
-        {"amount", "52000"}, 
-        {"baseCurrencyCode", "VND"}
-    }
-);
+    In this code, you use the ImportPluginFromType method to import your plugin. Then you use the InvokeAsync method to invoke your plugin function. The InvokeAsync method takes the plugin name, function name, and a dictionary of parameters. Finally, you print the result to the console. Next, run the code to make sure it's working.
 
-Console.WriteLine(result);
-```
-
-In this code, you use the ImportPluginFromType method to import your plugin. Then you use the InvokeAsync method to invoke your plugin function. The InvokeAsync method takes the plugin name, function name, and a dictionary of parameters. Finally, you print the result to the console. Next, run the code to make sure it's working.
-
-![](./media/image24.png)
+    ![](./media/image24.png)
 
 5.  Go to files from top bar and select **Save all.**
 
@@ -326,30 +328,30 @@ conversions.
 4.  Open the newly created **config.json** file in Visual Studio Code.
     Copy and paste the following code into the file.
 
-```
-{
-    "schema": 1,
-    "type": "completion",
-    "description": "Identify the target currency, base currency, and amount to convert",
-    "execution_settings": {
-        "default": {
-            "max_tokens": 800,
-            "temperature": 0
-        }
-    },
-    "input_variables": [
-        {
-            "name": "input",
-            "description": "Text describing some currency amount to convert",
-            "required": true
-        }
-    ]
-}
-```
+    ```
+    {
+        "schema": 1,
+        "type": "completion",
+        "description": "Identify the target currency, base currency, and amount to convert",
+        "execution_settings": {
+            "default": {
+                "max_tokens": 800,
+                "temperature": 0
+            }
+        },
+        "input_variables": [
+            {
+                "name": "input",
+                "description": "Text describing some currency amount to convert",
+                "required": true
+            }
+        ]
+    }
+    ```
 
-![](./media/image30.png)
+    ![](./media/image30.png)
 
-Save the file by pressing **Ctrl + S**. This configuration defines how the AI system should interpret and process user input.
+    Save the file by pressing **Ctrl + S**. This configuration defines how the AI system should interpret and process user input.
 
 5.  Still inside the **GetTargetCurrencies** folder, create another new
     file named +++**skprompt.txt**+++.
@@ -359,28 +361,28 @@ Save the file by pressing **Ctrl + S**. This configuration defines how the AI sy
 6.  Open the **skprompt.txt** file in your text editor and paste the
     following content:
 
-```
-<message role="system">Identify the target currency, base currency, and 
-amount from the user's input in the format target|base|amount</message>
+    ```
+    <message role="system">Identify the target currency, base currency, and 
+    amount from the user's input in the format target|base|amount</message>
+    
+    For example: 
+    
+    <message role="user">How much in GBP is 750.000 VND?</message>
+    <message role="assistant">GBP|VND|750000</message>
+    
+    <message role="user">How much is 60 USD in New Zealand Dollars?</message>
+    <message role="assistant">NZD|USD|60</message>
+    
+    <message role="user">How many Korean Won is 33,000 yen?</message>
+    <message role="assistant">KRW|JPY|33000</message>
+    
+    <message role="user">{{$input}}</message>
+    <message role="assistant">target|base|amount</message>
+    ```
 
-For example: 
+    ![](./media/image32.png)
 
-<message role="user">How much in GBP is 750.000 VND?</message>
-<message role="assistant">GBP|VND|750000</message>
-
-<message role="user">How much is 60 USD in New Zealand Dollars?</message>
-<message role="assistant">NZD|USD|60</message>
-
-<message role="user">How many Korean Won is 33,000 yen?</message>
-<message role="assistant">KRW|JPY|33000</message>
-
-<message role="user">{{$input}}</message>
-<message role="assistant">target|base|amount</message>
-```
-
-![](./media/image32.png)
-
-Save the file by pressing **Ctrl + S**. This script defines the prompt logic for processing currency conversion requests.
+    Save the file by pressing **Ctrl + S**. This script defines the prompt logic for processing currency conversion requests.
 
 ## Exercise 6: Configuring a Prompt System for Travel Activity Recommendations
 
@@ -403,31 +405,31 @@ personalized and creative travel recommendations.
 3.  Replace the existing code in the **config.json** file with the
     following:
 
-```
-{
-    "schema": 1,
-    "type": "completion",
-    "description": "Suggest activities and points of interest at a given destination",
-    "execution_settings": {
-        "default": {
-            "max_tokens": 4000,
-            "temperature": 0.5
-        }
-    },
-    "input_variables": [
-        {
-            "name": "history",
-            "description": "Some background information about the user",
-            "required": false
+    ```
+    {
+        "schema": 1,
+        "type": "completion",
+        "description": "Suggest activities and points of interest at a given destination",
+        "execution_settings": {
+            "default": {
+                "max_tokens": 4000,
+                "temperature": 0.5
+            }
         },
-        {
-            "name": "destination",
-            "description": "The destination a user wants to visit",
-            "required": true
-        }
-    ]
-  }
-```
+        "input_variables": [
+            {
+                "name": "history",
+                "description": "Some background information about the user",
+                "required": false
+            },
+            {
+                "name": "destination",
+                "description": "The destination a user wants to visit",
+                "required": true
+            }
+        ]
+      }
+    ```
 
 ![](./media/image35.png)
 
@@ -441,17 +443,17 @@ Save the file after making the changes by pressing **Ctrl + S**. This file confi
 5.  Replace the existing content of **skprompt.txt** with the following
     text:
 
-```
-You are an experienced travel agent. 
-You are helpful, creative, and very friendly. 
-Consider the traveler's background: {{$history}}
-The traveler would like some activity recommendations for their trip to {{$destination}}.
-Please suggest a list of things to do, see, and points of interest.
-```
+    ```
+    You are an experienced travel agent. 
+    You are helpful, creative, and very friendly. 
+    Consider the traveler's background: {{$history}}
+    The traveler would like some activity recommendations for their trip to {{$destination}}.
+    Please suggest a list of things to do, see, and points of interest.
+    ```
 
-![](./media/image37.png)
+    ![](./media/image37.png)
 
-Save the file by pressing **Ctrl + S**. This script sets the behaviour and tone of the system when generating activity recommendations.
+    Save the file by pressing **Ctrl + S**. This script sets the behaviour and tone of the system when generating activity recommendations.
 
 ## Exercise 7: Configuring the Main Program for AI Workflow
 
@@ -472,136 +474,136 @@ and intent recognition, leveraging plugins and prompt-based logic.
 
     >[!Note] **Note:** After replacing code, please again add endpoint, Key and deployment name in the respected part of code.
 
-```
-using System.Text;
-using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.ChatCompletion;
-using Microsoft.SemanticKernel.Connectors.OpenAI;
-using Microsoft.SemanticKernel.Plugins.Core;
-#pragma warning disable SKEXP0050 
-#pragma warning disable SKEXP0060
+    ```
+    using System.Text;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.ChatCompletion;
+    using Microsoft.SemanticKernel.Connectors.OpenAI;
+    using Microsoft.SemanticKernel.Plugins.Core;
+    #pragma warning disable SKEXP0050 
+    #pragma warning disable SKEXP0060
+    
+    string yourDeploymentName = "gpt-35-turbo-16k";
+    string yourEndpoint = "EndPoint";
+    string yourApiKey = "API Key";
+    
+    var builder = Kernel.CreateBuilder();
+    builder.Services.AddAzureOpenAIChatCompletion(
+        yourDeploymentName,
+        yourEndpoint,
+        yourApiKey,
+        "gpt-35-turbo-16k");
+    var kernel = builder.Build();
+    
+    kernel.ImportPluginFromType<CurrencyConverter>();
+    kernel.ImportPluginFromType<ConversationSummaryPlugin>();
+    var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
+    
+    // Note: ChatHistory isn't working correctly as of SemanticKernel v 1.4.0
+    StringBuilder chatHistory = new();
+    
+    OpenAIPromptExecutionSettings settings = new()
+    {
+        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+    };
+    
+    string input;
+    
+    do {
+        Console.WriteLine("What would you like to do?");
+        input = Console.ReadLine()!;
+    
+        var intent = await kernel.InvokeAsync<string>(
+            prompts["GetIntent"], 
+            new() {{ "input",  input }}
+        );
+    
+        switch (intent) {
+            case "ConvertCurrency": 
+                var currencyText = await kernel.InvokeAsync<string>(
+                    prompts["GetTargetCurrencies"], 
+                    new() {{ "input",  input }}
+                );
+                
+                var currencyInfo = currencyText!.Split("|");
+                var result = await kernel.InvokeAsync("CurrencyConverter", 
+                    "ConvertAmount", 
+                    new() {
+                        {"targetCurrencyCode", currencyInfo[0]}, 
+                        {"baseCurrencyCode", currencyInfo[1]},
+                        {"amount", currencyInfo[2]}, 
+                    }
+                );
+                Console.WriteLine(result);
+                break;
+            case "SuggestDestinations":
+                chatHistory.AppendLine("User:" + input);
+                var recommendations = await kernel.InvokePromptAsync(input!);
+                Console.WriteLine(recommendations);
+                break;
+            case "SuggestActivities":
+    
+                var chatSummary = await kernel.InvokeAsync(
+                    "ConversationSummaryPlugin", 
+                    "SummarizeConversation", 
+                    new() {{ "input", chatHistory.ToString() }});
+    
+                var activities = await kernel.InvokePromptAsync(
+                    input!,
+                    new () {
+                        {"input", input},
+                        {"history", chatSummary},
+                        {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
+                });
+    
+                chatHistory.AppendLine("User:" + input);
+                chatHistory.AppendLine("Assistant:" + activities.ToString());
+    
+                Console.WriteLine(activities);
+                break;
+            case "HelpfulPhrases":
+            case "Translate":
+                var autoInvokeResult = await kernel.InvokePromptAsync(input, new(settings));
+                Console.WriteLine(autoInvokeResult);
+                break;
+            default:
+                Console.WriteLine("Sure, I can help with that.");
+                var otherIntentResult = await kernel.InvokePromptAsync(input);
+                Console.WriteLine(otherIntentResult);
+                break;
+        }
+    } 
+    while (!string.IsNullOrWhiteSpace(input));
+    ```
 
-string yourDeploymentName = "gpt-35-turbo-16k";
-string yourEndpoint = "EndPoint";
-string yourApiKey = "API Key";
+    The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
 
-var builder = Kernel.CreateBuilder();
-builder.Services.AddAzureOpenAIChatCompletion(
-    yourDeploymentName,
-    yourEndpoint,
-    yourApiKey,
-    "gpt-35-turbo-16k");
-var kernel = builder.Build();
+    The Semantic Kernel is initialized using a builder pattern. Plugins for additional functionalities, such as CurrencyConverter and ConversationSummaryPlugin, are imported. Furthermore, prompts stored in a directory (Prompts) are dynamically loaded to facilitate intent recognition and task execution.
 
-kernel.ImportPluginFromType<CurrencyConverter>();
-kernel.ImportPluginFromType<ConversationSummaryPlugin>();
-var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
+    The main loop of the program interacts with the user by asking for input and determining the intent using the GetIntent prompt. Based on the intent, the program branches into different functionalities:
 
-// Note: ChatHistory isn't working correctly as of SemanticKernel v 1.4.0
-StringBuilder chatHistory = new();
-
-OpenAIPromptExecutionSettings settings = new()
-{
-    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
-};
-
-string input;
-
-do {
-    Console.WriteLine("What would you like to do?");
-    input = Console.ReadLine()!;
-
-    var intent = await kernel.InvokeAsync<string>(
-        prompts["GetIntent"], 
-        new() {{ "input",  input }}
-    );
-
-    switch (intent) {
-        case "ConvertCurrency": 
-            var currencyText = await kernel.InvokeAsync<string>(
-                prompts["GetTargetCurrencies"], 
-                new() {{ "input",  input }}
-            );
-            
-            var currencyInfo = currencyText!.Split("|");
-            var result = await kernel.InvokeAsync("CurrencyConverter", 
-                "ConvertAmount", 
-                new() {
-                    {"targetCurrencyCode", currencyInfo[0]}, 
-                    {"baseCurrencyCode", currencyInfo[1]},
-                    {"amount", currencyInfo[2]}, 
-                }
-            );
-            Console.WriteLine(result);
-            break;
-        case "SuggestDestinations":
-            chatHistory.AppendLine("User:" + input);
-            var recommendations = await kernel.InvokePromptAsync(input!);
-            Console.WriteLine(recommendations);
-            break;
-        case "SuggestActivities":
-
-            var chatSummary = await kernel.InvokeAsync(
-                "ConversationSummaryPlugin", 
-                "SummarizeConversation", 
-                new() {{ "input", chatHistory.ToString() }});
-
-            var activities = await kernel.InvokePromptAsync(
-                input!,
-                new () {
-                    {"input", input},
-                    {"history", chatSummary},
-                    {"ToolCallBehavior", ToolCallBehavior.AutoInvokeKernelFunctions}
-            });
-
-            chatHistory.AppendLine("User:" + input);
-            chatHistory.AppendLine("Assistant:" + activities.ToString());
-
-            Console.WriteLine(activities);
-            break;
-        case "HelpfulPhrases":
-        case "Translate":
-            var autoInvokeResult = await kernel.InvokePromptAsync(input, new(settings));
-            Console.WriteLine(autoInvokeResult);
-            break;
-        default:
-            Console.WriteLine("Sure, I can help with that.");
-            var otherIntentResult = await kernel.InvokePromptAsync(input);
-            Console.WriteLine(otherIntentResult);
-            break;
-    }
-} 
-while (!string.IsNullOrWhiteSpace(input));
-```
-
-The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
-
-The Semantic Kernel is initialized using a builder pattern. Plugins for additional functionalities, such as CurrencyConverter and ConversationSummaryPlugin, are imported. Furthermore, prompts stored in a directory (Prompts) are dynamically loaded to facilitate intent recognition and task execution.
-
-The main loop of the program interacts with the user by asking for input and determining the intent using the GetIntent prompt. Based on the intent, the program branches into different functionalities:
-
-1.  **Currency Conversion**: If the intent is to convert currency, the
+    1.  **Currency Conversion**: If the intent is to convert currency, the
     program extracts details (target currency, base currency, and
     amount) using the GetTargetCurrencies prompt. It then calls the
     CurrencyConverter plugin's ConvertAmount method and displays the
     result.
 
-2.  **Destination Suggestions**: If the intent is to suggest
+    2.  **Destination Suggestions**: If the intent is to suggest
     destinations, the program uses the Semantic Kernel's
     InvokePromptAsync method to provide recommendations based on user
     input.
 
-3.  **Activity Suggestions**: This functionality leverages conversation
+    3.  **Activity Suggestions**: This functionality leverages conversation
     summarization through the ConversationSummaryPlugin to provide
     contextually relevant activity suggestions. The conversation history
     is maintained using a StringBuilder object for continuous dialogue
     flow.
 
-4.  **Helpful Phrases and Translation**: For intents like
+    4.  **Helpful Phrases and Translation**: For intents like
     "HelpfulPhrases" or "Translate," the kernel automatically invokes
     relevant functions based on the input and settings.
 
-Other user intents are handled generically by invoking the prompt system, ensuring flexibility in responses. The interaction loop continues until the user provides no input (an empty string).
+    Other user intents are handled generically by invoking the prompt system, ensuring flexibility in responses. The interaction loop continues until the user provides no input (an empty string).
 
 ## Exercise 8: Testing the Application
 
