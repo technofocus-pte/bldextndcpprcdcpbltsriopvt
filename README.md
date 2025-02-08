@@ -5,14 +5,14 @@ Bienvenidos al repositorio de guías de laboratorio del curso. Este curso propor
 
 ## Laboratorios incluidos
 
-### 1. Build a Declarative Agent for Microsoft 365 Copilot Using Teams Toolkit
+### Laboratorio 1: Creación de un agente declarativo para Microsoft 365 Copilot utilizando Teams Toolkit
 
-### 2. Streamlining IT Support Operations with Autonomous Copilot Agent at Contoso Solutions
+### Laboratorio 2 - Optimización de las operaciones de soporte IT con el agente autónomo Copilot en Contoso Solutions 
 
-### 3. Creating a Custom AI Agent with Azure AI Foundry and Search Integration
+### Laboratorio 3 - Creación de un agente AI personalizado con Azure AI Foundry e integración de búsquedaCreating a Custom AI Agent with Azure AI Foundry and Search Integration
 
-### 4. Build, Evaluate, and Deploy a RAG-Based Agent with the Azure AI Foundry SDK
+### Laboratorio 4 - Crear, evaluar e implementar un agente basado en RAG con Azure AI Foundry SDK
 
-### 5. Develop a Contoso AI Travel Assistant Agent Using Azure OpenAI and the Semantic Kernel SDK
+### Laboratorio 5 - Desarrollar un agente asistente de viajes de Contoso utilizando Azure OpenAI y el SDK de Semantic Kernel Develop a Contoso AI Travel Assistant Agent Using Azure OpenAI and the Semantic Kernel SDK
 
 Explore the labs to unleash the full potential of building and extending AI agents with pro-code capabilities!
