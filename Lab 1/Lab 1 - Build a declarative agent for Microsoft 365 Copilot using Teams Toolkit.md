@@ -405,8 +405,7 @@ Some of the benefits of having conversation starters are:
     "conversation_starters": [
         { 
                 "title": "Getting Started",
-                "text":"I am ready to play the Geo Location Game! Give me a city to guess, and start with the first clue."          
-
+                "text":"I am ready to play the Geo Location Game! Give me a city to guess, and start with the first clue." 
             },
             {
                 "title": "Ready for a Challenge",
