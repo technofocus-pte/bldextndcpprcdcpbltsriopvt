@@ -257,11 +257,11 @@ class CurrencyConverter
 }
 ```  
 
-    In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
+In this code, you use the Currency.Currencies dictionary to get the Currency object for the target and base currencies. You then use the Currency object to convert the amount from the base currency to the target currency. Finally, you return a string with the converted amount. Next, let's test your plugin.
 
 ![](./media/image23.png)
 
-    >[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
+>[!Note] **Note:** When using the Semantic Kernel SDK in your own projects, you don't need to hardcode data into files if you have access to RESTful APIs. Instead, you can use the Plugins.Core.HttpClient plugin to retrieve data from APIs.
 
 4.  In the Starter/Program.cs file, import and invoke your new plugin
     function with the following code. (Delete the code below var kernel
@@ -576,34 +576,34 @@ do {
 while (!string.IsNullOrWhiteSpace(input));
 ```
 
-    The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
+The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
 
-    The Semantic Kernel is initialized using a builder pattern. Plugins for additional functionalities, such as CurrencyConverter and ConversationSummaryPlugin, are imported. Furthermore, prompts stored in a directory (Prompts) are dynamically loaded to facilitate intent recognition and task execution.
+   The Semantic Kernel is initialized using a builder pattern. Plugins for additional functionalities, such as CurrencyConverter and ConversationSummaryPlugin, are imported. Furthermore, prompts stored in a directory (Prompts) are dynamically loaded to facilitate intent recognition and task execution.
 
-    The main loop of the program interacts with the user by asking for input and determining the intent using the GetIntent prompt. Based on the intent, the program branches into different functionalities:
+ The main loop of the program interacts with the user by asking for input and determining the intent using the GetIntent prompt. Based on the intent, the program branches into different functionalities:
 
-    1.  **Currency Conversion**: If the intent is to convert currency, the
+1.  **Currency Conversion**: If the intent is to convert currency, the
     program extracts details (target currency, base currency, and
     amount) using the GetTargetCurrencies prompt. It then calls the
     CurrencyConverter plugin's ConvertAmount method and displays the
     result.
 
-    2.  **Destination Suggestions**: If the intent is to suggest
+2.  **Destination Suggestions**: If the intent is to suggest
     destinations, the program uses the Semantic Kernel's
     InvokePromptAsync method to provide recommendations based on user
     input.
 
-    3.  **Activity Suggestions**: This functionality leverages conversation
+3.  **Activity Suggestions**: This functionality leverages conversation
     summarization through the ConversationSummaryPlugin to provide
     contextually relevant activity suggestions. The conversation history
     is maintained using a StringBuilder object for continuous dialogue
     flow.
 
-    4.  **Helpful Phrases and Translation**: For intents like
+4.  **Helpful Phrases and Translation**: For intents like
     "HelpfulPhrases" or "Translate," the kernel automatically invokes
     relevant functions based on the input and settings.
 
-    Other user intents are handled generically by invoking the prompt system, ensuring flexibility in responses. The interaction loop continues until the user provides no input (an empty string).
+Other user intents are handled generically by invoking the prompt system, ensuring flexibility in responses. The interaction loop continues until the user provides no input (an empty string).
 
 ## Exercise 8: Testing the Application
 
