@@ -189,7 +189,7 @@ index.
 
     ![A screenshot of a computer Description automatically generated](./media/image19.png)
 
-6.  Wait till the deployment gets succeeded as in the below screenshot
+6.  Wait until the deployment succeeds, as in the below screenshot
     before proceeding with the next step.
 
     ![A screenshot of a computer Description automatically generated](./media/image20.png)
@@ -229,7 +229,7 @@ environment, so that you can use your user credentials to call the Azure
 OpenAI service.
 
 1.  Search for +++**PowerShell**+++ from the Windows search bar and open
-    it in the Administrator mode.
+    it in the Administrator mode. Accept if prompted for the launch to continue.
 
     ![A screenshot of a computer Description automatically generated](./media/image27.png)
 
@@ -253,7 +253,7 @@ OpenAI service.
     winget install -e --id Microsoft.AzureCLI
     ```
 
-    Select **Y** when prompted for acceptance.
+    Select **Y** and then **Enter** when prompted for acceptance.
 
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
