@@ -679,8 +679,21 @@ trigger automated workflows effectively.
     ![](./media/image84.png)
 
 
-3.	**Send an email** to the 365 admin tenant mail id from any other mail box in order to **trigger the action**. The mail should be describing an issue and should have your details like employee id in it, similar to the one in the below screenshot.
+3.	**Send an email** to the 365 admin tenant mail id from any other mail box in order to **trigger the action**. The mail should be describing an issue and should have your details like employee id in it, similar to the one in the below screenshot. Example content is as below
 
+    ```
+    Hi Support Team,
+    
+    I hope this message finds you well.
+    Iam Mark Brown, working as a Software Engineer at Contoso. My employee ID is CONTOSO099
+    Issue: Monitor is completely balank and not functioning.
+    Kindly raise a support ticket and assist in resolving this issue at the earlierst.
+    Thank you for your support.
+
+    Best Regards,
+    Mark Brown
+    ```
+    
     ![](./media/image85.png)
 
     ![](./media/image86.png)
