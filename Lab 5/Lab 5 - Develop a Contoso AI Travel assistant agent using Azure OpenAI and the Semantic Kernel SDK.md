@@ -156,6 +156,8 @@ execution using your Azure OpenAI deployment details.
 5.  Navigate to **C:\LabFiles** and select **AITravelAgent** folder and
     click **Select Folder**. The folder will open in VS Code.
 
+    >[!Note] **Note:** Trust the contents if prompted.
+    
     ![A screenshot of a computer Description automatically generated](./media/image17.png)
 
 6.  In the Explorer pane, navigate to the **AITravelAgent/Starter**
@@ -189,6 +191,8 @@ amount from one currency to another using predefined exchange rates.
 This exercise will help you understand how to build and invoke custom
 plugins, utilize decorators for functionality and descriptions, and
 integrate plugins into a larger application.
+
+>[!Alert] **Important:** Errors that appear in the VS Code on adding the code in the following steps can be safely ignored. Make sure to follow the steps below.
 
 1.  Create a new file named +++CurrencyConverter.cs+++ in
     the **Stater/Plugins/ConvertCurrency** folder
@@ -309,12 +313,12 @@ and setting up configuration and prompt files, you will define how the
 AI interprets and processes natural language requests for currency
 conversions.
 
-1.  From Visual Studio Code, locate the Starter/Prompt folder. Navigate
+1.  From Visual Studio Code, locate the **Starter/Prompts** folder. Navigate
     into this folder to prepare for the next steps.
 
     ![](./media/image27.png)
 
-2.  Inside the Starter/Prompt folder, create a new folder named
+2.  Inside the **Starter/Prompts** folder, create a new folder named
     +++**GetTargetCurrencies**+++. This folder will contain all the
     files related to this exercise.
 
@@ -472,7 +476,7 @@ and intent recognition, leveraging plugins and prompt-based logic.
 2.  Replace the entire content of the **Program.cs** file with the
     following code and then **press ctrl + S** to save the code.
 
-    >[!Note] **Note:** After replacing code, please again add endpoint, Key and deployment name in the respected part of code.
+    >[!Note] **Note:** After replacing code, please again add endpoint, **Key** and **deployment** name as done earlier.
 
 ```
 using System.Text;
