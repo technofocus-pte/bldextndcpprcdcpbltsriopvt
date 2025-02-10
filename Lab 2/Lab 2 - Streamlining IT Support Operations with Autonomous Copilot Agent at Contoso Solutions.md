@@ -91,7 +91,7 @@ applications.
 
 5.  Select the table and click on **View data** to see the table.
 
-    > Note: In my case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future             reference. The comlumn name may also vary in the executioin.
+    >[!Note] **Note:** In this case, the table is named *Employee Technical Support Record*. The name may vary with each execution. Please save the table name for future reference. The column name may also vary in the execution.
 
     ![](./media/image24.png)
 
@@ -101,7 +101,7 @@ applications.
     line** 🡪 **Plain Text** and click on the **Update**. The column name
     may be different in each case.
 
-    **Note:** The **column name might be slightly different**, but it will be something similar to the issue description since it is Copilot generated.
+    >[!Note] **Note:** The **column name might be slightly different**, but it will be something similar to the issue description since it is Copilot generated.
 
     ![](./media/image25.png)
 
@@ -201,13 +201,13 @@ agent to streamline IT workflows.
     ![](./media/image10.png)
 
 
-6.  On overview page of Contoso IT Support Agent, **Enable** the
+6.  On the overview page of Contoso IT Support Agent, **Enable** the
     orchestrator for the agent.
 
     ![](./media/image11.png)
 
 
-7.  On overview page of the agent, **Disable** the “**Allow the AI to
+7.  On the overview page of the agent, **Disable** the “**Allow the AI to
     use its own general knowledge**” option.
 
     ![](./media/image12.png)
@@ -249,7 +249,7 @@ ensure it effectively assists users in troubleshooting and escalation.
 
 ## Task 1: Add Knowledge Base 
 
-1.  On Contoso agent overview page, scroll down and click on **+ Add
+1.  On the Contoso agent overview page, scroll down and click on **+ Add
     Knowledge** button.
 
     ![](./media/image29.png)
@@ -284,6 +284,7 @@ ensure it effectively assists users in troubleshooting and escalation.
 
     ![](./media/image35.png)
 
+    >[!Alert] **Important:** From the Knowledge page, ensure that the added knowledge source has been successfully uploaded. This will generally take 10 to 15 minutes to complete.
 
 ## Task 2: Customize the Conversation Start Topic
 
@@ -308,7 +309,7 @@ ensure it effectively assists users in troubleshooting and escalation.
 
 ##  Task 3: Update the Fallback Topic 
 
-1.  From the top bar option click on **Topics** and then click and open
+1.  From the top bar option click on **Topics** and then click and open the
     **Fallback** topic.
 
     ![](./media/image39.png)
@@ -413,13 +414,13 @@ data in Dataverse, and notify support engineers via email.
 
 5.  With same procedure create more input as per given below details.
 
-| **Input Name** | **Data Type** |
-|----------------|---------------|
-| +++ID+++             | Text          |
-| +++Email+++          | Text          |
-| +++Details+++        | Text          |
-
-![](./media/image51.png)
+    | **Input Name** | **Data Type** |
+    |----------------|---------------|
+    | +++ID+++             | Text          |
+    | +++Email+++          | Text          |
+    | +++Details+++        | Text          |
+    
+    ![](./media/image51.png)
 
 
 6.  Below Run a flow from copilot, click on **(+)** sign and select **Add an action**.
@@ -433,7 +434,8 @@ data in Dataverse, and notify support engineers via email.
     ![](./media/image53.png)
 
 
-    > Note: Sometimes Dataverse connection is not created automatically, so participant need to **sign** in with their credential, authentication should be **OAuth.**
+    > Note: Sometimes, a Dataverse connection is not created automatically. You may need 
+to **sign in** again with your credentials **OAuth** authentication.
     
     ![](./media/image54.png)
 
@@ -492,9 +494,9 @@ data in Dataverse, and notify support engineers via email.
     ```
     A new technical support ticket has been raised and requires your attention. Please find details below:
     
-    Employee Name: Name (**Replace with Name** dynamic content variable (Thunder bolt))
-    Employee ID: ID (**Replace with ID** dynamic content variable (Thunder bolt))
-    Technical Issue: Details (**Replace with Details** Name dynamic content variable (Thunder Bolt))
+    Employee Name: Name (**Replace with Name** **dynamic content variable** (Thunder bolt))
+    Employee ID: ID (**Replace with ID** **dynamic content variable** (Thunder bolt))
+    Technical Issue: Details (**Replace with Details** Name **dynamic content variable** (Thunder Bolt))
     
     Thank you for your prompt attention to this matter.'
     
