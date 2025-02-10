@@ -289,6 +289,8 @@ global python installation. You should always use a virtual or conda
 environment when installing python packages, otherwise you can break
 your global install of Python.
 
+>[Alert] **Important:** If the commands below are not pastable, try pasting them to a notepad and then copy and paste it to the PowerShell. Or copy and paste directly to the PowerShell. The T button does not work at times in the PowerShell.
+
 **Create a virtual environment**
 
 1.  From your Power Shell, navigate to **C:\Users\Admin** by executing
@@ -335,6 +337,8 @@ your global install of Python.
 5.  Open **VS Code**. Select **File -\> Open Folder** and select
     **RAGproject** folder that we created in the previous steps (from **C:\Users\Admin**).
 
+    >[!Note] **Note:**  Click on Yes, I trust the folder and content and then proceed if prompted.
+    
     ![A screenshot of a computer Description automatically generated](./media/image37.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image38.png)
@@ -364,16 +368,16 @@ along with other required packages.
 
     ![](./media/img54.png)
 
-3.  On the top navigation bar click on **File** and **Save All**.
+2.  On the top navigation bar click on **File** and **Save All**.
 
-4.  Right click on the requirements.txt and select **Open in Integrated
+3.  Right click on the requirements.txt and select **Open in Integrated
     Terminal**.
 
     ![](./media/img55.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image43.png)
 
-5.  Run the following command to get into the virtual environment
+4.  Run the following command to get into the virtual environment
 
     +++py -3 -m venv .venv+++
 
@@ -381,9 +385,11 @@ along with other required packages.
 
     ![A screenshot of a computer Description automatically generated](./media/image44.png)
 
-6.  Run the +++az login+++ command and login with your Azure login
+5.  Run the +++az login+++ command and login with your Azure login
     credentials. Select **1** to select the subscription.
 
+    >[!note] **Note:** Minimize the VS Code to view the login prompt if not automatically visible.
+    
     ![A screenshot of a computer Description automatically generated](./media/image45.png)
 
     ![A screenshot of a computer Description automatically generated](./media/image46.png)
@@ -495,7 +501,7 @@ your application can read.
     Replace  **< your-connection-string >** with the project connection string value saved in the notepad in task 1.
 
     ```
-    AIPROJECT_CONNECTION_STRING=<your-connection-string>
+    AIPROJECT_CONNECTION_STRING="<your-connection-string>"
     AISEARCH_INDEX_NAME="example-index"
     EMBEDDINGS_MODEL="text-embedding-ada-002"
     INTENT_MAPPING_MODEL="gpt-4o-mini"
@@ -1442,7 +1448,7 @@ to handle limit errors.
 ### Task 4: Run the evaluation 
 
 1.  From the Azure AI Foundry, select **Evaluations** from the left pane
-    and select **+ New Evaluation**.
+    and select **+ New Evaluation**. Click on **Create a new evaluation**.
 
     ![A screenshot of a computer Description automatically generated](./media/image97.png)
 
