@@ -45,7 +45,7 @@ enhance user engagement through intuitive and efficient interactions.
     ![](./media/image3.png) 
 
 5.  Scroll down and navigate to **Additional settings** section, then
-    click on **Syn now** button.  
+    click on **Sync now** button.  
 
     ![](./media/image4.png) 
 
@@ -119,13 +119,13 @@ generated](./media/image6.png)
 
     - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
       
-    - **Location**: Select a **region**. Canada East is used here.
+    - **Location**: Select **Canada East** region
 
     - **Pricing tier**: Standard
 
     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
-6.  Review the settings in the click on **Create**.
+6.  Review the settings and then click on **Create**.
 
     ![A screenshot of a search service Description automatically generated](./media/image13.png)
 
