@@ -43,7 +43,7 @@ Follow the steps as shown in the screen shot below.
     ![](./media/image1.png)
 
 
-2.  Search for +++**Teams**+++ and locate Teams **Toolkit** and click **Install.**
+2.  Search for +++**Teams**+++ and locate **Teams Toolkit** and click **Install.**
 
     ![](./media/image2.png)
 
@@ -166,7 +166,7 @@ Toolkit.
     ![](./media/Picture2.png)
 
 
-3.  Next, you will be asked to choose the app feature of Copilot Agent Choose **declarative agent** and press **Enter**.
+3.  Next, you will be asked to choose the app feature of Copilot Agent. Choose **declarative agent**.
 
     ![](./media/image8.png)
 
@@ -186,7 +186,7 @@ Toolkit.
 
     The project will be created in a few seconds in the folder you mentioned and will open in a new project window of Visual Studio Code. This is your working folder.
 
-7.  Click on **Yes, I trust the authors.**
+7.  If a prompt appears regarding the trustworthiness of the source, click on **Yes, I trust the authors.**
 
     ![](./media/image12.png)
 
@@ -202,15 +202,15 @@ Well done! You have successfully set up the base declarative agent! Now, proceed
 
     ![](./media/Picture1.png)
 
-2.  A browser window will pop up and offer to log into Microsoft 365. When it says "You are signed in now and close this page", please do so.
+2.	Select **Allow access** in the Security Alert dialog.
+
+  	 ![](./media/Picture3.png)
+  	
+3.  A browser window will pop up and offer to log into Microsoft 365. When it says "You are signed in now and close this page", please do so.
 
     ![](./media/image15.png)
 
     ![](./media/image16.png)
-
-3.	Select **Allow access** in the Security Alert dialog.
-
-  	 ![](./media/Picture3.png)
 
 5.  Verify that the **Custom App Upload Enabled** checker has a green checkmark.
 
@@ -436,11 +436,9 @@ Some of the benefits of having conversation starters are:
 
     ![](./media/image31.png)
 
-2.  When prompted sign in with your credentials.
+2.  If prompted, sign in with your credentials.
 
     ![](./media/image32.png)
-
-
 
 3.  In this step Teams toolkit will package up all the files inside the appPackage folder as a zip file and install the declarative agent to your own app catalog.
 
