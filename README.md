@@ -1,6 +1,6 @@
 
 
-Welcome to the lab guide repository for the course. This course provides hands-on exercises to design, build, and deploy custom AI agents leveraging Microsoft and Azure AI technologies.
+このコースのラボガイドリポジトリへようこそ。このコースでは、MicrosoftおよびAzure AI技術を活用してカスタムAIエージェントを設計、構築、展開するための実践的な演習を提供します。
 
 
 ## Labs Included
