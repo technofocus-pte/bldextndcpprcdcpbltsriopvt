@@ -1,6 +1,6 @@
 
 
-Welcome to the lab guide repository for the course. This course provides hands-on exercises to design, build, and deploy custom AI agents leveraging Microsoft and Azure AI technologies.
+이 과정에 대한 실습 가이드 리포지토리에 오신 것을 환영합니다. 이 과정에서는 Microsoft 및 Azure AI 기술을 활용하여 사용자 지정 AI 에이전트를 설계, 빌드 및 배포하는 실습을 제공합니다.
 
 
 ## Labs Included
