@@ -297,7 +297,7 @@ your global install of Python.
     the below commands.
 
     ```
-    cd\\
+    cd\
     ```
     ```
     cd Users\Admin
