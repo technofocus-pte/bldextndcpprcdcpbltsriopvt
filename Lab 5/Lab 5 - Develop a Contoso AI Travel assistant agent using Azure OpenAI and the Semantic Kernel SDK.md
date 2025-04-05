@@ -124,7 +124,7 @@ we will be using throughout the lab.
 
 10.  Select **+ Deploy model** -\> **Deploy base model**
 
-    ![A screenshot of a computer Description automatically generated](./media/image12.png)
+     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
 11. Search for and select +++**gpt-35-turbo**+++. Click on
     **Confirm**.
