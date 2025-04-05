@@ -248,14 +248,14 @@ You need two models to implement your solution:
 
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
-5.  Repeat the previous steps to deploy a +++**gpt-35-turbo-16k**+++ model
-    with the deployment name gpt-35-turbo-16k.
+5.  Repeat the previous steps to deploy a +++**gpt-4o**+++ model
+    with the deployment name **gpt-4o**.
 
-    ![](./media/image29.png)
+    ![](./media/image77.png)
 
 6.  We now have the two deployments ready.
 
-    ![](./media/image30.png)
+    ![](./media/image78.png)
 
     >[!Note] **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
 
@@ -368,10 +368,10 @@ can be used to affect generative AI responses.
 
     ![A screenshot of a computer Description automatically generated](./media/image47.png)
 
-3.  Ensure that your **gpt-35-turbo-16k** model deployment is selected.
+3.  Ensure that your **gpt-4o** model deployment is selected.
     Then, in the main chat session panel, submit the prompt +++**Where can I stay in New York?**+++
 
-    ![A screenshot of a computer program Description automatically generated](./media/image48.png)
+    ![A screenshot of a computer program Description automatically generated](./media/image79.png)
 
     ![A screenshot of a chat Description automatically generated](./media/image49.png)
 
@@ -474,11 +474,11 @@ enabling you to use it easily in a prompt flow.
 
     - **Api**: Select **chat**
 
-    - **deployment_name**: Select **gpt-35-turbo-16k**
+    - **deployment_name**: Select **gpt-4o**
 
     - **response_format**: Select **{“type”:”text”}**
 
-    ![](./media/image62.png)
+    ![](./media/image80.png)
 
 9.  Once the compute session has started, in the **lookup** section, set
     the following parameter values:
@@ -533,7 +533,7 @@ enabling you to use it easily in a prompt flow.
 
     - **Api**: Chat
 
-    - **deployment_name**: gpt-35-turbo-16k
+    - **deployment_name**: gpt-4o
 
     - **response_format**: {“type”:”text”}
 
@@ -542,7 +542,7 @@ parameters:
 
     - **prompt_text** *(string)*: ${Prompt_variants.output}
 
-    ![A screenshot of a computer Description automatically generated](./media/image68.png)
+    ![A screenshot of a computer Description automatically generated](./media/image81.png)
 
 13. On the toolbar, use the **Save** button to save the changes you’ve
     made to the tools in the prompt flow.
