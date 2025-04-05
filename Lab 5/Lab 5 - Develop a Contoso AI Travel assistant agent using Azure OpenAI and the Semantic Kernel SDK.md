@@ -126,14 +126,14 @@ we will be using throughout the lab.
 
     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
-11. Search for and select +++**gpt-35-turbo-16k**+++. Click on
+11. Search for and select +++**gpt-35-turbo**+++. Click on
     **Confirm**.
 
-    ![A screenshot of a chat Description automatically generated](./media/image13.png)
+    ![A screenshot of a chat Description automatically generated](./media/image57.png)
 
 12. Accept the defaults and select **Deploy**.
 
-    ![A screenshot of a computer Description automatically generated](./media/image14.png)
+    ![A screenshot of a computer Description automatically generated](./media/image58.png)
 
 ## Exercise 3: Setting up the AI Travel Agent Project with Azure OpenAI Services
 
@@ -181,13 +181,13 @@ execution using your Azure OpenAI deployment details.
     with your Azure OpenAI Services deployment name, API key, and
     endpoint. After making the changes, press Ctrl + S to save the file:
 
-    -   string yourDeploymentName = +++**gpt-35-turbo-16k**+++
+    -   string yourDeploymentName = +++**gpt-35-turbo**+++
 
     -   string yourEndpoint = The Azure OpenAI resource Endpoint value we saved earlier
 
     -   string yourKey = The Key1 of the AOAI resource that we saved earlier
 
-    ![](./media/image20.png)
+    ![](./media/image59.png)
 
 ## Exercise 4: Creating and Testing a Currency Converter Plugin with Semantic Kernel
 
@@ -493,7 +493,7 @@ using Microsoft.SemanticKernel.Plugins.Core;
 #pragma warning disable SKEXP0050 
 #pragma warning disable SKEXP0060
 
-string yourDeploymentName = "gpt-35-turbo-16k";
+string yourDeploymentName = "gpt-35-turbo";
 string yourEndpoint = "EndPoint";
 string yourApiKey = "API Key";
 
@@ -502,7 +502,7 @@ builder.Services.AddAzureOpenAIChatCompletion(
     yourDeploymentName,
     yourEndpoint,
     yourApiKey,
-    "gpt-35-turbo-16k");
+    "gpt-35-turbo");
 var kernel = builder.Build();
 
 kernel.ImportPluginFromType<CurrencyConverter>();
@@ -586,7 +586,7 @@ do {
 while (!string.IsNullOrWhiteSpace(input));
 ```
 
-The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo-16k). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
+The program begins by importing essential namespaces such as System.Text for text handling and Microsoft.SemanticKernel for AI-powered conversational workflows. It integrates Microsoft Azure OpenAI services through the Microsoft.SemanticKernel.Connectors.OpenAI namespace, allowing communication with the GPT model (gpt-35-turbo). The configuration involves setting up variables like yourDeploymentName, yourEndpoint, and yourApiKey to authenticate and connect to the Azure OpenAI endpoint.
 
    The Semantic Kernel is initialized using a builder pattern. Plugins for additional functionalities, such as CurrencyConverter and ConversationSummaryPlugin, are imported. Furthermore, prompts stored in a directory (Prompts) are dynamically loaded to facilitate intent recognition and task execution.
 
