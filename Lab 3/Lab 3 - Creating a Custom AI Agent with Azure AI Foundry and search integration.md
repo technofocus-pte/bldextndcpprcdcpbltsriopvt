@@ -96,9 +96,12 @@ automaticamente](./media/image7.png)
 ## Tarefa 2: Criar um recurso do Azure AI Search
 
 1.  Em um navegador da web, abra o portal do Azure em
-    +++<https://portal.azure.com>+++ e **sign in** usando as credenciais
-    de **login no Azure**.
+    +++https://portal.azure.com+++ e **sign in** usando as credenciais.
 
+   - Username - +++@lab.CloudPortalCredential(User1).Username+++
+  
+   - Password - +++@lab.CloudPortalCredential(User1).Password+++
+    
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image8.png)
 
 2.  Na página inicial, selecione **+ Create a resource.**
