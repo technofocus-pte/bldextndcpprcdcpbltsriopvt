@@ -402,7 +402,7 @@ incorrect.](./media/image25.png)
     
     ```
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image26.png)
 
 4.  Siga a próxima etapa para garantir que nosso agente possa ajudar o
     usuário a se envolver com ele, fornecendo iniciadores de conversa.
@@ -415,7 +415,7 @@ incorrect.](./media/image25.png)
     
     Isso traz suas instruções do arquivo **instruction.txt**. Se você quiser modularizar seus arquivos de empacotamento, poderá usar essa técnica em qualquer um dos arquivos JSON na pasta **appPackage.**
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image27.png)
 
 ### Tarefa 2: Adicionar iniciadores de conversa
 
@@ -457,7 +457,7 @@ adicionando iniciadores de conversa a ele.
         ]
     ```
     
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image30.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image28.png)
 
     Agora que todas as alterações foram feitas no agente, é hora de
 testá-lo.
@@ -465,7 +465,7 @@ testá-lo.
 2.  Vá para **File** na barra superior e clique em **Salve All.**
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image31.png)
+incorrect.](./media/image29.png)
 
 ### Tarefa 3: Testar o aplicativo
 
@@ -475,22 +475,22 @@ incorrect.](./media/image31.png)
     aqui, pois torna a publicação muito simples.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image32.png)
+incorrect.](./media/image30.png)
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image33.png)
+incorrect.](./media/image31.png)
 
 2.  Quando solicitado, entre com suas credenciais.
 
     ![A screen shot of a computer AI-generated content may be
-incorrect.](./media/image34.png)
+incorrect.](./media/image32.png)
 
 3.  Nesta etapa, o Teams Toolkit empacotará todos os arquivos dentro da
     pasta **appPackage** como um arquivo zip e instalará o agente
     declarativo em seu próprio catálogo de aplicativos.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image35.png)
+incorrect.](./media/image33.png)
 
 4.  Acesse o Teams no navegador <https://teams.microsoft.com/v2/>
     conectado ao locatário do desenvolvedor. Se você tiver um Microsoft
@@ -499,13 +499,13 @@ incorrect.](./media/image35.png)
     o **Copilot**.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image36.png)
+incorrect.](./media/image34.png)
 
 5.  Depois que o aplicativo Copilot for carregado, encontre o **Geo
     Locator Game** no painel direito, conforme mostrado:
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image37.png)
+incorrect.](./media/image35.png)
 
     Se você não conseguir encontrá-lo, esta pode ser uma lista longa, mas você pode encontrar seu agente expandindo a lista selecionando "**see more**"
 
@@ -514,7 +514,7 @@ incorrect.](./media/image37.png)
     abaixo:
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image38.png)
+incorrect.](./media/image29.png)
 
 7.  Selecione um dos iniciadores de conversa e ele preencherá sua caixa
     de mensagem de composição com o prompt inicial, apenas esperando que
@@ -522,7 +522,7 @@ incorrect.](./media/image38.png)
     esperará que você faça uma ação.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image39.png)
+incorrect.](./media/image30.png)
 
 8.  Tente responder à pergunta e explorar o jogo que você desenvolveu.
 
