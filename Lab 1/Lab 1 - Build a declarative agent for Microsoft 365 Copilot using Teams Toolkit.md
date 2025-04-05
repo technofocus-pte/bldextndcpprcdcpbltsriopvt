@@ -419,22 +419,18 @@ incorrect.](./media/image25.png)
 
 ### Tarefa 2: Adicionar iniciadores de conversa
 
-    Você pode aumentar o envolvimento do usuário com o agente declarativo
+Você pode aumentar o envolvimento do usuário com o agente declarativo
 adicionando iniciadores de conversa a ele.
 
-    Alguns dos benefícios de iniciar uma conversa são:
+Alguns dos benefícios de iniciar uma conversa são:
     
-    - **Engajamento**: eles ajudam a iniciar a interação, fazendo com que os
-      usuários se sintam mais confortáveis e incentivando a participação.
+- **Engajamento**: eles ajudam a iniciar a interação, fazendo com que os usuários se sintam mais confortáveis e incentivando a participação.
     
-    - **Configuração de contexto**: os iniciantes definem o tom e o tópico
-      da conversa, orientando os usuários sobre como proceder.
+- **Configuração de contexto**: os iniciantes definem o tom e o tópico da conversa, orientando os usuários sobre como proceder.
     
-    - **Eficiência**: ao liderar com um foco claro, os iniciantes reduzem a
-      ambiguidade, permitindo que a conversa progrida sem problemas.
+- **Eficiência**: ao liderar com um foco claro, os iniciantes reduzem a ambiguidade, permitindo que a conversa progrida sem problemas.
     
-    - **Retenção de usuários**: iniciantes bem projetados mantêm os usuários
-      interessados, incentivando interações repetidas com a AI.
+- **Retenção de usuários**: iniciantes bem projetados mantêm os usuários interessados, incentivando interações repetidas com a AI.
 
 1.  Abra o arquivo **declarativeAgent.json** e logo após o nódulo de
     instruções, adicione uma vírgula e cole o código abaixo:
@@ -492,7 +488,7 @@ incorrect.](./media/image32.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image33.png)
 
-4.  Acesse o Teams no navegador <https://teams.microsoft.com/v2/>
+4.  Acesse o Teams no navegador +++https://teams.microsoft.com/v2/+++
     conectado ao locatário do desenvolvedor. Se você tiver um Microsoft
     365 Copilot, o novo aplicativo será fixado automaticamente acima de
     seus chats. Basta abrir o **Teams**, selecionar **Chat** e você verá
@@ -501,8 +497,7 @@ incorrect.](./media/image33.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image34.png)
 
-5.  Depois que o aplicativo Copilot for carregado, encontre o **Geo
-    Locator Game** no painel direito, conforme mostrado:
+5.  Depois que o aplicativo Copilot for carregado, encontre o +++**Geo Locator Game**+++ no painel direito, conforme mostrado:
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image35.png)
@@ -514,7 +509,7 @@ incorrect.](./media/image35.png)
     abaixo:
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+incorrect.](./media/image36.png)
 
 7.  Selecione um dos iniciadores de conversa e ele preencherá sua caixa
     de mensagem de composição com o prompt inicial, apenas esperando que
@@ -522,7 +517,7 @@ incorrect.](./media/image29.png)
     esperará que você faça uma ação.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image30.png)
+incorrect.](./media/image37.png)
 
 8.  Tente responder à pergunta e explorar o jogo que você desenvolveu.
 
