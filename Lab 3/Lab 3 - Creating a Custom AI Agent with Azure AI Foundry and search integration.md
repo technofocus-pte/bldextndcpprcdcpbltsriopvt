@@ -120,9 +120,9 @@ generated](./media/image6.png)
     - **Resource group**: Select the Resource group assigned to your
       subscription (ResourceGroup1)
 
-    - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
+    - **Service name**: +++aisearch@lab.LabInstance.Id+++
       
-    - **Location**: Select **Canada East** region
+    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location
 
     - **Pricing tier**: Standard
 
@@ -142,24 +142,28 @@ generated](./media/image6.png)
 
 1.  In a web browser, open **Azure AI Foundry
     portal** at +++https://ai.azure.com+++ and
-    **sign in** using your **Azure login credentials**.
+    **sign in** using
+
+    - Username - +++@lab.CloudPortalCredential(User1).Username+++
+    
+    - Password - +++@lab.CloudPortalCredential(User1).Password+++
 
     ![](./media/image15.png)
 
-2.  **Close** the **Help** tab and select **Got it** in the
+3.  **Close** the **Help** tab and select **Got it** in the
     **Streamlined from the start** pop up.
 
-3.  In the home page, select **+ Create project**.
+4.  In the home page, select **+ Create project**.
 
     ![](./media/image16.png)
 
-4.  In the **Create a project** wizard enter project name as
+5.  In the **Create a project** wizard enter project name as
     **+++ragpfproject@lab.LabInstance.Id+++** and click on
     **Customize**.
 
     ![](./media/image17.png)
 
-5.  **In Customize**, connect to your Azure AI Search resource, enter
+6.  **In Customize**, connect to your Azure AI Search resource, enter
     the following details, select **Next** and review your
     configuration.
 
@@ -167,29 +171,28 @@ generated](./media/image6.png)
 
     - **Azure Subscription**: Select the **assigned Azure subscription**
 
-    - **Resource group**: Select the **assigned Resource Group** (This should be the one from the **Resources** tab and not a new one that gets pre populated here)
+    - **Resource group**: Select the **assigned Resource Group**
 
-    - **Location**: The same **location** as your **Azure AI Search
-      resource**, Canada East
+    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location
 
     - **Connect Azure AI Services or Azure OpenAI**: (New) Autofill’s
       with your hub name
 
     - **Connect Azure AI Search**: Select your Azure AI Search resource,
-      **+++aisearch@lab.LabInstance.Id+++** 
+      **aisearch@lab.LabInstance.Id**
 
     ![](./media/image18.png)
 
-6.  Review the details and click on **Create** and wait for the process
+7.  Review the details and click on **Create** and wait for the process
     to complete.
 
     ![](./media/image19.png)
 
-7.  **Close** the Explore and experiment pop up.
+8.  **Close** the Explore and experiment pop up.
 
     ![](./media/image20.png)
 
-8.  You will land in the created project page.
+9.  You will land in the created project page.
 
     ![](./media/image21.png)
 
