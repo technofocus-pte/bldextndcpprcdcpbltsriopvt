@@ -254,9 +254,9 @@ Você precisa de dois modelos para implementar sua solução:
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image28.png)
 
 5.  Repita as etapas anteriores para implantar um modelo
-    +++**gpt-35-turbo-16k**+++ com o nome de implantação **gpt-35-turbo-16k**.
+    +++**gpt-4o**+++ com o nome de implantação **gpt-4o**.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image77.png)
 
 6.  Agora temos as duas implementações prontas.
 
@@ -382,11 +382,11 @@ AI.
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image47.png)
 
-3.  Certifique-se de que a implantação do modelo **gpt-35-turbo-16k**
+3.  Certifique-se de que a implantação do modelo **gpt-4o**
     esteja selecionada. Em seguida, no painel principal da sessão de
     chat, insira o prompt +++ **Where can I stay in New York?**+++
 
-    ![Uma captura de tela de um programa de computador Descrição gerada automaticamente](./media/image48.png)
+    ![Uma captura de tela de um programa de computador Descrição gerada automaticamente](./media/image79.png)
 
     ![Uma captura de tela de um bate-papo Descrição gerada automaticamente](./media/image49.png)
 
@@ -491,11 +491,11 @@ AI.
 
     - **Api**: selecione **chat**
 
-    - **deployment_name**: selecione **gpt-35-turbo-16k**
+    - **deployment_name**: selecione **gpt-4o**
 
     - **response_format**: selecione **{"type":"text"}**
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image62.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image80.png)
 
 9.  Depois que a sessão de computação for iniciada, na seção **lookup**,
     defina os seguintes valores de parâmetro:
@@ -548,7 +548,7 @@ AI.
 
     - **Api**: chat
 
-    - **deployment_name**: GPT-35-turbo-16K
+    - **deployment_name**: gPT-4o
 
     - **response_format**: {"type":"text"}
 
@@ -557,7 +557,7 @@ incluam os seguintes parâmetros:
 
     - **prompt_text** *(string):* ${Prompt_variants.output}
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image68.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image81.png)
 
 13. Na barra de ferramentas, use o botão **Salve** para salvar as
     alterações feitas nas ferramentas no fluxo de prompt.
