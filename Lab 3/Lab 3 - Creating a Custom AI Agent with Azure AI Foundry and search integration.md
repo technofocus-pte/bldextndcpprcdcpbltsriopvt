@@ -98,9 +98,9 @@ automaticamente](./media/image7.png)
 1.  Em um navegador da web, abra o portal do Azure em
     +++https://portal.azure.com+++ e **sign in** usando as credenciais.
 
-   - Username - +++@lab.CloudPortalCredential(User1).Username+++
+    - Username - +++@lab.CloudPortalCredential(User1).Username+++
   
-   - Password - +++@lab.CloudPortalCredential(User1).Password+++
+    - Password - +++@lab.CloudPortalCredential(User1).Password+++
     
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image8.png)
 
