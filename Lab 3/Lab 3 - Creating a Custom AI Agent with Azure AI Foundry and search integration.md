@@ -254,7 +254,7 @@ Você precisa de dois modelos para implementar sua solução:
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image28.png)
 
 5.  Repita as etapas anteriores para implantar um modelo
-    **gpt-35-turbo-16k** com o nome de implantação **gpt-35-turbo-16k**.
+    +++**gpt-35-turbo-16k**+++ com o nome de implantação **gpt-35-turbo-16k**.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image29.png)
 
