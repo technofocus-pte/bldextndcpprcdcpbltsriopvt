@@ -69,16 +69,22 @@ we will be using throughout the lab.
 ## Exercise 2: Create Azure OpenAI resource and model deployment
 
 1.  Login to +++**https://portal.azure.com**+++ using the Azure login
-    credentials. Search for +++**Azure OpenAI**+++ from the search bar
+    credentials.
+    
+    - Username - +++@lab.CloudPortalCredential(User1).Username+++
+
+    - Password - +++@lab.CloudPortalCredential(User1).Password+++
+
+2.  Search for +++**Azure OpenAI**+++ from the search bar
     and select it.
 
     ![A screenshot of a computer Description automatically generated](./media/image4.png)
 
-2.  Select **+ Create**.
+3.  Select **+ Create**.
 
     ![A screenshot of a computer Description automatically generated](./media/image5.png)
 
-3.  Fill in the below details in the **Basics** tab and select **Next**.
+4.  Fill in the below details in the **Basics** tab and select **Next**.
 
     - Subscription – Select your assigned **subscription**
 
@@ -92,40 +98,40 @@ we will be using throughout the lab.
 
     ![A screenshot of a computer Description automatically generated](./media/image6.png)
 
-4.  Accept the defaults in the **Network** and **Tags** pages and click
+5.  Accept the defaults in the **Network** and **Tags** pages and click
     on **Create** in the **Review + submit** page.
 
     ![A screenshot of a computer Description automatically generated](./media/image7.png)
 
-5.  Once created, click on **Go to resource**.
+6.  Once created, click on **Go to resource**.
 
     ![A screenshot of a computer Description automatically generated](./media/image8.png)
 
-6.  Select **Keys and Endpoint** under **Resource Management**. Copy the
+7.  Select **Keys and Endpoint** under **Resource Management**. Copy the
     **Key 1** and the **Endpoint** values to a notepad for future use in
     this lab.
 
     ![](./media/image9.png)
 
-7.  From the Azure OpenAI resource **Overview** page, select **Go to
+8.  From the Azure OpenAI resource **Overview** page, select **Go to
     Azure AI Foundry portal**.
 
     ![A screenshot of a computer Description automatically generated](./media/image10.png)
 
-8.  From the left pane, select **Deployments**.
+9.  From the left pane, select **Deployments**.
 
     ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
-9.  Select **+ Deploy model** -\> **Deploy base model**
+10.  Select **+ Deploy model** -\> **Deploy base model**
 
     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
-10. Search for and select +++**gpt-35-turbo-16k**+++. Click on
+11. Search for and select +++**gpt-35-turbo-16k**+++. Click on
     **Confirm**.
 
     ![A screenshot of a chat Description automatically generated](./media/image13.png)
 
-11. Accept the defaults and select **Deploy**.
+12. Accept the defaults and select **Deploy**.
 
     ![A screenshot of a computer Description automatically generated](./media/image14.png)
 
