@@ -74,18 +74,22 @@ automaticamente](./media/image2.png)
 ## Exercício 2: Criar recursos e modelo de implementação do Azure OpenAI 
 
 1.  Faça login em +++**https://portal.azure.com**+++ usando as
-    credenciais de login no Azure. Pesquise +++**Azure OpenAI**+++ na
-    barra de pesquisa e selecione-o.
+    credenciais de login no Azure.
+     - Username - +++@lab.CloudPortalCredential(User1).Username+++
+
+    - Password - +++@lab.CloudPortalCredential(User1).Password+++
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image4.png)
 
-2.  Selecione **+ Create**.
+2.  Pesquise +++**Azure OpenAI**+++ na barra de pesquisa e selecione-o.
+    
+3.  Selecione **+ Create**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image5.png)
 
-3.  Preencha os detalhes abaixo na guia **Basics** e selecione **Next**.
+4.  Preencha os detalhes abaixo na guia **Basics** e selecione **Next**.
 
     - Subscription – Selecione sua **assinatura atribuída**
     
@@ -102,47 +106,47 @@ automaticamente](./media/image5.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image6.png)
 
-4.  Aceite os padrões nas páginas **Network** e **Tags** e clique em
+5.  Aceite os padrões nas páginas **Network** e **Tags** e clique em
     **Create** na página **Review + submit**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image7.png)
 
-5.  Depois de criado, clique em **Go to resource**.
+6.  Depois de criado, clique em **Go to resource**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image8.png)
 
-6.  Selecione **Keys and Endpoint** em **Resource Management**. Copie os
+7.  Selecione **Keys and Endpoint** em **Resource Management**. Copie os
     valores de **Key 1** e **Endpoint** para um bloco de notas para uso
     futuro neste laboratório.
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image9.png)
 
-7.  Na página **Overview** do recurso do Azure OpenAI, selecione **Go to
+8.  Na página **Overview** do recurso do Azure OpenAI, selecione **Go to
     Azure AI Foundry portal**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image10.png)
 
-8.  No painel esquerdo, selecione **Deployments**.
+9.  No painel esquerdo, selecione **Deployments**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image11.png)
 
-9.  Selecione **+ Deploy model** -\> **Deploy base model**.
+10.  Selecione **+ Deploy model** -\> **Deploy base model**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image12.png)
 
-10. Pesquise e selecione +++**gpt-35-turbo-16k**+++. Clique em
+11. Pesquise e selecione +++**gpt-35-turbo-16k**+++. Clique em
     **Confirm**.
 
     ![Uma captura de tela de um bate-papo Descrição gerada
 automaticamente](./media/image13.png)
 
-11. Aceite os padrões e selecione **Deploy**.
+12. Aceite os padrões e selecione **Deploy**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image14.png)
