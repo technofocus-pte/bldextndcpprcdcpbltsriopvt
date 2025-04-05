@@ -111,8 +111,7 @@ automaticamente](./media/image7.png)
 3.  Na barra de pesquisa, pesquise e selecione +++**Azure AI
     Search**+++.
 
-> ![Uma captura de tela de um computador Descrição gerada
-> automaticamente](./media/image10.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image10.png)
 
 4.  Selecione a lista suspensa ao lado de **Create** e selecione **Azure
     AI Search**.
@@ -128,8 +127,7 @@ automaticamente](./media/image7.png)
     - **Resource group**: selecione o grupo de recursos atribuído à sua
       assinatura (ResourceGroup1)
 
-    - **Service name**: *+++*aisearch\<labinstanceid\>+++ (substitua o
-      ID da instância do laboratório pelo valor da guia de ajuda)
+    - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
 
     - **Location**: selecione uma **região**. O **Canada East** é usado aqui.
 
@@ -150,56 +148,56 @@ automaticamente](./media/image7.png)
 ## Tarefa 3: Criar um projeto Azure AI
 
 1.  Em um navegador da web, abra o **Portal do Azure AI Foundry** em +++https://ai.azure.com+++ e
-    **sign in** usando suas **credenciais de login no Azure**.
+    **sign in** usando
+    
+    - Username - +++@lab.CloudPortalCredential(User1).Username+++
+    
+    - Password - +++@lab.CloudPortalCredential(User1).Password+++
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image15.png)
 
-2.  **Feche** a guia **Help** e selecione **Got it** no pop-up
+3.  **Feche** a guia **Help** e selecione **Got it** no pop-up
     **Streamlined from the start**.
 
-3.  Na página inicial, selecione **+ Create project**.
+4.  Na página inicial, selecione **+ Create project**.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image16.png)
 
-4.  No assistente **Create a project,** insira o nome do projeto como
-    +++**ragpfproject+++\<ID da instância do laboratório**\>
-    substituindo o **ID** **da instância do laboratório** pelo **ID da
-    instância de laboratório da VM** e clique em **Customize**.
+5.  No assistente **Create a project,** insira o nome do projeto como
+    +++ragpfproject@lab.LabInstance.Id+++ e clique em **Customize**.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image17.png)
 
-5.  Em **Customize**, conecte-se ao recurso do Azure AI Search, insira
+6.  Em **Customize**, conecte-se ao recurso do Azure AI Search, insira
     os detalhes a seguir, selecione **Next**  e examine sua
     configuração.
 
-    - **Hub name**: +++hub+++\<**LabinstanceID\>** (substitua o ID da
-      instância do laboratório pelo valor da VM)
+    - **Hub name**: +++hub@lab.LabInstance.Id+++
 
     - **Azure Subscription**: selecione a assinatura do Azure atribuída
 
     - **Resource group**: selecione o grupo de recursos atribuído
 
-    - **Location**: o mesmo **local** que o **recurso do Azure AI
-      Search**, Canada East
+    - **Location**: selecione @lab.CloudResourceGroup(ResourceGroup1).Location
 
     - **Connect Azure AI Services or Azure OpenAI:** (new) preenchimento
       automático com o nome do hub
 
     - **Connect Azure AI Search**: selecione o recurso do Azure AI
-      Search, **aisearch\<Labinstance ID\>**
+      Search, **aisearch@lab.LabInstance.Id**
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image18.png)
 
-6.  Revise os detalhes e clique em **Create** e aguarde a conclusão do
+7.  Revise os detalhes e clique em **Create** e aguarde a conclusão do
     processo.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image19.png)
 
-7.  Clique em **Close** no pop-up **Explore and experiment**.
+8.  Clique em **Close** no pop-up **Explore and experiment**.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image20.png)
 
-8.  Você será direcionado para a página do projeto criado.
+9.  Você será direcionado para a página do projeto criado.
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image21.png)
 
@@ -296,8 +294,7 @@ adicioná-los ao projeto.
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image35.png)
 
 5.  Na próxima página de nome e conclusão, insira o nome dos dados como
-    +++**data\<ID da instância do laboratório\>**+++ (substituindo o
-    espaço reservado pelo ID da instância do laboratório) e clique em
+    +++**data@lab.LabInstance.Id**+++ e clique em
     **Create.**
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image36.png)
