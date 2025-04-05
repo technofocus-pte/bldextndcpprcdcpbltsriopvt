@@ -186,7 +186,7 @@ automaticamente](./media/image6.png)
     de tipos de projeto.
 
     ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image7.png)
+automaticamente](./media/image38.png)
 
 3.  Em seguida, você será solicitado a escolher o recurso do aplicativo
     do Copilot Agent. Escolha **Declarative Agent** e pressione
@@ -231,9 +231,17 @@ automaticamente](./media/image9.png)
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image14.png)
 
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image38.png)
+
+2. Select **Allow access** in the Security Alert dialog.
+
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image40.png)
+
+3. A browser window will pop up and offer to log into Microsoft 365. When it says "You are signed in now and close this page", please do so.
+   
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image15.png)
 
-2.  Uma janela do navegador aparecerá e oferecerá o login no
+5.  Uma janela do navegador aparecerá e oferecerá o login no
     Microsoft 365. Quando aparecer a mensagem " **You are signed in now
     and close this page.**", feche esta janela.
 
@@ -243,15 +251,15 @@ automaticamente](./media/image16.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image17.png)
 
-3.  Selecione **Allow access** na caixa de diálogo **Security Alert**.
+6.  Selecione **Allow access** na caixa de diálogo **Security Alert**.
 
     ![Uma captura de tela de um alerta de segurança do computador Descrição
 gerada automaticamente](./media/image18.png)
 
-4.  Verifique se " **Custom App Upload Enabled**" tem uma marca de
+7.  Verifique se " **Custom App Upload Enabled**" tem uma marca de
     seleção verde.
 
-5.  Verifique se "**Copilot Access Enabled**” tem uma marca de seleção
+8.  Verifique se "**Copilot Access Enabled**” tem uma marca de seleção
     verde.
 
     ![Uma captura de tela de um computador Descrição gerada
