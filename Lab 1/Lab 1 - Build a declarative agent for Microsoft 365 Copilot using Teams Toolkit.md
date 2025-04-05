@@ -275,7 +275,7 @@ Veja como o projeto base se parece:
     você pode escrever instruções em linguagem natural nele.
 
     ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image20.png)
+automaticamente](./media/image41.png)
 
 2.  Outro arquivo importante é o **appPackage/declarativeAgent.json**,
     onde há um esquema a ser seguido para estender o Microsoft 365
@@ -296,7 +296,7 @@ automaticamente](./media/image20.png)
       aqui. Mas para este laboratório, usaremos o arquivo
       **instructions.txt**.
     
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image21.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image42.png)
 
 3.  Outro arquivo importante é o arquivo **appPackage/manifest.json**,
     que contém metadados cruciais, incluindo o nome do pacote, o nome do
@@ -317,7 +317,7 @@ automaticamente](./media/image20.png)
     ```
     
 
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image22.png)
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image20.png)
 
 4.  Você também pode atualizar os arquivos de logotipo color.png e
     outline.png para que correspondam à marca do seu aplicativo. No
@@ -336,11 +336,11 @@ imagem de mesmo nome na pasta **appPackage** em seu projeto raiz (o
 caminho deve ser **C:\Users\Student\TeamsApps\Geo Locator
 Game\appPackage**).
 
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image21.png)
+
+    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image22.png)
+
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image23.png)
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image24.png)
-
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image25.png)
 
 2.  Em seguida, vá para o arquivo **appPackage/manifest.json** em seu
     projeto raiz e localize o nódulo **copilotAgents**. Atualize o valor
@@ -357,10 +357,10 @@ Game\appPackage**).
         ]
     },
     ```
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image26.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image24.png)
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image27.png)
+incorrect.](./media/image25.png)
 
 3.  Em seguida, vá para o arquivo **appPackage/instruction.txt** e copie
     e cole a instrução abaixo para substituir o conteúdo existente do
