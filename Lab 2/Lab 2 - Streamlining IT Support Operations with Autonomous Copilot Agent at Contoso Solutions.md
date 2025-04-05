@@ -45,22 +45,7 @@ applications.
     
     ![](./media/Picture4.png)
 
-
-4.  Enter Country/ Region, Phone number, select box check box and click
-    on the **Get started**.
-
-    ![](./media/image17.png)
-
-
-5.  Confirm the account details and then click on the **Get started**.
-
-    ![](./media/image18.png)
-
-
-6.  On the Stay signed in tab select **Yes**.
-
-    ![](./media/image19.png)
-
+3.	Enter the **Administrative Password** and you will be taken to the Power Apps Home page.
 
 ## Task 2: Setting Up a Dataverse Table
 
@@ -69,7 +54,6 @@ applications.
     own environment.
 
     ![](./media/image20.png)
-
 
 2.  From the left navigation bar select **Tables.** In the tables
     section top bar click on the **+ New table** and then select
