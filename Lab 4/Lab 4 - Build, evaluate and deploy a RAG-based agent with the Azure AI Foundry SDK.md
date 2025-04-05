@@ -83,17 +83,15 @@ Para criar um projeto no Azure AI Foundry, siga estas etapas:
 
     ![](./media/image4.png)
 
-3.  Insira +++**RAGproj\<Lab instance ID\>**+++ como nome do projeto,
+3.  Insira +++**RAGproj@lab.LabInstance.Id**+++ como nome do projeto,
     clique em **Customize**.
-
-    **Observação:** substitua o **\<ID da instância do laboratório**\> pelo **ID da instância do laboratório**
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image5.png)
 
 4.  Na próxima página, insira os seguintes detalhes e clique em
     **Next.**
 
-    **Hub name** - +++hub\<ID da instância do laboratório\>+++
+    **Hub name** - +++hub@lab.LabInstance.Id+++
     
     **Subscription** - selecione sua assinatura atribuída
     
