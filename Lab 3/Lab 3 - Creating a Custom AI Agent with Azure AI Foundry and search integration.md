@@ -129,7 +129,7 @@ automaticamente](./media/image7.png)
 
     - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
 
-    - **Location**: selecione uma **região**. O **Canada East** é usado aqui.
+    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location
 
     - **Pricing tier**: Standard
 
