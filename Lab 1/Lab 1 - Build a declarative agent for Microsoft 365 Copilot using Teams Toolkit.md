@@ -35,7 +35,7 @@ Microsoft 365.
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image1.png)
 
-2.  Pesquise "**Teams**" e localize o **Teams Toolkit** e clique em
+2.  Pesquise +++**Teams**+++ e localize o **Teams Toolkit** e clique em
     **Install.**
 
     ![A screenshot of a computer AI-generated content may be
