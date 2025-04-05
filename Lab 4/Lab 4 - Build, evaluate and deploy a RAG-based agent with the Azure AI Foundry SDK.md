@@ -185,9 +185,7 @@ um índice de pesquisa.
     
     - **Resource Group** – selecione o grupo de recursos atribuído
     
-    - **Service name** – insira +++**aisearch\<ID da instância do
-      laboratório\>**+++ substituindo ao ID da instância do laboratório pelo
-      ID da VM.
+    - **Service name** – insira +++**aisearch@lab.LabInstance.Id**+++
     
     - **Region** - selecione Sweden Central ou East US 2 (estamos usando
       East US 2 aqui)
