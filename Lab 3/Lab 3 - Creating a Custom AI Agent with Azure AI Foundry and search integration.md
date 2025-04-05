@@ -91,8 +91,11 @@ generated](./media/image6.png)
 ## Task 2: Create an Azure AI Search resource
 
 1.  In a web browser, open the Azure
-    portal at +++https://portal.azure.com+++ and **Sign in** using the
-    **Azure login credentials**.
+    portal at +++https://portal.azure.com+++ and **Sign in** using
+
+  - Username - +++@lab.CloudPortalCredential(User1).Username+++
+  
+  - Password - +++@lab.CloudPortalCredential(User1).Password+++
 
     ![A screenshot of a computer Description automatically generated](./media/image8.png)
 
