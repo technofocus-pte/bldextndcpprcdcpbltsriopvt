@@ -140,16 +140,16 @@ automaticamente](./media/image11.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image12.png)
 
-11. Pesquise e selecione +++**gpt-35-turbo-16k**+++. Clique em
+11. Pesquise e selecione +++**gpt-35-turbo**+++. Clique em
     **Confirm**.
 
     ![Uma captura de tela de um bate-papo Descrição gerada
-automaticamente](./media/image13.png)
+automaticamente](./media/image57.png)
 
 12. Aceite os padrões e selecione **Deploy**.
 
     ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image14.png)
+automaticamente](./media/image58.png)
 
 ## Exercício 3: Configurando o projeto do agente de viagens de AI com os serviços Azure OpenAI 
 
@@ -200,13 +200,13 @@ automaticamente](./media/image19.png)
     de API e o ponto de endpoint. Depois de fazer as alterações,
     pressione **Ctrl + S** para salvar o arquivo:
 
-    string yourDeploymentName = +++**gpt-35-turbo-16k+++**
+    string yourDeploymentName = +++**gpt-35-turbo+++**
 
     string yourEndpoint = O valor do endpoint do recurso Azure OpenAI que salvamos anteriormente
 
     string yourKey = A Key 1 do recurso AOAI que salvamos anteriormente
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image20.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image59.png)
 
 ## Exercício 4: Criando e testando um plug-in conversor de moeda com Semantic Kernel
 
@@ -516,7 +516,7 @@ código.
     #pragma aviso desabilitar SKEXP0050 
     #pragma aviso desabilitar SKEXP0060
     
-    string yourDeploymentName = "gpt-35-turbo-16k";
+    string yourDeploymentName = "gpt-35-turbo";
     string yourEndpoint = "EndPoint";
     string yourApiKey = "Chave de API";
     
@@ -525,7 +525,7 @@ código.
         yourDeploymentName,
         seuEndpoint,
         suaApiKey,
-        "GPT-35-turbo-16k");
+        "gpt-35-turbo");
     var kernel = construtor.Construir();
     
     kernel.ImportPluginFromType<CurrencyConverter>();
@@ -609,7 +609,7 @@ código.
     enquanto (!cadeia de caracteres.IsNullOrWhiteSpace(entrada));
     ```
 
-    O programa começa importando namespaces essenciais, como System.Text para manipulação de texto e Microsoft.SemanticKernel para fluxos de trabalho de conversação com tecnologia de AI. Ele integra os serviços Microsoft Azure OpenAI por meio do namespace Microsoft.SemanticKernel.Connectors.OpenAI, permitindo a comunicação com o modelo GPT (gpt-35-turbo-16k). A configuração envolve a configuração de variáveis como yourDeploymentName, yourEndpoint e yourApiKey para autenticar e se conectar ao ponto de extremidade do OpenAI do Azure.
+    O programa começa importando namespaces essenciais, como System.Text para manipulação de texto e Microsoft.SemanticKernel para fluxos de trabalho de conversação com tecnologia de AI. Ele integra os serviços Microsoft Azure OpenAI por meio do namespace Microsoft.SemanticKernel.Connectors.OpenAI, permitindo a comunicação com o modelo GPT (gpt-35-turbo). A configuração envolve a configuração de variáveis como yourDeploymentName, yourEndpoint e yourApiKey para autenticar e se conectar ao ponto de extremidade do OpenAI do Azure.
 O Semantic Kernel é inicializado usando um padrão de construtor. Plug-ins para funcionalidades adicionais, como CurrencyConverter e ConversationSummaryPlugin, são importados. Além disso, os prompts armazenados em um diretório (Prompts) são carregados dinamicamente para facilitar o reconhecimento da intenção e a execução da tarefa.
 O loop principal do programa interage com o usuário solicitando entrada e determinando a intenção usando o prompt GetIntent. Com base na intenção, o programa se ramifica em diferentes funcionalidades:
 
