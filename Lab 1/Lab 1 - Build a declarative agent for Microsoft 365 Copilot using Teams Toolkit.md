@@ -202,12 +202,6 @@ automaticamente](./media/image8.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image9.png)
 
-    **Por que não criar um com plugin de API aqui?**
-    
-    Você criará plug-ins de API no próximo laboratório e também aprenderá
-    a integrar um plug-in de API a um agente declarativo. Aqui vamos
-    apenas criar um agente declarativo.
-
 5.  Em seguida, selecione a opção **Default folder** para especificar
     onde a pasta do projeto deve ser criada.
 
