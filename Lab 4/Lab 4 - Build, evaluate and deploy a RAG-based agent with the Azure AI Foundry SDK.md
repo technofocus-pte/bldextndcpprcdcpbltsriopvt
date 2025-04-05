@@ -74,7 +74,7 @@ automaticamente](./media/image2.png)
 
 Para criar um projeto no Azure AI Foundry, siga estas etapas:
 
-1.  Faça login no Azure AI Foundry em +++<https://ai.azure.com/>+++
+1.  Faça login no Azure AI Foundry em +++https://ai.azure.com/+++
     **sign in** usando as credenciais de **login no Azure**.
 
     ![](./media/image3.png)
@@ -153,8 +153,7 @@ catálogo de modelos do portal do AI Foundry:
 
     ![](./media/image14.png)
 
-5.  Depois de implementar o **gpt-4o-mini**, repita as etapas para
-    implantar o modelo +++**text-embedding-ada-002**++++.
+5.  Depois de implementar o **gpt-4o-mini**, implantar o modelo +++**text-embedding-ada-002**++++. selecione **Deployment Type** como **Standard**.
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image15.png)
