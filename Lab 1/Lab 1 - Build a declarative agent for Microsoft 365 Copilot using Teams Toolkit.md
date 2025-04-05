@@ -27,13 +27,6 @@ Microsoft 365.
 
 ## Exercício 1: Configurar seu ambiente de desenvolvimento para o Microsoft 365 Copilot
 
-Atualmente, este laboratório pressupõe que você já tenha um locatário
-para configurar.
-
-- Visual Studio Code
-
-- NodeJS versão 22.13.1
-
 ### Tarefa 1: Instalar o Teams Toolkit
 
 1.  Abra o **Visual Studio Code** e clique no botão da barra de
