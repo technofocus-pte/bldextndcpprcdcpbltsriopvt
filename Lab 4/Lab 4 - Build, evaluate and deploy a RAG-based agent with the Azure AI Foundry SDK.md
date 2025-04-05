@@ -302,7 +302,7 @@ interromper sua instalação global do Python.
 1.  No Power Shell, navegue até **C:\Users\Admin** executando os
     comandos abaixo.
 
-    +++cd\\+++
+    +++cd\+++
 
     +++cd Users\Admin+++
 
@@ -312,7 +312,9 @@ interromper sua instalação global do Python.
     >[!Note] **Nota:** substitua \<Nome do projeto\> pelo nome do seu projeto no
 comando abaixo e execute-o.
 
-    +++**mkdir \<Nome do projeto\>**+++
+    ```
+    mkdir RAGproj@lab.LabInstance.Id
+    ```
 
     ![Uma tela de computador com texto branco e verde Descrição gerada
 automaticamente](./media/image34.png)
@@ -320,25 +322,28 @@ automaticamente](./media/image34.png)
 3.  No terminal, digite o seguinte comando para navegar até o novo local
     da pasta
 
-    +++cd \<Nome do projeto\>+++
-
-    Substitua \<Nome do projeto\> pelo nome da pasta que você criou na etapa
-anterior.
+    ```
+    cd RAGproj@lab.LabInstance.Id
+    ```
 
     ![Uma tela azul com texto branco Descrição gerada
 automaticamente](./media/image35.png)
 
 4.  Crie um ambiente virtual usando os seguintes comandos
 
-    +++py -3 -m venv .venv+++
+    ```
+    py -3 -m venv .venv
+    ```
 
-    +++.venv\scripts\activate+++
+    ```
+    .venv\scripts\activate
+    ```
 
     ![Uma captura de tela de computador de um código Descrição gerada automaticamente](./media/image36.png)
 
     Ativar o ambiente Python significa que, ao executar Python ou pip a partir da linha de comando, você usa o interpretador Python contido na pasta .venv do seu aplicativo.
 
-5.  Abra o **VS Code**. Selecione **File -\> Open Folder** e selecione
+6.  Abra o **VS Code**. Selecione **File -\> Open Folder** e selecione
     **a pasta RAGproject** que criamos nas etapas anteriores (**de
     C:\Users\Admin**).
 
