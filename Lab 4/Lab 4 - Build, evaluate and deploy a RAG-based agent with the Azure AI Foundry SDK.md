@@ -307,16 +307,18 @@ your global install of Python.
 
     >[!Note] **Note:** Replace < Project name > with your project’s name in the command below and execute it.
 
-    +++**mkdir < Project name >**+++
-
+    ```
+    mkdir RAGproj@lab.LabInstance.Id
+    ```
+    
     ![A computer screen with white and green text Description automatically generated](./media/image34.png)
 
 2.  In your terminal enter the following command to navigate to the new
     folder location
 
-    +++**cd < Project name >**+++
-
-    Replace < Project name > with the folder name you created in the previous step.
+    ```
+    cd RAGproj@lab.LabInstance.Id
+    ```
 
     ![A blue screen with white text Description automatically generated](./media/image35.png)
 
