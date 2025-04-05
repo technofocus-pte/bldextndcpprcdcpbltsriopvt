@@ -241,20 +241,11 @@ automaticamente](./media/image9.png)
    
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image15.png)
 
-5.  Uma janela do navegador aparecerá e oferecerá o login no
-    Microsoft 365. Quando aparecer a mensagem " **You are signed in now
-    and close this page.**", feche esta janela.
-
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image16.png)
 
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image17.png)
-
-6.  Selecione **Allow access** na caixa de diálogo **Security Alert**.
-
-    ![Uma captura de tela de um alerta de segurança do computador Descrição
-gerada automaticamente](./media/image18.png)
 
 7.  Verifique se " **Custom App Upload Enabled**" tem uma marca de
     seleção verde.
