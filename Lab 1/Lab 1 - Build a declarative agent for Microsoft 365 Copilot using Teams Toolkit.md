@@ -231,7 +231,7 @@ automaticamente](./media/image9.png)
 
     ![A screenshot of a computer AI-generated content may be incorrect.](./media/image14.png)
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image38.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image39.png)
 
 2. Select **Allow access** in the Security Alert dialog.
 
