@@ -244,9 +244,6 @@ automaticamente](./media/image9.png)
     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image16.png)
 
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image17.png)
-
 7.  Verifique se " **Custom App Upload Enabled**" tem uma marca de
     seleção verde.
 
@@ -254,7 +251,7 @@ automaticamente](./media/image17.png)
     verde.
 
     ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image19.png)
+automaticamente](./media/image17.png)
 
 ### Tarefa 3: Entendendo os arquivos no aplicativo
 
