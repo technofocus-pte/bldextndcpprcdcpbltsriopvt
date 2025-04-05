@@ -207,7 +207,7 @@ automaticamente](./media/image9.png)
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image10.png)
 
-6.  Em seguida, dê a ele um aplicativo chamado **Geo Locator Game** e
+6.  Em seguida, dê a ele um aplicativo chamado +++**Geo Locator Game**+++ e
     pressione **Enter**.
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image11.png)
