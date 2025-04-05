@@ -49,18 +49,7 @@ aplicativos orientados a dados.
 
     ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image2.png)
 
-3.  Insira dados em **Country or Region, Business phone number**, marque
-    as caixas de seleção e clique em **Get Started**.
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image3.png)
-
-4.  Confirme os detalhes da conta e clique em **Get Started**.
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image4.png)
-
-5.  Na guia **Stay signed in**, selecione **Yes**.
-
-    ![Uma captura de tela de um computador Descrição gerada automaticamente](./media/image5.png)
+3.	Enter the **Administrative Password** and you will be taken to the Power Apps Home page.
 
 ### Tarefa 2: Configurando uma tabela do Dataverse
 
@@ -141,42 +130,9 @@ inteligência artificial para simplificar os fluxos de trabalho de TI.
 
 ### Tarefa 1: Fazendo login no Microsoft Copilot Studio
 
-1.  Navegue até o site do Copilot Studio
-    +++https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio+++
-    e clique em **Try free.**
+1.	Navigate to the url +++https://copilotstudio.microsoft.com+++ and click on Start free trial to start the Copilot Studio trial.
 
-    ![](./media/image15.png)
-
-2.  Insira o **Nome de usuário administrativo** da seção **Locatário do
-    Office 365** da guia **Resources** no campo de e-mail e clique no
-    botão **Start free**.
-
-    **Observação:** para este laboratório, estamos usando credenciais de
-locatário de administrador, o participante pode usar sua ID corporativa
-ou de estudante para iniciar a avaliação gratuita.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image16.png)
-
-    ![Uma captura de tela de um computador Descrição gerada
-automaticamente](./media/image17.png)
-
-3.  Insira o **Country or Region** e o **Business phone number** nos
-    campos respeitados. Marque a caixa de seleção e clique no botão
-    **Get Started**.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image18.png)
-
-4.  Na seção de confirmação, clique novamente no botão **Get Started**.
-
-    ![A screen shot of a computer AI-generated content may be
-incorrect.](./media/image19.png)
-
-5.  Selecione **Get Started** na tela de boas-vindas do Copilot Studio.
-
-    ![Uma pessoa sentada em um computador Descrição gerada
-automaticamente](./media/image20.png)
+    ![](./media/image100.png)
 
 ###  Tarefa 2: Criando e configurando o Agente de Suporte de TI da Contoso 
 
@@ -229,12 +185,10 @@ incorrect.](./media/image27.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image28.png)
 
-9.  Em seguida, vá para a seção **Generative AI**, selecione
-    **Generative (Preview)**, defina a moderação de conteúdo como
-    **Medium** e clique em **Save** para salvar a configuração.
+9.	Then go to **Generative AI** section, select **Generative**, set content moderation as **Medium** and click on **Save** to save the setting.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+incorrect.](./media/image101.png)
 
 ###  Conclusão
 
