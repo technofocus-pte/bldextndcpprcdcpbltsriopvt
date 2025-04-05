@@ -26,12 +26,6 @@ seamlessly with Microsoft 365.
 
 ## Exercise 1: Set up your development environment for Microsoft 365 Copilot
 
-This lab currently assumes you already have a tenant to setup.
-
-- Visual studio code
-
-- NodeJS version 18.16.0.
-
 ### Task 1: Install Teams Toolkit
 
 These labs are based on [Teams Toolkit version
