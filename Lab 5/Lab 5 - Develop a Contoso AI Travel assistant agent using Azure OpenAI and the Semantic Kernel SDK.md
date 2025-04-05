@@ -137,7 +137,7 @@ automaticamente](./media/image11.png)
 
 10.  Selecione **+ Deploy model** -\> **Deploy base model**.
 
-    ![Uma captura de tela de um computador Descrição gerada
+     ![Uma captura de tela de um computador Descrição gerada
 automaticamente](./media/image12.png)
 
 11. Pesquise e selecione +++**gpt-35-turbo**+++. Clique em
