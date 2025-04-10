@@ -49,6 +49,8 @@ applications.
    
 4.	Select **Yes** in the Stay Signed in dialog and **Got it** for the Save password prompt and select **No, Thanks** in the Sign in to Microsoft Edge pop up.
 
+    >[!Note] **Note:** If it agains prompts for the user name, password or any information to login, please provide the same and login.
+   
 ## Task 2: Setting Up a Dataverse Table
 
 1.  Ensure that the **Dev One** environment is selected. Select it if not done already.
