@@ -41,19 +41,19 @@ applications.
     ![](./media/image15.png)
 
 
-2.  Enter the **Administrative Username** from the **Office 365 Tenant** section of the **Resources** tab into the email field and click on the **Start free** button.
+2.  Enter the **Administrative Username** from the **Office 365 Tenant** section of the **Resources** tab into the email field, **select** the **checkbox** and click on the **Start free** button.
     
     ![](./media/Picture4.png)
 
 3.	Enter the **Administrative Password** and you will be taken to the Power Apps Home page.
+   
+4.	Select **Yes** in the Stay Signed in dialog and **Got it** for the Save password prompt and select **No, Thanks** in the Sign in to Microsoft Edge pop up.
 
 ## Task 2: Setting Up a Dataverse Table
 
-1.  On the power apps home page, from top select the development
-    environment. In our case its **Dev One**, participant can choose their
-    own environment.
+1.  Ensure that the **Dev One** environment is selected. Select it if not done already.
 
-    ![](./media/image20.png)
+    ![](./media/img1.png)
 
 2.  From the left navigation bar select **Tables.** In the tables
     section top bar click on the **+ New table** and then select
@@ -409,7 +409,7 @@ to **sign in** again with your credentials **OAuth** authentication.
 
 9.  Below table name select **Show all**, then click on the particular
     field and add input with the help of dynamic content button (Thunder
-    bolt) as per the below given field. The **Current Status** field
+    bolt) as per the below table. The **Current Status** field
     should be selected with drop down as **Unresolved**.
 
     | Section                     | Input Variable          |
@@ -458,9 +458,9 @@ to **sign in** again with your credentials **OAuth** authentication.
     ```
     A new technical support ticket has been raised and requires your attention. Please find details below:
     
-    Employee Name: Name (**Replace with Name** **dynamic content variable** (Thunder bolt))
-    Employee ID: ID (**Replace with ID** **dynamic content variable** (Thunder bolt))
-    Technical Issue: Details (**Replace with Details** Name **dynamic content variable** (Thunder Bolt))
+    Employee Name: < Name >
+    Employee ID: < ID > 
+    Technical Issue: < Details >
     
     Thank you for your prompt attention to this matter.'
     
@@ -471,39 +471,39 @@ to **sign in** again with your credentials **OAuth** authentication.
     ![](./media/image60.png)
 
 
-14. From top left corner rename the flow as +++**Employee Data**+++ .
+13. From top left corner rename the flow as +++**Create an Employee Support Ticket**+++.
 
-    ![](./media/image61.png)
+    ![](./media/img2.png)
 
 
-15. From top bar click on **Save draft** and then click **Publish**.
+14. From top bar click on **Save draft** and then click **Publish**. **Close** the Power automate tab.
 
     ![](./media/image62.png)
 
 
-16. Go back to Copilot window and click on **Refresh** button.
+15. Go back to Copilot window and click on **Refresh** button.
 
     ![](./media/image63a.png)
 
 
-17. In Choose an action window, select **Employee Data** flow.
+16. In Choose an action window, select **Create an Employee Support Ticket** flow.
 
-    ![](./media/image64a.png)
-
-
-18. Click on **Add action** button to add a flow
-
-    ![](./media/imagea.png)
+    ![](./media/img3.png)
 
 
-19. Click on the **Employee Data** flow and open it, after opening select inputs option.
+17. Click on **Add action** button to add a flow.
 
-    ![](./media/imageb.png)
+    ![](./media/img4.png)
+
+
+18.	From the **Overview** page of the agent, under the **Action** section, select **Edit** to Edit the parameters of the action. Select the **Inputs** section.
+
+    ![](./media/img5.png)
     
-    ![](./media/imagec.png)
+    ![](./media/img6.png)
 
 
-20. Enter the given description in the respected input field, after entering
+19. Enter the given description in the respected input field, after entering
     the description click on **Save** button. 
 
     | Section | Details |
@@ -513,9 +513,9 @@ to **sign in** again with your credentials **OAuth** authentication.
     | Email -- Description | +++Enter the email address of the employee from whom the email is received.+++ |
     | Details -- Description | +++Enter the email details of the employee.+++ |
 
-    ![](./media/imaged2.png)
+    ![](./media/img7.png)
     
-    ![](./media/imaged3.png)
+    ![](./media/img8.png)
 
 
 
@@ -585,9 +585,9 @@ configure triggers and finalize the agent for deployment.
 
 
 8.  Click on **Send a prompt to the specified copilot for processing**,
-    in body/message section enter the prompt, +++**Run Employee Data flow and use content from Body From.**+++ Replace “Body” and “From” as dynamic content variable (Thunder bolt option).
+    in body/message section enter the prompt, +++**Run Create an Employee Support Ticket flow and use content from Body From.**+++ Replace **Body** and **From** as dynamic content variable.
 
-    ![](./media/image78.png)
+    ![](./media/img9.png)
 
 
 9.  **Save** and **Publish** the flow, close power automate window and
