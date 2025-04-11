@@ -488,8 +488,6 @@ enabling you to use it easily in a prompt flow.
 
       - **index_type**: Select **Registered Index**
 
-      &nbsp;
-
       - **mlindex_asset_id**: Select **brochures-index:1**
 
     ![A screenshot of a computer Description automatically generated](./media/image63.png)
