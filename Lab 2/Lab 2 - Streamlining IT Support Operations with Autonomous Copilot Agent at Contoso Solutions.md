@@ -142,7 +142,7 @@ inteligência artificial para simplificar os fluxos de trabalho de TI.
 ### Tarefa 1: Fazendo login no Microsoft Copilot Studio
 
 1.  Navegue até +++https://copilotstudio.microsoft.com+++ e clique em **Start
-    free trial** para iniciar a avaliação do Copilot Studio**.**
+    free trial** para iniciar a avaliação do Copilot Studio.
 
     ![](./media/image12.png)
 
