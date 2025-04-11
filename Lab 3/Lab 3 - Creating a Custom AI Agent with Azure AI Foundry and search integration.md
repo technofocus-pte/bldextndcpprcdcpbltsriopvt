@@ -527,7 +527,7 @@ enabling you to use it easily in a prompt flow.
 12. In the **chat_with_context** section, select the following settings
     (leaving others as they are):
 
-    - **Connection**: Default_AzureOpenAI
+    - **Connection**: Select the **Azure OpenAI** resource that gets listed
 
     - **Api**: Chat
 
