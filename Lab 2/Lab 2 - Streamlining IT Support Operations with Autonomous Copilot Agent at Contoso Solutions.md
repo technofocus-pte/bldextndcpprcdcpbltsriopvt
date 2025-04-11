@@ -552,10 +552,10 @@ incorrect.](./media/image59.png)
     | Email -- Description | +++Enter the email address of the employee from whom the email is received.+++ |
     | Details -- Description | +++Enter the email details of the employee.+++ |
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image60.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image61.png)
 
 ### Conclusão
@@ -585,28 +585,28 @@ para implementação.
 1.  Vá para a página de visão geral do agente, role para baixo e clique
     em **+ Add trigger**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image62.png)
 
 2.  Em seguida, na janela **Add trigger**, selecione o gatilho **When a
     new email arrives (V3)**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image63.png)
 
 3.  Após a conexão bem-sucedida do copiloto e do Outlook e a marca verde
     aparecer, clique no botão **Next**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image64.png)
 
 4.  No campo de pasta, selecione o ícone de pasta e selecione **Inbox**
     e, em seguida, selecione **Create trigger.**
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image65.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image66.png)
 
 5.  Clique em **Close** no prompt **Time to test your trigger!** Na
@@ -614,10 +614,10 @@ incorrect.](./media/image66.png)
     seção de **Triggers**, clique nos três pontos **(...)** e selecione
     **Edit in Power Automate.**
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image67.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image68.png)
 
 6.  Clique com o botão direito do mouse no gatilho **When a new email
@@ -630,32 +630,31 @@ incorrect.](./media/image69.png)
     arrives** e selecione **When a new email arrives (V3)** na seção
     **Office 365 Outlook**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image70.png)
 
 8.  Clique em **Sends a prompt to the specified copilot for
-    processing**, na seção corpo/mensagem, insira o prompt, **Run
-    Employee Data flow and use content from Body From.** Substitua "
+    processing**, na seção corpo/mensagem, insira o prompt, +++**Run Employee Data flow and use content from Body From.**+++ Substitua "
     **Body** " e "**From**" como variável de conteúdo dinâmico (opção
     raio de trovão).
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image71.png)
 
 9.  Clique em **Save** **draft** e **Publish**, feche o Power Automate e
     volte para a janela do Copilot.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image72.png)
 
 10. Vá para a seção de visão geral e, no canto superior direito, clique
     em **Publish** e clique novamente em **Publish** para publicar o
     Copilot.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image73.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image74.png)
 
 ### Conclusão
@@ -684,91 +683,104 @@ de suporte e acionar fluxos de trabalho automatizados de forma eficaz.
 1.  Vá para a página de visão geral do agente, role para baixo, clique
     em **(...)** em **Triggers** e selecione **Edit in Power Automate**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image75.png)
 
 2.  Isso o levará até o fluxo do Power Automate, na barra superior,
     clique no botão **Test** e selecione **Manually** e clique novamente
     em **Test**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image76.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image77.png)
 
 3.  **Envie um email** para a ID de e-mail do administrador do locatário
     365 de qualquer outra caixa de e-mail para **acionar** **o
     gatilho**. O e-mail deve descrever um problema e deve conter seus
     detalhes, como ID do funcionário, semelhante ao da captura de tela
-    abaixo:
+    abaixo. O conteúdo de exemplo é o seguinte
 
-![A screenshot of a computer AI-generated content may be
+    ```
+    Hi Support Team,
+    
+    I hope this message finds you well.
+    Iam Mark Brown, working as a Software Engineer at Contoso. My employee ID is CONTOSO099
+    Issue: Monitor is completely balank and not functioning.
+    Kindly raise a support ticket and assist in resolving this issue at the earlierst.
+    Thank you for your support.
+
+    Best Regards,
+    Mark Brown
+    ```
+
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image78.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image79.png)
 
-4.  Navegue até a página de visão geral do agente do Copilot, role para
+5.  Navegue até a página de visão geral do agente do Copilot, role para
     baixo e selecione **Test trigger**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image80.png)
 
 5.  Clique em **Start testing**, ele começará a testar.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image81.png)
 
 6.  Na seção de teste, clique em **Connect**, ele abrirá a janela de
     conexão.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image82.png)
 
 7.  Clique em **Connect** novamente e clique em **Submit.**
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image83.png)
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image84.png)
 
 8.  Navegue até a janela do Copilot Studio e execute o **teste**
     novamente.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image85.png)
 
 9.  A solicitação de suporte é gerada automaticamente.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image86.png)
 
 10. Navegue até o Power Apps e vá para a tabela Employee Technical
     Support Ticket Record e verifique os detalhes.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image87.png)
 
 11. Verifique o e-mail de suporte que configuramos no fluxo do Power
     Automate para enviar um e-mail. O e-mail é enviado automaticamente
     para a equipe de suporte.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image88.png)
 
 12. Vá para a janela de teste e consulta do gravador como usuário
-    **"Mark Brown Ticket Current Status".** Isso fornecerá o status do
+    +++**"Mark Brown Ticket Current Status".**+++ Isso fornecerá o status do
     problema como **unresolved**.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image89.png)
 
 13. Como engenheiro de suporte, insira o seguinte prompt na seção de
     teste: "**I want to know about all Unresolved ticket**".
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image90.png)
 
 ### Conclusão
