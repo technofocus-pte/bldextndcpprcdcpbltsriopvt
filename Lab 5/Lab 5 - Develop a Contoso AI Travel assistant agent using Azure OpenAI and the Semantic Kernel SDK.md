@@ -382,10 +382,10 @@ de moeda.
 
     Salve o arquivo pressionando Ctrl + S. Essa configuração define como o sistema de AI deve interpretar e processar a entrada do usuário.
 
-5.  Debaixo **Prompts**, crie outro novo
+5.  Debaixo **GetTargetCurrencies**, crie outro novo
     arquivo chamado +++**skprompt.txt**+++.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image31.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](./media/img4.png)
 
 6.  Abra o arquivo **skprompt.txt** em seu editor de texto e cole o
     seguinte conteúdo:
