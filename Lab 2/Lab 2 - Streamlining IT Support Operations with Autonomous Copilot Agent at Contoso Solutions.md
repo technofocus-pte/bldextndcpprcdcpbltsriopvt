@@ -216,7 +216,7 @@ incorrect.](./media/image20.png)
     clique em **Save** para salvar a configuração.
 
 ![A person sitting at a computer AI-generated content may be
-incorrect.](./media/image12.png)
+incorrect.](./media/image91.png)
 
 10. Feche a guia **Settings**.
 
