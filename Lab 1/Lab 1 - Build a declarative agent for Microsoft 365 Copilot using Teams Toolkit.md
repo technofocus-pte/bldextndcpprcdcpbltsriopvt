@@ -113,11 +113,11 @@ para ver todos os elementos principais. Você também verá que o processo
 de implantação do aplicativo é muito semelhante à implantação de um
 aplicativo do Teams.
 
-|  Elemento  | Descripción   |  Nombre del archivo |
+|  Elemento  | Descrição   |  Nome do arquivo |
 |:----|:-------|:-----|
-|  **Manifiesto de la aplicación**  |  Describe la configuración, las capacidades, los recursos necesarios y los atributos importantes de la aplicación.  |  manifest.json  |
-| **Íconos de aplicaciones**   | Se requiere un ícono de color (192x192) y un ícono de contorno (32x32) para su agente declarativo.   |  icon.png, color.png  |
-| **Manifiesto declarativo del agente**   |  Describe la configuración del agente, las instrucciones, los campos requeridos, las capacidades, los iniciadores de conversación y las acciones.  |  declarativeAgent.json  |
+|  **Manifesto do aplicativo**  |  Descreve a configuração do aplicativo, os recursos, os recursos necessários e os atributos importantes.  |  manifest.json  |
+| **Ícones de aplicativos**   | Requer um ícone de cor (192x192) e contorno (32x32) para seu agente declarativo.   |  icon.png, color.png  |
+| **Manifesto do agente declarativo**   |  Descreve a configuração do agente, instruções, campos obrigatórios, recursos, iniciadores de conversa e ações.  |  declarativeAgent.json  |
 
 **Observação:** você pode adicionar dados de referência do SharePoint,
 OneDrive, pesquisa na web etc. e adicionar recursos de extensão a um
@@ -309,7 +309,7 @@ automaticamente](./media/image41.png)
         "declarativeAgents": [            
             {
                 "id": "declarativeAgent",
-                "arquivo": "declarativeAgent.json"
+                "file": "declarativeAgent.json"
             }
         ]
     },
@@ -352,7 +352,7 @@ Game\appPackage**).
         "declarativeAgents": [            
             {
                 "id": "dcGeolocator",
-                "arquivo": "declarativeAgent.json"
+                "file": "declarativeAgent.json"
             }
         ]
     },
@@ -437,18 +437,17 @@ Alguns dos benefícios de iniciar uma conversa são:
 
     ```
     "conversation_starters": [
-          { 
-                "title": "Começando",
-                "text":"Estou pronto para jogar o Jogo de Localização Geográfica! Dê-me uma cidade para adivinhar e comece com a primeira pista.          
-    
-             },
+        { 
+                "title": "Getting Started",
+                "text":"I am ready to play the Geo Location Game! Give me a city to guess, and start with the first clue." 
+            },
             {
-                "title": "Pronto para um Desafio",
-                "text": "Vamos tentar algo diferente. Podemos jogar uma rodada usando o diário do viajante?"
+                "title": "Ready for a Challenge",
+                "text": "Let us try something different. Can we play a round using the travelers diary?"
             },
             { 
-                "title": "Sentindo-se mais aventureiro",
-                "text": "Estou com vontade de um desafio! Podemos jogar o jogo usando o mapa histórico? Quero ver se consigo descobrir a cidade a partir dessas pistas antigas."
+                "title": "Feeling More Adventurous",
+                "text": "I am in the mood for a challenge! Can we play the game using the historical map? I want to see if I can figure out the city from those ancient clues."
             }
         ]
     ```
