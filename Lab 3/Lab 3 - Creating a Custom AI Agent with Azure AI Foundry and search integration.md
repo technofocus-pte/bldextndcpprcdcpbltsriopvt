@@ -122,7 +122,7 @@ generated](./media/image6.png)
 
     - **Service name**: +++aisearch@lab.LabInstance.Id+++
       
-    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location
+    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location (Select Canada East if there is no quota in the specified region)
 
     - **Pricing tier**: Standard
 
