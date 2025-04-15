@@ -173,7 +173,7 @@ generated](./media/image6.png)
 
     - **Resource group**: Select the **assigned Resource Group**
 
-    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location
+    - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location (Select Canada East if there is no quota in the specified region)
 
     - **Connect Azure AI Services or Azure OpenAI**: (New) Autofill’s
       with your hub name
