@@ -296,13 +296,13 @@ incorrect.](./media/image22.png)
     = builder.Build(); e substitua-o pelo código abaixo.)
 
     ```
-    kernel. ImportPluginFromType<CurrencyConverter>();
-    kernel. ImportPluginFromType<ConversationSummaryPlugin>();
-    var prompts = kernel. ImportPluginFromPromptDirectory("Prompts");
+    kernel.ImportPluginFromType<CurrencyConverter>();
+    kernel.ImportPluginFromType<ConversationSummaryPlugin>();
+    var prompts = kernel.ImportPluginFromPromptDirectory("Prompts");
     
-    var resultado = await kernel. InvokeAsync("CurrencyConverter", 
+    var result = await kernel.InvokeAsync("CurrencyConverter", 
         "ConvertAmount", 
-        novo() {
+        new() {
             {"targetCurrencyCode", "USD"}, 
             {"amount", "52000"}, 
             {"baseCurrencyCode", "VND"}
