@@ -742,7 +742,7 @@ incorrect.](./media/image39.png)
 
 2.  리소스 그룹에 있는 리소스를 선택하고 **Delete**을 클릭하세요.
 
-![A screenshot of a computer AI-generated content may be
+    ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image40.png)
 
 3.  삭제 확인 텍스트 상자에 +++delete+++를 입력하고 **요Delete**
