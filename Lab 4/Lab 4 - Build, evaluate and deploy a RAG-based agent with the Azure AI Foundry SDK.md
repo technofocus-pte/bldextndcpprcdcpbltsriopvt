@@ -798,8 +798,8 @@ O índice de pesquisa é usado para armazenar dados vetorizados do modelo de inc
     
     ![](./media/image61.png)
 
-6. O arquivo agora deve ter o conteúdo abaixo.
-
+>[!Note] **Note:** O arquivo agora deve ter o conteúdo abaixo.
+>
 ```
 import os
 from azure.ai.projects import AIProjectClient
