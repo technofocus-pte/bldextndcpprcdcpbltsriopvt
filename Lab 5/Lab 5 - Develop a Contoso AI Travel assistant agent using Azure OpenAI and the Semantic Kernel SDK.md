@@ -81,8 +81,7 @@ este laboratorio. Si no tiene una cuenta, cree una desde aquí
 generated](./media/image3.png)
 
 1.  Inicie sesión +++**https://portal.azure.com**+++ utilizando las
-    credenciales de inicio de sesión de Azure. Busque +++**Azure
-    OpenAI**+++ en la barra de búsqueda y selecciónelo.
+    credenciales de inicio de sesión de Azure. Busque +++**Azure OpenAI**+++ en la barra de búsqueda y selecciónelo.
 
     ![A screenshot of a computer Description automatically
 generated](./media/image4.png)
