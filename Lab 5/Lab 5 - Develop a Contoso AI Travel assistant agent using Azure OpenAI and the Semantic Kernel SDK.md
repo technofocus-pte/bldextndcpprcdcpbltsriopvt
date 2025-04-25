@@ -68,7 +68,7 @@ generated](./media/image2.png)
 
 ## 연습 2: Azure OpenAI 리소스 및 모델 배포 생성
 
-1.  +++\*\*에 Azure 로그인 자격 증명을 사용해 로그인하세요. 검색창에
+1.  +++https://portal.azure.com/+++ 에 Azure 로그인 자격 증명을 사용해 로그인하세요. 검색창에
     Azure OpenAI를 입력하고 검색 결과에서 선택하세요.
 
     ![A screenshot of a computer Description automatically
@@ -155,8 +155,7 @@ generated](./media/image14.png)
 
     +++dotnet nuget list source+++
     
-    +++dotnet nuget add source <https://api.nuget.org/v3/index.json> --name
-    nuget.org+++
+    +++dotnet nuget add source https://api.nuget.org/v3/index.json --name nuget.org+++
 
     ![A screenshot of a computer Description automatically
 generated](./media/image15.png)
