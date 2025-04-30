@@ -31,7 +31,7 @@ Apps에 로그인하고, 작업 환경을 설정한 후 , Excel 파일에서 데
 ### 작업 1: Power Apps에 로그인
 
 1.  Power apps 웹사이트
-    +++<https://www.microsoft.com/en-us/power-platform/products/power-apps+++>로
+    +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++로
     이동한 후 **Try for Free** 버튼을 클릭하세요.
 
     ![](./media/image1.png)
