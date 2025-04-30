@@ -71,7 +71,7 @@ generated](./media/image2.png)
 
 **Azure AI Foundry**에서 프로젝트를 생성하려면 다음 단계를 수행하세요:
 
-1.   **Azure login credentials**로 +++<https://ai.azure.com/+++> 에서
+1.   **Azure login credentials**로 +++https://ai.azure.com/+++ 에서
     Azure AI Foundry에 **sign in** 하세요.
 
     ![A screenshot of a computer AI-generated content may be
@@ -82,7 +82,7 @@ incorrect.](./media/image3.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image4.png)
 
-3.  **<+++RAGproj@lab.LabInstance.Id>+++**를 프로젝트명으로 입력하세요.
+3.  **+++RAGproj@lab.LabInstance.Id+++**를 프로젝트명으로 입력하세요.
     **Customize** 클릭하세요.
 
     ![A screenshot of a computer Description automatically
@@ -90,7 +90,7 @@ generated](./media/image5.png)
 
 4.  다음 페이지에서 다음 세부 정보를 입력하고 **next** 클릭하세요.
 
-    - Hub name - **<+++hub@lab.LabInstance.Id>+++**
+    - Hub name - **+++hub@lab.LabInstance.Id+++**
 
     - Subscription - 할당된 구독 서비스 선택
 
@@ -195,7 +195,7 @@ incorrect.](./media/image17.png)
 
     - Resource Group – 할당된 리소스 그룹 선택
 
-    - Service name –**<+++aisearch@lab.LabInstance.Id>+++** 입력
+    - Service name –**+++aisearch@lab.LabInstance.Id+++** 입력
 
     - Region – 지역 선택(여기서 East US 2 사용)
 
@@ -339,7 +339,7 @@ PowerShell에서 T 버튼이 제대로 작동하지 않을 수 있습니다.
     
 2.  PowerShell에 다음 명령어를 입력하여 프로젝트 이름으로 폴더를
     생성하세요. 폴더
-    이름은 **<+++RAGproj@lab.LabInstance.Id>+++**입니다.
+    이름은 **+++RAGproj@lab.LabInstance.Id+++**입니다.
 
     >[!Note] **참고:** 아래 명령어\< Project name \> 프로젝트 이름으로
 변경하고 실행하세요.
@@ -1345,7 +1345,7 @@ generated](./media/image82.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image83.png)
 
-6.  이름을  **<+++appinsight@lab.LabInstance.Id>+++**로 제공하세요.
+6.  이름을  **+++appinsight@lab.LabInstance.Id+++**로 제공하세요.
 
     ![A screenshot of a computer screen Description automatically
 generated](./media/image84.png)
