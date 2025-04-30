@@ -1,8 +1,10 @@
 # 실습 3 - Azure AI Foundry와 검색 통합(search integration)을 활용한 맞춤형 AI 에이전트 생성
 
-**예상 소요 시간: 45분**
+**예상 소요 시간: 45분**<img width="942" alt="image" src="https://github.com/user-attachments/assets/21ae371e-3b8a-4cc0-a1a8-5e58405096d6" />
 
-**목표**
+
+**목표**<img width="942" alt="image" src="https://github.com/user-attachments/assets/859d026e-b4d5-4bd7-80aa-37177cbc2164" />
+
 
 이 실습의 목표는 Azure AI 서비스와 검색 통합(Search integration) 기능을
 활용해 AI 기반의 에이전트를 구축하는 방법을 안내하는 것입니다.
@@ -123,7 +125,7 @@ generated](./media/image11.png)
 
     - **Resource group**: 구독에 할당된 리소스 그룹(ResourceGroup1) 선택
 
-    - **Service name**: **<+++aisearch@lab.LabInstance.Id>+++**
+    - **Service name**: **+++aisearch@lab.LabInstance.Id+++**
 
     - **Location**:  **Canada East** 지역 선택
 
@@ -169,8 +171,7 @@ incorrect.](./media/image15.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image16.png)
 
-4.  **Create a project** 마법사에서 프로젝트명을
-     **<+++ragpfproject@lab.LabInstance.Id>+++**로 입력하고
+4.  **Create a project** 마법사에서 프로젝트명을 **+++ragpfproject@lab.LabInstance.Id+++**로 입력하고
     **Customize**를 클릭하세요.
 
     ![A screenshot of a computer AI-generated content may be
@@ -179,7 +180,7 @@ incorrect.](./media/image17.png)
 5.  **Customize**에서 Azure AI Search 리소스에 연결하고 다음 정보를
     입력하세요. **Next**를 선택하고 구성 설정을 검토하세요.
 
-    - **Hub name**: **<+++hub@lab.LabInstance.Id>+++**
+    - **Hub name**: **+++hub@lab.LabInstance.Id+++**
 
     - **Azure Subscription**: **assigned Azure subscription**
       선택하세요.
@@ -195,7 +196,7 @@ incorrect.](./media/image17.png)
       자동으로 허브 이름이 채워집니다.
 
     - **Connect Azure AI Search**:  Azure AI Search
-      리소스 **<+++aisearch@lab.LabInstance.Id>+++**를 선택하세요.
+      리소스 **+++aisearch@lab.LabInstance.Id+++**를 선택하세요.
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image18.png)
