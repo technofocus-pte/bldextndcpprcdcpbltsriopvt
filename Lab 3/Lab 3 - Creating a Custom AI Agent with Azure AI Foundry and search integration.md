@@ -1,10 +1,9 @@
 # 실습 3 - Azure AI Foundry와 검색 통합(search integration)을 활용한 맞춤형 AI 에이전트 생성
 
-**예상 소요 시간: 45분**<img width="942" alt="image" src="https://github.com/user-attachments/assets/21ae371e-3b8a-4cc0-a1a8-5e58405096d6" />
+**예상 소요 시간: 45분**
 
 
-**목표**<img width="942" alt="image" src="https://github.com/user-attachments/assets/859d026e-b4d5-4bd7-80aa-37177cbc2164" />
-
+**목표**
 
 이 실습의 목표는 Azure AI 서비스와 검색 통합(Search integration) 기능을
 활용해 AI 기반의 에이전트를 구축하는 방법을 안내하는 것입니다.
