@@ -509,7 +509,7 @@ incorrect.](./media/image34.png)
 incorrect.](./media/image35.png)
 
 4.  브라우저에서 Teams로 이동하세요:
-    +++<https://teams.microsoft.com/v2/+++%C2%A0logged> 개발자 테넌트에
+    +++https://teams.microsoft.com/v2/+++%C2%A0logged 개발자 테넌트에
     로그인한 후, Microsoft 365 Copilot이 있다면 새 앱이 자동으로 채팅
     위에 고정됩니다. Teams를 열고 ‘chats’을 선택하면 Copilot을 확인할 수
     있습니다.
