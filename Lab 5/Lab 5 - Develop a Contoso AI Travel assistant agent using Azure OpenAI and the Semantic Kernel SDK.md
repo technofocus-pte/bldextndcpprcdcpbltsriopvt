@@ -87,7 +87,7 @@ generated](./media/image4.png)
 
     - Region – 가장 가까운 **region** 선택(여기서 East US 2사용됨)
 
-    - Name – **<+++AOAI@lab.LabInstance.Id>+++**
+    - Name – **+++AOAI@lab.LabInstance.Id+++**
 
     - Pricing tier – **Standard**
 
