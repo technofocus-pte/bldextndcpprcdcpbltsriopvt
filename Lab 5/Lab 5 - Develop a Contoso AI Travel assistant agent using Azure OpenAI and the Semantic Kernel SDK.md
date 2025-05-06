@@ -73,13 +73,6 @@ generated](./media/image2.png)
 
 ## Ejercicio 2: Creación de recursos Azure OpenAI e implementación de modelos
 
-**Requisitos previos**: Se requiere una cuenta de GitHub para completar
-este laboratorio. Si no tiene una cuenta, cree una desde aquí
-+++https://github.com/+++, seleccionando **Sign up**.
-
-    ![A screenshot of a computer Description automatically
-generated](./media/image3.png)
-
 1.  Inicie sesión +++**https://portal.azure.com**+++ utilizando las
     credenciales de inicio de sesión de Azure. Busque +++**Azure OpenAI**+++ en la barra de búsqueda y selecciónelo.
 
