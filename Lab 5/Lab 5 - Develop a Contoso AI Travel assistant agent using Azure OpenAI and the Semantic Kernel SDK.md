@@ -128,16 +128,16 @@ generated](./media/image10.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image11.png)
 
-10. +++**gpt-35-turbo-16k**+++를 검색해 선택하세요. **Confirm**을
+10. +++**gpt-35-turbo**+++를 검색해 선택하세요. **Confirm**을
     클릭하세요.
 
     ![A screenshot of a chat Description automatically
-generated](./media/image12.png)
+generated](./media/image57.png)
 
 11. 기본값을 적용하고 **Deploy**를 선택하세요.
 
     ![A screenshot of a computer Description automatically
-generated](./media/image13.png)
+generated](./media/image58.png)
 
 ## 연습 3: Azure OpenAI 서비스로 AI 여행사 프로젝트 설정
 
