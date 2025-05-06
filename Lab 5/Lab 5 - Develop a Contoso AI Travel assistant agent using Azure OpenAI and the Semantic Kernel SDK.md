@@ -141,12 +141,12 @@ generated](./media/image12.png)
     **Confirm**.
 
     ![A screenshot of a chat Description automatically
-generated](./media/image13.png)
+generated](./media/image57.png)
 
 11. Acepte los valores por defecto y seleccione **Deploy**.
 
     ![A screenshot of a computer Description automatically
-generated](./media/image14.png)
+generated](./media/image58.png)
 
 ## Ejercicio 3: Configuración del proyecto AI Travel Agent con Azure OpenAI Services
 
