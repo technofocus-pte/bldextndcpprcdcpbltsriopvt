@@ -137,7 +137,7 @@ generated](./media/image11.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image12.png)
 
-10. Busque y seleccione +++**gpt-35-turbo-16k**+++. Haga clic en
+10. Busque y seleccione +++**gpt-35-turbo**+++. Haga clic en
     **Confirm**.
 
     ![A screenshot of a chat Description automatically
