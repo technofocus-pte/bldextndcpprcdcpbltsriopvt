@@ -82,7 +82,7 @@ credentials**이 필요한 곳에서는 이 자격 증명을 사용합니다.
 >[!Alert] **중요 사항**: 모든 리소스를 이 리소스 그룹에서 생성해야
 합니다.
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image6.png)
 
 3.  **Help** 탭에는 지원 정보가 포함되어 있습니다. 여기서의 **ID** 값은
@@ -347,7 +347,7 @@ generated](./media/image39.png)
 
 나열된 **data source** 선택하고 **next** 클릭하세요.
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image40.png)
 
 4.  Create a vector index – Index configuration 페이지에서 아래의 정보를
@@ -368,7 +368,7 @@ generated](./media/image41.png)
 
 기타 기본값을 그대로 두고 **Next** 선택하세요.
 
-    ![A screenshot of a search box Description automatically
+   ![A screenshot of a search box Description automatically
 generated](./media/image42.png)
 
 6.  **Review and finish** 페이지에서 세부 정보를 검토하고 **Create
@@ -470,7 +470,7 @@ generated](./media/image55.png)
 >[!Note] **참고:** 권한 오류가 발생하면 2분 후에 새 이름으로 다시
 시도하면 플로우가 복제됩니다.
 
-    ![A screenshot of a computer AI-generated content may be
+   ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image56.png)
 
 4.  프롬프트 플로우 디자이너 페이지가 열리면, **brochure-flow**를
@@ -506,7 +506,7 @@ incorrect.](./media/image57.png)
 컨텍스트를 제공합니다. 기다리는 동안 Flow 탭에서 흐름에 포함된 도구
 섹션을 검토하세요.
 
-    ![A screenshot of a computer screen Description automatically
+   ![A screenshot of a computer screen Description automatically
 generated](./media/image59.png)
 
 6.  **Inputs** 섹션에서 입력에 다음이 포함되는지 확인하세요:
