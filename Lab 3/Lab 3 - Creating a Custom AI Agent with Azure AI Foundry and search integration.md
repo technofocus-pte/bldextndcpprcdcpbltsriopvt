@@ -391,7 +391,9 @@ can be used to affect generative AI responses.
 
     ![A screenshot of a chat Description automatically generated](./media/image51.png)
 
-7.  Review the response and note that now the response is based on data
+    If there is an error stating **Rate Limit Exceeded**, from **Models + endpoints**, open the **gpt-4o** model and set the **Tokens per Minute Rate Limit** to its **maximum** value.
+    
+8.  Review the response and note that now the response is based on data
     in the index.
 
     ![A screenshot of a chat Description automatically generated](./media/image52.png)
