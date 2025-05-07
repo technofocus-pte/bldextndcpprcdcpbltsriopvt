@@ -249,7 +249,7 @@ You need two models to implement your solution:
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
 5.  Repeat the previous steps to deploy a +++**gpt-4o**+++ model
-    with the deployment name **gpt-4o**.
+    with the deployment name **gpt-4o** and **Deployment type** as **Global Standard**.
 
     ![](./media/image77.png)
 
