@@ -409,8 +409,7 @@ generated](./media/image46.png)
 generated](./media/image47.png)
 
 3.  **gpt-4o** 모델 배포가 선택되어 있는지 확인하세요. 그런
-    다음, 주요 채팅 세션 패널에서 프롬프트 +++**Where can I stay in New
-    York?**+++ 을 제출하세요.
+    다음, 주요 채팅 세션 패널에서 프롬프트 +++**Where can I stay in New York?**+++ 을 제출하세요.
 
     ![A screenshot of a computer program Description automatically
 generated](./media/image79.png)
@@ -440,6 +439,8 @@ generated](./media/image50.png)
     ![A screenshot of a chat Description automatically
 generated](./media/image51.png)
 
+    **Rate Limit Exceeded**라는 오류가 있는 경우 **Models + endpoints**에서 **gpt-4o** 모델을 열고 **Tokens per Minute Rate Limit**를 **최대** 값으로 설정합니다.
+    
 7.  응답을 검토하고, 이제 응답이 인덱스의 데이터를 기반으로 제공된다는
     점을 확인하세요.
 
