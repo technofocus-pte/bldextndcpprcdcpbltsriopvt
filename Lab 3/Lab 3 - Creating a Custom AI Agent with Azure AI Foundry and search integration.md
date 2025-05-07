@@ -184,7 +184,7 @@ incorrect.](./media/image17.png)
     - **Azure Subscription**: **assigned Azure subscription**
       선택하세요.
 
-    - **Resource group**: **assigned Resource Group** 선택하세요(여기서
+    - **Resource group**: **assigned Resource Group** (ResourceGroup1) 선택하세요(여기서
       자동으로 채워지는 새로운 것이 아니라 **Resources** 탭에서 제공되는
       것을 선택해야 함)
 
