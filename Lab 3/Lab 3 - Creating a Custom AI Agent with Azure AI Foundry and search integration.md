@@ -268,11 +268,11 @@ generated](./media/image25.png)
     
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
-5.  이전 단계를 반복하여 **gpt-35-turbo-16k** 모델을 배포하고 배포
-    이름을 gpt-35-turbo-16k로 설정하세요.
+5.  이전 단계를 반복하여 **gpt-4o** 모델을 배포하고 배포
+    이름을 gpt-4o-16k로 설정하세요.
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image29.png)
+incorrect.](./media/image77.png)
 
 6.  이제 두 가지 배포가 준비되었습니다.
 
@@ -408,12 +408,12 @@ generated](./media/image46.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image47.png)
 
-3.  **gpt-35-turbo-16k** 모델 배포가 선택되어 있는지 확인하세요. 그런
+3.  **gpt-4o** 모델 배포가 선택되어 있는지 확인하세요. 그런
     다음, 주요 채팅 세션 패널에서 프롬프트 +++**Where can I stay in New
     York?**+++ 을 제출하세요.
 
     ![A screenshot of a computer program Description automatically
-generated](./media/image48.png)
+generated](./media/image79.png)
 
     ![A screenshot of a chat Description automatically
 generated](./media/image49.png)
@@ -535,12 +535,12 @@ incorrect.](./media/image61.png)
 
     - **Api**: **chat** 선택
 
-    - **deployment_name**: **gpt-35-turbo-16k** 선택
+    - **deployment_name**: **gpt-4o** 선택
 
     - **response_format**: **{“type”:”text”}** 선택
 
     ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image62.png)
+incorrect.](./media/image80.png)
 
 9.  연산 세션이 시작되면, **lookup** 섹션에서 다음 파라미터 값들을
     설정하세요:
@@ -597,7 +597,7 @@ generated](./media/image67.png)
 
     - **Api**: Chat
 
-    - **deployment_name**: gpt-35-turbo-16k
+    - **deployment_name**: gpt-4o
 
     - **response_format**: {“type”:”text”}
 
@@ -607,7 +607,7 @@ generated](./media/image67.png)
 - **prompt_text** *(string)*: ${Prompt_variants.output}
 
     ![A screenshot of a computer Description automatically
-generated](./media/image68.png)
+generated](./media/image81.png)
 
 13. 도구 모음에서 **Save** 버튼을 사용하여 프롬프트에서 변경한 내용을
     저장하세요.
