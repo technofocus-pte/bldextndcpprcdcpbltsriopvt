@@ -339,10 +339,7 @@ PowerShell에서 T 버튼이 제대로 작동하지 않을 수 있습니다.
     
 2.  PowerShell에 다음 명령어를 입력하여 프로젝트 이름으로 폴더를
     생성하세요. 폴더
-    이름은 **+++RAGproj@lab.LabInstance.Id+++**입니다.
-
-    >[!Note] **참고:** 아래 명령어\< Project name \> 프로젝트 이름으로
-변경하고 실행하세요.
+    이름은 **RAGproj@lab.LabInstance.Id**입니다.
 
     ```
     mkdir RAGproj@lab.LabInstance.Id
