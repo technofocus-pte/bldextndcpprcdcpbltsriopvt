@@ -303,9 +303,7 @@ your global install of Python.
     cd Users\Admin
     ```
     
-1.  Create a folder with your project name, **+++RAGproj@lab.LabInstance.Id+++**, by entering the following command in your powershell.
-
-    >[!Note] **Note:** Replace < Project name > with your project’s name in the command below and execute it.
+1.  Create a folder with your project name, **RAGproj@lab.LabInstance.Id**, by entering the following command in your powershell.
 
     ```
     mkdir RAGproj@lab.LabInstance.Id
