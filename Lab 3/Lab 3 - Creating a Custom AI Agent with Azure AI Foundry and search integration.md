@@ -171,7 +171,7 @@ generated](./media/image6.png)
 
     - **Azure Subscription**: Select the **assigned Azure subscription**
 
-    - **Resource group**: Select the **assigned Resource Group**
+    - **Resource group**: Select the **assigned Resource Group** (ResourceGroup1)
 
     - **Location**: Select @lab.CloudResourceGroup(ResourceGroup1).Location (Select Canada East if there is no quota in the specified region)
 
