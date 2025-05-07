@@ -269,7 +269,7 @@ generated](./media/image25.png)
     ![A screenshot of a computer Description automatically generated](./media/image28.png)
 
 5.  이전 단계를 반복하여 **gpt-4o** 모델을 배포하고 배포
-    이름을 gpt-4o-16k로 설정하세요.
+    이름을 gpt-4o로 설정하세요 그리고 **Deployment type** 을 **Global Standard**.
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image77.png)
