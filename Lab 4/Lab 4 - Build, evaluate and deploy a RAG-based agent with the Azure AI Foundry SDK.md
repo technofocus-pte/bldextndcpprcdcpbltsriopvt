@@ -139,7 +139,7 @@ Foundry 프로젝트에 배포되어야 하며, 아래 단계에 따라 각각 �
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image10.png)
 
-2.  모델 목록에서 **gpt-4o-mini** 모델을 선택하세요. 검색 창을 이용하여
+2.  모델 목록에서 +++**gpt-4o-mini**+++ 모델을 선택하세요. 검색 창을 이용하여
     해당 모델을 빠르게 찾을 수 있습니다.
 
     ![A screenshot of a computer Description automatically
