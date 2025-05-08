@@ -55,7 +55,7 @@ text-embedding-ada-002)을 배포하며, Azure AI Search를 통합하여 사용�
 >[!Alert] **중요 사항**: 모든 리소스는 이 Resource Group 내에 생성해야
 합니다.
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image1.png)
 
 3.  **Help** 탭에는 지원 관련 정보가 포함되어 있습니다. 이 탭에 표시된
@@ -383,13 +383,12 @@ generated](./media/image36.png)
 >[!Note] **참고:** Yes, I trust folder and content를 클릭한 다음
 메시지가 표시되면 계속 진행하세요.
 
-    ![A screenshot of a computer Description automatically
-generated](./media/image37.png)
+   ![A screenshot of a computer Description automatically generated](./media/image37.png)
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image38.png)
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image39.png)
 
 ### 작업 7: 패키지 설치
@@ -443,10 +442,10 @@ generated](./media/image44.png)
    >[!Note] **참고:** 로그인 프롬프트가 자동으로 표시되지 않는 경우 VS
 Code를 최소화하여 로그인 프롬프트를 확인하세요.
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image45.png)
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image46.png)
 
 6.  필요한 패키지를 설치하려면 다음 코드를 실행하세요.
