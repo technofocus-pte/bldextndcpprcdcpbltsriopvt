@@ -101,7 +101,7 @@ generated](./media/image5.png)
 
 나머지는 기본값으로 두고 **next** 클릭하세요.
 
-    ![A screenshot of a computer Description automatically
+   ![A screenshot of a computer Description automatically
 generated](./media/image6.png)
 
 5.  **Review and finish** 페이지에서  **Create** 클릭하세요.
