@@ -853,7 +853,7 @@ if __name__ == "__main__":
 ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image61.png)
 
->[!Note] **Note:** 이제 파일의 내용이 다음과 같아야 합니다
+>[!Note] **Note:** 이제 파일의 내용이 다음과 같습니다.
 >
 ```
 import os
@@ -1254,7 +1254,7 @@ if __name__ == "__main__":
 ![A screenshot of a computer Description automatically
 generated](./media/image68.png)
 
->[!Note] **Note:** 이제 파일의 내용이 다음과 같아야 합니다.
+>[!Note] **Note:** 이제 파일의 내용이 다음과 같습니다.
 >
 ```
 import os
