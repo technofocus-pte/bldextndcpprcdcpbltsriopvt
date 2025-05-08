@@ -1071,7 +1071,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
     )
     
     # create a vector embeddings client that will be used to generate vector embeddings
-    chat = project.inference.get_chat_completions_client()
+    chat = project.inference.get_azure_openai_client(api_version="2024-06-01")
     embeddings = project.inference.get_embeddings_client()
     
     # use the project client to get the default search connection
@@ -1107,7 +1107,7 @@ Quando o chat recebe uma solicitação, ele pesquisa seus dados para encontrar i
         # generate a search query from the chat messages
         intent_prompty = PromptTemplate.from_prompty(Path(ASSET_PATH) / "intent_mapping.prompty")
     
-        intent_mapping_response = chat.complete(
+        intent_mapping_response = chat.chat.completions.create(
             model=os.environ["INTENT_MAPPING_MODEL"],
             messages=intent_prompty.create_messages(conversation=messages),
             **intent_prompty.parameters,
@@ -1209,7 +1209,7 @@ project = AIProjectClient.from_connection_string(
 )
  
 # create a vector embeddings client that will be used to generate vector embeddings
-chat = project.inference.get_chat_completions_client()
+chat = project.inference.get_azure_openai_client(api_version="2024-06-01")
 embeddings = project.inference.get_embeddings_client()
  
 # use the project client to get the default search connection
@@ -1239,7 +1239,7 @@ def get_product_documents(messages: list, context: dict = None) -> dict:
     # generate a search query from the chat messages
     intent_prompty = PromptTemplate.from_prompty(Path(ASSET_PATH) / "intent_mapping.prompty")
  
-    intent_mapping_response = chat.complete(
+    intent_mapping_response = chat.chat.completions.create(
         model=os.environ["INTENT_MAPPING_MODEL"],
         messages=intent_prompty.create_messages(conversation=messages),
         **intent_prompty.parameters,
