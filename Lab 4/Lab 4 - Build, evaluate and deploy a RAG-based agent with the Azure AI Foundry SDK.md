@@ -1433,7 +1433,7 @@ Em seguida, você cria um código personalizado para adicionar recursos de retri
     )
     
     # create a chat client we can use for testing
-    chat = project.inference.get_chat_completions_client()
+    chat = project.inference.get_azure_openai_client(api_version="2024-06-01")
     
     ```
 
@@ -1522,7 +1522,7 @@ project = AIProjectClient.from_connection_string(
 )
 
 # create a chat client we can use for testing
-chat = project.inference.get_chat_completions_client()
+chat = project.inference.get_azure_openai_client(api_version="2024-06-01")
 from azure.ai.inference.prompts import PromptTemplate
 
 
