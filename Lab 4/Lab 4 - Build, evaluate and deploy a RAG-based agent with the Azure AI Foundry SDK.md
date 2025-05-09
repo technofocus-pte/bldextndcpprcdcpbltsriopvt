@@ -1,4 +1,4 @@
-# 실습 4 - Azure AI Foundry SDK 사용해 RAG 기반 에이전트 구축, 평가 및 배포
+![image](https://github.com/user-attachments/assets/417cea5e-2f41-4d30-a81d-41dc3f872f97)![image](https://github.com/user-attachments/assets/35a18fad-3869-4688-881e-6994a82c193c)# 실습 4 - Azure AI Foundry SDK 사용해 RAG 기반 에이전트 구축, 평가 및 배포
 
 **예상 소요 시간: 120 분**
 
@@ -1463,6 +1463,13 @@ Return the search query for the messages in the following conversation:
 generated](./media/image71.png)
 
 ### 작업 5: 제품 문서 검색 스크립트 테스트
+
+1. 아래 명령을 실행합니다.
+
+   +++pip install openai+++
+
+   ![image](https://github.com/user-attachments/assets/42650231-d812-4bc2-9d25-c84821cde1d4)
+
 
 1.  N스크립트와 템플릿이 모두 있으면 스크립트를 실행하여 검색 인덱스가
     쿼리에서 반환하는 문서를 테스트합니다. 터미널 창에서 다음을
