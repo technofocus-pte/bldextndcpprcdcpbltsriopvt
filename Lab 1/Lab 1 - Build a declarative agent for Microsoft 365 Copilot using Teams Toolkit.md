@@ -28,11 +28,7 @@ seamlessly with Microsoft 365.
 
 ### Task 1: Install Teams Toolkit
 
-These labs are based on [Teams Toolkit version
-5.0](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension).
-Follow the steps as shown in the screen shot below.
-
-1.  Open Visual Studio Code and click on the Extensions toolbar button.
+1.  Open Visual Studio Code and click on the **Extensions** toolbar button.
 
     ![](./media/image1.png)
 
