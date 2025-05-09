@@ -26,11 +26,7 @@ agent의 기본 구조를 생성합니다. instruction.txt와 manifest.json과 �
 
 ### 작업 1: Teams Toolkit 설치
 
-이 실습들은 [Teams Toolkit version
-5.0](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
-기반으로 진행됩니다. 아래 스크리샷에 표시된 단계 대로 실습을 진행하세요.
-
-1.  Visual Studio Code을 열고 Extensions 도구 모음 버튼을 클릭하세요.
+1.  Visual Studio Code을 열고 **Extensions** 도구 모음 버튼을 클릭하세요.
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image1.png)
@@ -227,16 +223,17 @@ incorrect.](./media/image14.png)
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image15.png)
 
+2.  브라우저 창이 열리고 Microsoft 365에 로그인하라는 메시지가 표시됩니다.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](./media/image17.png)
+
 2.  Security Alert 대화 상자에 **Allow access** 선택하세요.
 
     ![](./media/image16.png)
 
-3.  브라우저 창이 열리고 Microsoft 365에 로그인하라는 메시지가
-    표시됩니다. "You are signed in now and close this page"가 표시되면
+3.  "You are signed in now and close this page"가 표시되면
     페이지를 닫아주세요.
-
-    ![A screenshot of a computer AI-generated content may be
-incorrect.](./media/image17.png)
 
     ![A screenshot of a computer AI-generated content may be
 incorrect.](./media/image18.png)
