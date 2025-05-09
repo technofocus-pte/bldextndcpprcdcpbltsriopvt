@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/417cea5e-2f41-4d30-a81d-41dc3f872f97)![image](https://github.com/user-attachments/assets/35a18fad-3869-4688-881e-6994a82c193c)# 실습 4 - Azure AI Foundry SDK 사용해 RAG 기반 에이전트 구축, 평가 및 배포
+# 실습 4 - Azure AI Foundry SDK 사용해 RAG 기반 에이전트 구축, 평가 및 배포
 
 **예상 소요 시간: 120 분**
 
