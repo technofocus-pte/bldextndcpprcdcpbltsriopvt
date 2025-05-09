@@ -192,13 +192,15 @@ Well done! You have successfully set up the base declarative agent! Now, proceed
 
     ![](./media/Picture1.png)
 
+3.  A browser window will pop up and offer to log into Microsoft 365.
+
+    ![](./media/image15.png)
+    
 2.	Select **Allow access** in the Security Alert dialog.
 
   	 ![](./media/Picture3.png)
   	
-3.  A browser window will pop up and offer to log into Microsoft 365. When it says "You are signed in now and close this page", please do so.
-
-    ![](./media/image15.png)
+3.  When the browser window says "You are signed in now and close this page", please do so.
 
     ![](./media/image16.png)
 
@@ -268,7 +270,7 @@ Here's how the base project looks:
 
 ### Task 1: Update icons and manifests
 
-1.  First, we will replace the logo. We will replace the image color.png in the project with a new ont.
+1.  First, we will replace the logo. We will replace the image **color.png** in the project with a new one.
 Copy the image **color.png** located in **C:\LabFiles** and replace the image of same name in the folder **appPackage** in your root project(The path should be **C:\Users\Student\TeamsApps\Geo Locator Game\appPackage**).
 
     ![](./media/image21.png)
@@ -438,7 +440,6 @@ Some of the benefits of having conversation starters are:
 4.  Go to Teams in browser +++https://teams.microsoft.com/v2/+++ logged into your developer tenant. If you have a Microsoft 365 Copilot, the new app will be automatically pinned above your chats. Just open Teams, select “chats” and you’ll see Copilot.
 
     ![](./media/image34.png)
-
 
 5.  Once the Copilot app is loaded, Find the +++Geo Locator Game+++ from the right panel as shown.
 
