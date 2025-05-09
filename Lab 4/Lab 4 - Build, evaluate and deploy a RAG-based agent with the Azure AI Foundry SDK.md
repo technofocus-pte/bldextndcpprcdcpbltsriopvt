@@ -1368,6 +1368,10 @@ Return the search query for the messages in the following conversation:
 
 ### Task 5: Test the product document retrieval script
 
+1.	Execute the command +++pip install openai+++
+
+    ![image](https://github.com/user-attachments/assets/a82c8963-726a-4244-b94e-09f69449c746)
+
 1.  Now that you have both the script and template, run the script to
     test out what documents the search index returns from a query. From
     the terminal window run,
