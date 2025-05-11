@@ -360,23 +360,25 @@ data in Dataverse, and notify support engineers via email.
 
 2.  In choose an action window, From top left side click on the **+ New Action** and select **New Power Automate Flow** . 
 
-    ![](./media/image47a.png)
+    ![](./media/SS1.png)
 
 
-3.  In Power automate flow, click on **Run a flow from copilot** and then select **Add an Input**.
+3.  In Power automate flow, click on **When an agent calls the flow** and then select **Add an Input**.
 
-    ![](./media/image48.png)
+    ![](./media/SS2.png)
 
-
-4.  Select **Text** as data type of input and rename the input as +++**Name**+++.
-
-    ![](./media/image49.png)
+    ![](./media/SS3.png)
 
 
-    ![](./media/image50.png)
+5.  Select **Text** as data type of input and rename the input as +++**Name**+++.
+
+    ![](./media/SS4.png)
 
 
-5.  With same procedure create more input as per given below details.
+    ![](./media/SS5.png)
+
+
+6.  With same procedure create more input as per given below details.
 
     | **Input Name** | **Data Type** |
     |----------------|---------------|
@@ -384,32 +386,32 @@ data in Dataverse, and notify support engineers via email.
     | +++Email+++          | Text          |
     | +++Details+++        | Text          |
     
-    ![](./media/image51.png)
+    ![](./media/SS6.png)
 
 
-6.  Below Run a flow from copilot, click on **(+)** sign and select **Add an action**.
+7.  Below **When an agent calls the flow**, click on **(+)** sign and select **Add an action**.
 
-    ![](./media/image52a.png)
+    ![](./media/SS7.png)
 
 
-7.  In Add an action search bar, enter +++**Add a new row**+++ . Then select
+8.  In Add an action search bar, enter +++**Add a new row**+++ . Then select
     **Add a new row** from Microsoft Dataverse section.
 
-    ![](./media/image53.png)
+    ![](./media/SS8.png)
 
 
     > Note: Sometimes, a Dataverse connection is not created automatically. You may need 
 to **sign in** again with your credentials **OAuth** authentication.
     
-    ![](./media/image54.png)
+    ![](./media/SS9.png)
 
 
-8.  In **Table Name** section search and select +++**Employee Technical Support Record**+++ (or your corresponding table name created).
+9.  In **Table Name** section search and select +++**Employee Technical Support Record**+++ (or your corresponding table name created).
 
-    ![](./media/image55.png)
+    ![](./media/SS10.png)
 
 
-9.  Below table name select **Show all**, then click on the particular
+10.  Below table name select **Show all**, then click on the particular
     field and add input with the help of dynamic content button (Thunder
     bolt) as per the below table. The **Current Status** field
     should be selected with drop down as **Unresolved**.
@@ -424,21 +426,23 @@ to **sign in** again with your credentials **OAuth** authentication.
     ![](./media/image56.png)
     
     
-    ![](./media/image57.png)
+    ![](./media/SS11.png)
 
 
-10. Below Add a new row action click on (+) and select **Add an action**.
+11. Below Add a new row action click on (+) and select **Add an action**.
 
-    ![](./media/image58a.png)
+    ![](./media/SS12.png)
 
 
-11. In add an action section, enter +++**Send an email**+++ in the search bar
+12. In add an action section, enter +++**Send an email**+++ in the search bar
     and select **send an email (V2)** from office 365 outlook section.
 
-    ![](./media/image59.png)
+    ![](./media/SS13.png)
+
+    ![](./media/SS14.png)
 
 
-12. In send an email section, Enter the below given detail in the
+14. In send an email section, Enter the below given detail in the
     respected section:
 
     Replace the place holders for **Name**, **ID**, **Details** with the variables using dynamic content
@@ -470,42 +474,42 @@ to **sign in** again with your credentials **OAuth** authentication.
     ```
 
 
-    ![](./media/image60.png)
+    ![](./media/SS15.png)
 
 
-13. From top left corner rename the flow as +++**Create an Employee Support Ticket**+++.
+15. From top left corner rename the flow as +++**Create an Employee Support Ticket**+++.
 
-    ![](./media/img2.png)
+    ![](./media/SS16.png)
 
 
-14. From top bar click on **Save draft** and then click **Publish**. **Close** the Power automate tab.
+16. From top bar click on **Save draft** and then click **Publish**. **Close** the Power automate tab.
 
     ![](./media/image62.png)
 
 
-15. Go back to Copilot window and click on **Refresh** button.
+17. Go back to Copilot window and click on **Refresh** button.
 
     ![](./media/image63a.png)
 
 
-16. In Choose an action window, select **Create an Employee Support Ticket** flow.
+18. In Choose an action window, select **Create an Employee Support Ticket** flow.
 
-    ![](./media/img3.png)
-
-
-17. Click on **Add action** button to add a flow.
-
-    ![](./media/img4.png)
+    ![](./media/SS17.png)
 
 
-18.	From the **Overview** page of the agent, under the **Action** section, select **Edit** to Edit the parameters of the action. Select the **Inputs** section.
+19. Click on **Add action** button to add a flow.
 
-    ![](./media/img5.png)
+    ![](./media/SS18.png)
+
+
+20.	From the **Overview** page of the agent, under the **Action** section, select **Edit** to Edit the parameters of the action. Select the **Inputs** section.
+
+    ![](./media/SS19.png)
     
-    ![](./media/img6.png)
+    ![](./media/SS20.png)
 
 
-19. Enter the given description in the respected input field, after entering
+21. Enter the given description in the respected input field, after entering
     the description click on **Save** button. 
 
     | Section | Details |
@@ -548,7 +552,7 @@ configure triggers and finalize the agent for deployment.
 
 1.  Go to overview page of the agent, scroll down and click on **+ Add trigger**.
 
-    ![](./media/image70.png)
+    ![](./media/SS21.png)
 
 
 2.  Then from Add trigger window, select **When a new email arrives (V3)** trigger.
@@ -571,7 +575,7 @@ configure triggers and finalize the agent for deployment.
 
 5.  Close the **Time to test your trigger** prompt. On Support agent overview page scroll down, on trigger section click on three dots **(…)** and select **Edit in Power Automate.**
 
-    ![](./media/image75.png)
+    ![](./media/SS22.png)
 
 
 6.  Right click on When a new email arrives trigger and select **Delete**.
@@ -667,7 +671,7 @@ trigger automated workflows effectively.
 4.  Navigate to copilot agent overview page, scroll down and select
     **Test trigger**.
 
-    ![](./media/image87.png)
+    ![](./media/SS23.png)
 
 
 5.  Click on **Start testing**, it will start testing.
@@ -691,7 +695,7 @@ trigger automated workflows effectively.
 
 8.  Navigate to copilot studio window and re run the **Test**.
 
-    ![](./media/image92.png)
+    ![](./media/SS24.png)
 
 
 9.  The support request is automatically generated.
