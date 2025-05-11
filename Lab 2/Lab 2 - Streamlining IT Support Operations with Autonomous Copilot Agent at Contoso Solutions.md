@@ -411,7 +411,7 @@ to **sign in** again with your credentials **OAuth** authentication.
     ![](./media/SS10.png)
 
 
-10.  Below table name select **Show all**, then click on the particular
+10. Below table name select **Show all**, then click on the particular
     field and add input with the help of dynamic content button (Thunder
     bolt) as per the below table. The **Current Status** field
     should be selected with drop down as **Unresolved**.
