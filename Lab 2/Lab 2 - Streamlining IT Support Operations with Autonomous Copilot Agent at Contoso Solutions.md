@@ -223,7 +223,8 @@ ensure it effectively assists users in troubleshooting and escalation.
 
     <img width="637" alt="image" src="https://github.com/user-attachments/assets/0012fded-c9b5-4bf5-8a48-265dc5ae5838" />
 
-    <img width="648" alt="image" src="https://github.com/user-attachments/assets/4db0f9a2-ae39-4e91-a407-c589a6eecd02" />
+    <img width="573" alt="image" src="https://github.com/user-attachments/assets/d27b7266-5d85-40a8-87b9-3d0513c90149" />
+
 
 
 3.  Again, go to agent overview page, scroll down and click on **+ Add knowledge.**
