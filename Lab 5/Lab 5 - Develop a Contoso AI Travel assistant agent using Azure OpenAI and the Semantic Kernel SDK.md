@@ -1,4 +1,4 @@
-# Lab 5 - Develop a Contoso AI Travel assistant agent using Azure OpenAI and the Semantic Kernel SDK
+# Lab 3 - Develop a Contoso AI Travel assistant agent using Azure OpenAI and the Semantic Kernel SDK
 
 **Estimated Time: 40 mins**
 
