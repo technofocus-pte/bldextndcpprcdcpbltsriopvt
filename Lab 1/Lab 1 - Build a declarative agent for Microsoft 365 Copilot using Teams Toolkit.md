@@ -209,8 +209,7 @@ Well done! You have successfully set up the base declarative agent! Now, proceed
 
 5.  Verify that the **Custom App Upload Enabled** checker has a green checkmark.
 
-    ![](./media/image17.png)
-
+    <img width="215" alt="image" src="https://github.com/user-attachments/assets/b3a57cbf-0aad-4689-8759-6dd121402862" />
 
 ### Task 3: Understanding the files in the app
 
