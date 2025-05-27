@@ -44,7 +44,7 @@ seamlessly with Microsoft 365.
 
     ![](./media/image3.png)
 
->[!Note] **Note:** Microsoft 365 Agents Toolkit is an evolution of Teams Toolkit. It is in a transition state and at places it shows up as Teams toolkit and at places it shows up as Microsoft 365 Agents Toolkit.
+>[!Note] **Note:** Microsoft 365 Agents Toolkit is an evolution of Teams Toolkit. It is in a transition phase and at places it shows up as Teams toolkit and at places it shows up as Microsoft 365 Agents Toolkit.
 
 ## Exercise 2: First declarative agent
 
@@ -78,7 +78,6 @@ In this lab you will start out building a declarative agent using Teams Toolkit 
 The goal of your AI is to provide a fun break from work while helping you learn about different cities around the world. It offers abstract clues for you to identify a city. The more clues you need, the fewer points you earn. At the end of the game, it will reveal your final score.
 
 ![](./media/image4.png)
-
 
 You will also give your agent some files to refer to a secret diary 🕵🏽
 and a map 🗺️ to give more challenges to the player.
@@ -209,8 +208,6 @@ Well done! You have successfully set up the base declarative agent! Now, proceed
     ![](./media/image16.png)
 
 5.  Verify that the **Custom App Upload Enabled** checker has a green checkmark.
-
-6.  Verify that the **Copilot Access Enabled** checker has a green checkmark.
 
     ![](./media/image17.png)
 
