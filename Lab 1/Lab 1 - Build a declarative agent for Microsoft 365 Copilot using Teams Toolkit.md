@@ -32,15 +32,19 @@ seamlessly with Microsoft 365.
 
     ![](./media/image1.png)
 
+2.   Search for +++**Microsoft 365 agents**+++ and locate **Microsoft 365 Agents Toolkit**.
 
-2.  Search for +++**Teams**+++ and locate **Teams Toolkit** and click **Install.**
+     ![image](https://github.com/user-attachments/assets/805fcaf0-1ba9-454e-94ea-62361715b20e)
 
-    ![](./media/image2.png)
+3.   Select **Install**.
 
+     ![image](https://github.com/user-attachments/assets/eef791c2-12a5-4a55-9f09-f5ec8dc533ec)
 
-3.  Once the installation is complete, the **Teams Toolkit** icon will appear on the left navigation bar.
+4.  Once the installation is complete, the **Teams Toolkit/Microsoft 365 Agents Toolkit** icon will appear on the left navigation bar.
+
     ![](./media/image3.png)
 
+>[!Note] **Note:** Microsoft 365 Agents Toolkit is an evolution of Teams Toolkit. It is in a transition state and at places it shows up as Teams toolkit and at places it shows up as Microsoft 365 Agents Toolkit.
 
 ## Exercise 2: First declarative agent
 
@@ -437,21 +441,13 @@ Some of the benefits of having conversation starters are:
     ![](./media/image33.png)
 
 
-4.  Go to Teams in browser +++https://teams.microsoft.com/v2/+++ logged into your developer tenant. If you have a Microsoft 365 Copilot, the new app will be automatically pinned above your chats. Just open Teams, select “chats” and you’ll see Copilot.
+4.  Open a browser and navigate to +++https://m365.cloud.microsoft/chat/+++ logged into your developer tenant. Open the Geo Locator Game from the left pane.
 
-    ![](./media/image34.png)
-
-5.  Once the Copilot app is loaded, Find the +++Geo Locator Game+++ from the right panel as shown.
-
-    ![](./media/image35.png)
-
-
-    If you can't find it, this may be a long list and you can find your agent by expanding the list by selecting "see more"
+    ![image](https://github.com/user-attachments/assets/7255ef7b-6d18-4153-9a48-1933f0645f32)
 
 6.  Once launched, you will be in this focused chat window with the agent. And you will see the conversation starters as marked below:
 
-    ![](./media/image36.png)
-
+    ![image](https://github.com/user-attachments/assets/34e64754-ce6f-4626-b8ea-5243d85316aa)
 
 7.  Select one of the conversation starters and it will fill your compose message box with the starter prompt, just waiting for you to hit "Enter". It is still only your assistant and will wait for you to take action.
 
