@@ -128,16 +128,21 @@ agent to streamline IT workflows.
 
 ## Task 1: Logging into Microsoft Copilot Studio
 
-1.	Navigate to the url +++https://copilotstudio.microsoft.com+++ and click on Start free trial to start the Copilot Studio trial.
+1.	From a browser, navigate to the url +++https://copilotstudio.microsoft.com+++.
+
+2.  If it says **Setting up your copilot** as in the below screenshot, select the **Environments** from the top right menu and select **Dev One**. Else, ignore this step and continue with Step 3.
+
+    <img width="591" alt="image" src="https://github.com/user-attachments/assets/b9c8fd8b-5de0-4d77-9c8f-7ab8877fca67" />
+
+3.  Click on **Start free trial** to start the Copilot Studio trial.
 
     ![](./media/image100.png)
 
 ##  Task 2: Creating and Configuring Contoso IT Support Agent 
 
-1.  In Copilot Studio home section from top right, select the **environment** and choose **DevOne** environment. 
+1.  If step 2 the previous task is done, ignore this step. Else, perform this step. In Copilot Studio home section from top right, select the **environment** and choose **DevOne** environment. 
 
     ![](./media/image6.png)
-
 
 2.  On welcome copilot studio tab, click on the **Skip** to move
     forward.
@@ -257,7 +262,6 @@ ensure it effectively assists users in troubleshooting and escalation.
     **Conversation Start** topic.
 
     ![](./media/image36.png)
-
 
 2.  Scroll down and go to message node. Update the message after bot
     name as given below:
