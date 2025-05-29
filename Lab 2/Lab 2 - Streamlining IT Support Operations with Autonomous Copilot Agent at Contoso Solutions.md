@@ -36,18 +36,20 @@ applications.
 
 ## Task 1: Logging into Power Apps
 
-1.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Free** button.
+1.  Open a browser from the Lab VM.
+
+2.  Navigate to power apps website +++https://www.microsoft.com/en-us/power-platform/products/power-apps+++ and click on the **Try for Free** button.
 
     ![](./media/image15.png)
 
 
-2.  Enter the **Administrative Username** from the **Office 365 Tenant** section of the **Resources** tab into the email field, **select** the **checkbox** and click on the **Start free** button.
+3.  Enter the **Administrative Username** from the **Office 365 Tenant** section of the **Resources** tab into the email field, **select** the **checkbox** and click on the **Start free** button.
     
     ![](./media/Picture4.png)
 
-3.	Enter the **Administrative Password** and you will be taken to the Power Apps Home page.
+4.	Enter the **Administrative Password** and you will be taken to the Power Apps Home page.
    
-4.	Select **Yes** in the Stay Signed in dialog and **Got it** for the Save password prompt and select **No, Thanks** in the Sign in to Microsoft Edge pop up.
+5.	Select **Yes** in the Stay Signed in dialog and **Got it** for the Save password prompt and select **No, Thanks** in the Sign in to Microsoft Edge pop up.
 
     >[!Note] **Note:** If it agains prompts for the user name, password or any information to login, please provide the same and login.
    
@@ -258,10 +260,10 @@ ensure it effectively assists users in troubleshooting and escalation.
 
 ## Task 2: Customize the Conversation Start Topic
 
-1.  From the top bar option click on **Topics** and then click and open
+1.  From the top bar option click on **Topics** -> **System** and then click and open
     **Conversation Start** topic.
 
-    ![](./media/image36.png)
+    <img width="791" alt="image" src="https://github.com/user-attachments/assets/fe9cb4be-824b-4fed-8861-02754959bf6a" />
 
 2.  Scroll down and go to message node. Update the message after bot
     name as given below:
@@ -278,7 +280,7 @@ ensure it effectively assists users in troubleshooting and escalation.
 
 ##  Task 3: Update the Fallback Topic 
 
-1.  From the top bar option click on **Topics** and then open the
+1.  From the top bar option click on **Topics** -> **System** and then open the
     **Fallback** topic.
 
     ![](./media/image39.png)
